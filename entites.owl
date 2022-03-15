@@ -1,0 +1,2282 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
+     xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
+     xmlns:gsp="http://www.opengis.net/ont/geosparql#"
+     xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourActivite -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourActivite"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCible -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCible">
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteoOceano -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteoOceano"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDepartement -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDepartement">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">a pour département</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourElement -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourElement">
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is partly constituted.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Relie une entité topographique à une autre dont elle est partiellement constituée.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour élément</rdfs:label>
+        <rdfs:label xml:lang="en">has element</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourEntiteImpliquee -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourEntiteImpliquee">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Route"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour entité impliquée</rdfs:label>
+        <rdfs:label xml:lang="en">entity involved</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourLieuDEffet -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLieuDEffet">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">a pour lieu d&apos;effet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourMotif -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNature -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNature">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:comment xml:lang="en">Links rdf:type topographic entity to the concept that specifies its nature.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Relie une entité topographique au concept qui précise sa nature.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour nature</rdfs:label>
+        <rdfs:label xml:lang="en">has nature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRepere -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRepere">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourSeparation -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourSeparation">
+        <rdfs:label xml:lang="fr">a pour séparation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporalite -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour type cardinal</rdfs:label>
+        <rdfs:label xml:lang="en">has cardinal type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">a une relation spatiale avec</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#deborde -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#deborde">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDebordeDe"/>
+        <rdfs:label xml:lang="fr">déborde</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#destination -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#destination">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">destination</rdfs:label>
+        <rdfs:label xml:lang="fr">destination</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#donneAccesA -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#donneAccesA">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">donne accès à</rdfs:label>
+        <rdfs:label xml:lang="en">gives access to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#entiteLumineuse -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#entiteLumineuse"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#entiteMarquee -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#entiteMarquee"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#entoure -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#entoure">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estEntoureDe"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALAbriDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALAbriDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est à l&apos;abri de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALEstDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALEstDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estALOuestDe"/>
+        <rdfs:label xml:lang="fr">est à l&apos;Est de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALEstNordEstDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALEstNordEstDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est à l&apos;Est-Nord-Est de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALExtremiteDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALExtremiteDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est à l&apos;extremité de</rdfs:label>
+        <rdfs:label xml:lang="en">is at the extremity of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALOuestDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALOuestDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est à l&apos;Ouest de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALaDroiteDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALaDroiteDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estALaGaucheDe"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">est à la droite de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estALaGaucheDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALaGaucheDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est à la gauche de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAccessiblePar -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est accessible par</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAuLargeDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuLargeDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est au large de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAuNordDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuNordDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudDe"/>
+        <rdfs:label xml:lang="fr">est au Nord de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAuNordEstDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuNordEstDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe"/>
+        <rdfs:label xml:lang="fr">est au Nord-Est de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAuSudDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuSudDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est au Sud de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est au Sud-Ouest de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDansLEstDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLEstDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est dans l&apos;Est de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDansLOuestDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLOuestDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est dans l&apos;Ouest de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDansLeNordDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLeNordDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est dans le Nord de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDansLeSudDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLeSudDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est dans le Sud de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeCouleur -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeCouleur">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+            <rdf:Description rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label xml:lang="fr">est de couleur</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDebordeDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDebordeDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est débordé de</rdfs:label>
+        <rdfs:label xml:lang="en">surrounded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estEntoureDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEntoureDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est entouré de</rdfs:label>
+        <rdfs:label xml:lang="en">surrounded by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estEntre -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEntre">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est entre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estGerePar -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estGerePar">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est géré par</rdfs:label>
+        <rdfs:label xml:lang="en">is managed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estImposeePar -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estImposeePar">
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Reglement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estLocaliseA -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estLocaliseA">
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estMarquePar -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estMarquePar">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#marqueLEntite"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="fr">e.g. une bouée</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est marqué par</rdfs:label>
+        <rdfs:label xml:lang="en">is marked by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estPresDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estPresDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:label xml:lang="fr">est près de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estSitueDans -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estSitueDans">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est situé dans</rdfs:label>
+        <rdfs:label xml:lang="en">is situated in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUnElementDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnElementDe">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is rdf:type part.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Relie une entité topographique à une autre dont elle fait partie.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">est un élément de</rdfs:label>
+        <rdfs:label xml:lang="en">is an element of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#isGeometryOf -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#isGeometryOf">
+        <owl:inverseOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#lExtremiteDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#lExtremiteDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:label xml:lang="fr">l&apos;extremité de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#leMilieuDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#leMilieuDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:label xml:lang="fr">le milieu de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#marqueLEntite -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#marqueLEntite">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">marks entity</rdfs:label>
+        <rdfs:label xml:lang="fr">marque l&apos;entité</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#typeLateral -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#typeLateral">
+        <rdfs:label xml:lang="fr">type latéral</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#unePartieDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#unePartieDe">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">une partie de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#sfContains -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#sfContains">
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_3 -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#_4 -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourAdresseMail -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAdresseMail">
+        <rdfs:label xml:lang="fr">a pour adresse mail</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourAngleDebut -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAngleDebut">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+        <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourAngleFin"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour angle début</rdfs:label>
+        <rdfs:label xml:lang="en">has beginning angle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourAngleFin -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAngleFin">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour angle fin</rdfs:label>
+        <rdfs:label xml:lang="en">has end angle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCap -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCap">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="fr">a pour cap</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionsNavire -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionsNavire">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Reglement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">a pour conditions navire</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourContact -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourContact">
+        <rdfs:label xml:lang="fr">a pour contact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourContexte -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourContexte">
+        <rdfs:label xml:lang="fr">a pour contexte</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDistance -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDistance">
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour distance</rdfs:label>
+        <rdfs:label xml:lang="en">has distance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourHauteur -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHauteur">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour hauteur</rdfs:label>
+        <rdfs:label xml:lang="en">has height</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourHorairesTelephone -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHorairesTelephone">
+        <rdfs:label xml:lang="fr">a pour horaires téléphone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourHorairesVHF -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHorairesVHF">
+        <rdfs:label xml:lang="fr">a pour horaires VHF</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourInfo -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourLat -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLat">
+        <rdfs:label xml:lang="fr">a pour lat</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourLng -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLng">
+        <rdfs:label xml:lang="fr">a pour lng</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
+        <rdfs:label xml:lang="fr">a pour nature du fond</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNombreDHabitants -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDHabitants">
+        <rdfs:label xml:lang="fr">a pour nombre d&apos;habitants</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNumeroDeTelephone -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNumeroDeTelephone">
+        <rdfs:label xml:lang="fr">a pour numéro de téléphone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="fr">a pour profondeur eau</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMaxi">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">La profondeur maximum de l&apos;eau en mètres.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The maximum depth of the water in metres.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour profondeur eau maximum</rdfs:label>
+        <rdfs:label xml:lang="en">has maximum depth of the water</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMini">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">La profondeur minimum de l&apos;eau en mètres.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The minimum depth of the water in metres.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">a pour profondeur eau minimum</rdfs:label>
+        <rdfs:label xml:lang="en">minimum depth of the water</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estCouverteDUneHauteurDEauDe -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estCouverteDUneHauteurDEauDe">
+        <rdfs:label xml:lang="fr">est couverte d&apos;une hauteur d&apos;eau de</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDecouverteDe -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
+        <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUtiliseePar -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUtiliseePar">
+        <rdfs:label xml:lang="fr">est utilisée par</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#stipule -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#stipule">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#AideALaNavigation -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:allValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="fr">Les établissements de signalisation maritime (ESM) sont l&apos;ensemble des dispositifs d&apos;aides à la navigation maritime. Ils sont fixes ou flottants, actifs ou non actifs. et sont constitués par :
+les phares,
+les feux,
+les bouées,
+les tourelles,
+et les espars.
+
+En fonction de leur rôle dans la signalisation maritime, ils possèdent certaines caractéristiques ou certains équipements (feux, réflecteurs, signaux radio).
+
+Les ESM sont recensés dans une base informatique nationale dénommée &quot;ALADIN&quot;, base aux normes Acai, dont les accès sont soumis au préalable à autorisation par création de compte « Cerbère ».
+
+Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/</rdfs:comment>
+        <rdfs:comment xml:lang="fr">http://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/les-aides-a-la-navigation-infographie-r295.html</rdfs:comment>
+        <rdfs:comment xml:lang="fr">https://diffusion.shom.fr/pro/balisage_maritime.html</rdfs:comment>
+        <rdfs:label xml:lang="fr">AIde à la Navigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">Aide Virtuelle à la Navigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Alignement -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Alignement">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">Alignement</rdfs:label>
+        <rdfs:label xml:lang="en">Leading Line</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#CaracteristiqueDeNavire -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#CaracteristiqueDeNavire">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Chenal -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Chenal">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Cote -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Cote">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Littoral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Zone de contact entre la terre et la mer vers l&apos;intérieur (dunes, embruns) et la ligne des plus basses mers ; littoral. (Certains auteurs distinguent la côte, bande de terre telle qu&apos;elle est vue du large et qui présente un certain relief, et le rivage, zone soumise directement à l&apos;action des vagues.) (https://www.larousse.fr/dictionnaires/francais/c%c3%b4te/19603).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Couleur -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Couleur">
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">Colour</rdfs:label>
+        <rdfs:label xml:lang="fr">Couleur</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Danger -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Danger">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:allValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#DirectionCardinale -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale">
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">Cardinal Direction</rdfs:label>
+        <rdfs:label xml:lang="fr">Direction Cardinale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+        <owl:disjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <rdfs:label xml:lang="fr">Direction Cardinale Complexe</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+        <rdfs:label xml:lang="fr">Direction Cardinale Simple</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#DirectionLaterale -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale">
+        <rdfs:label xml:lang="fr">Direction Latérale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:comment xml:lang="fr">Façon virtuelle d&apos;organiser le flux de trafic</rdfs:comment>
+        <rdfs:label xml:lang="fr">Dispositif de séparation du trafic (DST)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#EntiteGeographique -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:allValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment xml:lang="en"> ... </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">Entité Géographique</rdfs:label>
+        <rdfs:label xml:lang="en">Geographic Entity</rdfs:label>
+        <skos:definition xml:lang="en"> ... </skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Entre -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Entre">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#RelationNAire"/>
+        <rdfs:comment xml:lang="fr">Ex. : &quot;passez entre point A et point B&quot;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">Between</rdfs:label>
+        <rdfs:label xml:lang="fr">Entre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Estran -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Estran">
+        <owl:equivalentClass rdf:resource="http://data.shom.fr/def/navigation_cotiere#Rivage"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Littoral"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Partie du littoral alternativement couverte et découverte par la mer (https://www.larousse.fr/dictionnaires/francais/estran/31219).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#GroupeDeMouillages -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#GroupeDeMouillages">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologique -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologique">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
+        <rdfs:comment xml:lang="fr">À l&apos;intérieur des terres, dans l&apos;arrière-pays ou assez loin de la côte, par opposition au bord de mer (https://www.larousse.fr/dictionnaires/francais/terre/77443#175925).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Large -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Large">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:comment xml:lang="fr">La haute mer (https://www.larousse.fr/dictionnaires/francais/large/46283).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:allValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Lieu de Stationnement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Littoral -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Littoral">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourElement"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Cote"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourElement"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Estran"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourElement"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Rivage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Zone sinueuse où s&apos;établit le contact entre la mer ou un lac et la terre. (Le terme a un sens plus large que rivage et côte, qui désignent respectivement les domaines du littoral soumis directement ou indirectement à l&apos;action de la mer.) (https://www.larousse.fr/dictionnaires/francais/littoral/47506).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Motif -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Motif">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Reglement -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Reglement"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#RelationNAire -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#RelationNAire"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Relevement -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Relevement">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:comment xml:lang="fr">Le relèvement est la détermination de l&apos;angle que fait, dans le plan horizontal, la ligne d&apos;un observateur vers un objet avec celle d&apos;une direction de référence fixe. En général, le relèvement se fait par rapport au Nord vrai ou géographique : positif dans le sens horaire (wikipédia).</rdfs:comment>
+        <rdfs:label xml:lang="en">Bearing</rdfs:label>
+        <rdfs:label xml:lang="fr">Relèvement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Reperage -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Reperage">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:label xml:lang="fr">Repérage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Rivage -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Rivage">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Separation"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
+        <rdfs:comment xml:lang="fr">Partie de la terre soumise à l&apos;action des vagues, de la marée (https://www.larousse.fr/dictionnaires/francais/rivage/69587).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Route -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Route">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:label xml:lang="fr">Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Secteur -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Secteur">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">Secteur</rdfs:label>
+        <rdfs:label xml:lang="en">Sector</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Separation -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Separation">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#RelationNAire"/>
+        <rdfs:comment xml:lang="fr">Ex. : &quot;le chenal sépare le point A et le point B&quot;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="en">Separation</rdfs:label>
+        <rdfs:label xml:lang="fr">Séparation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">Type d&apos;Entité Géographique</rdfs:label>
+        <rdfs:label xml:lang="en">Type of Geographic Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCourant -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label xml:lang="fr">Type de Courant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeDanger -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Type De Danger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeMarque -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeNavire -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
+        <rdfs:label xml:lang="fr">Type de Navire</rdfs:label>
+        <rdfs:label xml:lang="en">Type of Ship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="fr">Ancien nom : ZoneDeNaviationReglementeeOuLimitee</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+        <rdfs:comment xml:lang="en">A feature is simply any entity in the real world with some spatial location. This could be a park, an airport, a monument, a restaurant,etc. A feature can have a spatial location that cannot be precisely defined, such as a swamp or a mountain range (GeoSPARQL: Enabling a GeospatialSemantic Web by Robert Battle and Dave Kolas).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Line -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Line">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Linestring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Linestring -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Linestring">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Point -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Point">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeBouees -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeBouees">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeDangers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeDangers">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeMaisons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeMaisons">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Balise -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Balise">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <rdfs:label xml:lang="fr">balise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">AIS beacon</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">balise d&apos;émission AIS</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">basse</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Bouee -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Bouee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">bouée</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">buoy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Cale -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Cale">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">cale</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">slipway</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">chapel</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">chapelle</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chenal -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chenal">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">channel</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">chenal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Clocher -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Clocher">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">bell tower</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">clocher</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Cote -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Cote">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:prefLabel xml:lang="en">coast</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">côte</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse"/>
+        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond"/>
+        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau"/>
+        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche"/>
+        <skos:prefLabel xml:lang="en">danger</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">danger</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Debarcadere -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Debarcadere">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">débarcadère</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">landing stage</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">département</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">dispositif d&apos;amarrage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Espar -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Espar">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <rdfs:comment xml:lang="fr">Espar : Marque de petite dimension sur support fixe, de forme, de matériau et de taille très divers. Source : http://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/glossaire-a180.html</rdfs:comment>
+        <rdfs:label xml:lang="fr">espar</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Estacade -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Estacade">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Une estacade ferme l&apos;entrée du port.</skos:definition>
+        <skos:prefLabel xml:lang="fr">estacade</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">pier</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
+        <skos:prefLabel xml:lang="fr">feu</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">light</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">feu à secteur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">sector light</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="br">bazenn</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">haut fond</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
+        <skos:related rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Ile -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Ile">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">island</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">île</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/InterieurDesTerres -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/InterieurDesTerres">
+        <rdfs:label xml:lang="fr">intérieur des terres</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">jetty</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">jetée</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Maison -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Maison">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">house</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">maison</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueCardinale -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueCardinale">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+        <rdfs:label xml:lang="fr">marque cardinale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDEauSaine -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDEauSaine">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+        <rdfs:label xml:lang="fr">marque d&apos;eau saine</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDeDangerIsole -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDeDangerIsole">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+        <rdfs:label xml:lang="fr">marque de danger isolé</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueLaterale -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueLaterale">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+        <rdfs:label xml:lang="fr">marque latérale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueSpeciale -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueSpeciale">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
+        <rdfs:label xml:lang="fr">marque spéciale</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Mouillage -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Mouillage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">anchorage</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">mouillage</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Phare -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Phare">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">lighthouse</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">phare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">plateau</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">plateau</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Pointe -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Pointe">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">pointe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">pyramid</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">pyramide</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz">
+        <rdfs:label xml:lang="fr">raz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">roche</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">rock</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Semaphore -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Semaphore">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">semaphore</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">sémaphore</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Tour -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Tour">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">tour</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">tower</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAideALaNavigation"/>
+        <rdfs:label xml:lang="fr">tourelle</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Ville -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Ville">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">town</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">ville</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeDanger -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeDanger">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <rdfs:label xml:lang="fr">zone de danger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">zone de mouillage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/sas -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/sas">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Babord -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Babord">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
+        <rdfs:label xml:lang="fr">bâbord</rdfs:label>
+        <rdfs:label xml:lang="en">port</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#BasseMer -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#BasseMer">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
+        <rdfs:label xml:lang="fr">basse mer</rdfs:label>
+        <rdfs:label xml:lang="en">low tide</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Blanc -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Blanc">
+        <owl:sameAs rdf:resource="http://data.shom.fr/def/navigation_cotiere#Blanche"/>
+        <rdfs:label xml:lang="fr">blanc</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Blanche -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Blanche">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <rdfs:label xml:lang="fr">blanche</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Est-Nord-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Est-Nord-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Est-Sud-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Est-Sud-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Gris -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Gris">
+        <owl:sameAs rdf:resource="http://data.shom.fr/def/navigation_cotiere#Grise"/>
+        <rdfs:label xml:lang="fr">gris</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Grise -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Grise">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <rdfs:label xml:lang="fr">grise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Jaune -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Jaune">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalEst -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalEst">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noir"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Jaune"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noir"/>
+        <rdfs:label xml:lang="fr">motif cardinal Est</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalNord -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalNord">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noir"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Jaune"/>
+        <rdfs:label xml:lang="fr">motif cardinal Nord</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalOuest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalOuest">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Jaune"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noir"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Jaune"/>
+        <rdfs:label xml:lang="fr">motif cardinal Ouest</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalSud -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalSud">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Jaune"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noir"/>
+        <rdfs:label xml:lang="fr">motif cardinal Sud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Noir -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Noir">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <owl:sameAs rdf:resource="http://data.shom.fr/def/navigation_cotiere#Noire"/>
+        <rdfs:label xml:lang="fr">noir</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Noire -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Noire">
+        <rdfs:label xml:lang="fr">noire</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Nord -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Nord">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Nord-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Nord-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Nord-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Nord-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Ouest-Nord-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Ouest-Nord-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Ouest-Sud-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Ouest-Sud-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Rouge -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Rouge">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <rdfs:label xml:lang="fr">rouge</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Sud -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Sud">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Sud-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Sud-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Sud-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Sud-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Est -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Est">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Ouest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Ouest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Tribord -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Tribord">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
+        <rdfs:label xml:lang="en">starboard</rdfs:label>
+        <rdfs:label xml:lang="fr">tribord</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Vert -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Vert">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
+        <owl:sameAs rdf:resource="http://data.shom.fr/def/navigation_cotiere#Verte"/>
+        <rdfs:label xml:lang="fr">vert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Verte -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Verte">
+        <rdfs:label xml:lang="fr">verte</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
+        <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
+        <rdfs:comment xml:lang="fr">Renvoie &apos;vrai&apos; si le repère est lumineux.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Reperage"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Route"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
