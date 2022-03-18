@@ -1,14 +1,35 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
      xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
+     xmlns:A02="http://vocab.nerc.ac.uk/collection/A02/current/"
+     xmlns:A04="http://vocab.nerc.ac.uk/collection/A04/current/"
+     xmlns:P21="http://vocab.nerc.ac.uk/collection/P21/current/"
+     xmlns:bkc="http://data.europa.eu/bkc/"
+     xmlns:eau="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/"
+     xmlns:evo="http://eurovoc.europa.eu/"
+     xmlns:gem="http://www.eionet.europa.eu/gemet/concept/"
      xmlns:gsp="http://www.opengis.net/ont/geosparql#"
      xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tco="http://data.shom.fr/id/codes/nav/typedecouleur/"
+     xmlns:tdi="http://data.shom.fr/id/codes/nav/typededirection/"
+     xmlns:teg="http://data.shom.fr/id/codes/nav/typedentitegeographique/"
+     xmlns:tfo="http://data.shom.fr/id/codes/nav/typedeforme/"
+     xmlns:tmo="http://data.shom.fr/id/codes/nav/typedemotif/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:pext="http://www.ontotext.com/proton/protonext#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:ttdb="http://data.ign.fr/id/codes/topo/typedebatiment/"
+     xmlns:ttdc="http://data.ign.fr/id/codes/topo/typedeconstruction/"
+     xmlns:ttdf="http://data.ign.fr/id/codes/topo/typedefranchissement/"
+     xmlns:ttdr="http://data.ign.fr/id/codes/topo/typederelief/"
+     xmlns:ttdz="http://data.ign.fr/id/codes/topo/typedezai/"
+     xmlns:soreahb="http://sweetontology.net/realmHydroBody/"
+     xmlns:spacerel="http://data.ordnancesurvey.co.uk/ontology/spatialrelations/"
+     xmlns:sopropsdir="http://sweetontology.net/propSpaceDirection/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"/>
     
 
@@ -62,6 +83,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://data.ordnancesurvey.co.uk/ontology/spatialrelations/contains -->
+
+    <owl:ObjectProperty rdf:about="http://data.ordnancesurvey.co.uk/ontology/spatialrelations/contains">
+        <owl:equivalentProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#contient"/>
+    </owl:ObjectProperty>
     
 
 
@@ -230,6 +259,16 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#contient -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#contient">
+        <owl:equivalentProperty rdf:resource="http://www.opengis.net/ont/geosparql#sfContains"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#deborde -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#deborde">
@@ -285,7 +324,7 @@
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estALOuestDe"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est à l&apos;Est de</rdfs:label>
+        <rdfs:label xml:lang="fr">est à l&apos;est de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -296,7 +335,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est à l&apos;Est-Nord-Est de</rdfs:label>
+        <rdfs:label xml:lang="fr">est à l&apos;est-nord-est de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -320,7 +359,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est à l&apos;Ouest de</rdfs:label>
+        <rdfs:label xml:lang="fr">est à l&apos;ouest de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -377,7 +416,7 @@
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudDe"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est au Nord de</rdfs:label>
+        <rdfs:label xml:lang="fr">est au nord de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -389,7 +428,7 @@
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est au Nord-Est de</rdfs:label>
+        <rdfs:label xml:lang="fr">est au nord-est de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -400,7 +439,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est au Sud de</rdfs:label>
+        <rdfs:label xml:lang="fr">est au sud de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -411,7 +450,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est au Sud-Ouest de</rdfs:label>
+        <rdfs:label xml:lang="fr">est au sud-ouest de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -433,7 +472,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est dans l&apos;Est de</rdfs:label>
+        <rdfs:label xml:lang="fr">est dans l&apos;est de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -444,7 +483,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est dans l&apos;Ouest de</rdfs:label>
+        <rdfs:label xml:lang="fr">est dans l&apos;ouest de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -455,7 +494,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est dans le Nord de</rdfs:label>
+        <rdfs:label xml:lang="fr">est dans le nord de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -466,7 +505,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est dans le Sud de</rdfs:label>
+        <rdfs:label xml:lang="fr">est dans le sud de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -785,6 +824,14 @@
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exact match</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
@@ -1082,6 +1129,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Balise -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Balise">
+        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#Beacon"/>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
@@ -1090,6 +1138,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Balise</rdfs:label>
+        <rdfs:label xml:lang="en">Beacon</rdfs:label>
     </owl:Class>
     
 
@@ -1105,6 +1154,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Bouée</rdfs:label>
+        <rdfs:label xml:lang="en">Buoy</rdfs:label>
     </owl:Class>
     
 
@@ -1112,6 +1162,8 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Chenal -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Chenal">
+        <owl:equivalentClass rdf:resource="http://sweetontology.net/realmHydroBody/Channel"/>
+        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#Channel"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
         <rdfs:label xml:lang="fr">Chenal</rdfs:label>
     </owl:Class>
@@ -1121,6 +1173,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Cote -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Cote">
+        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#Coast"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1128,6 +1181,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
                 <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Littoral"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Bande de TERRE située au voisinage de la MER. Bord extérieur de cette bande. RIVAGE de la MER. Source : S-32 IHO - Hydrographic Dictionary</rdfs:comment>
         <rdfs:comment xml:lang="fr">Zone de contact entre la terre et la mer vers l&apos;intérieur (dunes, embruns) et la ligne des plus basses mers ; littoral. (Certains auteurs distinguent la côte, bande de terre telle qu&apos;elle est vue du large et qui présente un certain relief, et le rivage, zone soumise directement à l&apos;action des vagues.) (https://www.larousse.fr/dictionnaires/francais/c%c3%b4te/19603).</rdfs:comment>
         <rdfs:label xml:lang="fr">Côte</rdfs:label>
     </owl:Class>
@@ -1256,7 +1310,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
                 <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Feu"/>
         <rdfs:label xml:lang="fr">Feu à Secteur</rdfs:label>
     </owl:Class>
     
@@ -1307,6 +1361,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
                 <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#Cote"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Zone côtière en bordure immédiate de la MER. Source : S-32 IHO - Hydrographic Dictionary</rdfs:comment>
         <rdfs:comment xml:lang="fr">Zone sinueuse où s&apos;établit le contact entre la mer ou un lac et la terre. (Le terme a un sens plus large que rivage et côte, qui désignent respectivement les domaines du littoral soumis directement ou indirectement à l&apos;action de la mer.) (https://www.larousse.fr/dictionnaires/francais/littoral/47506).</rdfs:comment>
         <rdfs:label xml:lang="fr">Littoral</rdfs:label>
     </owl:Class>
@@ -1838,6 +1893,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#Phare -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Phare">
+        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#LightHouse"/>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
@@ -1853,6 +1909,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#Relevement -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Relevement">
+        <owl:equivalentClass rdf:resource="http://sweetontology.net/propSpaceDirection/Bearing"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
         <rdfs:comment xml:lang="fr">Le relèvement est la détermination de l&apos;angle que fait, dans le plan horizontal, la ligne d&apos;un observateur vers un objet avec celle d&apos;une direction de référence fixe. En général, le relèvement se fait par rapport au Nord vrai ou géographique : positif dans le sens horaire (wikipédia).</rdfs:comment>
         <rdfs:label xml:lang="en">Bearing</rdfs:label>
@@ -1884,6 +1941,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Secteur">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:comment xml:lang="fr">Le secteur désigné par un feu à secteur.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">Secteur</rdfs:label>
         <rdfs:label xml:lang="en">Sector</rdfs:label>
@@ -2050,6 +2108,42 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     
 
 
+    <!-- http://sweetontology.net/propSpaceDirection/Bearing -->
+
+    <owl:Class rdf:about="http://sweetontology.net/propSpaceDirection/Bearing"/>
+    
+
+
+    <!-- http://sweetontology.net/realmHydroBody/Channel -->
+
+    <owl:Class rdf:about="http://sweetontology.net/realmHydroBody/Channel"/>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protonext#Beacon -->
+
+    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#Beacon"/>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protonext#Channel -->
+
+    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#Channel"/>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protonext#Coast -->
+
+    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#Coast"/>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protonext#LightHouse -->
+
+    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#LightHouse"/>
+    
+
+
     <!-- http://www.opengis.net/ont/geosparql#Feature -->
 
     <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
@@ -2094,12 +2188,79 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     
 
 
+    <!-- http://data.europa.eu/bkc/010.03.00.0700 -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/bkc/010.03.00.0700"/>
+    
+
+
+    <!-- http://data.europa.eu/bkc/017.03.04.0500 -->
+
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/bkc/017.03.04.0500"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedebatiment/Chapelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedebatiment/Chapelle"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedebatiment/Eglise -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedebatiment/Eglise"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedebatiment/Tour -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedebatiment/Tour"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedeconstruction/Ecluse -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedeconstruction/Ecluse"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedeconstruction/Phare -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedeconstruction/Phare"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedeconstruction/Quai -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedeconstruction/Quai"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedefranchissement/Pont -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedefranchissement/Pont"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typederelief/Ile -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typederelief/Ile"/>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/topo/typedezai/Port -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/topo/typedezai/Port"/>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedecouleur/Blanc -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Blanc">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Blanche"/>
-        <rdfs:label xml:lang="fr">blanc</rdfs:label>
+        <skos:prefLabel xml:lang="fr">blanc</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">white</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2108,7 +2269,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Blanche">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">blanche</rdfs:label>
+        <skos:prefLabel xml:lang="fr">blanche</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2118,7 +2279,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Gris">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Grise"/>
-        <rdfs:label xml:lang="fr">gris</rdfs:label>
+        <skos:prefLabel xml:lang="fr">gris</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2127,7 +2288,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Grise">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">grise</rdfs:label>
+        <skos:prefLabel xml:lang="fr">grise</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2136,7 +2297,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">jaune</rdfs:label>
+        <skos:prefLabel xml:lang="fr">jaune</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2146,7 +2307,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Noir">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noire"/>
-        <rdfs:label xml:lang="fr">noir</rdfs:label>
+        <skos:prefLabel xml:lang="fr">noir</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2155,7 +2316,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Noire">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">noire</rdfs:label>
+        <skos:prefLabel xml:lang="fr">noire</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2164,7 +2325,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">rouge</rdfs:label>
+        <skos:prefLabel xml:lang="fr">rouge</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2174,7 +2335,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Vert">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Verte"/>
-        <rdfs:label xml:lang="fr">vert</rdfs:label>
+        <skos:prefLabel xml:lang="fr">vert</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2183,7 +2344,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecouleur/Verte">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur"/>
-        <rdfs:label xml:lang="fr">verte</rdfs:label>
+        <skos:prefLabel xml:lang="fr">verte</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2192,8 +2353,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Babord">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
-        <rdfs:label xml:lang="fr">bâbord</rdfs:label>
-        <rdfs:label xml:lang="en">port</rdfs:label>
+        <skos:prefLabel xml:lang="fr">bâbord</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">port</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2202,6 +2363,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <skos:prefLabel xml:lang="fr">est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2210,6 +2372,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Est-Nord-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">est-nord-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2218,6 +2381,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Est-Sud-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">est-sud-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2226,6 +2390,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Nord">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <skos:prefLabel xml:lang="fr">nord</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2234,6 +2399,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Nord-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">nord-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2242,6 +2408,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Nord-Nord-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">nord-nord-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2250,6 +2417,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Nord-Nord-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">nord-nord-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2258,6 +2426,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Nord-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">nord-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2266,6 +2435,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <skos:prefLabel xml:lang="fr">ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2274,6 +2444,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Ouest-Nord-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">ouest-nord-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2282,6 +2453,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Ouest-Sud-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">ouest-sud-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2290,6 +2462,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Sud">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <skos:prefLabel xml:lang="fr">sud</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2298,6 +2471,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Sud-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">sud-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2306,6 +2480,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Sud-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">sud-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2314,6 +2489,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Sud-Sud-Est">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">sud-sud-est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2322,6 +2498,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Sud-Sud-Ouest">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe"/>
+        <skos:prefLabel xml:lang="fr">sud-sud-ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2330,8 +2507,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typededirection/Tribord">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
-        <rdfs:label xml:lang="en">starboard</rdfs:label>
-        <rdfs:label xml:lang="fr">tribord</rdfs:label>
+        <skos:prefLabel xml:lang="en">starboard</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">tribord</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2340,7 +2517,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedeforme/Conique">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeForme"/>
-        <rdfs:label xml:lang="en">conique</rdfs:label>
+        <skos:prefLabel xml:lang="fr">conique</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2349,7 +2526,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedeforme/Rectangulaire">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeForme"/>
-        <rdfs:label xml:lang="fr">rectangulaire</rdfs:label>
+        <skos:prefLabel xml:lang="fr">rectangulaire</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2358,7 +2535,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedeforme/Spherique">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeForme"/>
-        <rdfs:label xml:lang="fr">sphérique</rdfs:label>
+        <skos:prefLabel xml:lang="fr">sphérique</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2367,7 +2544,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedeforme/Tronconique">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeForme"/>
-        <rdfs:label xml:lang="en">tronconique</rdfs:label>
+        <skos:prefLabel xml:lang="fr">tronconique</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2376,7 +2553,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/BandesHorizontales">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
-        <rdfs:label xml:lang="fr">bandes horizontales</rdfs:label>
+        <skos:prefLabel xml:lang="fr">bandes horizontales</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2385,7 +2562,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/BandesVerticales">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
-        <rdfs:label xml:lang="fr">bandes verticales</rdfs:label>
+        <skos:prefLabel xml:lang="fr">bandes verticales</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2394,8 +2571,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/Damier">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
-        <rdfs:label xml:lang="en">checked pattern</rdfs:label>
-        <rdfs:label xml:lang="fr">damier</rdfs:label>
+        <skos:prefLabel xml:lang="en">checked pattern</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">damier</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2408,7 +2585,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
         <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdfs:label xml:lang="fr">motif cardinal Est</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif cardinal Est</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2420,7 +2597,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdfs:label xml:lang="fr">motif cardinal Nord</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif cardinal Nord</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2433,7 +2610,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
         <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdfs:label xml:lang="fr">motif cardinal Ouest</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif cardinal Ouest</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2445,7 +2622,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdfs:label xml:lang="fr">motif cardinal Sud</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif cardinal Sud</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2458,7 +2635,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
         <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
-        <rdfs:label xml:lang="fr">motif chenal préféré bâbord région A</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif chenal préféré bâbord région A</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2471,7 +2648,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
         <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
-        <rdfs:label xml:lang="fr">motif chenal préféré tribord région A</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif chenal préféré tribord région A</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2483,7 +2660,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdfs:label xml:lang="fr">motif danger isolé</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif danger isolé</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2495,7 +2672,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Blanc"/>
-        <rdfs:label xml:lang="fr">motif eaux saines</rdfs:label>
+        <skos:prefLabel xml:lang="fr">motif eaux saines</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2504,9 +2681,10 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Anse">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">anse</rdfs:label>
-        <rdfs:label xml:lang="en">bay</rdfs:label>
-        <rdfs:label xml:lang="en">cove</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/10142"/>
+        <rdfs:comment xml:lang="fr">Voir classes : http://www.ontotext.com/proton/protonext#Cove ; http://sweetontology.net/realmLandCoastal/Cove</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">anse</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">cove</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2515,7 +2693,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Archipel">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">archipel</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/531"/>
+        <skos:prefLabel xml:lang="fr">archipel</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2524,7 +2703,10 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Baie">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">baie</rdfs:label>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/c79b3794-f546-4e32-a5a6-9db7a6693537"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/749"/>
+        <rdfs:comment xml:lang="fr">Voir classes : http://www.ontotext.com/proton/protonext#Bay ; http://sweetontology.net/realmHydroBody/Bay</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">baie</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2534,7 +2716,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">balise</rdfs:label>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS1246"/>
+        <skos:prefLabel xml:lang="fr">balise</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2543,8 +2726,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">AIS beacon</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">balise d&apos;émission AIS</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2556,8 +2737,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">basse</skos:prefLabel>
         <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2568,8 +2747,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Bouee">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Buoys"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS1554"/>
         <skos:prefLabel xml:lang="fr">bouée</skos:prefLabel>
         <skos:prefLabel xml:lang="en">buoy</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2582,7 +2761,11 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Digue"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mole"/>
-        <rdfs:label xml:lang="fr">brise-lames</rdfs:label>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Seawalls"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS1460"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS9685"/>
+        <rdfs:comment xml:lang="fr">Voir classe : http://www.ontotext.com/proton/protonext#Breakwater</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">brise-lames</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2591,8 +2774,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Cale">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">cale</skos:prefLabel>
         <skos:prefLabel xml:lang="en">slipway</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2603,7 +2784,9 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Cap">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">cap</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/10144"/>
+        <rdfs:comment xml:lang="fr">Voir classe : http://www.ontotext.com/proton/protonext#Cape</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">cap</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2613,8 +2796,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chapelle">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedebatiment/Chapelle"/>
         <skos:prefLabel xml:lang="en">chapel</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">chapelle</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2625,7 +2807,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chaussee">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="en">chaussée</rdfs:label>
+        <skos:prefLabel xml:lang="fr">chaussée</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2634,8 +2816,10 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chenal">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Channels"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS3992"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MSS233"/>
+        <rdfs:comment xml:lang="fr">Voir classes : http://www.ontotext.com/proton/protonext#Channel ;  	http://sweetontology.net/realmHydroBody/Channel</rdfs:comment>
         <skos:prefLabel xml:lang="en">channel</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">chenal</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2647,8 +2831,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Clocher">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">bell tower</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">clocher</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2660,7 +2842,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Corps-Mort">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
         <rdfs:comment xml:lang="fr">&quot;Un corps-mort est une dalle de béton ou un objet pesant en général, posé au fond de l&apos;eau et qui est relié par un filin ou une chaîne à une bouée appelée « coffre », afin que les bateaux puissent s&apos;y amarrer.&quot; [https://fr.wikipedia.org/wiki/Corps-mort]</rdfs:comment>
-        <rdfs:label xml:lang="fr">corps-mort</rdfs:label>
+        <skos:prefLabel xml:lang="fr">corps-mort</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2679,8 +2861,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse"/>
         <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/HautFond"/>
         <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Plateau"/>
@@ -2695,8 +2875,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Debarcadere">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">débarcadère</skos:prefLabel>
         <skos:prefLabel xml:lang="en">landing stage</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2707,7 +2885,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Departement">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">département</rdfs:label>
+        <skos:prefLabel xml:lang="fr">département</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2716,7 +2894,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Detroit">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">détroit</rdfs:label>
+        <rdfs:comment xml:lang="fr">Voir classe : http://sweetontology.net/realmHydroBody/Strait</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">détroit</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2726,7 +2905,9 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Digue">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mole"/>
-        <rdfs:label xml:lang="fr">digue</rdfs:label>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/98904286-2dd4-45ac-bf0a-89f7f4471d5c"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS3140"/>
+        <skos:prefLabel xml:lang="fr">digue</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2735,7 +2916,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">dispositif d&apos;amarrage</rdfs:label>
+        <skos:prefLabel xml:lang="fr">dispositif d&apos;amarrage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2744,7 +2925,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Echouage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">échouage</rdfs:label>
+        <skos:prefLabel xml:lang="fr">échouage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2753,7 +2934,10 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ecluse">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">écluse</rdfs:label>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedeconstruction/Ecluse"/>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/209c9299-058c-4bde-81c1-70e08c24f995"/>
+        <rdfs:comment xml:lang="fr">Voir classe : http://www.ontotext.com/proton/protonext#Lock</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">écluse</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2763,7 +2947,21 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Eglise">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">église</rdfs:label>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedebatiment/Eglise"/>
+        <skos:exactMatch rdf:resource="http://eurovoc.europa.eu/4101"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/1410"/>
+        <skos:prefLabel xml:lang="fr">église</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Epave -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Epave">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A04/current/Shipwrecks"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS11347"/>
+        <skos:prefLabel xml:lang="fr">épave</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2772,7 +2970,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Escalier">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">escalier</rdfs:label>
+        <skos:prefLabel xml:lang="fr">escalier</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2783,7 +2981,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <rdfs:comment xml:lang="fr">Espar : Marque de petite dimension sur support fixe, de forme, de matériau et de taille très divers. Source : http://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/glossaire-a180.html</rdfs:comment>
-        <rdfs:label xml:lang="fr">espar</rdfs:label>
+        <skos:prefLabel xml:lang="fr">espar</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2792,7 +2990,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Estacade">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS8155"/>
         <skos:definition xml:lang="fr">Une estacade ferme l&apos;entrée du port.</skos:definition>
         <skos:prefLabel xml:lang="fr">estacade</skos:prefLabel>
         <skos:prefLabel xml:lang="en">pier</skos:prefLabel>
@@ -2805,8 +3003,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
         <skos:prefLabel xml:lang="fr">feu</skos:prefLabel>
         <skos:prefLabel xml:lang="en">light</skos:prefLabel>
@@ -2820,8 +3016,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">feu à secteur</skos:prefLabel>
         <skos:prefLabel xml:lang="en">sector light</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2832,7 +3026,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Goulet">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">goulet</rdfs:label>
+        <skos:prefLabel xml:lang="fr">goulet</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2841,7 +3035,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeBouees">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">groupe de bouées</rdfs:label>
+        <skos:prefLabel xml:lang="fr">groupe de bouées</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2850,7 +3044,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeMaisons">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">groupe de maisons</rdfs:label>
+        <skos:prefLabel xml:lang="fr">groupe de maisons</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2859,9 +3053,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/HautFond">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <rdfs:comment xml:lang="fr">Voir classe : http://sweetontology.net/realmLandCoastal/Shoal</rdfs:comment>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="br">bazenn</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">haut fond</skos:prefLabel>
         <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
@@ -2874,8 +3067,11 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ile">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://data.europa.eu/bkc/017.03.04.0500"/>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typederelief/Ile"/>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/368b14ee-4cc3-4184-babd-e1dca13e802b"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/4514"/>
+        <rdfs:comment xml:lang="fr">Voir classes : http://www.ontotext.com/proton/protonext#Island ; http://sweetontology.net/realmLandCoastal/Island</rdfs:comment>
         <skos:prefLabel xml:lang="en">island</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">île</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2886,8 +3082,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Jetee">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Jetties"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS5343"/>
         <skos:prefLabel xml:lang="en">jetty</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">jetée</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2899,7 +3095,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Lanterne">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">lanterne</rdfs:label>
+        <skos:prefLabel xml:lang="fr">lanterne</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2908,8 +3104,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Maison">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">house</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">maison</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2920,7 +3114,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mole">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">môle</rdfs:label>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS6560"/>
+        <skos:prefLabel xml:lang="fr">môle</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2930,8 +3125,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mouillage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
         <skos:inScheme rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedelieudestationnement/liste"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">anchorage</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">mouillage</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2943,7 +3136,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Moulin">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">moulin</rdfs:label>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/9331"/>
+        <skos:prefLabel xml:lang="fr">moulin</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2952,7 +3146,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Panneau">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">panneau</rdfs:label>
+        <skos:prefLabel xml:lang="fr">panneau</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2961,7 +3155,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Passe">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">passe</rdfs:label>
+        <skos:prefLabel xml:lang="fr">passe</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2970,7 +3164,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PasseDEntree">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">passe d&apos;entrée</rdfs:label>
+        <skos:prefLabel xml:lang="fr">passe d&apos;entrée</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -2980,8 +3174,9 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Phare">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedeconstruction/Phare"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Lighthouses"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS5756"/>
         <skos:prefLabel xml:lang="en">lighthouse</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">phare</skos:prefLabel>
     </owl:NamedIndividual>
@@ -2993,8 +3188,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Plateau">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">plateau</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">plateau</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3005,7 +3198,22 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Pointe">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">pointe</rdfs:label>
+        <skos:prefLabel xml:lang="fr">pointe</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Pont -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Pont">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:exactMatch rdf:resource="http://data.europa.eu/bkc/010.03.00.0700"/>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedefranchissement/Pont"/>
+        <skos:exactMatch rdf:resource="http://eurovoc.europa.eu/8452"/>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/502b9132-958a-4b3c-b336-d15482e5caf6"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/1001"/>
+        <rdfs:comment xml:lang="fr">Voir classe : http://www.ontotext.com/proton/protonext#Bridge</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">pont</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3014,7 +3222,12 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Port">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port</rdfs:label>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedezai/Port"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/A02/current/Ports"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS11590"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/3834"/>
+        <rdfs:comment xml:lang="fr">Voir classes : http://www.ontotext.com/proton/protonext#Harbor ; http://sweetontology.net/realmLandCoastal/Harbor</rdfs:comment>
+        <skos:prefLabel xml:lang="fr">port</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3023,7 +3236,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDEchouage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port d&apos;échouage</rdfs:label>
+        <skos:prefLabel xml:lang="fr">port d&apos;échouage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3032,7 +3245,8 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePeche">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port de pêche</rdfs:label>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS4060"/>
+        <skos:prefLabel xml:lang="fr">port de pêche</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3041,7 +3255,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePlaisance">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port de plaisance</rdfs:label>
+        <skos:prefLabel xml:lang="fr">port de plaisance</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3055,7 +3269,7 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
 &quot;Sur la vase, les posées y sont mauvaises, et l&apos;on y risque (...) l&apos;affreuse sensation d&apos;entendre craquer ses béquilles [du bateau].&quot; Chevrillon, Bret. hier,II, 1925, p.150.
 
 Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
-        <rdfs:label xml:lang="fr">posée</rdfs:label>
+        <skos:prefLabel xml:lang="fr">posée</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3065,8 +3279,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Pyramide">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">pyramid</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">pyramide</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3077,7 +3289,8 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Quai">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">quai</rdfs:label>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedeconstruction/Quai"/>
+        <skos:prefLabel xml:lang="fr">quai</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3086,7 +3299,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Rade">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">rade</rdfs:label>
+        <skos:prefLabel xml:lang="fr">rade</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3095,7 +3308,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Raz">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">raz</rdfs:label>
+        <skos:prefLabel xml:lang="fr">raz</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3104,7 +3317,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Rive">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">rive</rdfs:label>
+        <skos:prefLabel xml:lang="fr">rive</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3115,8 +3328,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">roche</skos:prefLabel>
         <skos:prefLabel xml:lang="en">rock</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3127,8 +3338,18 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ruisseau">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">ruisseau</rdfs:label>
-        <rdfs:label xml:lang="en">stream</rdfs:label>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/41132b86-d702-4e57-a984-d12603a269d0"/>
+        <skos:prefLabel xml:lang="fr">ruisseau</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">stream</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Sas -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Sas">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:prefLabel xml:lang="fr">sas</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3138,8 +3359,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Semaphore">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">semaphore</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">sémaphore</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3150,7 +3369,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Terre-Plein">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">terre-plein</rdfs:label>
+        <skos:prefLabel xml:lang="fr">terre-plein</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3160,8 +3379,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Tour">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:exactMatch rdf:resource="http://data.ign.fr/id/codes/topo/typedebatiment/Tour"/>
         <skos:prefLabel xml:lang="fr">tour</skos:prefLabel>
         <skos:prefLabel xml:lang="en">tower</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3173,7 +3391,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Tourelle">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">tourelle</rdfs:label>
+        <skos:prefLabel xml:lang="fr">tourelle</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3182,8 +3400,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ville">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">town</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">ville</skos:prefLabel>
     </owl:NamedIndividual>
@@ -3194,7 +3410,8 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/VoieNavigable">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">voie navigable</rdfs:label>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/53283a85-af9e-4a66-8a01-8a282cf44db2"/>
+        <skos:prefLabel xml:lang="fr">voie navigable</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3204,7 +3421,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Voyant">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAmer"/>
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">voyant</rdfs:label>
+        <skos:prefLabel xml:lang="fr">voyant</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3213,7 +3430,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDEchouage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone d&apos;échouage</rdfs:label>
+        <skos:prefLabel xml:lang="fr">zone d&apos;échouage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3222,7 +3439,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeDangers">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <rdfs:label xml:lang="fr">zone de dangers</rdfs:label>
+        <skos:prefLabel xml:lang="fr">zone de dangers</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3231,7 +3448,8 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone de mouillage</rdfs:label>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/4710b772-c6fe-4ff3-be61-f314924016d7"/>
+        <skos:prefLabel xml:lang="fr">zone de mouillage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3240,7 +3458,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDePilotage">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">zone de pilotage</rdfs:label>
+        <skos:prefLabel xml:lang="fr">zone de pilotage</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3249,15 +3467,7 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDePosees">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone de posées</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/sas -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/sas">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:prefLabel xml:lang="fr">zone de posées</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -3286,6 +3496,252 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type d&apos;Entité Géographique</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://eurovoc.europa.eu/4101 -->
+
+    <owl:NamedIndividual rdf:about="http://eurovoc.europa.eu/4101"/>
+    
+
+
+    <!-- http://eurovoc.europa.eu/8452 -->
+
+    <owl:NamedIndividual rdf:about="http://eurovoc.europa.eu/8452"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/c79b3794-f546-4e32-a5a6-9db7a6693537 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/c79b3794-f546-4e32-a5a6-9db7a6693537"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/209c9299-058c-4bde-81c1-70e08c24f995 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/209c9299-058c-4bde-81c1-70e08c24f995"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/368b14ee-4cc3-4184-babd-e1dca13e802b -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/368b14ee-4cc3-4184-babd-e1dca13e802b"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/41132b86-d702-4e57-a984-d12603a269d0 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/41132b86-d702-4e57-a984-d12603a269d0"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/4710b772-c6fe-4ff3-be61-f314924016d7 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/4710b772-c6fe-4ff3-be61-f314924016d7"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/502b9132-958a-4b3c-b336-d15482e5caf6 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/502b9132-958a-4b3c-b336-d15482e5caf6"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/53283a85-af9e-4a66-8a01-8a282cf44db2 -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/53283a85-af9e-4a66-8a01-8a282cf44db2"/>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/98904286-2dd4-45ac-bf0a-89f7f4471d5c -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/98904286-2dd4-45ac-bf0a-89f7f4471d5c"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Buoys -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Buoys"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Channels -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Channels"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Jetties -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Jetties"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Lighthouses -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Lighthouses"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Ports -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Ports"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A02/current/Seawalls -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A02/current/Seawalls"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/A04/current/Shipwrecks -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/A04/current/Shipwrecks"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS10833 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS10833"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS11347 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS11347"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS11590 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS11590"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS1246 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS1246"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS1460 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS1460"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS1554 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS1554"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS3140 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS3140"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS3992 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS3992"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS4060 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS4060"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS5343 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS5343"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS5756 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS5756"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS6560 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS6560"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS8155 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS8155"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS9685 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS9685"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MSS233 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MSS233"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/1001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/1001"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/10142 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/10142"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/10144 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/10144"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/1410 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/1410"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/3834 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/3834"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/4514 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/4514"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/531 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/531"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/749 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/749"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/9331 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/9331"/>
     
 
 
