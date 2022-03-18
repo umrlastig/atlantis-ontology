@@ -23,15 +23,18 @@ ent:4001 a nav:EntiteGeographique;
 	rdfs:label "île de Batz"@fr;
 	nav:aPourNature teg:Ile;
 	nav:aPourElement ent:4002, ent:4004, ent:4005;
-	nav:debordeDe ent:4006.
+	nav:debordeDe ent:4006;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 ent:4002 a nav:EntiteGeographique;
 	nav:aPourNature teg:Tour;
 	rdfs:label "tour du sémaphore"@fr;
-	nav:estUnElementDe ent:4003.
+	nav:estUnElementDe ent:4003;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons."^^xsd:string.
 
 ent:4003 a nav:EntiteGeographique;
-	nav:aPourNature teg:Semaphore.
+	nav:aPourNature teg:Semaphore;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons."^^xsd:string.
 
 ent:4004 a nav:EntiteGeographique;
 	nav:aPourNature teg:Phare;
@@ -40,22 +43,26 @@ ent:4004 a nav:EntiteGeographique;
 	nav:estDeCouleur tco:Grise;
 	nav:estUnElementDe ent:4001;
 	nav:estEquipeeDUneBaliseAIS "true"^^xsd:boolean;
-	nav:aPourHauteur "43.0"^^xsd:float.
+	nav:aPourHauteur "43.0"^^xsd:float;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS."^^xsd:string.
 	
 <<ent:4004 nav:aPourHauteur "43.0"^^xsd:float>> qudt:Unit unit:M.
 
-ent:4005 a nav:GroupeDeMaisons.
+ent:4005 a nav:GroupeDeMaisons;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons."^^xsd:string.
 
 ent:4006 a nav:EntiteGeographique;
 	nav:aPourNature teg:ZoneDeDangers;
-	nav:aPourElement ent:4007, ent:4008, ent:4009.
+	nav:aPourElement ent:4007, ent:4008, ent:4009;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 ent:4007 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger, teg:Basse;
 	rdfs:label "Basse Astan"@fr;
 	nav:estMarquePar ent:4010;
 	nav:estALEstDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float.
+	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 <<ent:4007 nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float>> qudt:Unit unit:M.
 
@@ -63,7 +70,8 @@ ent:4008 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger, teg:Basse;
 	rdfs:label "Grande Basse"@fr;
 	nav:estAuNordDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float.
+	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 <<ent:4008 nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float>> qudt:Unit unit:M.
 
@@ -72,7 +80,8 @@ ent:4009 a nav:EntiteGeographique;
 	rdfs:label "Men Aodi"@fr;
 	nav:estALOuestDe ent:4001;
 	nav:estUneEntiteMarquee "false"^^xsd:boolean;
-	nav:estDecouverteDe "0.1"^^xsd:float.
+	nav:estDecouverteDe "0.1"^^xsd:float;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 <<ent:4009 nav:estDecouverteDe "0.1"^^xsd:float>> qudt:Unit unit:M.
 
@@ -80,7 +89,8 @@ ent:4010 a nav:Bouee;
 	nav:estUneMarqueDeType nav:MarqueCardinale;
 	nav:aPourTypeCardinale tdi:Est;
 	nav:estUnRepereLumineux "true"^^xsd:boolean;
-	rdfs:label "Astan"@fr.
+	rdfs:label "Astan"@fr;
+	nav:aPourTexteAssocie "Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."^^xsd:string.
 
 
 #exemple 2
@@ -100,7 +110,8 @@ ent:4011 a nav:Chenal;
 		];
 	nav:aPourInfo "On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string;
 	nav:aPourProfondeurEauMini "0.1"^^xsd:float;
-	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float.
+	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float;
+	nav:aPourTexteAssocie "Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 
 <<ent:4011 nav:aPourProfondeurEauMini "0.1"^^xsd:float>> qudt:Unit unit:M.
 <<ent:4011 nav:aPourProfondeurEauMaxi "10.0"^^xsd:float>> qudt:Unit unit:M.
@@ -111,20 +122,24 @@ ent:4012 a nav:Cote;
 ent:4013 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
 	nav:estUnElementDe ent:4015;
-	rdfs:label "port d'échouage de Porz Kernok (Île de Batz)"@fr.
+	rdfs:label "port d'échouage de Porz Kernok (Île de Batz)"@fr;
+	nav:aPourTexteAssocie "Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 	
 ent:4014 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
 	nav:estUnElementDe ent:4016;
-	rdfs:label "port d'échouage de Roscoff"@fr.
+	rdfs:label "port d'échouage de Roscoff"@fr;
+	nav:aPourTexteAssocie "Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 	
 ent:4015 a nav:EntiteGeographique;
 	rdfs:label "Porz Kernok"@fr;
 	nav:aPourNature teg:Ville;
-	nav:estUnElementDe ent:4001.
+	nav:estUnElementDe ent:4001;
+	nav:aPourTexteAssocie "Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 	
 ent:4016 a nav:EntiteGeographique;
-	rdfs:label "Roscoff"@fr.
+	rdfs:label "Roscoff"@fr;
+	nav:aPourTexteAssocie "Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 
 
 #exemple 3
@@ -137,19 +152,17 @@ ent:4017 a nav:EntiteGeographique;
 	nav:aPourInfo "utilisés notamment par les navires se rendant à Roscoff"^^xsd:string;
 	nav:estDansLEstDe ent:4011;
 	nav:estDansLOuestDe ent:4011;
-	nav:aPourElement ent:4018.
-	
-# >>> dans l'ouest de vs. à l'ouest de ? ---> les deux, ajouter à l'ontologie ---> FAIT
+	nav:aPourElement ent:4018;
+	nav:aPourTexteAssocie "MOUILLAGES D’ATTENTE. — Ces mouillages, utilisés notamment par les navires se rendant à Roscoff, se trouvent dans l’Est et dans l’Ouest du chenal. Un des meilleurs se trouve au NE de la tourelle « Men Guen Bras », par profondeur de 14 m, fond de sable et coquille de bonne tenue. Prendre garde à la roche profonde de 2,8 m située à 0,3 M à l’ENE de la tourelle. Par vents d’Est, on peut mouiller partout dans la partie Ouest du chenal jusqu’au Sud de la tourelle « Malvoch », implantée près de l’extrémité de la jetée de Porz Kernok."^^xsd:string.
 	
 ent:4018 a nav:Mouillage;
 	nav:estAuNordEstDe ent:4019;
 	nav:estUnElementDe ent:4017;
 	nav:aPourNatureDuFond "sable et coquille de bonne tenue"^^xsd:string;
-	nav:aPourProfondeurEau "14.0"^^xsd:float.
+	nav:aPourProfondeurEau "14.0"^^xsd:float;
+	nav:aPourTexteAssocie "MOUILLAGES D’ATTENTE. — Ces mouillages, utilisés notamment par les navires se rendant à Roscoff, se trouvent dans l’Est et dans l’Ouest du chenal. Un des meilleurs se trouve au NE de la tourelle « Men Guen Bras », par profondeur de 14 m, fond de sable et coquille de bonne tenue. Prendre garde à la roche profonde de 2,8 m située à 0,3 M à l’ENE de la tourelle. Par vents d’Est, on peut mouiller partout dans la partie Ouest du chenal jusqu’au Sud de la tourelle « Malvoch », implantée près de l’extrémité de la jetée de Porz Kernok."^^xsd:string.
 
 <<ent:4018 nav:aPourProfondeurEau "14.0"^^xsd:float>> qudt:Unit unit:M.
-	
-# >>> OU utiliser instances ? ---> string pour l'instant
 	
 ent:4019 a nav:Tourelle;
 	rdfs:label "Men Guen Bras"@fr.
@@ -158,30 +171,22 @@ ent:4020 a nav:EntiteGeographique;
 	nav:aPourNature teg:Roche;
 	nav:estALEstNordEstDe ent:4019.
 
-# >>> roche = danger ? ---> FAIT
-# >>> distance + direction ? ---> voir mail NA ---> FAIT
-
 << <<ent:4020 nav:estALEstNordEstDe ent:4019>> nav:aPourSeparation "0.3"^^xsd:float>> qudt:Unit unit:MI_N.
 
 ent:4021 a nav:ZoneDeMouillage;
 	nav:estALOuestDe ent:4011;
-	nav:estAuNordDe ent:4023.
-
-# >>> jusqu’au Sud de la tourelle ? ---> FAIT
+	nav:estAuNordDe ent:4023;
+	nav:aPourTexteAssocie "MOUILLAGES D’ATTENTE. — Ces mouillages, utilisés notamment par les navires se rendant à Roscoff, se trouvent dans l’Est et dans l’Ouest du chenal. Un des meilleurs se trouve au NE de la tourelle « Men Guen Bras », par profondeur de 14 m, fond de sable et coquille de bonne tenue. Prendre garde à la roche profonde de 2,8 m située à 0,3 M à l’ENE de la tourelle. Par vents d’Est, on peut mouiller partout dans la partie Ouest du chenal jusqu’au Sud de la tourelle « Malvoch », implantée près de l’extrémité de la jetée de Porz Kernok."^^xsd:string.
 
 ent:4022 a nav:Tourelle;
 	rdfs:label "Malvoch"@fr;
 	nav:estPresDe [nav:lExtremiteDe ent:4023].
-	
-#<< <<ent:4022 nav:estPresDe ent:4023>> nav:restrictionObjet nav:extremite >> nav:restrictionSujet nav:pied.
 
 ent:4023 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee;
 	rdfs:label "jetée de Porz Kernok"@fr.
 	
-# >>> près de l’extrémité de ? ---> FAIT, ajouter une propriété ---> FAIT
-	
-	
+
 #exemple 4
 #"PORT DE L’ÎLE DE BATZ (Porz Kernok) [48° 44,6' N — 4° 00,8' W]. — Ce port d’échouage est géré par le département du Finistère. Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."
 
@@ -193,7 +198,8 @@ ent:4024 a nav:EntiteGeographique;
 	nav:estUnElementDe ent:4070;
 	nav:aPourInfo "bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string;
 	nav:estGerePar ent:4025;
-	owl:sameAs ent:4013.
+	owl:sameAs ent:4013;
+	nav:aPourTexteAssocie "PORT DE L’ÎLE DE BATZ (Porz Kernok) [48° 44,6' N — 4° 00,8' W]. — Ce port d’échouage est géré par le département du Finistère. Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string.
 
 ent:4070 a nav:EntiteGeographique;
 	nav:aPourNature teg:Cote;
@@ -209,28 +215,33 @@ ent:4025 a nav:EntiteGeographique;
 ent:4026 a nav:EntiteGeographique;
 	nav:aPourNature teg:Pointe;
 	rdfs:label "Pointe de Bloscon"@fr;
-	nav:aPourElement ent:4027.
+	nav:aPourElement ent:4027;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 	
 ent:4027 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chapelle;
 	rdfs:label "chapelle de Sainte-Barbe"@fr;
 	nav:aPourLat "48° 43,6' N"^^xsd:string;
 	nav:aPourLng "3° 58,2' W"^^xsd:string;
-	nav:estDeCouleur tco:Blanche.
+	nav:estDeCouleur tco:Blanche;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 	
 ent:4028 a nav:EntiteGeographique;
 	nav:aPourNature teg:Clocher;
 	rdfs:label "clocher de Roscoff"@fr;
-	nav:estAuSudOuestDe ent:4026.
+	nav:estAuSudOuestDe ent:4026;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 
 ent:4029 a nav:EntiteGeographique;
 	rdfs:label "installations portuaires de Roscoff-Bloscon"@fr;
-	nav:estAuSudDe ent:4028.
+	nav:estAuSudDe ent:4028;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 
 ent:4066 a nav:EntiteGeographique;
 	nav:aPourNature teg:Ile;
 	rdfs:label "Île de Siec"@fr;
-	nav:aPourElement ent:4067.
+	nav:aPourElement ent:4067;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 
 << <<ent:4066 nav:estAuSudOuestDe ent:4004>> nav:aPourSeparation "3.0"^^xsd:float>> qudt:Unit unit:MI_N.
 
@@ -239,10 +250,12 @@ ent:4067 a nav:EntiteGeographique;
 	nav:estDansLOuestDe ent:4066;
 	nav:estOuverteAu tdi:Sud;
 	nav:estProtegePar ent:4068;
-	nav:estALEstDe ent:4068.
+	nav:estALEstDe ent:4068;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 
 ent:4068 a nav:EntiteGeographique;
-	nav:aPourNature teg:Mole.
+	nav:aPourNature teg:Mole;
+	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string.
 
 # >>> On peut mouiller, suivant le tirant d’eau, à l’ouvert de l’anse et dans le SW de l’extrémité Ouest de l’île, tout comme dans l’anse de Port-­Neuf, située entre les communes de Cléder et Sibiril. Un mouillage pour 65 bateaux y est organisé, réglementé par l’arrêté du préfet du Finistère 20150146 ­- 0005 du 26 mai 2015. ???
 	
@@ -257,7 +270,8 @@ ent:4030 a nav:EntiteGeographique;
 	nav:aPourLat "48° 41,3' N"^^xsd:string;
 	nav:aPourLng "4° 04,3' W"^^xsd:string;
 	nav:aPourInfo "Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux."^^xsd:string;
-	nav:aPourElement ent:4039.
+	nav:aPourElement ent:4039;
+	nav:aPourTexteAssocie "Moguériec (48° 41,3' N — 4° 04,3' W) est abrité au Nord par une jetée. Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux. On se présente de jour sur l’alignement à 163° du clocher de Sibiril par la tourelle blanche de l’extrémité de la jetée, et de nuit sur l’alignement à 162° du phare par le feu de la jetée. À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."^^xsd:string.
 
 ent:4031 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee.
@@ -268,7 +282,8 @@ ent:4032 a nav:EntiteGeographique;
 	nav:estAuSudDe ent:4031;
 	nav:estBordeDe ent:4033;
 	nav:estBordeDe ent:4034;
-	nav:estAuSudDe ent:4035.
+	nav:estAuSudDe ent:4035;
+	nav:aPourTexteAssocie "Moguériec (48° 41,3' N — 4° 04,3' W) est abrité au Nord par une jetée. Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux. On se présente de jour sur l’alignement à 163° du clocher de Sibiril par la tourelle blanche de l’extrémité de la jetée, et de nuit sur l’alignement à 162° du phare par le feu de la jetée. À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."^^xsd:string.
 
 # débouche ?
 
@@ -296,7 +311,8 @@ ent:4038 a nav:EntiteGeographique;
 		
 ent:4039 a nav:EntiteGeographique;
 	nav:aPourNature teg:ZoneDePosees;
-	nav:aPourInfo "Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau."^^xsd:string.
+	nav:aPourInfo "Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau."^^xsd:string;
+	nav:aPourTexteAssocie "Moguériec (48° 41,3' N — 4° 04,3' W) est abrité au Nord par une jetée. Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux. On se présente de jour sur l’alignement à 163° du clocher de Sibiril par la tourelle blanche de l’extrémité de la jetée, et de nuit sur l’alignement à 162° du phare par le feu de la jetée. À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."^^xsd:string.
 
 # >>> La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée. ???
 	
@@ -315,7 +331,8 @@ ent:4040 a nav:EntiteGeographique;
 	nav:aPourInfo "Il sert d’abri aux bateaux de pêche, par des fonds découvrant de 2 à 5,5 m."^^xsd:string;
 	nav:aPourElement ent:4043;
 	nav:aPourElement ent:4044;
-	nav:aPourElement ent:4045.
+	nav:aPourElement ent:4045;
+	nav:aPourTexteAssocie "L’échouage de Porz Guen (48° 40,0' N — 4° 13,0' W) est protégé à l’Ouest par une digue et au Sud par un brise-lames submersible en enrochements. Il sert d’abri aux bateaux de pêche, par des fonds découvrant de 2 à 5,5 m. Le port dispose d’une cale enracinée à un terre-plein et offre une vingtaine de places sur bouées. La passe d’entrée est marquée par deux balises latérales."^^xsd:string.
 
 ent:4041 a nav:EntiteGeographique;
 	nav:aPourNature teg:Digue.
@@ -334,7 +351,8 @@ ent:4044 a nav:EntiteGeographique;
 ent:4045 a nav:EntiteGeographique;
 	nav:aPourNature teg:ZoneDEchouage;
 	nav:estMarquePar ent:4046;
-	nav:aPourInfo "une vingtaine de places sur bouées"^^xsd:string.
+	nav:aPourInfo "une vingtaine de places sur bouées"^^xsd:string;
+	nav:aPourTexteAssocie "L’échouage de Porz Guen (48° 40,0' N — 4° 13,0' W) est protégé à l’Ouest par une digue et au Sud par un brise-lames submersible en enrochements. Il sert d’abri aux bateaux de pêche, par des fonds découvrant de 2 à 5,5 m. Le port dispose d’une cale enracinée à un terre-plein et offre une vingtaine de places sur bouées. La passe d’entrée est marquée par deux balises latérales."^^xsd:string.
 
 ent:4046 a nav:EntiteGeographique;
 	nav:aPourNature teg:GroupeDeBouees.
@@ -364,7 +382,8 @@ ent:4050 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chenal;
 	rdfs:label "chenal de La Malouine"@fr;
 	nav:aPourProfondeurEau "3.0"^^xsd:float;
-	nav:aPourLargeurMini "100.0"^^xsd:float.
+	nav:aPourLargeurMini "100.0"^^xsd:float;
+	nav:aPourTexteAssocie "CHENAL DE LA MALOUINE. INSTRUCTIONS. — Ce chenal, profond de 3 m, n’a que 100 m de largeur entre le plateau de La Malouine et celui de La Pendante."^^xsd:string.
 
 <<ent:4050 nav:aPourProfondeurEau "3.0"^^xsd:float>> qudt:Unit unit:M.
 
@@ -373,12 +392,14 @@ ent:4050 a nav:EntiteGeographique;
 ent:4051 a nav:EntiteGeographique;
 	nav:aPourNature teg:Plateau;
 	nav:estSitueDans ent:4050;
-	rdfs:label "plateau de La Malouine"@fr.
+	rdfs:label "plateau de La Malouine"@fr;
+	nav:aPourTexteAssocie "CHENAL DE LA MALOUINE. INSTRUCTIONS. — Ce chenal, profond de 3 m, n’a que 100 m de largeur entre le plateau de La Malouine et celui de La Pendante."^^xsd:string.
 
 ent:4052 a nav:EntiteGeographique;
 	nav:aPourNature teg:Plateau;
 	nav:estSitueDans ent:4050;
-	rdfs:label "plateau de La Pendante"@fr.
+	rdfs:label "plateau de La Pendante"@fr;
+	nav:aPourTexteAssocie "CHENAL DE LA MALOUINE. INSTRUCTIONS. — Ce chenal, profond de 3 m, n’a que 100 m de largeur entre le plateau de La Malouine et celui de La Pendante."^^xsd:string.
 
 << <<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float>> qudt:Unit unit:M.
 
@@ -400,7 +421,8 @@ ent:4053 a nav:EntiteGeographique;
 		rdf:_1 ent:4055;
 		rdf:_2 ent:4056;
 		];
-	nav:estGerePar ent:4057.
+	nav:estGerePar ent:4057;
+	nav:aPourTexteAssocie "L’Aber-Wrac’h (48° 35,9' N — 4° 33,7' W), établi sur la rive gauche de l’aber, entre l’Anse des Anges et l’Anse Saint-Antoine, est un port de plaisance et de pêche géré par la chambre de commerce et d’industrie de Brest."^^xsd:string.
 
 # port avec type dans la classe ou dans l'objet d'un propriété ?
 
@@ -446,7 +468,8 @@ ent:4060 a nav:EntiteGeographique;
 		a rdf:Bag;
 		rdf:_1 ent:4064;
 		rdf:_2 ent:4065;
-		].
+		];
+	nav:aPourTexteAssocie "Deux tourelles portant chacune un feu marquent, entre la chaussée et Guernsey, les rochers Roustel et Platte ; la première est tronconique à damier noir et blanc avec lanterne verte, la seconde est conique verte."^^xsd:string.
 
 ent:4069 a nav:EntiteGeographique;
 	nav:aPourNature teg:Lanterne;
@@ -461,15 +484,18 @@ ent:4061 a nav:EntiteGeographique;
 		a rdf:Bag;
 		rdf:_1 ent:4064;
 		rdf:_2 ent:4065;
-		].
+		];
+	nav:aPourTexteAssocie "Deux tourelles portant chacune un feu marquent, entre la chaussée et Guernsey, les rochers Roustel et Platte ; la première est tronconique à damier noir et blanc avec lanterne verte, la seconde est conique verte."^^xsd:string.
 
 ent:4062 a nav:EntiteGeographique;
 	nav:aPourNature teg:Roche;
-	rdfs:label "rocher Roustel"@fr.
+	rdfs:label "rocher Roustel"@fr;
+	nav:aPourTexteAssocie "Deux tourelles portant chacune un feu marquent, entre la chaussée et Guernsey, les rochers Roustel et Platte ; la première est tronconique à damier noir et blanc avec lanterne verte, la seconde est conique verte."^^xsd:string.
 
 ent:4063 a nav:EntiteGeographique;
 	nav:aPourNature teg:Roche;
-	rdfs:label "rocher Platte"@fr.
+	rdfs:label "rocher Platte"@fr;
+	nav:aPourTexteAssocie "Deux tourelles portant chacune un feu marquent, entre la chaussée et Guernsey, les rochers Roustel et Platte ; la première est tronconique à damier noir et blanc avec lanterne verte, la seconde est conique verte."^^xsd:string.
 
 ent:4064 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chaussee.
@@ -488,7 +514,8 @@ ent:4071 a nav:EntiteGeographique;
 	nav:aPourNature teg:Port;
 	rdfs:label "Camaret-sur-Mer"@fr;
 	nav:aPourLat "48° 16,7' N"^^xsd:string;
-	nav:aPourLng "4° 35,4' W"^^xsd:string.
+	nav:aPourLng "4° 35,4' W"^^xsd:string;
+	nav:aPourTexteAssocie "Camaret-sur-mer (48° 16,7' N — 4° 35,4' W) est un port municipal, de pêche et de plaisance, établi au creux de l’Anse de Camaret ; c’est aussi un port de liaisons maritimes avec Brest et les îles de l’Iroise."^^xsd:string.
 
 <<ent:4071 nav:aPourNombreDePlaces "550"^^xsd:int>> nav:aPourCible ent:3003.
 <<ent:4071 nav:aPourNombreDePlaces "150"^^xsd:int>> nav:aPourCible ent:3004.
@@ -499,7 +526,8 @@ ent:4071 a nav:EntiteGeographique;
 
 ent:4072 a nav:EntiteGeographique;
 	nav:aPourNature teg:ZoneDePilotage;
-	nav:estSitueDans ent:4073.
+	nav:estSitueDans ent:4073;
+	nav:aPourTexteAssocie "La zone de pilotage est limitée au Nord par le parallèle du phare du Four (48° 31,4' Nord), à l’Ouest par le méridien 5° 15' Ouest, au Sud par le parallèle de la Pointe de Lervily (48° 00' Nord). Elle comprend les rivières Élorn, jusqu’à Landerneau, et Aulne, jusqu’à Châteaulin."^^xsd:string.
 
 ent:4073 a nav:EntiteGeographique;
 	nav:aPourNature teg:Rade;
