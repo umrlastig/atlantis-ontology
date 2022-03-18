@@ -3,13 +3,18 @@
 
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
-@prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix teg: <http://data.shom.fr/id/codes/nav/typedentitegeographique/>.
+@prefix tco: <http://data.shom.fr/id/codes/nav/typedecouleur/>.
+@prefix tfo: <http://data.shom.fr/id/codes/nav/typedeforme/>.
+@prefix tmo: <http://data.shom.fr/id/codes/nav/typedemotif/>.
+@prefix tdi: <http://data.shom.fr/id/codes/nav/typededirection/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix unit: <http://qudt.org/2.1/vocab/unit/>.
 
 #exemple 1
 #"Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."
@@ -23,17 +28,21 @@ ent:4001 a nav:EntiteGeographique;
 ent:4002 a nav:EntiteGeographique;
 	nav:aPourNature teg:Tour;
 	rdfs:label "tour du sémaphore"@fr;
-	nav:estElementDe ent:4003.
+	nav:estUnElementDe ent:4003.
 
 ent:4003 a nav:EntiteGeographique;
 	nav:aPourNature teg:Semaphore.
 
 ent:4004 a nav:EntiteGeographique;
 	nav:aPourNature teg:Phare;
+	rdfs:label "phare de l'Île de Batz"@fr;
 	nav:estEntoureDe ent:4005;
-	nav:estDeHauteur "43.0"^^xsd:float {|qudt:Unit unit:M|};
-	nav:estDeCouleur nav:Grise;
-	nav:estEquipeeDUneBaliseAIS "true"^^xsd:boolean.
+	nav:estDeCouleur tco:Grise;
+	nav:estUnElementDe ent:4001;
+	nav:estEquipeeDUneBaliseAIS "true"^^xsd:boolean;
+	nav:aPourHauteur "43.0"^^xsd:float.
+	
+<<ent:4004 nav:aPourHauteur "43.0"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4005 a nav:GroupeDeMaisons.
 
@@ -46,24 +55,30 @@ ent:4007 a nav:EntiteGeographique;
 	rdfs:label "Basse Astan"@fr;
 	nav:estMarquePar ent:4010;
 	nav:estALEstDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float {|qudt:Unit unit:M|}.
+	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float.
+
+<<ent:4007 nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4008 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger, teg:Basse;
 	rdfs:label "Grande Basse"@fr;
 	nav:estAuNordDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float {|qudt:Unit unit:M|}.
+	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float.
+
+<<ent:4008 nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4009 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger, teg:Roche;
 	rdfs:label "Men Aodi"@fr;
 	nav:estALOuestDe ent:4001;
 	nav:estUneEntiteMarquee "false"^^xsd:boolean;
-	nav:estDecouverteDe "0.1"^^xsd:float {|qudt:Unit unit:M|}.
+	nav:estDecouverteDe "0.1"^^xsd:float.
+
+<<ent:4009 nav:estDecouverteDe "0.1"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4010 a nav:Bouee;
 	nav:estUneMarqueDeType nav:MarqueCardinale;
-	nav:aPourTypeCardinale nav:Est;
+	nav:aPourTypeCardinale tdi:Est;
 	nav:estUnRepereLumineux "true"^^xsd:boolean;
 	rdfs:label "Astan"@fr.
 
@@ -73,8 +88,6 @@ ent:4010 a nav:Bouee;
 
 ent:4011 a nav:Chenal;
 	rdfs:label "Canal de l'Île de Batz"@fr;
-	nav:aPourProfondeurEauMini "0.1"^^xsd:float {|qudt:Unit unit:M|};
-	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float {|qudt:Unit unit:M|};
 	nav:estEntre [
 		a rdf:Bag;
 		rdf:_1 ent:4001;
@@ -85,29 +98,33 @@ ent:4011 a nav:Chenal;
 		rdf:_1 ent:4013;
 		rdf:_2 ent:4014;
 		];
-	nav:aPourInfo "On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
+	nav:aPourInfo "On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string;
+	nav:aPourProfondeurEauMini "0.1"^^xsd:float;
+	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float.
+
+<<ent:4011 nav:aPourProfondeurEauMini "0.1"^^xsd:float>> qudt:Unit unit:M.
+<<ent:4011 nav:aPourProfondeurEauMaxi "10.0"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4012 a nav:Cote;
 	rdfs:label "côte"@fr.
 	
 ent:4013 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
-	nav:estElementDe ent:4015;
+	nav:estUnElementDe ent:4015;
 	rdfs:label "port d'échouage de Porz Kernok (Île de Batz)"@fr.
 	
 ent:4014 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
-	nav:estElementDe ent:4016;
+	nav:estUnElementDe ent:4016;
 	rdfs:label "port d'échouage de Roscoff"@fr.
 	
 ent:4015 a nav:EntiteGeographique;
 	rdfs:label "Porz Kernok"@fr;
 	nav:aPourNature teg:Ville;
-	nav:estElementDe ent:4001.
+	nav:estUnElementDe ent:4001.
 	
 ent:4016 a nav:EntiteGeographique;
-	rdfs:label "Roscoff"@fr;
-	nav:aPourNature teg:Ville.
+	rdfs:label "Roscoff"@fr.
 
 
 #exemple 3
@@ -126,8 +143,11 @@ ent:4017 a nav:EntiteGeographique;
 	
 ent:4018 a nav:Mouillage;
 	nav:estAuNordEstDe ent:4019;
-	nav:aPourProfondeurEau "14.0"^^xsd:float {|qudt:Unit unit:M|};
-	nav:aPourNatureDuFond "sable et coquille de bonne tenue"^^xsd:string.
+	nav:estUnElementDe ent:4017;
+	nav:aPourNatureDuFond "sable et coquille de bonne tenue"^^xsd:string;
+	nav:aPourProfondeurEau "14.0"^^xsd:float.
+
+<<ent:4018 nav:aPourProfondeurEau "14.0"^^xsd:float>> qudt:Unit unit:M.
 	
 # >>> OU utiliser instances ? ---> string pour l'instant
 	
@@ -135,7 +155,8 @@ ent:4019 a nav:Tourelle;
 	rdfs:label "Men Guen Bras"@fr.
 	
 ent:4020 a nav:EntiteGeographique;
-	nav:aPourNature teg:Roche.
+	nav:aPourNature teg:Roche;
+	nav:estALEstNordEstDe ent:4019.
 
 # >>> roche = danger ? ---> FAIT
 # >>> distance + direction ? ---> voir mail NA ---> FAIT
@@ -166,10 +187,10 @@ ent:4023 a nav:EntiteGeographique;
 
 ent:4024 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
-	rdfs:label "Port de l'Île de Batz"@fr;
+	rdfs:label "Port de l'Île de Batz (Porz Kernok)"@fr;
 	nav:aPourLat "48° 44,6' N"^^xsd:string;
 	nav:aPourLng "4° 00,8' W"^^xsd:string;
-	nav:estElementDe ent:4070;
+	nav:estUnElementDe ent:4070;
 	nav:aPourInfo "bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string;
 	nav:estGerePar ent:4025;
 	owl:sameAs ent:4013.
@@ -195,7 +216,7 @@ ent:4027 a nav:EntiteGeographique;
 	rdfs:label "chapelle de Sainte-Barbe"@fr;
 	nav:aPourLat "48° 43,6' N"^^xsd:string;
 	nav:aPourLng "3° 58,2' W"^^xsd:string;
-	nav:estDeCouleur nav:Blanche.
+	nav:estDeCouleur tco:Blanche.
 	
 ent:4028 a nav:EntiteGeographique;
 	nav:aPourNature teg:Clocher;
@@ -216,7 +237,7 @@ ent:4066 a nav:EntiteGeographique;
 ent:4067 a nav:EntiteGeographique;
 	nav:aPourNature teg:Anse;
 	nav:estDansLOuestDe ent:4066;
-	nav:estOuverteAu nav:Sud;
+	nav:estOuverteAu tdi:Sud;
 	nav:estProtegePar ent:4068;
 	nav:estALEstDe ent:4068.
 
@@ -322,18 +343,18 @@ ent:4046 a nav:EntiteGeographique;
 
 ent:4047 a nav:EntiteGeographique;
 	nav:aPourNature teg:PasseDEntree;
-	nav:estMarquePar ent:4048, ent4049;
+	nav:estMarquePar ent:4048, ent:4049;
 	nav:donneAccesA ent:4040.
 
 ent:4048 a nav:EntiteGeographique;
 	nav:aPourNature teg:Balise;
-	nav:estUneMarqueDeType nav:Laterale;
-	nav:aPourTypeLaterale nav:Babord.
+	nav:estUneMarqueDeType nav:MarqueLaterale;
+	nav:aPourTypeLaterale tdi:Babord.
 
 ent:4049 a nav:EntiteGeographique;
 	nav:aPourNature teg:Balise;
-	nav:estUneMarqueDeType nav:Laterale;
-	nav:aPourTypeLaterale nav:Tribord.
+	nav:estUneMarqueDeType nav:MarqueLaterale;
+	nav:aPourTypeLaterale tdi:Tribord.
 
 
 #exemple 8
@@ -341,20 +362,25 @@ ent:4049 a nav:EntiteGeographique;
 
 ent:4050 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chenal;
-	rdfs:label "chenal de La Malouine";
-	nav:aPourProfondeurEau "3.0"^^xsd:float {|qudt:Unit unit:M|};
-	nav:aPourElement ent:4051;
-	nav:aPourElement ent:4052.
+	rdfs:label "chenal de La Malouine"@fr;
+	nav:aPourProfondeurEau "3.0"^^xsd:float;
+	nav:aPourLargeurMini "100.0"^^xsd:float.
 
-<< <<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float>> qudt:Unit unit:M.
+<<ent:4050 nav:aPourProfondeurEau "3.0"^^xsd:float>> qudt:Unit unit:M.
+
+<<ent:4050 nav:aPourLargeurMini "100.0"^^xsd:float>> qudt:Unit unit:M.
 
 ent:4051 a nav:EntiteGeographique;
 	nav:aPourNature teg:Plateau;
+	nav:estSitueDans ent:4050;
 	rdfs:label "plateau de La Malouine"@fr.
 
 ent:4052 a nav:EntiteGeographique;
 	nav:aPourNature teg:Plateau;
+	nav:estSitueDans ent:4050;
 	rdfs:label "plateau de La Pendante"@fr.
+
+<< <<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float>> qudt:Unit unit:M.
 
 
 #exemple 9
@@ -411,9 +437,9 @@ ent:4059 a nav:EntiteGeographique;
 
 ent:4060 a nav:EntiteGeographique;
 	nav:aPourNature teg:Tourelle;
-	nav:aPourForme nav:tronconique;
-	nav:aPourMotif nav:damier;
-	nav:estDeCouleur nav:Noir, nav:Blanc;
+	nav:aPourForme tfo:tronconique;
+	nav:aPourMotif tmo:damier;
+	nav:estDeCouleur tco:Noir, tco:Blanc;
 	nav:aPourElement ent:4069;
 	nav:marqueLEntite ent:4062;
 	nav:estEntre [
@@ -424,13 +450,13 @@ ent:4060 a nav:EntiteGeographique;
 
 ent:4069 a nav:EntiteGeographique;
 	nav:aPourNature teg:Lanterne;
-	nav:aPourCouleur nav:Verte.
+	nav:aPourCouleur tco:Verte.
 
 ent:4061 a nav:EntiteGeographique;
 	nav:aPourNature teg:Tourelle;
-	nav:aPourForme nav:conique;
-	nav:estDeCouleur nav:Vert;
-	nav:marqueLEntite ent4063;
+	nav:aPourForme tfo:conique;
+	nav:estDeCouleur tco:Vert;
+	nav:marqueLEntite ent:4063;
 	nav:estEntre [
 		a rdf:Bag;
 		rdf:_1 ent:4064;
@@ -451,3 +477,55 @@ ent:4064 a nav:EntiteGeographique;
 ent:4065 a nav:EntiteGeographique;
 	nav:aPourNature teg:Ile;
 	rdfs:label "Guernsey"@fr.
+
+
+#entités pour d'autres modelets
+
+#exemple 2 modelet navires
+#"Les principaux équipements et services offerts sont les suivants : 550 places pour navires de plaisance, dont 150 pour les bateaux de passage, longueur maximum 15 m, tirant d’eau 5 m ; [...]"
+
+ent:4071 a nav:EntiteGeographique;
+	nav:aPourNature teg:Port;
+	rdfs:label "Camaret-sur-Mer"@fr;
+	nav:aPourLat "48° 16,7' N"^^xsd:string;
+	nav:aPourLng "4° 35,4' W"^^xsd:string.
+
+<<ent:4071 nav:aPourNombreDePlaces "550"^^xsd:int>> nav:aPourCible ent:3003.
+<<ent:4071 nav:aPourNombreDePlaces "150"^^xsd:int>> nav:aPourCible ent:3004.
+
+
+#exemple 3 modelet navires
+#"Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."
+
+ent:4072 a nav:EntiteGeographique;
+	nav:aPourNature teg:ZoneDePilotage;
+	nav:estSitueDans ent:4073.
+
+ent:4073 a nav:EntiteGeographique;
+	nav:aPourNature teg:Rade;
+	rdfs:label "rade de Brest"@fr.
+
+
+#exemple 4 modelet navires
+#"AVERTISSEMENT. — Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."
+#relâcher : Un navire relâche quand par suite du mauvais temps, avaries subies, etc... il est forcé d'interrompre sa mission et d'entrer dans un port qui n'est pas son port de destination. (https://www.annoncesbateau.com/conseils/termes-nautiques/)
+
+ent:4074 a nav:EntiteGeographique;
+	nav:aPourNature teg:Archipel;
+	rdfs:label "Îles Chausey"@fr.
+
+
+#exemple 5 modelet navires
+#"Le passage est rectiligne, facile à suivre et avantageux par beau temps, lorsque l’on a le courant pour soi. Mais les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."
+
+ent:4075 a nav:EntiteGeographique;
+	nav:aPourNature teg:Detroit;
+	rdfs:label "Passage du Fromveur"@fr.
+
+
+#exemple 6 modelet navires
+#"Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."
+
+ent:4076 a nav:EntiteGeographique;
+	nav:aPourNature teg:VoieNavigable;
+	rdfs:label "Seine maritime"@fr.
