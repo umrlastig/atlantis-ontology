@@ -11,116 +11,134 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 #exemple 1
-ent:6001 a nav:EntiteGeographique;
+#"Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."
+
+ent:4001 a nav:EntiteGeographique;
 	rdfs:label "île de Batz"@fr;
-	nav:nature teg:Ile;
-	nav:aCommeElement ent:6002, ent:6004, ent:6005;
-	nav:debordeDe ent:6006.
+	nav:aPourNature teg:Ile;
+	nav:aPourElement ent:4002, ent:4004, ent:4005;
+	nav:debordeDe ent:4006.
 
-ent:6002 a nav:EntiteGeographique;
-	nav:nature teg:Tour;
-	nav:estElementDe ent:6003.
+ent:4002 a nav:EntiteGeographique;
+	nav:aPourNature teg:Tour;
+	rdfs:label "tour du sémaphore"@fr;
+	nav:estElementDe ent:4003.
 
-ent:6003 a nav:EntiteGeographique;
-	nav:nature teg:Semaphore.
+ent:4003 a nav:EntiteGeographique;
+	nav:aPourNature teg:Semaphore.
 
-ent:6004 a nav:EntiteGeographique;
-	nav:nature teg:Phare;
-	nav:entoureDe ent:6005.
+ent:4004 a nav:EntiteGeographique;
+	nav:aPourNature teg:Phare;
+	nav:estEntoureDe ent:4005;
+	nav:estDeHauteur "43.0"^^xsd:float;
+	nav:estDeCouleur nav:Grise;
+	nav:estEquipeeDUneBaliseAIS "true"^^xsd:boolean.
 
-ent:6005 a nav:EntiteGeographique;
-	nav:nature teg:GroupeDeMaisons.
+ent:4005 a nav:GroupeDeMaisons.
 
-ent:6006 a nav:ZoneDeDanger;
-	nav:aCommeElement ent:6007, ent:6008, ent:6009.
+ent:4006 a nav:GroupeDeDangers;
+	nav:aPourElement ent:4007, ent:4008, ent:4009.
 
-ent:6007 a nav:EntiteGeographique;
-	nav:nature teg:Danger;
+ent:4007 a nav:EntiteGeographique;
+	nav:aPourNature teg:Danger;
+	nav:aPourNature teg:Basse;
 	rdfs:label "Basse Astan"@fr;
-	nav:marquePar ent:6010;
-	rlsp:eastOf 6001.
+	nav:estMarquePar ent:4010;
+	rlsp:eastOf ent:4001;
+	nav:estCouverteDUneHauteurDEauDe "0.8"xsd:float.
 
-ent:6008 a nav:EntiteGeographique;
-	nav:nature teg:Danger;
+ent:4008 a nav:EntiteGeographique;
+	nav:aPourNature teg:Danger;
+	nav:aPourNature teg:Basse;
 	rdfs:label "Grande Basse"@fr;
-	rlsp:northOf ent:6001.
+	rlsp:northOf ent:4001;
+	nav:estCouverteDUneHauteurDEauDe "0.5"xsd:float.
 
-ent:6009 a nav:EntiteGeographique;
-	nav:nature teg:Danger;
+ent:4009 a nav:EntiteGeographique;
+	nav:aPourNature teg:Danger;
+	nav:aPourNature teg:Roche;
 	rdfs:label "Men Aodi"@fr;
-	rlsp:westOf ent:6001.
+	rlsp:westOf ent:4001;
+	nav:estUneEntiteMarquee "false"^^xsd:boolean;
+	nav:decouvrantDe "0.1"xsd:float.
 
-ent:6010 a nav:BoueeCardinaleEst;
+ent:4010 a nav:Bouee;
+	nav:estUneMarqueDeType nav:MarqueCardinale;
+	nav:aPourTypeCardinale nav:Est;
+	nav:estUnRepereLumineux "true"^^xsd:boolean;
 	rdfs:label "Astan"@fr.
+	
+#exemple 2
+#"Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."	
 
-ent:6011 a nav:Chenal.
+ent:4011 a nav:Chenal.
 
-ent:6012 a nav:EntiteGeographique;
-	nav:nature teg:Clocher;
+ent:4012 a nav:EntiteGeographique;
+	nav:aPourNature teg:Clocher;
 	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
-	nav:estElementDe ent:6001.
+	nav:estElementDe ent:4001.
 
-ent:6013 a nav:Cote;
-	nav:estElementDe ent:6001;
-	rlsp:southOf ent:6001.
+ent:4013 a nav:Cote;
+	nav:estElementDe ent:4001;
+	rlsp:southOf ent:4001.
 
-ent:6014 a nav:EntiteGeographique;
-	nav:nature teg:Pyramide;
-	nav:estElementDe ent:6015.
+ent:4014 a nav:EntiteGeographique;
+	nav:aPourNature teg:Pyramide;
+	nav:estElementDe ent:4015.
 
-ent:6015 a nav:EntiteGeographique;
-	nav:nature teg:Ile;
+ent:4015 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ile;
 	rdfs:label "île Pigued"@fr.
 
-ent:6016 a nav:Chenal.
+ent:4016 a nav:Chenal.
 	
-ent:6017 a nav:EntiteGeographique;
+ent:4017 a nav:EntiteGeographique;
 	rdfs:label "tourelle « Ar Chaden »"@fr.
 
-ent:6018 a nav:EntiteGeographique;
+ent:4018 a nav:EntiteGeographique;
 	rdfs:label "tourelle « Men Guen Bras »"@fr;
-	nav:aCommeElement ent:6019.
+	nav:aPourElement ent:4019.
 
-ent:6019 a nav:EntiteGeographique;
-	nav:nature teg:FeuASecteur.
+ent:4019 a nav:EntiteGeographique;
+	nav:aPourNature teg:FeuASecteur.
 
-ent:6016 a nav:Entre;
-	nav:entiteImpliquee ent:6017;
-	nav:entiteImpliquee ent:6018.
+ent:4016 a nav:Entre;
+	nav:entiteImpliquee ent:4017;
+	nav:entiteImpliquee ent:4018.
 
-ent:6020 a nav:ZoneDeDanger;
-	nav:auxAbordsDe ent:6016.
+ent:4020 a nav:ZoneDeDanger;
+	nav:auxAbordsDe ent:4016.
 
-ent:6021 a nav:EntiteGeographique;
-	nav:nature teg:Feu;
-	nav:aLExtremiteDe ent:6022.
+ent:4021 a nav:EntiteGeographique;
+	nav:aPourNature teg:Feu;
+	nav:aLExtremiteDe ent:4022.
 
-ent:6022 a nav:EntiteGeographique;
-	nav:nature teg:Estacade;
-	nav:estElementDe ent:6023.
+ent:4022 a nav:EntiteGeographique;
+	nav:aPourNature teg:Estacade;
+	nav:estElementDe ent:4023.
 
-ent:6023 a nav:EntiteGeographique;
-	nav:nature teg:Jetee;
+ent:4023 a nav:EntiteGeographique;
+	nav:aPourNature teg:Jetee;
 	rdfs:label "jetée de Roscoff"@fr;
-	nav:estElementDe ent:6024.
+	nav:estElementDe ent:4024.
 
-ent:6024 a nav:EntiteGeographique;
-	nav:nature teg:Ville;
+ent:4024 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ville;
 	rdfs:label "Roscoff"@fr.
 
-ent:6025 a nav:EntiteGeographique;
-	nav:nature teg:Feu;
-	nav:aLExtremiteDe ent:6026.
+ent:4025 a nav:EntiteGeographique;
+	nav:aPourNature teg:Feu;
+	nav:aLExtremiteDe ent:4026.
 
-ent:6026 a nav:EntiteGeographique;
-	nav:nature teg:Debarcadere.
+ent:4026 a nav:EntiteGeographique;
+	nav:aPourNature teg:Debarcadere.
 
-ent:6027 a nav:ZoneDeMouillage;
-	rlsp:eastOf ent:6028;
-	nav:estElementDe ent:6028.
+ent:4027 a nav:ZoneDeMouillage;
+	rlsp:eastOf ent:4028;
+	nav:estElementDe ent:4028.
 
-ent:6028 a nav:Chenal.
+ent:4028 a nav:Chenal.
 
-ent:6029 a nav:ZoneDeMouillage;
-	rlsp:westOf ent:6028;
-	nav:estElementDe ent:6028.
+ent:4029 a nav:ZoneDeMouillage;
+	rlsp:westOf ent:4028;
+	nav:estElementDe ent:4028.
