@@ -3,8 +3,8 @@
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xml: <http://data.ign.fr/id/codes/nav/typedentitegeographique/#> .
+@prefix xsd: <http://data.ign.fr/id/codes/nav/typedentitegeographique/#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8> .
@@ -102,6 +102,10 @@ nav:actionARealiser rdf:type owl:ObjectProperty ;
                     rdfs:domain nav:Instruction ,
                                 nav:Interdiction ;
                     rdfs:range gsp:Feature .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#actionInterdite
+nav:actionInterdite rdf:type owl:ObjectProperty .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#cap
@@ -242,10 +246,10 @@ nav:equipeDe rdf:type owl:ObjectProperty ;
              rdfs:comment "projecteur, étrave, VHF"@fr .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#estImposePar
-nav:estImposePar rdf:type owl:ObjectProperty ;
-                 rdfs:domain nav:ConsigneDeNavigation ;
-                 rdfs:range nav:Reglement .
+###  http://data.shom.fr/def/navigation_cotiere#estImposeePar
+nav:estImposeePar rdf:type owl:ObjectProperty ;
+                  rdfs:domain nav:ConsigneDeNavigation ;
+                  rdfs:range nav:Reglement .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#estLocaliseA
@@ -290,6 +294,10 @@ nav:laisser rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf nav:actionARealiser .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#marqueDeType
+nav:marqueDeType rdf:type owl:ObjectProperty .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#marqueLEntite
 nav:marqueLEntite rdf:type owl:ObjectProperty ;
                   rdfs:domain nav:EntiteGeographique ;
@@ -327,6 +335,7 @@ nav:nature rdf:type owl:ObjectProperty ;
 
 ###  http://data.shom.fr/def/navigation_cotiere#naviguer
 nav:naviguer rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf nav:actionARealiser ;
              rdfs:domain nav:ConsigneDeNavigation ;
              rdfs:range nav:EntiteGeographique ;
              rdfs:isDefinedBy nav: ;
@@ -470,6 +479,10 @@ nav:angleFin rdf:type owl:DatatypeProperty ;
                         "end angle"@en .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#conditionsNavire
+nav:conditionsNavire rdf:type owl:DatatypeProperty .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#deDeplacement
 nav:deDeplacement rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf nav:navireDeCaracteristiqueData .
@@ -586,6 +599,10 @@ nav:info rdf:type owl:DatatypeProperty ;
                     "information supplémentaire"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#infoReglement
+nav:infoReglement rdf:type owl:DatatypeProperty .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#lat
 nav:lat rdf:type owl:DatatypeProperty ;
         rdfs:domain nav:EntiteGeographique ;
@@ -658,29 +675,30 @@ nav:stipule rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
+###  http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle
+nav:AideALaNavigationVirtuelle rdf:type owl:Class ;
+                               rdfs:subClassOf gsp:Feature .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Alignement
 nav:Alignement rdf:type owl:Class ;
-               rdfs:subClassOf gsp:Feature ;
+               rdfs:subClassOf nav:AideALaNavigationVirtuelle ;
                rdfs:isDefinedBy nav: ;
                rdfs:label "Alignement"@fr ,
                           "Leading Line"@en .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#BalisageFixe
-nav:BalisageFixe rdf:type owl:Class ;
-                 rdfs:subClassOf nav:ObjetDeSignalisationMaritime ;
-                 rdfs:label "Balisage Fixe"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BalisageFlottant
-nav:BalisageFlottant rdf:type owl:Class ;
-                     rdfs:subClassOf nav:ObjetDeSignalisationMaritime ;
-                     rdfs:label "Balisage Flottant"@fr .
+###  http://data.shom.fr/def/navigation_cotiere#Amer
+nav:Amer rdf:type owl:Class ;
+         rdfs:subClassOf nav:Repere ;
+         rdfs:comment "A prominent object at a fixed location which can be used in determining a location or a direction (adapted from IHO Dictionary, S-32, 5th Edition, 2643)."@en ;
+         rdfs:label "Amer"@fr ,
+                    "Landmark"@en .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Balise
 nav:Balise rdf:type owl:Class ;
-           rdfs:subClassOf nav:BalisageFixe ,
+           rdfs:subClassOf nav:Repere ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty nav:deCouleur ;
                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -691,201 +709,9 @@ nav:Balise rdf:type owl:Class ;
                       "Beacon"@en .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#BaliseCardinale
-nav:BaliseCardinale rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty nav:typeCardinal ;
-                                                                 owl:allValuesFrom nav:DirectionCardinaleSimple
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                    rdfs:subClassOf nav:Balise ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty nav:typeCardinal ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass nav:DirectionCardinaleSimple
-                                    ] ;
-                    rdfs:label "Balise Cardinale"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseCardinaleEst
-nav:BaliseCardinaleEst rdf:type owl:Class ;
-                       owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:aCommeMotif ;
-                                                                    owl:hasValue nav:MotifCardinalEst
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ,
-                                           [ owl:intersectionOf ( nav:Balise
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:typeCardinal ;
-                                                                    owl:hasValue nav:Est
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ;
-                       rdfs:subClassOf nav:BaliseCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseCardinaleNord
-nav:BaliseCardinaleNord rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty nav:aCommeMotif ;
-                                                                     owl:hasValue nav:MotifCardinalNord
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ,
-                                            [ owl:intersectionOf ( nav:Balise
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty nav:typeCardinal ;
-                                                                     owl:hasValue nav:Nord
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ;
-                        rdfs:subClassOf nav:BaliseCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseCardinaleOuest
-nav:BaliseCardinaleOuest rdf:type owl:Class ;
-                         owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty nav:aCommeMotif ;
-                                                                      owl:hasValue nav:MotifCardinalOuest
-                                                                    ]
-                                                                  ) ;
-                                               rdf:type owl:Class
-                                             ] ,
-                                             [ owl:intersectionOf ( nav:Balise
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty nav:typeCardinal ;
-                                                                      owl:hasValue nav:Ouest
-                                                                    ]
-                                                                  ) ;
-                                               rdf:type owl:Class
-                                             ] ;
-                         rdfs:subClassOf nav:BaliseCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseCardinaleSud
-nav:BaliseCardinaleSud rdf:type owl:Class ;
-                       owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:aCommeMotif ;
-                                                                    owl:hasValue nav:MotifCardinalSud
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ,
-                                           [ owl:intersectionOf ( nav:Balise
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:typeCardinal ;
-                                                                    owl:hasValue nav:Sud
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ;
-                       rdfs:subClassOf nav:BaliseCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseDEauSaine
-nav:BaliseDEauSaine rdf:type owl:Class ;
-                    rdfs:subClassOf nav:Balise ,
-                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                             owl:onProperty nav:deCouleur ;
-                                                             owl:hasValue nav:Blanc
-                                                           ]
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty nav:deCouleur ;
-                                                             owl:hasValue nav:Rouge
-                                                           ]
-                                                         ) ;
-                                      rdf:type owl:Class
-                                    ] ;
-                    rdfs:label "Balise d'Eau Saine"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseDeDangerIsole
-nav:BaliseDeDangerIsole rdf:type owl:Class ;
-                        rdfs:subClassOf nav:Balise ,
-                                        [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty nav:deCouleur ;
-                                                                 owl:hasValue nav:Noir
-                                                               ]
-                                                               [ rdf:type owl:Restriction ;
-                                                                 owl:onProperty nav:deCouleur ;
-                                                                 owl:hasValue nav:Rouge
-                                                               ]
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                        rdfs:label "Balise de Danger Isolé"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseLaterale
-nav:BaliseLaterale rdf:type owl:Class ;
-                   rdfs:subClassOf nav:Balise ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty nav:typeLateral ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass nav:DirectionLaterale
-                                   ] ;
-                   rdfs:label "Balise Latérale"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseLateraleBabord
-nav:BaliseLateraleBabord rdf:type owl:Class ;
-                         owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty nav:typeLateral ;
-                                                                      owl:hasValue nav:Babord
-                                                                    ]
-                                                                  ) ;
-                                               rdf:type owl:Class
-                                             ] ;
-                         rdfs:subClassOf nav:BaliseLaterale ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty nav:deCouleur ;
-                                           owl:hasValue nav:Rouge
-                                         ] .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseLateraleTribord
-nav:BaliseLateraleTribord rdf:type owl:Class ;
-                          owl:equivalentClass [ owl:intersectionOf ( nav:Balise
-                                                                     [ rdf:type owl:Restriction ;
-                                                                       owl:onProperty nav:typeLateral ;
-                                                                       owl:hasValue nav:Tribord
-                                                                     ]
-                                                                   ) ;
-                                                rdf:type owl:Class
-                                              ] ;
-                          rdfs:subClassOf nav:BaliseLaterale ,
-                                          [ rdf:type owl:Restriction ;
-                                            owl:onProperty nav:deCouleur ;
-                                            owl:hasValue nav:Vert
-                                          ] .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BaliseSpeciale
-nav:BaliseSpeciale rdf:type owl:Class ;
-                   rdfs:subClassOf nav:Balise ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty nav:deCouleur ;
-                                     owl:hasValue nav:Jaune
-                                   ] ;
-                   rdfs:label "Balise Spéciale"@fr .
-
-
 ###  http://data.shom.fr/def/navigation_cotiere#Bouee
 nav:Bouee rdf:type owl:Class ;
-          rdfs:subClassOf nav:BalisageFlottant ,
+          rdfs:subClassOf nav:Repere ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty nav:deCouleur ;
                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -894,206 +720,6 @@ nav:Bouee rdf:type owl:Class ;
           rdfs:comment "A buoy is a floating object moored to the bottom in a particular place, as an aid to navigation or for other specific purposes. (IHO Dictionary S-32 5th Edition, 565)."@en ;
           rdfs:label "Bouée"@fr ,
                      "Buoy"@en .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeCardinale
-nav:BoueeCardinale rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty nav:typeCardinal ;
-                                                                owl:allValuesFrom nav:DirectionCardinaleSimple
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                   rdfs:subClassOf nav:Bouee ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty nav:typeCardinal ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass nav:DirectionCardinaleSimple
-                                   ] ;
-                   rdfs:label "Bouée Cardinale"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeCardinaleEst
-nav:BoueeCardinaleEst rdf:type owl:Class ;
-                      owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                 [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty nav:aCommeMotif ;
-                                                                   owl:hasValue nav:MotifCardinalEst
-                                                                 ]
-                                                               ) ;
-                                            rdf:type owl:Class
-                                          ] ,
-                                          [ owl:intersectionOf ( nav:Bouee
-                                                                 [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty nav:typeCardinal ;
-                                                                   owl:hasValue nav:Est
-                                                                 ]
-                                                               ) ;
-                                            rdf:type owl:Class
-                                          ] ;
-                      rdfs:subClassOf nav:BoueeCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeCardinaleNord
-nav:BoueeCardinaleNord rdf:type owl:Class ;
-                       owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:aCommeMotif ;
-                                                                    owl:hasValue nav:MotifCardinalNord
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ,
-                                           [ owl:intersectionOf ( nav:Bouee
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty nav:typeCardinal ;
-                                                                    owl:hasValue nav:Nord
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ] ;
-                       rdfs:subClassOf nav:BoueeCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeCardinaleOuest
-nav:BoueeCardinaleOuest rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty nav:aCommeMotif ;
-                                                                     owl:hasValue nav:MotifCardinalOuest
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ,
-                                            [ owl:intersectionOf ( nav:Bouee
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty nav:typeCardinal ;
-                                                                     owl:hasValue nav:Ouest
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ;
-                        rdfs:subClassOf nav:BoueeCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeCardinaleSud
-nav:BoueeCardinaleSud rdf:type owl:Class ;
-                      owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                 [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty nav:aCommeMotif ;
-                                                                   owl:hasValue nav:MotifCardinalSud
-                                                                 ]
-                                                               ) ;
-                                            rdf:type owl:Class
-                                          ] ,
-                                          [ owl:intersectionOf ( nav:Bouee
-                                                                 [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty nav:typeCardinal ;
-                                                                   owl:hasValue nav:Sud
-                                                                 ]
-                                                               ) ;
-                                            rdf:type owl:Class
-                                          ] ;
-                      rdfs:subClassOf nav:BoueeCardinale .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeDEauSaine
-nav:BoueeDEauSaine rdf:type owl:Class ;
-                   rdfs:subClassOf nav:Bouee ,
-                                   [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty nav:deCouleur ;
-                                                            owl:hasValue nav:Blanc
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty nav:deCouleur ;
-                                                            owl:hasValue nav:Rouge
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-                   rdfs:label "Bouée d'Eau Saine"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeDeDangerIsole
-nav:BoueeDeDangerIsole rdf:type owl:Class ;
-                       rdfs:subClassOf nav:Bouee ,
-                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                owl:onProperty nav:deCouleur ;
-                                                                owl:hasValue nav:Noir
-                                                              ]
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty nav:deCouleur ;
-                                                                owl:hasValue nav:Rouge
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                       rdfs:label "Bouée de Danger Isolé"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeLaterale
-nav:BoueeLaterale rdf:type owl:Class ;
-                  rdfs:subClassOf nav:Bouee ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty nav:typeLateral ;
-                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass nav:DirectionLaterale
-                                  ] ;
-                  rdfs:label "Bouée Latérale"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeLateraleBabord
-nav:BoueeLateraleBabord rdf:type owl:Class ;
-                        owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                   [ rdf:type owl:Restriction ;
-                                                                     owl:onProperty nav:typeLateral ;
-                                                                     owl:hasValue nav:Babord
-                                                                   ]
-                                                                 ) ;
-                                              rdf:type owl:Class
-                                            ] ;
-                        rdfs:subClassOf nav:BoueeLaterale ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty nav:deCouleur ;
-                                          owl:hasValue nav:Rouge
-                                        ] ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty nav:typeLateral ;
-                                          owl:hasValue nav:Babord
-                                        ] .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeLateraleTribord
-nav:BoueeLateraleTribord rdf:type owl:Class ;
-                         owl:equivalentClass [ owl:intersectionOf ( nav:Bouee
-                                                                    [ rdf:type owl:Restriction ;
-                                                                      owl:onProperty nav:typeLateral ;
-                                                                      owl:hasValue nav:Tribord
-                                                                    ]
-                                                                  ) ;
-                                               rdf:type owl:Class
-                                             ] ;
-                         rdfs:subClassOf nav:BoueeLaterale ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty nav:deCouleur ;
-                                           owl:hasValue nav:Vert
-                                         ] ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty nav:typeLateral ;
-                                           owl:hasValue nav:Tribord
-                                         ] .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#BoueeSpeciale
-nav:BoueeSpeciale rdf:type owl:Class ;
-                  rdfs:subClassOf nav:Bouee ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty nav:deCouleur ;
-                                    owl:hasValue nav:Jaune
-                                  ] ;
-                  rdfs:label "Bouée Spéciale"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CaracteristiqueDeNavire
@@ -1167,7 +793,7 @@ nav:DirectionLaterale rdf:type owl:Class ;
 
 ###  http://data.shom.fr/def/navigation_cotiere#DispositifDAmarrage
 nav:DispositifDAmarrage rdf:type owl:Class ;
-                        rdfs:subClassOf nav:BalisageFlottant ;
+                        rdfs:subClassOf nav:EntiteGeographique ;
                         rdfs:comment "The equipment or structure used to secure a vessel (adapted from IHO Dictionary, S-32, 5th Edition, 3322)."@en ;
                         rdfs:label "Dispositif d'Amarrage"@fr ,
                                    "Mooring/Warping facility"@en .
@@ -1175,7 +801,7 @@ nav:DispositifDAmarrage rdf:type owl:Class ;
 
 ###  http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic
 nav:DispositifDeSeparationDuTrafic rdf:type owl:Class ;
-                                   rdfs:subClassOf nav:EntiteGeographique ;
+                                   rdfs:subClassOf nav:AideALaNavigationVirtuelle ;
                                    rdfs:comment "Façon virtuelle d'organiser le flux de trafic"@fr ;
                                    rdfs:label "Dispositif de séparation du trafic (DST)"@fr .
 
@@ -1199,6 +825,11 @@ nav:Entre rdf:type owl:Class ;
                      "Entre"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Espar
+nav:Espar rdf:type owl:Class ;
+          rdfs:subClassOf nav:Repere .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Estran
 nav:Estran rdf:type owl:Class ;
            owl:equivalentClass nav:Rivage ;
@@ -1220,6 +851,11 @@ nav:EtatDeLaMaree rdf:type owl:Class ;
                   rdfs:isDefinedBy nav: ;
                   rdfs:label "State of the Tide"@en ,
                              "État de la Marée"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Feu
+nav:Feu rdf:type owl:Class ;
+        rdfs:subClassOf nav:Repere .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologique
@@ -1277,19 +913,6 @@ nav:Littoral rdf:type owl:Class ;
              rdfs:comment "Zone sinueuse où s'établit le contact entre la mer ou un lac et la terre. (Le terme a un sens plus large que rivage et côte, qui désignent respectivement les domaines du littoral soumis directement ou indirectement à l'action de la mer.) (https://www.larousse.fr/dictionnaires/francais/littoral/47506)."@fr .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#MarqueDeJour
-nav:MarqueDeJour rdf:type owl:Class ;
-                 rdfs:subClassOf nav:ObjetDeSignalisationMaritime ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty nav:deCouleur ;
-                                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass nav:Couleur
-                                 ] ;
-                 rdfs:comment "The identifying characteristics of an aid to navigation which serve to facilitate its recognition against a daylight viewing background. On those structures that do not by themselves present an adequate viewing area to be seen at the required distance, the aid is made more visible by affixing a daymark to the structure. A daymark so affixed has a distinctive colour and shape depending on the purpose of the aid. (IHO Dictionary, S-32, 5th Edition, 1248)."@en ;
-                 rdfs:label "Daymark"@en ,
-                            "Marque de Jour"@fr .
-
-
 ###  http://data.shom.fr/def/navigation_cotiere#Motif
 nav:Motif rdf:type owl:Class ;
           rdfs:subClassOf rdf:Seq .
@@ -1324,17 +947,9 @@ nav:Navire rdf:type owl:Class ;
            rdfs:comment "navire, bâteau, engin nautique"@fr .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#ObjetDeSignalisationMaritime
-nav:ObjetDeSignalisationMaritime rdf:type owl:Class ;
-                                 rdfs:subClassOf nav:EntiteGeographique ;
-                                 rdfs:comment "https://diffusion.shom.fr/pro/balisage_maritime.html"@fr ;
-                                 rdfs:label "Objet de Signalisation Maritime"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#ObjetVirtuel
-nav:ObjetVirtuel rdf:type owl:Class ;
-                 rdfs:subClassOf nav:ObjetDeSignalisationMaritime ;
-                 rdfs:label "Objet Virtuel"@fr .
+###  http://data.shom.fr/def/navigation_cotiere#Phare
+nav:Phare rdf:type owl:Class ;
+          rdfs:subClassOf nav:Repere .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique
@@ -1361,7 +976,7 @@ nav:RelationNAire rdf:type owl:Class .
 
 ###  http://data.shom.fr/def/navigation_cotiere#Relevement
 nav:Relevement rdf:type owl:Class ;
-               rdfs:subClassOf gsp:Feature ;
+               rdfs:subClassOf nav:AideALaNavigationVirtuelle ;
                rdfs:comment "Le relèvement est la détermination de l'angle que fait, dans le plan horizontal, la ligne d'un observateur vers un objet avec celle d'une direction de référence fixe. En général, le relèvement se fait par rapport au Nord vrai ou géographique : positif dans le sens horaire (wikipédia)."@fr ;
                rdfs:label "Bearing"@en .
 
@@ -1369,9 +984,8 @@ nav:Relevement rdf:type owl:Class ;
 ###  http://data.shom.fr/def/navigation_cotiere#Repere
 nav:Repere rdf:type owl:Class ;
            rdfs:subClassOf nav:EntiteGeographique ;
-           rdfs:comment "A prominent object at a fixed location which can be used in determining a location or a direction (adapted from IHO Dictionary, S-32, 5th Edition, 2643)."@en ;
-           rdfs:label "Landmark"@en ,
-                      "Repère"@fr .
+           rdfs:comment "https://diffusion.shom.fr/pro/balisage_maritime.html"@fr ;
+           rdfs:label "Objet de Signalisation Maritime"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Rivage
@@ -1380,6 +994,11 @@ nav:Rivage rdf:type owl:Class ;
                            nav:ZoneDuDomaineMaritime ,
                            nav:ZoneDuDomaineTerrestre ;
            rdfs:comment "Partie de la terre soumise à l'action des vagues, de la marée (https://www.larousse.fr/dictionnaires/francais/rivage/69587)."@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Route
+nav:Route rdf:type owl:Class ;
+          rdfs:subClassOf nav:AideALaNavigationVirtuelle .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Secteur
@@ -1397,6 +1016,16 @@ nav:Separation rdf:type owl:Class ;
                rdfs:isDefinedBy nav: ;
                rdfs:label "Separation"@en ,
                           "Séparation"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#SuiteDePassages
+nav:SuiteDePassages rdf:type owl:Class ;
+                    rdfs:subClassOf nav:AideALaNavigationVirtuelle .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Tourelle
+nav:Tourelle rdf:type owl:Class ;
+             rdfs:subClassOf nav:Repere .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique
@@ -1421,6 +1050,11 @@ nav:TypeDeCourant rdf:type owl:Class ;
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDeFond
 nav:TypeDeFond rdf:type owl:Class ;
                rdfs:subClassOf skos:Concept .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeMarque
+nav:TypeDeMarque rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDeNavire
@@ -1755,6 +1389,10 @@ skos:Concept rdf:type owl:Class .
                                                                                   "pyramide"@fr .
 
 
+###  http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz
+<http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz> rdf:type owl:NamedIndividual .
+
+
 ###  http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche
 <http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche> rdf:type owl:NamedIndividual ,
                                                                          nav:TypeDEntiteGeographique ;
@@ -2008,6 +1646,31 @@ nav:MareeDeMorte-Eau rdf:type owl:NamedIndividual ,
 nav:MareeDeVive-Eau rdf:type owl:NamedIndividual ,
                              nav:TypeDIndicationTemporelle ;
                     rdfs:comment "En période de vives-eaux, le marnage est plus grand (la mer recouvre et découvre plus) et les courants de marée sont plus forts."@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#MarqueCardinale
+nav:MarqueCardinale rdf:type owl:NamedIndividual ,
+                             nav:TypeDeMarque .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#MarqueDEauSaine
+nav:MarqueDEauSaine rdf:type owl:NamedIndividual ,
+                             nav:TypeDeMarque .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#MarqueDeDangerIsole
+nav:MarqueDeDangerIsole rdf:type owl:NamedIndividual ,
+                                 nav:TypeDeMarque .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#MarqueLaterale
+nav:MarqueLaterale rdf:type owl:NamedIndividual ,
+                            nav:TypeDeMarque .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#MarqueSpeciale
+nav:MarqueSpeciale rdf:type owl:NamedIndividual ,
+                            nav:TypeDeMarque .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#MatieresDangereuses
