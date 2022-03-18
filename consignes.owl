@@ -69,19 +69,9 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAction">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
-        <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourActionInterdite"/>
-        <rdfs:label xml:lang="fr">a pour action</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourActionInterdite -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourActionInterdite">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Interdiction"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
-        <rdfs:label xml:lang="fr">a pour action interdite</rdfs:label>
+        <rdfs:label xml:lang="fr">a pour action</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -96,13 +86,34 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteoOceano -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteoOceano">
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
+        <rdfs:label xml:lang="fr">a pour condition locale</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
+        <rdfs:label xml:lang="fr">a pour condition météo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">a pour condition météo océano</rdfs:label>
+        <rdfs:label xml:lang="fr">a pour condition océano</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -217,6 +228,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
         <rdfs:label xml:lang="fr">a pour temporalité qualitative</rdfs:label>
@@ -1047,6 +1059,14 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#Mouillage -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Mouillage">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
+    </owl:Class>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#Navigation -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Navigation">
@@ -1396,6 +1416,14 @@
     
 
 
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Banc -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Banc">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle -->
 
     <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle">
@@ -1432,6 +1460,14 @@
     
 
 
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Ilot -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Ilot">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee -->
 
     <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee">
@@ -1456,6 +1492,14 @@
     
 
 
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Port -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Port">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide -->
 
     <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide">
@@ -1468,12 +1512,36 @@
     
 
 
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Quai -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Quai">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz -->
 
     <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <rdfs:label xml:lang="fr">raz</rdfs:label>
         <rdfs:label xml:lang="en">strait</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Sas -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Sas">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
     </owl:NamedIndividual>
     
 
@@ -1490,57 +1558,9 @@
     
 
 
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/banc -->
+    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Zone -->
 
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/banc">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ilot -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ilot">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/port -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/port">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/quai -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/quai">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/sas -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/sas">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/tourelle -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/tourelle">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/zone -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/zone">
+    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Zone">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
     </owl:NamedIndividual>
     
@@ -1549,7 +1569,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#AMareeBasse -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#AMareeBasse">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
         <rdfs:label xml:lang="fr">à marée basse</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1558,7 +1578,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#AMareeHaute -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#AMareeHaute">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
         <rdfs:label xml:lang="fr">à marée haute</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1594,6 +1614,14 @@
     <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#DeNuit">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
         <rdfs:label xml:lang="fr">de nuit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#Departement -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Departement">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
     </owl:NamedIndividual>
     
 
@@ -1634,14 +1662,6 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#VehiculeNautiqueAMoteur">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#departement -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#departement">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
     </owl:NamedIndividual>
     
 
