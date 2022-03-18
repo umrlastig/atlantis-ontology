@@ -103,6 +103,14 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourInfo -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourMotif -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourMotif">
@@ -135,6 +143,24 @@
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">a pour nature</rdfs:label>
         <rdfs:label xml:lang="en">has nature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
     </owl:ObjectProperty>
     
 
@@ -494,6 +520,15 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDecouverteDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#estEnracineA -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEnracineA">
@@ -525,6 +560,15 @@
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est entre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
     </owl:ObjectProperty>
     
 
@@ -648,6 +692,31 @@
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est un élément de</rdfs:label>
         <rdfs:label xml:lang="en">is an element of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     </owl:ObjectProperty>
     
 
@@ -801,8 +870,8 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourDimension -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDimension">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -812,6 +881,7 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHauteur">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -819,9 +889,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourInfo -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -831,6 +899,7 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeur">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -839,6 +908,7 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeurMaxi">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourLargeur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -847,6 +917,7 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeurMini">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourLargeur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -876,10 +947,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="fr">a pour nature du fond</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -887,11 +955,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourNombreDePlaces _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour nombre de places</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -899,8 +963,8 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -910,6 +974,7 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMaxi">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -919,6 +984,7 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMini">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -937,12 +1003,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estDecouverteDe -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:estDecouverteDe &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">La hauteur découverte de l&apos;eau est la longueur vertical de la partie au dessus de la surface de l&apos;eau d&apos;une entité pérenne de l&apos;environnement hydrographique côtier qui est partiellement submergé dans l&apos;eau (avec unités).</rdfs:comment>
-        <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -950,10 +1011,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:label xml:lang="fr">est equipé d&apos;une balise AIS</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -961,17 +1019,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
-                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -979,11 +1027,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="fr">Uniquement utilisé dans le cas ou c&apos;est FALSE car sinon l&apos;entité marquante sera cité directement</rdfs:comment>
-        <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2729,6 +2773,31 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
 
     <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique">
         <rdfs:label xml:lang="fr">a pour caractéristique</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
+        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
+        <rdfs:label xml:lang="fr">a pour nature du fond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
+        <rdfs:label xml:lang="fr">a pour nombre de places</rdfs:label>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourNombreDePlaces _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:estDecouverteDe &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
+        <rdfs:comment xml:lang="fr">La hauteur découverte de l&apos;eau est la longueur vertical de la partie au dessus de la surface de l&apos;eau d&apos;une entité pérenne de l&apos;environnement hydrographique côtier qui est partiellement submergé dans l&apos;eau (avec unités).</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
+        <rdfs:label xml:lang="fr">est equipé d&apos;une balise AIS</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
+        <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
+        <rdfs:comment xml:lang="fr">Uniquement utilisé dans le cas ou c&apos;est FALSE car sinon l&apos;entité marquante sera cité directement</rdfs:comment>
+        <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
     </rdf:Description>
     
 
