@@ -37,27 +37,25 @@ ent:4004 a nav:EntiteGeographique;
 
 ent:4005 a nav:GroupeDeMaisons.
 
-ent:4006 a nav:GroupeDeDangers;
+ent:4006 a nav:EntiteGeographique;
+	nav:aPourNature teg:ZoneDeDangers;
 	nav:aPourElement ent:4007, ent:4008, ent:4009.
 
 ent:4007 a nav:EntiteGeographique;
-	nav:aPourNature teg:Danger;
-	nav:aPourNature teg:Basse;
+	nav:aPourNature teg:Danger, teg:Basse;
 	rdfs:label "Basse Astan"@fr;
 	nav:estMarquePar ent:4010;
 	nav:estALEstDe ent:4001;
 	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float {|qudt:Unit unit:M|}.
 
 ent:4008 a nav:EntiteGeographique;
-	nav:aPourNature teg:Danger;
-	nav:aPourNature teg:Basse;
+	nav:aPourNature teg:Danger, teg:Basse;
 	rdfs:label "Grande Basse"@fr;
 	nav:estAuNordDe ent:4001;
 	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float {|qudt:Unit unit:M|}.
 
 ent:4009 a nav:EntiteGeographique;
-	nav:aPourNature teg:Danger;
-	nav:aPourNature teg:Roche;
+	nav:aPourNature teg:Danger, teg:Roche;
 	rdfs:label "Men Aodi"@fr;
 	nav:estALOuestDe ent:4001;
 	nav:estUneEntiteMarquee "false"^^xsd:boolean;
@@ -116,8 +114,10 @@ ent:4016 a nav:EntiteGeographique;
 #"MOUILLAGES D’ATTENTE. — Ces mouillages, utilisés notamment par les navires se rendant à Roscoff, se trouvent dans l’Est et dans l’Ouest du chenal. Un des meilleurs se trouve au NE de la tourelle « Men Guen Bras », par profondeur de 14 m, fond de sable et coquille de bonne tenue. Prendre garde à la roche profonde de 2,8 m située à 0,3 M à l’ENE de la tourelle.
 # Par vents d’Est, on peut mouiller partout dans la partie Ouest du chenal jusqu’au Sud de la tourelle « Malvoch », implantée près de l’extrémité de la jetée de Porz Kernok."
 
-ent:4017 a nav:GroupeDeMouillages;
-	nav:estUtiliséePar "les navires se rendant à Roscoff"^^xsd:string;
+ent:4017 a nav:EntiteGeographique;
+	rdfs:label "MOUILLAGES D'ATTENTE"@fr;
+	nav:aPourNature teg:ZoneDeMouillage;
+	nav:aPourInfo "utilisés notamment par les navires se rendant à Roscoff"^^xsd:string;
 	nav:estDansLEstDe ent:4011;
 	nav:estDansLOuestDe ent:4011;
 	nav:aPourElement ent:4018.
@@ -138,7 +138,7 @@ ent:4020 a nav:EntiteGeographique;
 	nav:aPourNature teg:Roche.
 
 # >>> roche = danger ? ---> FAIT
-# >>> distance + direction ? ---> voir mail NA
+# >>> distance + direction ? ---> voir mail NA ---> FAIT
 
 << <<ent:4020 nav:estALEstNordEstDe ent:4019>> nav:aPourSeparation "0.3"^^xsd:float>> qudt:Unit unit:MI_N.
 
@@ -158,27 +158,32 @@ ent:4023 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee;
 	rdfs:label "jetée de Porz Kernok"@fr.
 	
-# >>> près de l’extrémité de ? ---> FAIT, ajouter une propriété
+# >>> près de l’extrémité de ? ---> FAIT, ajouter une propriété ---> FAIT
 	
 	
-#Exemple 4
+#exemple 4
 #"PORT DE L’ÎLE DE BATZ (Porz Kernok) [48° 44,6' N — 4° 00,8' W]. — Ce port d’échouage est géré par le département du Finistère. Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."
 
 ent:4024 a nav:EntiteGeographique;
 	nav:aPourNature teg:PortDEchouage;
-	nav:estElementDe ent:4015;
+	rdfs:label "Port de l'Île de Batz"@fr;
 	nav:aPourLat "48° 44,6' N"^^xsd:string;
 	nav:aPourLng "4° 00,8' W"^^xsd:string;
-	nav:aPourInfo "Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string;
+	nav:estElementDe ent:4070;
+	nav:aPourInfo "bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string;
 	nav:estGerePar ent:4025;
 	owl:sameAs ent:4013.
+
+ent:4070 a nav:EntiteGeographique;
+	nav:aPourNature teg:Cote;
+	rdfs:label "côte Sud de l'Île de Batz"@fr.
 	
 ent:4025 a nav:EntiteGeographique;
 	nav:aPourNature teg:Departement;
 	rdfs:label "Finistère"@fr.
-	
-#Exemple 5
-#"La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle. On peut mouiller, suivant le tirant d’eau, à l’ouvert de l’anse et dans le SW de l’extrémité Ouest de l’île, tout comme dans l’anse de Port-­Neuf, située entre les communes de Cléder et Sibiril. Un mouillage pour 65 bateaux y est organisé, réglementé par l’arrêté du préfet du Finistère 20150146 ­- 0005 du 26 mai 2015."
+
+#exemple 5
+#"La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."
 
 ent:4026 a nav:EntiteGeographique;
 	nav:aPourNature teg:Pointe;
@@ -187,7 +192,7 @@ ent:4026 a nav:EntiteGeographique;
 	
 ent:4027 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chapelle;
-	rdfs:label "chapelle de Sainte-Barbe";
+	rdfs:label "chapelle de Sainte-Barbe"@fr;
 	nav:aPourLat "48° 43,6' N"^^xsd:string;
 	nav:aPourLng "3° 58,2' W"^^xsd:string;
 	nav:estDeCouleur nav:Blanche.
@@ -200,10 +205,249 @@ ent:4028 a nav:EntiteGeographique;
 ent:4029 a nav:EntiteGeographique;
 	rdfs:label "installations portuaires de Roscoff-Bloscon"@fr;
 	nav:estAuSudDe ent:4028.
+
+ent:4066 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ile;
+	rdfs:label "Île de Siec"@fr;
+	nav:aPourElement ent:4067.
+
+<< <<ent:4066 nav:estAuSudOuestDe ent:4004>> nav:aPourSeparation "3.0"^^xsd:float>> qudt:Unit unit:MI_N.
+
+ent:4067 a nav:EntiteGeographique;
+	nav:aPourNature teg:Anse;
+	nav:estDansLOuestDe ent:4066;
+	nav:estOuverteAu nav:Sud;
+	nav:estProtegePar ent:4068;
+	nav:estALEstDe ent:4068.
+
+ent:4068 a nav:EntiteGeographique;
+	nav:aPourNature teg:Mole.
+
+# >>> On peut mouiller, suivant le tirant d’eau, à l’ouvert de l’anse et dans le SW de l’extrémité Ouest de l’île, tout comme dans l’anse de Port-­Neuf, située entre les communes de Cléder et Sibiril. Un mouillage pour 65 bateaux y est organisé, réglementé par l’arrêté du préfet du Finistère 20150146 ­- 0005 du 26 mai 2015. ???
 	
 
-#Exemple 6
+#exemple 6
 #"Moguériec (48° 41,3' N — 4° 04,3' W) est abrité au Nord par une jetée. Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux. [...]
-#À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."
+# À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."
+
+ent:4030 a nav:EntiteGeographique;
+	rdfs:label "Moguériec"@fr;
+	nav:aPourNature teg:Port;
+	nav:aPourLat "48° 41,3' N"^^xsd:string;
+	nav:aPourLng "4° 04,3' W"^^xsd:string;
+	nav:aPourInfo "Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux."^^xsd:string;
+	nav:aPourElement ent:4039.
+
+ent:4031 a nav:EntiteGeographique;
+	nav:aPourNature teg:Jetee.
+
+ent:4032 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ruisseau;
+	nav:estALAbriDe ent:4031;
+	nav:estAuSudDe ent:4031;
+	nav:estBordeDe ent:4033;
+	nav:estBordeDe ent:4034;
+	nav:estAuSudDe ent:4035.
+
+# débouche ?
+
+ent:4033 a nav:EntiteGeographique;
+	nav:aPourNature teg:Quai.
+
+ent:4033 a nav:EntiteGeographique;
+	nav:aPourNature teg:Quai.
 	
-#exemple ENTRE
+ent:4035 a nav:EntiteGeographique;
+	rdfs:label "rive Nord"@fr;
+	nav:aPourNature teg:Rive;
+	nav:aPourElement ent:4036;
+	nav:aPourElement ent:4037;
+	nav:aPourElement ent:4038.
+
+ent:4036 a nav:EntiteGeographique;
+	nav:aPourNature teg:Terre-Plein.
+	
+ent:4037 a nav:EntiteGeographique;
+	nav:aPourNature teg:Escalier.
+	
+ent:4038 a nav:EntiteGeographique;
+	nav:aPourNature teg:Escalier.
+		
+ent:4039 a nav:EntiteGeographique;
+	nav:aPourNature teg:ZoneDePosees;
+	nav:aPourInfo "Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau."^^xsd:string.
+
+# >>> La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée. ???
+	
+
+#exemple 7
+#"L’échouage de Porz Guen (48° 40,0' N — 4° 13,0' W) est protégé à l’Ouest par une digue et au Sud par un brise-lames submersible en enrochements. Il sert d’abri aux bateaux de pêche, par des fonds découvrant de 2 à 5,5 m. Le port dispose d’une cale enracinée à un terre-plein et offre une vingtaine de places sur bouées. La passe d’entrée est marquée par deux balises latérales."
+
+ent:4040 a nav:EntiteGeographique;
+	nav:aPourNature teg:PortDEchouage;
+	rdfs:label "échouage de Porz Guen"@fr;
+	nav:aPourLat "48° 40,0' N"^^xsd:string;
+	nav:aPourLng "4° 13,0' W"^^xsd:string;
+	nav:estProtegePar ent:4041, ent:4042;
+	nav:estALEstDe ent:4041;
+	nav:estAuNordDe ent:4042;
+	nav:aPourInfo "Il sert d’abri aux bateaux de pêche, par des fonds découvrant de 2 à 5,5 m."^^xsd:string;
+	nav:aPourElement ent:4043;
+	nav:aPourElement ent:4044;
+	nav:aPourElement ent:4045.
+
+ent:4041 a nav:EntiteGeographique;
+	nav:aPourNature teg:Digue.
+	
+ent:4042 a nav:EntiteGeographique;
+	nav:aPourNature teg:Brise-Lames;
+	rdfs:label "brise-lames submersible en enrochements"@fr.
+
+ent:4043 a nav:EntiteGeographique;
+	nav:aPourNature teg:Cale;
+	nav:estEnracineA ent:4044.
+	
+ent:4044 a nav:EntiteGeographique;
+	nav:aPourNature teg:Terre-Plein.
+
+ent:4045 a nav:EntiteGeographique;
+	nav:aPourNature teg:ZoneDEchouage;
+	nav:estMarquePar ent:4046;
+	nav:aPourInfo "une vingtaine de places sur bouées"^^xsd:string.
+
+ent:4046 a nav:EntiteGeographique;
+	nav:aPourNature teg:GroupeDeBouees.
+
+# groupes comme classes ou instances ?
+
+ent:4047 a nav:EntiteGeographique;
+	nav:aPourNature teg:PasseDEntree;
+	nav:estMarquePar ent:4048, ent4049;
+	nav:donneAccesA ent:4040.
+
+ent:4048 a nav:EntiteGeographique;
+	nav:aPourNature teg:Balise;
+	nav:estUneMarqueDeType nav:Laterale;
+	nav:aPourTypeLaterale nav:Babord.
+
+ent:4049 a nav:EntiteGeographique;
+	nav:aPourNature teg:Balise;
+	nav:estUneMarqueDeType nav:Laterale;
+	nav:aPourTypeLaterale nav:Tribord.
+
+
+#exemple 8
+#"CHENAL DE LA MALOUINE. INSTRUCTIONS. — Ce chenal, profond de 3 m, n’a que 100 m de largeur entre le plateau de La Malouine et celui de La Pendante."
+
+ent:4050 a nav:EntiteGeographique;
+	nav:aPourNature teg:Chenal;
+	rdfs:label "chenal de La Malouine";
+	nav:aPourProfondeurEau "3.0"^^xsd:float {|qudt:Unit unit:M|};
+	nav:aPourElement ent:4051;
+	nav:aPourElement ent:4052.
+
+<< <<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float>> qudt:Unit unit:M.
+
+ent:4051 a nav:EntiteGeographique;
+	nav:aPourNature teg:Plateau;
+	rdfs:label "plateau de La Malouine"@fr.
+
+ent:4052 a nav:EntiteGeographique;
+	nav:aPourNature teg:Plateau;
+	rdfs:label "plateau de La Pendante"@fr.
+
+
+#exemple 9
+#"9.4.5.5. Port de l’Aber-Wrac’h
+# L’Aber-Wrac’h (48° 35,9' N — 4° 33,7' W), établi sur la rive gauche de l’aber, entre l’Anse des Anges et l’Anse Saint-Antoine, est un port de plaisance et de pêche géré par la chambre de commerce et d’industrie de Brest.
+# [...]
+# Le mouillage de Karreg Du se trouve entre les tourelles de la Roche aux Moines et le port."
+
+ent:4053 a nav:EntiteGeographique;
+	nav:aPourNature teg:Port, teg:PortDePlaisance, teg:PortDePeche;
+	rdfs:label "port de l'Aber-Wrac'h"@fr;
+	nav:aPourLat "48° 35,9' N"^^xsd:string;
+	nav:aPourLng "4° 33,7' W"^^xsd:string;
+	nav:estUnElementDe ent:4054;
+	nav:estEntre [
+		a rdf:Bag;
+		rdf:_1 ent:4055;
+		rdf:_2 ent:4056;
+		];
+	nav:estGerePar ent:4057.
+
+# port avec type dans la classe ou dans l'objet d'un propriété ?
+
+ent:4054 a nav:EntiteGeographique;
+	nav:aPourNature teg:Rive;
+	rdfs:label "rive gauche de l'aber"@fr.
+
+ent:4055 a nav:EntiteGeographique;
+	nav:aPourNature teg:Anse;
+	rdfs:label "Anse des Anges"@fr.
+
+ent:4056 a nav:EntiteGeographique;
+	nav:aPourNature teg:Anse;
+	rdfs:label "Anse Saint-Antoine"@fr.
+
+ent:4057 a nav:Organisation;
+	rdfs:label "chambre de commerce et d’industrie de Brest"@fr.
+
+ent:4058 a nav:EntiteGeographique;
+	nav:aPourNature teg:Mouillage;
+	rdfs:label "Karreg Du"@fr;
+	nav:estEntre [
+		a rdf:Bag;
+		rdf:_1 ent:4059;
+		rdf:_2 ent:4053;
+		].
+
+ent:4059 a nav:EntiteGeographique;
+	nav:aPourNature teg:GroupeDeTourelles;
+	rdfs:label "tourelles de la Roche aux Moines"@fr.
+
+#exemple 10
+#"Deux tourelles portant chacune un feu marquent, entre la chaussée et Guernsey, les rochers Roustel et Platte ; la première est tronconique à damier noir et blanc avec lanterne verte, la seconde est conique verte."
+
+ent:4060 a nav:EntiteGeographique;
+	nav:aPourNature teg:Tourelle;
+	nav:aPourForme nav:tronconique;
+	nav:aPourMotif nav:damier;
+	nav:estDeCouleur nav:Noir, nav:Blanc;
+	nav:aPourElement ent:4069;
+	nav:marqueLEntite ent:4062;
+	nav:estEntre [
+		a rdf:Bag;
+		rdf:_1 ent:4064;
+		rdf:_2 ent:4065;
+		].
+
+ent:4069 a nav:EntiteGeographique;
+	nav:aPourNature teg:Lanterne;
+	nav:aPourCouleur nav:Verte.
+
+ent:4061 a nav:EntiteGeographique;
+	nav:aPourNature teg:Tourelle;
+	nav:aPourForme nav:conique;
+	nav:estDeCouleur nav:Vert;
+	nav:marqueLEntite ent4063;
+	nav:estEntre [
+		a rdf:Bag;
+		rdf:_1 ent:4064;
+		rdf:_2 ent:4065;
+		].
+
+ent:4062 a nav:EntiteGeographique;
+	nav:aPourNature teg:Roche;
+	rdfs:label "rocher Roustel"@fr.
+
+ent:4063 a nav:EntiteGeographique;
+	nav:aPourNature teg:Roche;
+	rdfs:label "rocher Platte"@fr.
+
+ent:4064 a nav:EntiteGeographique;
+	nav:aPourNature teg:Chaussee.
+
+ent:4065 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ile;
+	rdfs:label "Guernsey"@fr.
