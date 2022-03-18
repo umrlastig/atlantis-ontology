@@ -70,6 +70,18 @@ nav:aLExtremiteDe rdf:type owl:ObjectProperty ;
                              "à l'extremité de"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteoOceano
+nav:aPourConditionMeteoOceano rdf:type owl:ObjectProperty ;
+                              rdfs:domain nav:ConsigneDeNavigation ;
+                              rdfs:range nav:PhenomeneMeteorologiqueOuOceanographique .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTemporalite
+nav:aPourTemporalite rdf:type owl:ObjectProperty ;
+                     rdfs:domain nav:ConsigneDeNavigation ;
+                     rdfs:range nav:IndicationTemporelle .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec
 nav:aUneRelationSpatialeAvec rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -85,9 +97,16 @@ nav:aVisibilite rdf:type owl:ObjectProperty ;
                            "has visibility"@en .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#actionARealiser
+nav:actionARealiser rdf:type owl:ObjectProperty ;
+                    rdfs:domain nav:Instruction ,
+                                nav:Interdiction ;
+                    rdfs:range gsp:Feature .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#cap
 nav:cap rdf:type owl:ObjectProperty ;
-        rdfs:domain nav:Instruction ;
+        rdfs:domain nav:ConsigneDeNavigation ;
         rdfs:range nav:Alignement ;
         rdfs:isDefinedBy nav: ;
         rdfs:label "cap"@fr ,
@@ -96,11 +115,22 @@ nav:cap rdf:type owl:ObjectProperty ;
 
 ###  http://data.shom.fr/def/navigation_cotiere#capAlternatif
 nav:capAlternatif rdf:type owl:ObjectProperty ;
-                  rdfs:domain nav:Instruction ;
+                  rdfs:domain nav:ConsigneDeNavigation ;
                   rdfs:range nav:Alignement ;
                   rdfs:isDefinedBy nav: ;
                   rdfs:label "alternative heading"@en ,
                              "cap alternatif"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#concerneTypeDeNavire
+nav:concerneTypeDeNavire rdf:type owl:ObjectProperty ;
+                         rdfs:domain nav:ConsigneDeNavigation ,
+                                     nav:Navire ,
+                                     nav:Visibilite ;
+                         rdfs:range nav:TypeDeNavire ;
+                         rdfs:isDefinedBy nav: ;
+                         rdfs:label "type de navire"@fr ,
+                                    "type of ship"@en .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#deCouleur
@@ -212,6 +242,18 @@ nav:equipeDe rdf:type owl:ObjectProperty ;
              rdfs:comment "projecteur, étrave, VHF"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#estImposePar
+nav:estImposePar rdf:type owl:ObjectProperty ;
+                 rdfs:domain nav:ConsigneDeNavigation ;
+                 rdfs:range nav:Reglement .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#estLocaliseA
+nav:estLocaliseA rdf:type owl:ObjectProperty ;
+                 rdfs:domain nav:ConsigneDeNavigation ;
+                 rdfs:range nav:EntiteGeographique .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#etatMaree
 nav:etatMaree rdf:type owl:ObjectProperty ;
               rdfs:domain nav:Visibilite ;
@@ -219,6 +261,11 @@ nav:etatMaree rdf:type owl:ObjectProperty ;
               rdfs:isDefinedBy nav: ;
               rdfs:label "state of the tide"@en ,
                          "état de la marée"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#eviter
+nav:eviter rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf nav:actionARealiser .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#fondDe
@@ -236,6 +283,11 @@ nav:gerePar rdf:type owl:ObjectProperty ;
 ###  http://data.shom.fr/def/navigation_cotiere#isGeometryOf
 nav:isGeometryOf rdf:type owl:ObjectProperty ;
                  owl:inverseOf gsp:hasGeometry .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#laisser
+nav:laisser rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf nav:actionARealiser .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#marqueLEntite
@@ -257,6 +309,11 @@ nav:marquePar rdf:type owl:ObjectProperty ;
                          "marqué par la bouée"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#mouiller
+nav:mouiller rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf nav:actionARealiser .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#nature
 nav:nature rdf:type owl:ObjectProperty ;
            rdfs:domain nav:EntiteGeographique ;
@@ -270,7 +327,7 @@ nav:nature rdf:type owl:ObjectProperty ;
 
 ###  http://data.shom.fr/def/navigation_cotiere#naviguer
 nav:naviguer rdf:type owl:ObjectProperty ;
-             rdfs:domain nav:Instruction ;
+             rdfs:domain nav:ConsigneDeNavigation ;
              rdfs:range nav:EntiteGeographique ;
              rdfs:isDefinedBy nav: ;
              rdfs:label "navigate"@en ,
@@ -323,6 +380,11 @@ nav:situeDans rdf:type owl:ObjectProperty ;
                          "situé dans"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#suivre
+nav:suivre rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf nav:actionARealiser .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#transportant
 nav:transportant rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf nav:navireDeCaracteristiqueObject ;
@@ -343,16 +405,6 @@ nav:typeDeCourant rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:range nav:TypeDeCourant ;
                   rdfs:label "type de courant"@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#typeDeNavire
-nav:typeDeNavire rdf:type owl:ObjectProperty ;
-                 rdfs:domain nav:Navire ,
-                             nav:Visibilite ;
-                 rdfs:range nav:TypeDeNavire ;
-                 rdfs:isDefinedBy nav: ;
-                 rdfs:label "type de navire"@fr ,
-                            "type of ship"@en .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#typeLateral
@@ -596,13 +648,19 @@ nav:relevement rdf:type owl:DatatypeProperty ;
                           "relevement"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#stipule
+nav:stipule rdf:type owl:DatatypeProperty ;
+            rdfs:domain nav:Information ;
+            rdfs:range xsd:string .
+
+
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://data.shom.fr/def/navigation_cotiere#Alignement
 nav:Alignement rdf:type owl:Class ;
-               rdfs:subClassOf nav:Itineraire ;
+               rdfs:subClassOf gsp:Feature ;
                rdfs:isDefinedBy nav: ;
                rdfs:label "Alignement"@fr ,
                           "Leading Line"@en .
@@ -1048,6 +1106,13 @@ nav:Chenal rdf:type owl:Class ;
            rdfs:subClassOf nav:ZoneDuDomaineMaritime .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation
+nav:ConsigneDeNavigation rdf:type owl:Class ;
+                         rdfs:isDefinedBy nav: ;
+                         rdfs:label "Instruction"@en ,
+                                    "Instruction"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Cote
 nav:Cote rdf:type owl:Class ;
          rdfs:subClassOf nav:ZoneDuDomaineTerrestre ,
@@ -1167,27 +1232,25 @@ nav:IndicationTemporelle rdf:type owl:Class ;
                          rdfs:label "Indications Temporelles"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Information
+nav:Information rdf:type owl:Class ;
+                rdfs:subClassOf nav:ConsigneDeNavigation .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Instruction
 nav:Instruction rdf:type owl:Class ;
-                rdfs:isDefinedBy nav: ;
-                rdfs:label "Instruction"@en ,
-                           "Instruction"@fr .
+                rdfs:subClassOf nav:ConsigneDeNavigation .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Interdiction
 nav:Interdiction rdf:type owl:Class ;
-                 rdfs:subClassOf nav:Instruction .
+                 rdfs:subClassOf nav:ConsigneDeNavigation .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres
 nav:InterieurDesTerres rdf:type owl:Class ;
                        rdfs:subClassOf nav:ZoneDuDomaineTerrestre ;
                        rdfs:comment "À l'intérieur des terres, dans l'arrière-pays ou assez loin de la côte, par opposition au bord de mer (https://www.larousse.fr/dictionnaires/francais/terre/77443#175925)."@fr .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Itineraire
-nav:Itineraire rdf:type owl:Class ;
-               rdfs:subClassOf gsp:Feature .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Large
@@ -1274,14 +1337,22 @@ nav:ObjetVirtuel rdf:type owl:Class ;
                  rdfs:label "Objet Virtuel"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique
+nav:PhenomeneMeteorologiqueOuOceanographique rdf:type owl:Class .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#QualiteDuFond
 nav:QualiteDuFond rdf:type owl:Class ;
                   rdfs:subClassOf skos:Concept .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#Recommendation
-nav:Recommendation rdf:type owl:Class ;
+###  http://data.shom.fr/def/navigation_cotiere#Recommandation
+nav:Recommandation rdf:type owl:Class ;
                    rdfs:subClassOf nav:Instruction .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Reglement
+nav:Reglement rdf:type owl:Class .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#RelationNAire
@@ -1290,7 +1361,7 @@ nav:RelationNAire rdf:type owl:Class .
 
 ###  http://data.shom.fr/def/navigation_cotiere#Relevement
 nav:Relevement rdf:type owl:Class ;
-               rdfs:subClassOf nav:Itineraire ;
+               rdfs:subClassOf gsp:Feature ;
                rdfs:comment "Le relèvement est la détermination de l'angle que fait, dans le plan horizontal, la ligne d'un observateur vers un objet avec celle d'une direction de référence fixe. En général, le relèvement se fait par rapport au Nord vrai ou géographique : positif dans le sens horaire (wikipédia)."@fr ;
                rdfs:label "Bearing"@en .
 
