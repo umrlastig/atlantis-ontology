@@ -79,9 +79,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is partly constituted.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Relie une entité topographique à une autre dont elle est partiellement constituée.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -96,7 +94,6 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourForme">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -113,7 +110,6 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourMotif">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -217,9 +213,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDebordeDe"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">déborde</rdfs:label>
     </owl:ObjectProperty>
     
@@ -231,9 +225,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">donne accès à</rdfs:label>
         <rdfs:label xml:lang="en">gives access to</rdfs:label>
@@ -247,9 +239,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estEntoureDe"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
     </owl:ObjectProperty>
     
 
@@ -259,9 +249,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALAbriDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">est à l&apos;abri de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -295,9 +283,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALExtremiteDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est à l&apos;extremité de</rdfs:label>
         <rdfs:label xml:lang="en">is at the extremity of</rdfs:label>
@@ -344,9 +330,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">est accessible par</rdfs:label>
     </owl:ObjectProperty>
     
@@ -468,7 +452,6 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -485,9 +468,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDebordeDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est débordé de</rdfs:label>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
@@ -500,9 +481,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEnracineA">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">est enraciné à</rdfs:label>
     </owl:ObjectProperty>
     
@@ -513,9 +492,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEntoureDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est entouré de</rdfs:label>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
@@ -540,7 +517,6 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estLeGerantDe"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Organisation"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -557,7 +533,6 @@
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Organisation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">est le gérant de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -606,9 +581,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estProtegePar">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:label xml:lang="fr">est protégé par</rdfs:label>
     </owl:ObjectProperty>
     
@@ -685,7 +658,6 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="en">marks entity</rdfs:label>
         <rdfs:label xml:lang="fr">marque l&apos;entité</rdfs:label>
@@ -799,7 +771,6 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHauteur">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">a pour hauteur</rdfs:label>
@@ -854,7 +825,6 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="fr">a pour nature du fond</rdfs:label>
     </owl:DatatypeProperty>
@@ -866,7 +836,6 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label xml:lang="fr">a pour profondeur eau</rdfs:label>
     </owl:DatatypeProperty>
@@ -878,7 +847,6 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMaxi">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">La profondeur maximum de l&apos;eau en mètres.</rdfs:comment>
         <rdfs:comment xml:lang="en">The maximum depth of the water in metres.</rdfs:comment>
@@ -894,7 +862,6 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMini">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">La profondeur minimum de l&apos;eau en mètres.</rdfs:comment>
         <rdfs:comment xml:lang="en">The minimum depth of the water in metres.</rdfs:comment>
@@ -910,7 +877,6 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauUniforme">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label xml:lang="fr">a pour profondeur eau uniforme</rdfs:label>
     </owl:DatatypeProperty>
@@ -921,7 +887,6 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourSeparation">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label xml:lang="fr">a pour séparation</rdfs:label>
     </owl:DatatypeProperty>
@@ -932,7 +897,6 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">La hauteur découverte de l&apos;eau est la longueur vertical de la partie au dessus de la surface de l&apos;eau d&apos;une entité pérenne de l&apos;environnement hydrographique côtier qui est partiellement submergé dans l&apos;eau (avec unités).</rdfs:comment>
         <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
@@ -944,7 +908,6 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:label xml:lang="fr">est equipé d&apos;une balise AIS</rdfs:label>
     </owl:DatatypeProperty>
@@ -1029,6 +992,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Balise -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Balise">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1037,6 +1006,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Bouee -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Bouee">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Bouee"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1142,6 +1117,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Espar -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Espar">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Espar"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1150,6 +1131,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Feu -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Feu">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1158,6 +1145,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#FeuASecteur -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#FeuASecteur">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1222,7 +1215,35 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalEst"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalNord"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalOuest"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalSud"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1247,6 +1268,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueLaterale">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1268,6 +1295,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Phare -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Phare">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Phare"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1317,6 +1350,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#Tourelle -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Tourelle">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Tourelle"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
     </owl:Class>
     
@@ -1471,31 +1510,6 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     
 
 
-    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">Groupe d&apos;Entités Géographiques</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeBouees -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeBouees">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeMaisons -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDeMaisons">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq -->
 
     <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
@@ -1525,698 +1539,15 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     
 
 
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Anse -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Anse">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">anse</rdfs:label>
-        <rdfs:label xml:lang="en">bay</rdfs:label>
-        <rdfs:label xml:lang="en">cove</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Balise -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Balise">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">balise</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">AIS beacon</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">balise d&apos;émission AIS</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">basse</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Bouee -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Bouee">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">bouée</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">buoy</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Brise-Lames -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Brise-Lames">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">brise-lames</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Cale -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Cale">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">cale</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">slipway</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chapelle">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">chapel</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">chapelle</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chaussee -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chaussee">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="en">chaussée</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Chenal -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Chenal">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">channel</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">chenal</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Clocher -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Clocher">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">bell tower</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">clocher</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Cote -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Cote">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:prefLabel xml:lang="en">coast</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">côte</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Debarcadere -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Debarcadere">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">débarcadère</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">landing stage</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">département</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Digue -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Digue">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">digue</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">dispositif d&apos;amarrage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Echouage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Echouage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">échouage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Escalier -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Escalier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">escalier</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Espar -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Espar">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:comment xml:lang="fr">Espar : Marque de petite dimension sur support fixe, de forme, de matériau et de taille très divers. Source : http://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/glossaire-a180.html</rdfs:comment>
-        <rdfs:label xml:lang="fr">espar</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Estacade -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Estacade">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Une estacade ferme l&apos;entrée du port.</skos:definition>
-        <skos:prefLabel xml:lang="fr">estacade</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">pier</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
-        <skos:prefLabel xml:lang="fr">feu</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">light</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/FeuASecteur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Feu"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">feu à secteur</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">sector light</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="br">bazenn</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">haut fond</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
-        <skos:related rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Ile -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Ile">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">island</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">île</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Jetee">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">jetty</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">jetée</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Lanterne -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Lanterne">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">lanterne</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Maison -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Maison">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">house</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">maison</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueCardinale -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueCardinale">
-        <rdfs:label xml:lang="fr">marque cardinale</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDEauSaine -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDEauSaine">
-        <rdfs:label xml:lang="fr">marque d&apos;eau saine</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDeDangerIsole -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueDeDangerIsole">
-        <rdfs:label xml:lang="fr">marque de danger isolé</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueLaterale -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueLaterale">
-        <rdfs:label xml:lang="fr">marque latérale</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueSpeciale -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/MarqueSpeciale">
-        <rdfs:label xml:lang="fr">marque spéciale</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Mole -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Mole">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">môle</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Mouillage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Mouillage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <skos:inScheme rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedelieudestationnement/liste"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">anchorage</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">mouillage</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Panneau -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Panneau">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">panneau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Passe -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Passe">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">passe</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/PasseDEntree -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/PasseDEntree">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">passe d&apos;entrée</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Phare -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Phare">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">lighthouse</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">phare</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">plateau</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">plateau</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Pointe -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Pointe">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">pointe</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Port -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Port">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDEchouage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDEchouage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port d&apos;échouage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDePeche -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDePeche">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port de pêche</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDePlaisance -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/PortDePlaisance">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">port de plaisance</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Posee -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Posee">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:comment xml:lang="fr">Substantif - féminin
-[En parlant d&apos;un bateau] Action de le faire échouer dans un endroit prévu à cet effet :
-&quot;Sur la vase, les posées y sont mauvaises, et l&apos;on y risque (...) l&apos;affreuse sensation d&apos;entendre craquer ses béquilles [du bateau].&quot; Chevrillon, Bret. hier,II, 1925, p.150.
-
-Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
-        <rdfs:label xml:lang="fr">posée</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Pyramide">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">pyramid</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">pyramide</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Quai -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Quai">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">quai</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Raz">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">raz</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Rive -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Rive">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">rive</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <skos:broader rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Danger"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">roche</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">rock</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Semaphore -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Semaphore">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">semaphore</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">sémaphore</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Terre-Plein -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Terre-Plein">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">terre-plein</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Tour -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Tour">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="fr">tour</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">tower</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Tourelle">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">tourelle</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Ville -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Ville">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">town</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">ville</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Voyant -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Voyant">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">voyant</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDEchouage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDEchouage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone d&apos;échouage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeDangers -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeDangers">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
-        <rdfs:label xml:lang="fr">zone de dangers</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone de mouillage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDePosees -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/ZoneDePosees">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
-        <rdfs:label xml:lang="fr">zone de posées</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/sas -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/sas">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalEst -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalEst">
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
-        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdfs:label xml:lang="fr">motif cardinal Est</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalNord -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalNord">
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
-        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdfs:label xml:lang="fr">motif cardinal Nord</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalOuest -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalOuest">
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
-        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdfs:label xml:lang="fr">motif cardinal Ouest</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#MotifCardinalSud -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MotifCardinalSud">
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
-        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
-        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
-        <rdfs:label xml:lang="fr">motif cardinal Sud</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Ruisseau -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Ruisseau">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:label xml:lang="fr">ruisseau</rdfs:label>
-        <rdfs:label xml:lang="en">stream</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#Toto -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Toto">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <nav:aPourNature rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Mouillage"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#Toto"/>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#TotoTwo -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#TotoTwo"/>
     
 
 
@@ -2526,18 +1857,686 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalEst -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalEst">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdfs:label xml:lang="fr">motif cardinal Est</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalNord -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalNord">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+        <rdfs:label xml:lang="fr">motif cardinal Nord</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalOuest -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalOuest">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+        <rdfs:label xml:lang="fr">motif cardinal Ouest</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalSud -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalSud">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdfs:label xml:lang="fr">motif cardinal Sud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Anse -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Anse">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">anse</rdfs:label>
+        <rdfs:label xml:lang="en">bay</rdfs:label>
+        <rdfs:label xml:lang="en">cove</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">balise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/BaliseDEmissionAIS">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">AIS beacon</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">balise d&apos;émission AIS</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">basse</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Bouee -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Bouee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">bouée</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">buoy</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Brise-Lames -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Brise-Lames">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">brise-lames</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Cale -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Cale">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">cale</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">slipway</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Chapelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chapelle">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">chapel</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">chapelle</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Chaussee -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chaussee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="en">chaussée</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Chenal -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Chenal">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">channel</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">chenal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Clocher -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Clocher">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">bell tower</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">clocher</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Cote -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Cote">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:prefLabel xml:lang="en">coast</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">côte</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
         <skos:definition xml:lang="en">Blabla.</skos:definition>
         <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Basse"/>
-        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/HautFond"/>
-        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Plateau"/>
-        <skos:narrower rdf:resource="http://data.ign.fr/id/codes/nav/typedentitegeographique/Roche"/>
+        <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse"/>
+        <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/HautFond"/>
+        <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Plateau"/>
+        <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Roche"/>
         <skos:prefLabel xml:lang="en">danger</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">danger</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Debarcadere -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Debarcadere">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">débarcadère</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">landing stage</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Departement -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Departement">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">département</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Digue -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Digue">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">digue</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/DispositifDAmarrage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">dispositif d&apos;amarrage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Echouage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Echouage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">échouage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Escalier -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Escalier">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">escalier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Espar -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Espar">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:comment xml:lang="fr">Espar : Marque de petite dimension sur support fixe, de forme, de matériau et de taille très divers. Source : http://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/glossaire-a180.html</rdfs:comment>
+        <rdfs:label xml:lang="fr">espar</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Estacade -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Estacade">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Une estacade ferme l&apos;entrée du port.</skos:definition>
+        <skos:prefLabel xml:lang="fr">estacade</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">pier</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:narrower rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur"/>
+        <skos:prefLabel xml:lang="fr">feu</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">light</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/FeuASecteur">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Feu"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">feu à secteur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">sector light</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeBouees -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeBouees">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">groupe de bouées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeMaisons -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/GroupeDeMaisons">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">groupe de maisons</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/HautFond -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/HautFond">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="br">bazenn</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">haut fond</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">shoal</skos:prefLabel>
+        <skos:related rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Basse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Ile -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ile">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">island</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">île</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Jetee -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Jetee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">jetty</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">jetée</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Lanterne -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Lanterne">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">lanterne</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Maison -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Maison">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">house</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">maison</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Mole -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mole">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">môle</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Mouillage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Mouillage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <skos:inScheme rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedelieudestationnement/liste"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">anchorage</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">mouillage</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Panneau -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Panneau">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">panneau</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Passe -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Passe">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">passe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/PasseDEntree -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PasseDEntree">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">passe d&apos;entrée</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Phare -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Phare">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">lighthouse</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">phare</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Plateau -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Plateau">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">plateau</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">plateau</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Pointe -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Pointe">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">pointe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Port -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Port">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">port</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDEchouage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDEchouage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">port d&apos;échouage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePeche -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePeche">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">port de pêche</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePlaisance -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/PortDePlaisance">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">port de plaisance</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Posee -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Posee">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:comment xml:lang="fr">Substantif - féminin
+[En parlant d&apos;un bateau] Action de le faire échouer dans un endroit prévu à cet effet :
+&quot;Sur la vase, les posées y sont mauvaises, et l&apos;on y risque (...) l&apos;affreuse sensation d&apos;entendre craquer ses béquilles [du bateau].&quot; Chevrillon, Bret. hier,II, 1925, p.150.
+
+Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
+        <rdfs:label xml:lang="fr">posée</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Pyramide -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Pyramide">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">pyramid</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">pyramide</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Quai -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Quai">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">quai</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Raz -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Raz">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">raz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Rive -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Rive">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">rive</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Roche -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Roche">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedentitegeographique/Danger"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">roche</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">rock</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Ruisseau -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ruisseau">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">ruisseau</rdfs:label>
+        <rdfs:label xml:lang="en">stream</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Semaphore -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Semaphore">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">semaphore</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">sémaphore</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Terre-Plein -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Terre-Plein">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">terre-plein</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Tour -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Tour">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="fr">tour</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">tower</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Tourelle -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Tourelle">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">tourelle</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Ville -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Ville">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <skos:definition xml:lang="en">Blabla.</skos:definition>
+        <skos:definition xml:lang="fr">Blabla.</skos:definition>
+        <skos:prefLabel xml:lang="en">town</skos:prefLabel>
+        <skos:prefLabel xml:lang="fr">ville</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Voyant -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Voyant">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">voyant</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDEchouage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDEchouage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">zone d&apos;échouage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeDangers -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeDangers">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger"/>
+        <rdfs:label xml:lang="fr">zone de dangers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDeMouillage">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">zone de mouillage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDePosees -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/ZoneDePosees">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">zone de posées</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/sas -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/sas">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
     </owl:NamedIndividual>
     
 
@@ -2583,15 +2582,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
     <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typededanger/liste">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type de Danger</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typededirection/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typededirection/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Direction</rdfs:label>
     </owl:NamedIndividual>
     
 
