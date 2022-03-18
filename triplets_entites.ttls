@@ -1,0 +1,126 @@
+#modélisation d'entités pérennes de l'environnement hydrographique côtier
+#extraits des IN C2A
+
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
+@prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix ent: <http://data.shom.fr/id/entitegeographique/>.
+@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#exemple 1
+ent:6001 a nav:EntiteGeographique;
+	rdfs:label "île de Batz"@fr;
+	nav:nature teg:Ile;
+	nav:aCommeElement ent:6002, ent:6004, ent:6005;
+	nav:debordeDe ent:6006.
+
+ent:6002 a nav:EntiteGeographique;
+	nav:nature teg:Tour;
+	nav:estElementDe ent:6003.
+
+ent:6003 a nav:EntiteGeographique;
+	nav:nature teg:Semaphore.
+
+ent:6004 a nav:EntiteGeographique;
+	nav:nature teg:Phare;
+	nav:entoureDe ent:6005.
+
+ent:6005 a nav:EntiteGeographique;
+	nav:nature teg:GroupeDeMaisons.
+
+ent:6006 a nav:ZoneDeDanger;
+	nav:aCommeElement ent:6007, ent:6008, ent:6009.
+
+ent:6007 a nav:EntiteGeographique;
+	nav:nature teg:Danger;
+	rdfs:label "Basse Astan"@fr;
+	nav:marquePar ent:6010;
+	rlsp:eastOf 6001.
+
+ent:6008 a nav:EntiteGeographique;
+	nav:nature teg:Danger;
+	rdfs:label "Grande Basse"@fr;
+	rlsp:northOf ent:6001.
+
+ent:6009 a nav:EntiteGeographique;
+	nav:nature teg:Danger;
+	rdfs:label "Men Aodi"@fr;
+	rlsp:westOf ent:6001.
+
+ent:6010 a nav:BoueeCardinaleEst;
+	rdfs:label "Astan"@fr.
+
+ent:6011 a nav:Chenal.
+
+ent:6012 a nav:EntiteGeographique;
+	nav:nature teg:Clocher;
+	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
+	nav:estElementDe ent:6001.
+
+ent:6013 a nav:Cote;
+	nav:estElementDe ent:6001;
+	rlsp:southOf ent:6001.
+
+ent:6014 a nav:EntiteGeographique;
+	nav:nature teg:Pyramide;
+	nav:estElementDe ent:6015.
+
+ent:6015 a nav:EntiteGeographique;
+	nav:nature teg:Ile;
+	rdfs:label "île Pigued"@fr.
+
+ent:6016 a nav:Chenal.
+	
+ent:6017 a nav:EntiteGeographique;
+	rdfs:label "tourelle « Ar Chaden »"@fr.
+
+ent:6018 a nav:EntiteGeographique;
+	rdfs:label "tourelle « Men Guen Bras »"@fr;
+	nav:aCommeElement ent:6019.
+
+ent:6019 a nav:EntiteGeographique;
+	nav:nature teg:FeuASecteur.
+
+ent:6016 a nav:Entre;
+	nav:entiteImpliquee ent:6017;
+	nav:entiteImpliquee ent:6018.
+
+ent:6020 a nav:ZoneDeDanger;
+	nav:auxAbordsDe ent:6016.
+
+ent:6021 a nav:EntiteGeographique;
+	nav:nature teg:Feu;
+	nav:aLExtremiteDe ent:6022.
+
+ent:6022 a nav:EntiteGeographique;
+	nav:nature teg:Estacade;
+	nav:estElementDe ent:6023.
+
+ent:6023 a nav:EntiteGeographique;
+	nav:nature teg:Jetee;
+	rdfs:label "jetée de Roscoff"@fr;
+	nav:estElementDe ent:6024.
+
+ent:6024 a nav:EntiteGeographique;
+	nav:nature teg:Ville;
+	rdfs:label "Roscoff"@fr.
+
+ent:6025 a nav:EntiteGeographique;
+	nav:nature teg:Feu;
+	nav:aLExtremiteDe ent:6026.
+
+ent:6026 a nav:EntiteGeographique;
+	nav:nature teg:Debarcadere.
+
+ent:6027 a nav:ZoneDeMouillage;
+	rlsp:eastOf ent:6028;
+	nav:estElementDe ent:6028.
+
+ent:6028 a nav:Chenal.
+
+ent:6029 a nav:ZoneDeMouillage;
+	rlsp:westOf ent:6028;
+	nav:estElementDe ent:6028.
