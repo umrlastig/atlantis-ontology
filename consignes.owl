@@ -293,7 +293,6 @@ skos:related rdf:type owl:AnnotationProperty .
 ###  http://data.shom.fr/def/navigation_cotiere#pointDebut
 <http://data.shom.fr/def/navigation_cotiere#pointDebut> rdf:type owl:ObjectProperty ;
                                                         rdfs:domain <http://data.shom.fr/def/navigation_cotiere#Visibilite> ;
-                                                        rdfs:range <http://data.shom.fr/def/navigation_cotiere#Point> ;
                                                         rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
                                                         rdfs:label "beginning point"@en ,
                                                                    "point début"@fr .
@@ -317,8 +316,7 @@ skos:related rdf:type owl:AnnotationProperty .
                                                        rdfs:subPropertyOf <http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec> ;
                                                        rdfs:domain <http://data.shom.fr/def/navigation_cotiere#Alignement> ,
                                                                    <http://data.shom.fr/def/navigation_cotiere#EntiteGeographique> ;
-                                                       rdfs:range <http://data.shom.fr/def/navigation_cotiere#Point> ,
-                                                                  <http://data.shom.fr/def/navigation_cotiere#Secteur> ;
+                                                       rdfs:range <http://data.shom.fr/def/navigation_cotiere#Secteur> ;
                                                        rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
                                                        rdfs:label "situated in"@en ,
                                                                   "situé dans"@fr .
@@ -481,7 +479,6 @@ rdf:member rdf:type owl:ObjectProperty .
 
 ###  http://data.shom.fr/def/navigation_cotiere#distance
 <http://data.shom.fr/def/navigation_cotiere#distance> rdf:type owl:DatatypeProperty ;
-                                                      rdfs:domain <http://data.shom.fr/def/navigation_cotiere#Point> ;
                                                       rdfs:range xsd:float ;
                                                       rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
                                                       rdfs:label "distance"@en ,
@@ -604,7 +601,7 @@ rdf:member rdf:type owl:ObjectProperty .
 
 ###  http://data.shom.fr/def/navigation_cotiere#Alignement
 <http://data.shom.fr/def/navigation_cotiere#Alignement> rdf:type owl:Class ;
-                                                        rdfs:subClassOf gsp:Feature ;
+                                                        rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Itineraire> ;
                                                         rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
                                                         rdfs:label "Alignement"@fr ,
                                                                    "Leading Line"@en .
@@ -1102,7 +1099,7 @@ rdf:member rdf:type owl:ObjectProperty .
 
 ###  http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic
 <http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic> rdf:type owl:Class ;
-                                                                            rdfs:subClassOf gsp:Feature ;
+                                                                            rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#EntiteGeographique> ;
                                                                             rdfs:comment "Façon virtuelle d'organiser le flux de trafic"@fr ;
                                                                             rdfs:label "Dispositif de séparation du trafic (DST)"@fr .
 
@@ -1155,6 +1152,16 @@ rdf:member rdf:type owl:ObjectProperty .
                                                                     "Instruction"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Interdiction
+<http://data.shom.fr/def/navigation_cotiere#Interdiction> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Instruction> .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Itineraire
+<http://data.shom.fr/def/navigation_cotiere#Itineraire> rdf:type owl:Class ;
+                                                        rdfs:subClassOf gsp:Feature .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#MarqueDeJour
 <http://data.shom.fr/def/navigation_cotiere#MarqueDeJour> rdf:type owl:Class ;
                                                           rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#ObjetDeSignalisationMaritime> ,
@@ -1199,7 +1206,6 @@ rdf:member rdf:type owl:ObjectProperty .
 
 ###  http://data.shom.fr/def/navigation_cotiere#Navire
 <http://data.shom.fr/def/navigation_cotiere#Navire> rdf:type owl:Class ;
-                                                    rdfs:subClassOf gsp:Feature ;
                                                     rdfs:comment "navire, bâteau, engin nautique"@fr .
 
 
@@ -1216,22 +1222,20 @@ rdf:member rdf:type owl:ObjectProperty .
                                                           rdfs:label "Objet Virtuel"@fr .
 
 
-###  http://data.shom.fr/def/navigation_cotiere#Point
-<http://data.shom.fr/def/navigation_cotiere#Point> rdf:type owl:Class ;
-                                                   rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
-                                                   rdfs:label "Point"@en ,
-                                                              "Point"@fr .
-
-
 ###  http://data.shom.fr/def/navigation_cotiere#QualiteDuFond
 <http://data.shom.fr/def/navigation_cotiere#QualiteDuFond> rdf:type owl:Class ;
                                                            rdfs:subClassOf skos:Concept .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Recommendation
+<http://data.shom.fr/def/navigation_cotiere#Recommendation> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Instruction> .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Repere
 <http://data.shom.fr/def/navigation_cotiere#Repere> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#BalisageFixe> ;
-                                                    rdfs:comment "A prominent object at a fixed location which can be used in determining a location or a direction. (adapted from IHO Dictionary, S-32, 5th Edition, 2643)."@en ;
+                                                    rdfs:comment "A prominent object at a fixed location which can be used in determining a location or a direction (adapted from IHO Dictionary, S-32, 5th Edition, 2643)."@en ;
                                                     rdfs:label "Landmark"@en ,
                                                                "Repère"@fr .
 
@@ -1429,32 +1433,7 @@ gsp:Point rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#Relevement
 :Relevement rdf:type owl:Class ;
-            owl:equivalentClass [ owl:intersectionOf ( gsp:Feature
-                                                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty gsp:hasGeometry ;
-                                                                                owl:someValuesFrom gsp:Line
-                                                                              ]
-                                                                              [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty gsp:sfContains ;
-                                                                                owl:someValuesFrom [ owl:intersectionOf ( gsp:Point
-                                                                                                                          [ rdf:type owl:Restriction ;
-                                                                                                                            owl:onProperty <http://data.shom.fr/def/navigation_cotiere#isGeometryOf> ;
-                                                                                                                            owl:someValuesFrom <http://data.shom.fr/def/navigation_cotiere#Repere>
-                                                                                                                          ]
-                                                                                                                        ) ;
-                                                                                                     rdf:type owl:Class
-                                                                                                   ]
-                                                                              ]
-                                                                            ) ;
-                                                         rdf:type owl:Class
-                                                       ]
-                                                       [ rdf:type owl:Class ;
-                                                         owl:complementOf <http://data.shom.fr/def/navigation_cotiere#Alignement>
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
-            rdfs:subClassOf gsp:Feature .
+            rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Itineraire> .
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq
