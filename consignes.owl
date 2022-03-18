@@ -65,12 +65,24 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#aLEstDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aLEstDe"/>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourAction -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAction">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Interdiction"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Interdiction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -101,7 +113,6 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:label xml:lang="fr">a pour condition locale</rdfs:label>
     </owl:ObjectProperty>
@@ -172,12 +183,17 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
-        <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Route"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Route"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination"/>
         <rdfs:label xml:lang="fr">a pour point de départ</rdfs:label>
@@ -229,7 +245,6 @@
                 <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
             </owl:Restriction>
         </rdfs:range>
-        <rdfs:label xml:lang="fr">a pour temporalité</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -496,6 +511,14 @@
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Renseignement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="fr">a pour numéro de téléphone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporalite -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -799,21 +822,44 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#AMareeBasse -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#MareeBasse -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#AMareeBasse">
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MareeBasse">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">à marée basse</rdfs:label>
+        <rdfs:label xml:lang="fr">marée basse</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#AMareeHaute -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#MareeHaute -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#AMareeHaute">
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MareeHaute">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">à marée haute</rdfs:label>
+        <rdfs:label xml:lang="fr">marée haute</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#5001 -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#5001">
+        <nav:aLEstDe rdf:resource="http://data.shom.fr/def/navigation_cotiere#6002"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#6001 -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#6001">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
+        <nav:aPourPointDeDepart rdf:resource="http://data.shom.fr/def/navigation_cotiere#5001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#6002 -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#6002"/>
     
 
 
@@ -898,11 +944,29 @@
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/BeauTemps -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/BeauTemps">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
+        <rdfs:label xml:lang="fr">beau temps</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
         <rdfs:label xml:lang="fr">mauvais temps</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/TempsCalme -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/TempsCalme">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
+        <rdfs:label xml:lang="fr">temps calme</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -967,6 +1031,20 @@
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type de Navire</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite">
+        <rdfs:label xml:lang="fr">a pour temporalité</rdfs:label>
+    </rdf:Description>
     
 
 
