@@ -31,7 +31,7 @@ ent:4003 a nav:EntiteGeographique;
 ent:4004 a nav:EntiteGeographique;
 	nav:aPourNature teg:Phare;
 	nav:estEntoureDe ent:4005;
-	nav:estDeHauteur "43.0"^^xsd:float;
+	nav:estDeHauteur "43.0"^^xsd:float {|qudt:Unit unit:M|};
 	nav:estDeCouleur nav:Grise;
 	nav:estEquipeeDUneBaliseAIS "true"^^xsd:boolean.
 
@@ -46,14 +46,14 @@ ent:4007 a nav:EntiteGeographique;
 	rdfs:label "Basse Astan"@fr;
 	nav:estMarquePar ent:4010;
 	nav:estALEstDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float.
+	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float {|qudt:Unit unit:M|}.
 
 ent:4008 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger;
 	nav:aPourNature teg:Basse;
 	rdfs:label "Grande Basse"@fr;
 	nav:estAuNordDe ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float.
+	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float {|qudt:Unit unit:M|}.
 
 ent:4009 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger;
@@ -61,7 +61,7 @@ ent:4009 a nav:EntiteGeographique;
 	rdfs:label "Men Aodi"@fr;
 	nav:estALOuestDe ent:4001;
 	nav:estUneEntiteMarquee "false"^^xsd:boolean;
-	nav:estDecouverteDe "0.1"^^xsd:float.
+	nav:estDecouverteDe "0.1"^^xsd:float {|qudt:Unit unit:M|}.
 
 ent:4010 a nav:Bouee;
 	nav:estUneMarqueDeType nav:MarqueCardinale;
@@ -75,8 +75,8 @@ ent:4010 a nav:Bouee;
 
 ent:4011 a nav:Chenal;
 	rdfs:label "Canal de l'Île de Batz"@fr;
-	nav:aPourProfondeurEauMini "0.1"^^xsd:float;
-	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float;
+	nav:aPourProfondeurEauMini "0.1"^^xsd:float {|qudt:Unit unit:M|};
+	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float {|qudt:Unit unit:M|};
 	nav:estEntre [
 		a rdf:Bag;
 		rdf:_1 ent:4001;
@@ -126,7 +126,7 @@ ent:4017 a nav:GroupeDeMouillages;
 	
 ent:4018 a nav:Mouillage;
 	nav:estAuNordEstDe ent:4019;
-	nav:aPourProfondeurEau "14.0"^^xsd:float;
+	nav:aPourProfondeurEau "14.0"^^xsd:float {|qudt:Unit unit:M|};
 	nav:aPourNatureDuFond "sable et coquille de bonne tenue"^^xsd:string.
 	
 # >>> OU utiliser instances ? ---> string pour l'instant
@@ -135,15 +135,12 @@ ent:4019 a nav:Tourelle;
 	rdfs:label "Men Guen Bras"@fr.
 	
 ent:4020 a nav:EntiteGeographique;
-	nav:aPourNature teg:Roche;
-	nav:estALEstNordEstDe ent:4019.
+	nav:aPourNature teg:Roche.
 
 # >>> roche = danger ? ---> FAIT
 # >>> distance + direction ? ---> voir mail NA
 
-<< <<ent:4020 nav:estALEstNordEstDe ent:4019>> nav:aPourDistance "0.3"^^xsd:float>> qudt:Unit <http://qudt.org/2.1/vocab/unit/MI_N>.
-
-<< <<ent:4020 nav:aUneRelationSpatialeAvec ent:4019>> nav:aPourSeparation "0.3"^^xsd:float>> qudt:Unit <http://qudt.org/2.1/vocab/unit/MI_N>.
+<< <<ent:4020 nav:estALEstNordEstDe ent:4019>> nav:aPourSeparation "0.3"^^xsd:float>> qudt:Unit unit:MI_N.
 
 ent:4021 a nav:ZoneDeMouillage;
 	nav:estALOuestDe ent:4011;
@@ -155,7 +152,7 @@ ent:4022 a nav:Tourelle;
 	rdfs:label "Malvoch"@fr;
 	nav:estPresDe [nav:lExtremiteDe ent:4023].
 	
-<< <<ent:4022 nav:estPresDe ent:4023>> nav:restrictionObjet nav:extremite >> nav:restrictionSujet nav:pied.
+#<< <<ent:4022 nav:estPresDe ent:4023>> nav:restrictionObjet nav:extremite >> nav:restrictionSujet nav:pied.
 
 ent:4023 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee;
@@ -180,6 +177,33 @@ ent:4025 a nav:EntiteGeographique;
 	nav:aPourNature teg:Departement;
 	rdfs:label "Finistère"@fr.
 	
+#Exemple 5
+#"La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle. On peut mouiller, suivant le tirant d’eau, à l’ouvert de l’anse et dans le SW de l’extrémité Ouest de l’île, tout comme dans l’anse de Port-­Neuf, située entre les communes de Cléder et Sibiril. Un mouillage pour 65 bateaux y est organisé, réglementé par l’arrêté du préfet du Finistère 20150146 ­- 0005 du 26 mai 2015."
+
+ent:4026 a nav:EntiteGeographique;
+	nav:aPourNature teg:Pointe;
+	rdfs:label "Pointe de Bloscon"@fr;
+	nav:aPourElement ent:4027.
 	
+ent:4027 a nav:EntiteGeographique;
+	nav:aPourNature teg:Chapelle;
+	rdfs:label "chapelle de Sainte-Barbe";
+	nav:aPourLat "48° 43,6' N"^^xsd:string;
+	nav:aPourLng "3° 58,2' W"^^xsd:string;
+	nav:estDeCouleur nav:Blanche.
+	
+ent:4028 a nav:EntiteGeographique;
+	nav:aPourNature teg:Clocher;
+	rdfs:label "clocher de Roscoff"@fr;
+	nav:estAuSudOuestDe ent:4026.
+
+ent:4029 a nav:EntiteGeographique;
+	rdfs:label "installations portuaires de Roscoff-Bloscon"@fr;
+	nav:estAuSudDe ent:4028.
+	
+
+#Exemple 6
+#"Moguériec (48° 41,3' N — 4° 04,3' W) est abrité au Nord par une jetée. Ce port offre un abri précaire aux pêcheurs et aux plaisanciers locaux. [...]
+#À l’abri de la jetée débouche un ruisseau bordé d’un quai de chaque côté. Sur la rive Nord se trouve un terre-plein et deux escaliers. Les posées, sur sable plat, sont franches partout sauf en bordure de la jetée ; les fonds découvrent de 4 à 5 m, voire de plus de 7 m à l’embouchure du ruisseau. La plupart des places à quai sont occupées par des bateaux de pêche qui y béquillent ; les bateaux de plaisance échouent entre le terre-plein et le milieu de la jetée."
 	
 #exemple ENTRE
