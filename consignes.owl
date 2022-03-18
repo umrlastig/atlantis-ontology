@@ -68,6 +68,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourAction -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourAction">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Interdiction"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
@@ -76,9 +77,16 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourCible -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCible">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
         <rdfs:label xml:lang="fr">a pour cible</rdfs:label>
@@ -121,6 +129,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourDepartement -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDepartement">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:label xml:lang="fr">a pour département</rdfs:label>
@@ -131,6 +140,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourElement -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourElement">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
@@ -146,6 +156,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourEntiteImpliquee -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourEntiteImpliquee">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
@@ -162,6 +173,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourLieuDEffet -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLieuDEffet">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">a pour lieu d&apos;effet</rdfs:label>
@@ -172,6 +184,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourNature -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNature">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
@@ -187,6 +200,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
@@ -203,6 +217,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic"/>
@@ -217,11 +232,18 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourRepere -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRepere">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">a pour repère</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourSpecification -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
     
 
 
@@ -323,7 +345,8 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estDeCouleur -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeCouleur">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Couleur"/>
         <rdfs:label xml:lang="fr">est de couleur</rdfs:label>
@@ -334,6 +357,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estGerePar -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estGerePar">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Organisation"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -346,6 +370,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estImposeePar -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estImposeePar">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Reglement"/>
         <rdfs:label xml:lang="fr">est imposée par</rdfs:label>
@@ -369,6 +394,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUnElementDe -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnElementDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is rdf:type part.</rdfs:comment>
@@ -383,7 +409,9 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque"/>
         <rdfs:label xml:lang="fr">est une marque de type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -392,6 +420,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#impliqueDeSuivre -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#impliqueDeSuivre">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourSpecification"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">implique de suivre</rdfs:label>
@@ -410,6 +439,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#marqueLEntite -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#marqueLEntite">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -498,6 +528,14 @@
     <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#member -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#member"/>
+    
+    
+    
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -602,6 +640,14 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques">
+        <rdfs:label xml:lang="fr">a pour coordonnées géographiques</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourException -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourException">
@@ -646,6 +692,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourLat -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLat">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourLng"/>
@@ -657,6 +704,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourLng -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLng">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="fr">a pour lng</rdfs:label>
@@ -707,7 +755,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
     </owl:DatatypeProperty>
@@ -754,6 +802,16 @@
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#AideALaNavigation -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:comment xml:lang="fr">https://diffusion.shom.fr/pro/balisage_maritime.html</rdfs:comment>
+        <rdfs:label xml:lang="fr">Aide à la Navigation</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle">
@@ -777,7 +835,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Amer -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Amer">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:comment xml:lang="en">A prominent object at a fixed location which can be used in determining a location or a direction (adapted from IHO Dictionary, S-32, 5th Edition, 2643).</rdfs:comment>
         <rdfs:label xml:lang="fr">Amer</rdfs:label>
         <rdfs:label xml:lang="en">Landmark</rdfs:label>
@@ -797,7 +855,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Balise -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Balise">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
@@ -815,7 +873,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Bouee -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Bouee">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
@@ -946,7 +1004,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Espar -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Espar">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Espar</rdfs:label>
     </owl:Class>
     
@@ -972,7 +1030,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Feu -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Feu">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Feu</rdfs:label>
     </owl:Class>
     
@@ -1094,7 +1152,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Phare -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Phare">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Phare</rdfs:label>
     </owl:Class>
     
@@ -1153,16 +1211,6 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Repere -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Repere">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:comment xml:lang="fr">https://diffusion.shom.fr/pro/balisage_maritime.html</rdfs:comment>
-        <rdfs:label xml:lang="fr">Repère</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#Rivage -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Rivage">
@@ -1207,7 +1255,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Tourelle -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Tourelle">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">Tourelle</rdfs:label>
     </owl:Class>
     
@@ -1264,7 +1312,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeMarque">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type De Marque</rdfs:label>
+        <rdfs:label xml:lang="fr">Type de Marque</rdfs:label>
     </owl:Class>
     
 
@@ -1302,7 +1350,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:label xml:lang="fr">Zone Du Domaine Maritime</rdfs:label>
+        <rdfs:label xml:lang="fr">Zone du Domaine Maritime</rdfs:label>
     </owl:Class>
     
 
@@ -1311,7 +1359,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:label xml:lang="fr">Zone Du Domaine Terrestre</rdfs:label>
+        <rdfs:label xml:lang="fr">Zone du Domaine Terrestre</rdfs:label>
     </owl:Class>
     
 
@@ -1402,6 +1450,12 @@
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+    
+    
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     
 
 
