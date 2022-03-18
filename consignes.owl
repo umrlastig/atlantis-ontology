@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
      xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
+     xmlns:P21="http://vocab.nerc.ac.uk/collection/P21/current/"
+     xmlns:eau="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/"
      xmlns:gsp="http://www.opengis.net/ont/geosparql#"
      xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tac="http://data.shom.fr/id/codes/nav/typedaction/"
+     xmlns:tim="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/"
+     xmlns:tio="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/"
+     xmlns:tit="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -340,6 +346,14 @@
     <!-- http://www.w3.org/2000/01/rdf-schema#member -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#member"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exact match</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -883,24 +897,6 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#MareeBasse -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MareeBasse">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceano"/>
-        <rdfs:label xml:lang="fr">marée basse</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#MareeHaute -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/def/navigation_cotiere#MareeHaute">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceano"/>
-        <rdfs:label xml:lang="fr">marée haute</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://data.shom.fr/id/codes/nav/typedaction/Attente -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedaction/Attente">
@@ -914,6 +910,8 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedaction/Baignade">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDAction"/>
+        <skos:exactMatch rdf:resource="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS10387"/>
         <rdfs:label xml:lang="fr">baignade</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1018,6 +1016,24 @@
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeBasse -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeBasse">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceano"/>
+        <rdfs:label xml:lang="fr">marée basse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeHaute -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeHaute">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceano"/>
+        <rdfs:label xml:lang="fr">marée haute</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour">
@@ -1069,6 +1085,18 @@
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type d&apos;Indication Temporelle</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f -->
+
+    <owl:NamedIndividual rdf:about="http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS10387 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS10387"/>
     
 
 
