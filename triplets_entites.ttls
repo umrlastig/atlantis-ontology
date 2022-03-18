@@ -5,10 +5,11 @@
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
 @prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
-@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
 
 #exemple 1
 #"Vue du Nord, l’Île de Batz montre la tour du sémaphore et surtout le phare, tour grise haute de 43 m, entourée de maisons. Ce phare est équipé d’une balise d’émission AIS. L’île est débordée de tous côtés par des dangers. Les plus au large sont : à l’Est, la Basse Astan, couverte de 0,8 m d’eau, marquée par la bouée « Astan », cardinale Est lumineuse ; au Nord, la Grande Basse, couverte de 0,5 m d’eau ; à l’Ouest, Men Aodi, roche non balisée découvrant de 0,1 m."
@@ -44,101 +45,141 @@ ent:4007 a nav:EntiteGeographique;
 	nav:aPourNature teg:Basse;
 	rdfs:label "Basse Astan"@fr;
 	nav:estMarquePar ent:4010;
-	rlsp:eastOf ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.8"xsd:float.
+	nav:estALEstDe ent:4001;
+	nav:estCouverteDUneHauteurDEauDe "0.8"^^xsd:float.
 
 ent:4008 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger;
 	nav:aPourNature teg:Basse;
 	rdfs:label "Grande Basse"@fr;
-	rlsp:northOf ent:4001;
-	nav:estCouverteDUneHauteurDEauDe "0.5"xsd:float.
+	nav:estAuNordDe ent:4001;
+	nav:estCouverteDUneHauteurDEauDe "0.5"^^xsd:float.
 
 ent:4009 a nav:EntiteGeographique;
 	nav:aPourNature teg:Danger;
 	nav:aPourNature teg:Roche;
 	rdfs:label "Men Aodi"@fr;
-	rlsp:westOf ent:4001;
+	nav:estALOuestDe ent:4001;
 	nav:estUneEntiteMarquee "false"^^xsd:boolean;
-	nav:decouvrantDe "0.1"xsd:float.
+	nav:estDecouverteDe "0.1"^^xsd:float.
 
 ent:4010 a nav:Bouee;
 	nav:estUneMarqueDeType nav:MarqueCardinale;
 	nav:aPourTypeCardinale nav:Est;
 	nav:estUnRepereLumineux "true"^^xsd:boolean;
 	rdfs:label "Astan"@fr.
-	
+
+
 #exemple 2
 #"Le Canal de l’Île de Batz est un chenal profond de 0,1 à 10 m qui sépare l’Île de Batz de la côte et donne accès aux ports d’échouage de Porz Kernok (Île de Batz) et de Roscoff (§ 9.4.3.6.). On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."	
 
-ent:4011 a nav:Chenal.
+ent:4011 a nav:Chenal;
+	rdfs:label "Canal de l'Île de Batz"@fr;
+	nav:aPourProfondeurEauMini "0.1"^^xsd:float;
+	nav:aPourProfondeurEauMaxi "10.0"^^xsd:float;
+	nav:estEntre [
+		a rdf:Bag;
+		rdf:_1 ent:4001;
+		rdf:_2 ent:4012;
+		];
+	nav:donneAccesA [
+		a rdf:Bag;
+		rdf:_1 ent:4013;
+		rdf:_2 ent:4014;
+		];
+	nav:aPourInfo "On ne doit s’y engager qu’avec une bonne connaissance des lieux et le concours d’un pratique local."^^xsd:string.
 
-ent:4012 a nav:EntiteGeographique;
-	nav:aPourNature teg:Clocher;
-	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
-	nav:estElementDe ent:4001.
-
-ent:4013 a nav:Cote;
-	nav:estElementDe ent:4001;
-	rlsp:southOf ent:4001.
-
-ent:4014 a nav:EntiteGeographique;
-	nav:aPourNature teg:Pyramide;
-	nav:estElementDe ent:4015.
-
-ent:4015 a nav:EntiteGeographique;
-	nav:aPourNature teg:Ile;
-	rdfs:label "île Pigued"@fr.
-
-ent:4016 a nav:Chenal.
+ent:4012 a nav:Cote;
+	rdfs:label "côte"@fr.
 	
-ent:4017 a nav:EntiteGeographique;
-	rdfs:label "tourelle « Ar Chaden »"@fr.
+ent:4013 a nav:EntiteGeographique;
+	nav:aPourNature teg:PortDEchouage;
+	nav:estElementDe ent:4015;
+	rdfs:label "port d'échouage de Porz Kernok (Île de Batz)"@fr.
+	
+ent:4014 a nav:EntiteGeographique;
+	nav:aPourNature teg:PortDEchouage;
+	nav:estElementDe ent:4016;
+	rdfs:label "port d'échouage de Roscoff"@fr.
+	
+ent:4015 a nav:EntiteGeographique;
+	rdfs:label "Porz Kernok"@fr;
+	nav:aPourNature teg:Ville;
+	nav:estElementDe ent:4001.
+	
+ent:4016 a nav:EntiteGeographique;
+	rdfs:label "Roscoff"@fr;
+	nav:aPourNature teg:Ville.
 
-ent:4018 a nav:EntiteGeographique;
-	rdfs:label "tourelle « Men Guen Bras »"@fr;
-	nav:aPourElement ent:4019.
 
-ent:4019 a nav:EntiteGeographique;
-	nav:aPourNature teg:FeuASecteur.
+#exemple 3
+#"MOUILLAGES D’ATTENTE. — Ces mouillages, utilisés notamment par les navires se rendant à Roscoff, se trouvent dans l’Est et dans l’Ouest du chenal. Un des meilleurs se trouve au NE de la tourelle « Men Guen Bras », par profondeur de 14 m, fond de sable et coquille de bonne tenue. Prendre garde à la roche profonde de 2,8 m située à 0,3 M à l’ENE de la tourelle.
+# Par vents d’Est, on peut mouiller partout dans la partie Ouest du chenal jusqu’au Sud de la tourelle « Malvoch », implantée près de l’extrémité de la jetée de Porz Kernok."
 
-ent:4016 a nav:Entre;
-	nav:entiteImpliquee ent:4017;
-	nav:entiteImpliquee ent:4018.
+ent:4017 a nav:GroupeDeMouillages;
+	nav:estUtiliséePar "les navires se rendant à Roscoff"^^xsd:string;
+	nav:estDansLEstDe ent:4011;
+	nav:estDansLOuestDe ent:4011;
+	nav:aPourElement ent:4018.
+	
+# >>> dans l'ouest de vs. à l'ouest de ? ---> les deux, ajouter à l'ontologie ---> FAIT
+	
+ent:4018 a nav:Mouillage;
+	nav:estAuNordEstDe ent:4019;
+	nav:aPourProfondeurEau "14.0"^^xsd:float;
+	nav:aPourNatureDuFond "sable et coquille de bonne tenue"^^xsd:string.
+	
+# >>> OU utiliser instances ? ---> string pour l'instant
+	
+ent:4019 a nav:Tourelle;
+	rdfs:label "Men Guen Bras"@fr.
+	
+ent:4020 a nav:EntiteGeographique;
+	nav:aPourNature teg:Roche;
+	nav:estALEstNordEstDe ent:4019.
 
-ent:4020 a nav:ZoneDeDanger;
-	nav:auxAbordsDe ent:4016.
+# >>> roche = danger ? ---> FAIT
+# >>> distance + direction ? ---> voir mail NA
 
-ent:4021 a nav:EntiteGeographique;
-	nav:aPourNature teg:Feu;
-	nav:aLExtremiteDe ent:4022.
+<< <<ent:4020 nav:estALEstNordEstDe ent:4019>> nav:aPourDistance "0.3"^^xsd:float>> qudt:Unit <http://qudt.org/2.1/vocab/unit/MI_N>.
 
-ent:4022 a nav:EntiteGeographique;
-	nav:aPourNature teg:Estacade;
-	nav:estElementDe ent:4023.
+<< <<ent:4020 nav:aUneRelationSpatialeAvec ent:4019>> nav:aPourSeparation "0.3"^^xsd:float>> qudt:Unit <http://qudt.org/2.1/vocab/unit/MI_N>.
+
+ent:4021 a nav:ZoneDeMouillage;
+	nav:estALOuestDe ent:4011;
+	nav:estAuNordDe ent:4023.
+
+# >>> jusqu’au Sud de la tourelle ? ---> FAIT
+
+ent:4022 a nav:Tourelle;
+	rdfs:label "Malvoch"@fr;
+	nav:estPresDe [nav:lExtremiteDe ent:4023].
+	
+<< <<ent:4022 nav:estPresDe ent:4023>> nav:restrictionObjet nav:extremite >> nav:restrictionSujet nav:pied.
 
 ent:4023 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee;
-	rdfs:label "jetée de Roscoff"@fr;
-	nav:estElementDe ent:4024.
+	rdfs:label "jetée de Porz Kernok"@fr.
+	
+# >>> près de l’extrémité de ? ---> FAIT, ajouter une propriété
+	
+	
+#Exemple 4
+#"PORT DE L’ÎLE DE BATZ (Porz Kernok) [48° 44,6' N — 4° 00,8' W]. — Ce port d’échouage est géré par le département du Finistère. Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."
 
 ent:4024 a nav:EntiteGeographique;
-	nav:aPourNature teg:Ville;
-	rdfs:label "Roscoff"@fr.
-
+	nav:aPourNature teg:PortDEchouage;
+	nav:estElementDe ent:4015;
+	nav:aPourLat "48° 44,6' N"^^xsd:string;
+	nav:aPourLng "4° 00,8' W"^^xsd:string;
+	nav:aPourInfo "Situé sur la côte Sud de l’Île de Batz et bien protégé de tous les vents, il sert d’abri aux pêcheurs de l’île."^^xsd:string;
+	nav:estGerePar ent:4025;
+	owl:sameAs ent:4013.
+	
 ent:4025 a nav:EntiteGeographique;
-	nav:aPourNature teg:Feu;
-	nav:aLExtremiteDe ent:4026.
-
-ent:4026 a nav:EntiteGeographique;
-	nav:aPourNature teg:Debarcadere.
-
-ent:4027 a nav:ZoneDeMouillage;
-	rlsp:eastOf ent:4028;
-	nav:estElementDe ent:4028.
-
-ent:4028 a nav:Chenal.
-
-ent:4029 a nav:ZoneDeMouillage;
-	rlsp:westOf ent:4028;
-	nav:estElementDe ent:4028.
+	nav:aPourNature teg:Departement;
+	rdfs:label "Finistère"@fr.
+	
+	
+	
+#exemple ENTRE
