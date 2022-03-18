@@ -1657,6 +1657,17 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Alignement"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Relevement"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Reperage"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Route"/>
+            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Secteur"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Information"/>
             <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Instruction"/>
             <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Interdiction"/>
