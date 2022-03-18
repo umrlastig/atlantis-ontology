@@ -626,19 +626,20 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#isGeometryOf -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#isGeometryOf">
-        <owl:inverseOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#lExtremiteDe -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#lExtremiteDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
         <rdfs:label xml:lang="fr">l&apos;extremité de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#leMeridienDe -->
+
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#leMeridienDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:label xml:lang="fr">le méridien de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -670,16 +671,6 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#unePartieDe">
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">une partie de</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
-
-    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql#"/>
     </owl:ObjectProperty>
     
 
@@ -1036,6 +1027,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Zone de contact entre la terre et la mer vers l&apos;intérieur (dunes, embruns) et la ligne des plus basses mers ; littoral. (Certains auteurs distinguent la côte, bande de terre telle qu&apos;elle est vue du large et qui présente un certain relief, et le rivage, zone soumise directement à l&apos;action des vagues.) (https://www.larousse.fr/dictionnaires/francais/c%c3%b4te/19603).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Côte</rdfs:label>
     </owl:Class>
     
 
@@ -1104,6 +1096,12 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#EntiteGeographique -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourNature"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:comment xml:lang="en"> ... </rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -1347,6 +1345,14 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     
 
 
+    <!-- http://data.shom.fr/def/navigation_cotiere#Terre -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Terre">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
+    </owl:Class>
+    
+
+
     <!-- http://data.shom.fr/def/navigation_cotiere#Tourelle -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Tourelle">
@@ -1434,7 +1440,6 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
-        <rdfs:comment xml:lang="fr">Parfois appelé &apos;échouage&apos;</rdfs:comment>
         <rdfs:label xml:lang="fr">Type de Lieu de Stationnement</rdfs:label>
     </owl:Class>
     
@@ -1476,36 +1481,6 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
         <rdfs:comment xml:lang="en">A feature is simply any entity in the real world with some spatial location. This could be a park, an airport, a monument, a restaurant,etc. A feature can have a spatial location that cannot be precisely defined, such as a swamp or a mountain range (GeoSPARQL: Enabling a GeospatialSemantic Web by Robert Battle and Dave Kolas).</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
-
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry"/>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#Line -->
-
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Line">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Linestring"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#Linestring -->
-
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Linestring">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#Point -->
-
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Point">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     </owl:Class>
     
 
@@ -1918,6 +1893,15 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Baie -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Baie">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">baie</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Balise">
@@ -1981,6 +1965,15 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">cale</skos:prefLabel>
         <skos:prefLabel xml:lang="en">slipway</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Cap -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Cap">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">cap</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2157,6 +2150,14 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="fr">feu à secteur</skos:prefLabel>
         <skos:prefLabel xml:lang="en">sector light</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Goulet -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Goulet">
+        <rdfs:label xml:lang="fr">goulet</rdfs:label>
     </owl:NamedIndividual>
     
 
