@@ -67,7 +67,9 @@
 
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique">
+        <rdfs:label xml:lang="fr">a pour caractéristique</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -76,8 +78,8 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourElement">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estUnElementDe"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is partly constituted.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Relie une entité topographique à une autre dont elle est partiellement constituée.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -91,7 +93,7 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourForme">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -103,19 +105,18 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourInfo -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourMotif -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourMotif">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -147,24 +148,6 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal">
@@ -177,7 +160,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
         <owl:propertyDisjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">a pour type cardinal</rdfs:label>
@@ -240,6 +223,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">a une relation spatiale avec</rdfs:label>
     </owl:ObjectProperty>
     
@@ -250,8 +235,8 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#deborde">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDebordeDe"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">déborde</rdfs:label>
     </owl:ObjectProperty>
     
@@ -262,8 +247,8 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#donneAccesA">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">donne accès à</rdfs:label>
         <rdfs:label xml:lang="en">gives access to</rdfs:label>
@@ -276,8 +261,8 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#entoure">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estEntoureDe"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     </owl:ObjectProperty>
     
 
@@ -286,8 +271,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALAbriDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est à l&apos;abri de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -320,8 +305,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALExtremiteDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est à l&apos;extremité de</rdfs:label>
         <rdfs:label xml:lang="en">is at the extremity of</rdfs:label>
@@ -367,8 +352,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAccessiblePar">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est accessible par</rdfs:label>
     </owl:ObjectProperty>
     
@@ -435,6 +420,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuxAbordsDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est aux abords de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -511,20 +498,11 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDebordeDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est débordé de</rdfs:label>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDecouverteDe -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
     </owl:ObjectProperty>
     
 
@@ -533,8 +511,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEnracineA">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est enraciné à</rdfs:label>
     </owl:ObjectProperty>
     
@@ -544,8 +522,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEntoureDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est entouré de</rdfs:label>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
@@ -564,21 +542,12 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#estGerePar -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estGerePar">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estLeGerantDe"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -606,7 +575,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est le gérant de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -661,8 +630,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estProtegePar">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est protégé par</rdfs:label>
     </owl:ObjectProperty>
     
@@ -685,8 +654,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnElementDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:comment xml:lang="en">Links rdf:type topographic entity to another, of which it is rdf:type part.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Relie une entité topographique à une autre dont elle fait partie.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
@@ -696,37 +665,12 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
-                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneMarqueDeType">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
         <rdfs:label xml:lang="fr">est une marque de type</rdfs:label>
     </owl:ObjectProperty>
     
@@ -736,6 +680,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#lExtremiteDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">l&apos;extremité de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -745,6 +691,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#leMeridienDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">le méridien de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -754,6 +702,8 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#leMilieuDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#unePartieDe"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">le milieu de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -771,7 +721,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="en">marks entity</rdfs:label>
         <rdfs:label xml:lang="fr">marque l&apos;entité</rdfs:label>
@@ -782,6 +732,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#unePartieDe -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#unePartieDe">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">une partie de</rdfs:label>
     </owl:ObjectProperty>
@@ -853,12 +804,6 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique -->
-
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique"/>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques">
@@ -870,8 +815,8 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourDimension -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDimension">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:comment>L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label>a pour dimension</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -880,8 +825,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHauteur">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label>a pour hauteur</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -890,6 +837,7 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -898,8 +846,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeur">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label>a pour largeur</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -908,7 +858,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeurMaxi">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourLargeur"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour largeur maximum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -917,7 +870,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourLargeurMini">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourLargeur"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour largeur minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -928,7 +884,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="fr">a pour lat</rdfs:label>
+        <rdfs:label xml:lang="fr">a pour latitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -939,7 +895,7 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="fr">a pour lng</rdfs:label>
+        <rdfs:label xml:lang="fr">a pour longitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -947,6 +903,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -955,7 +912,14 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedelieudestationnement/liste"/>
+            </owl:Restriction>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="fr">a pour nombre de places</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -963,8 +927,10 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourProfondeur &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour profondeur eau</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -973,8 +939,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMaxi">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourProfondeur &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour profondeur eau maximum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -983,8 +951,10 @@
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEauMini">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourProfondeur &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour profondeur eau minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -992,9 +962,8 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourSeparation -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourSeparation">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourSeparation &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Le sujet de cette propriété sera toujours un quoted triple écrit en RDF-star. L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:rélationSpatiale _:autreEntité &gt;&gt; _:aPourSeparation &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour séparation</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1003,7 +972,10 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estDecouverteDe -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:estDecouverteDe &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1011,7 +983,9 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="fr">est équipé d&apos;une balise AIS</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1019,7 +993,9 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1027,7 +1003,9 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1096,6 +1074,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Balise</rdfs:label>
     </owl:Class>
     
 
@@ -1110,6 +1089,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Bouée</rdfs:label>
     </owl:Class>
     
 
@@ -1118,6 +1098,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Chenal">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:label xml:lang="fr">Chenal</rdfs:label>
     </owl:Class>
     
 
@@ -1148,6 +1129,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Danger</rdfs:label>
     </owl:Class>
     
 
@@ -1155,6 +1137,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#DirectionCardinale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale">
+        <rdfs:comment xml:lang="fr">Les points cardinaux de la rose des vents. Nous en comptons 16.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="en">Cardinal Direction</rdfs:label>
         <rdfs:label xml:lang="fr">Direction Cardinale</rdfs:label>
@@ -1167,6 +1150,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
         <owl:disjointWith rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+        <rdfs:comment xml:lang="fr">Les points cardinaux qui se retrouvent entre les quatre points cardinaux principaux. Nous en comptons 12.</rdfs:comment>
         <rdfs:label xml:lang="fr">Direction Cardinale Complexe</rdfs:label>
     </owl:Class>
     
@@ -1176,6 +1160,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+        <rdfs:comment xml:lang="fr">Les quatre points cardinaux principaux de la rose des vents : nord (0°), est (90°), sud (180°), ouest (270°).</rdfs:comment>
         <rdfs:label xml:lang="fr">Direction Cardinale Simple</rdfs:label>
     </owl:Class>
     
@@ -1184,6 +1169,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#DirectionLaterale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale">
+        <rdfs:comment xml:lang="fr">Les deux directions oposées à gauche et à droit d&apos;un navire selon un observateur situé sur le navire et orienté vers l&apos;avant. La direction bâbord se trouve à gauche et tribord à droit.</rdfs:comment>
         <rdfs:label xml:lang="fr">Direction Latérale</rdfs:label>
     </owl:Class>
     
@@ -1193,7 +1179,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DispositifDeSeparationDuTrafic">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideVirtuelleALaNavigation"/>
-        <rdfs:comment xml:lang="fr">Façon virtuelle d&apos;organiser le flux de trafic</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Façon virtuelle d&apos;organiser le flux de trafic en mer.</rdfs:comment>
         <rdfs:label xml:lang="fr">Dispositif de séparation du trafic (DST)</rdfs:label>
     </owl:Class>
     
@@ -1209,11 +1195,9 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:comment xml:lang="en"> ... </rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">Entité Géographique</rdfs:label>
         <rdfs:label xml:lang="en">Geographic Entity</rdfs:label>
-        <skos:definition xml:lang="en"> ... </skos:definition>
     </owl:Class>
     
 
@@ -1228,6 +1212,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Espar</rdfs:label>
     </owl:Class>
     
 
@@ -1242,6 +1227,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Feu</rdfs:label>
     </owl:Class>
     
 
@@ -1256,6 +1242,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Feu à Secteur</rdfs:label>
     </owl:Class>
     
 
@@ -1265,6 +1252,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
         <rdfs:comment xml:lang="fr">À l&apos;intérieur des terres, dans l&apos;arrière-pays ou assez loin de la côte, par opposition au bord de mer (https://www.larousse.fr/dictionnaires/francais/terre/77443#175925).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Intérieur des Terres</rdfs:label>
     </owl:Class>
     
 
@@ -1274,6 +1262,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Large">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
         <rdfs:comment xml:lang="fr">La haute mer (https://www.larousse.fr/dictionnaires/francais/large/46283).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Large</rdfs:label>
     </owl:Class>
     
 
@@ -1304,6 +1293,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Zone sinueuse où s&apos;établit le contact entre la mer ou un lac et la terre. (Le terme a un sens plus large que rivage et côte, qui désignent respectivement les domaines du littoral soumis directement ou indirectement à l&apos;action de la mer.) (https://www.larousse.fr/dictionnaires/francais/littoral/47506).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Littoral</rdfs:label>
     </owl:Class>
     
 
@@ -1312,6 +1302,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Marque</rdfs:label>
     </owl:Class>
     
 
@@ -1319,6 +1310,22 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                        <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1345,17 +1352,280 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Les marques cardinales, dont l’emploi est associé à celui du compas du navire, indiquent où le navire peut trouver des eaux saines. Elles sont partout les mêmes, quelle que soit la région, A ou B.
+Une marque cardinale peut être utilisée par exemple :
+– pour indiquer que les eaux les plus profondes se trouvent dans la direction (Nord, Est, Sud ou Ouest) désignée par le nom de la marque ;
+– pour indiquer de quel côté d’un danger se trouvent les eaux saines ;
+– pour attirer l’attention sur une configuration particulière d’un chenal telle qu’un coude, une jonction, une bifurcation ou l’extrémité d’un banc.
+Les quadrants Nord, Est, Sud et Ouest sont respectivement limités par les azimuts vrais NW-NE, NE-SE, SE-SW et SW-NW dont l’origine est le point à marquer (point d’intérêt).
+Une marque cardinale reçoit le nom du quadrant dans lequel elle est placée.
+Le nom d’une marque cardinale indique qu’il convient de passer, par rapport à la marque, dans le quadrant qui porte ce nom.
+Dans le code standard, les revêtements rétroréfléchissants des marques cardinales sont constitués d’une ou plusieurs bandes horizontales, lettres, chiffres ou symboles blancs.
+Dans le code détaillé, les revêtements rétroréfléchissants des marques cardinales sont constitués comme suit :
+– marques cardinales Nord : une bande horizontale bleue sur la partie noire de la marque et une bande horizontale jaune (jaune citron, d’aspect blanc de nuit lorsque éclairé par un projecteur) sur la partie jaune de la marque ;
+– marques cardinales Est : deux bandes horizontales bleues sur la partie supérieure noire de la marque ;
+– marques cardinales Sud : une bande horizontale jaune sur la partie jaune de la marque et une bande horizontale bleue sur la partie noire de la marque ;
+– marques cardinale Ouest : deux bandes horizontales jaunes sur la partie supérieure jaune de la marque.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque Cardinale</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDEauSaine -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleEst -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDEauSaine">
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleEst">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Est"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalEst"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Est"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Cardinale Est</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleNord -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleNord">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Nord"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalNord"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Nord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Cardinale Nord</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleOuest -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleOuest">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Ouest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalOuest"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Ouest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Cardinale Ouest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleSud -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueCardinaleSud">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Sud"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifCardinalSud"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueCardinale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Sud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Cardinale Sud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDEauxSaines -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDEauxSaines">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifEauxSaines"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Blanc"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Une marque d’eaux saines indique que les eaux sont saines tout autour d’elle.
+Une marque d’eaux saines sert à définir l’axe d’un chenal et le milieu du chenal. Elle peut aussi être utilisée pour indiquer un atterrissage.
+Dans le code standard, les revêtements rétroréfléchissants des marques d’eaux saines sont constitués d’une ou plusieurs bandes horizontales, lettres, chiffres ou symboles, blancs ; dans le code détaillé, de paires de bandes horizontales ou verticales rouges et blanches.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque d&apos;Eaux Saines</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefere -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefere">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereBabordRegionA"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereTribordRegionA"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueLaterale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Lorsqu’un chenal se divise, une marque latérale peut être utilisée pour indiquer la route qu’il convient de suivre de préférence (chenal préféré).
+Les marques latérales diffèrent suivant qu’elles sont employées dans l’une ou l’autre des régions de balisage A et B.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque de Chenal Préféré</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefereBabordRegionA -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefereBabordRegionA">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereBabordRegionA"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefere"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Babord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque de Chenal Préféré Bâbord Région A</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefereTribordRegionA -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefereTribordRegionA">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereTribordRegionA"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueDeChenalPrefere"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Tribord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque de Chenal Préféré Tribord Région A</rdfs:label>
     </owl:Class>
     
 
@@ -1363,7 +1633,31 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#MarqueDeDangerIsole -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueDeDangerIsole">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourMotif"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedemotif/MotifDangerIsole"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Une marque de danger isolé indique un danger isolé d’étendue limitée autour duquel les eaux sont saines.
+Dans le code standard, les revêtements rétroréfléchissants des marques de danger isolé sont constitués d’une ou plusieurs bandes horizontales, lettres, chiffres ou symboles, blancs ; dans le code détaillé, de paires de bandes horizontales bleues et rouges.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque de Danger Isolé</rdfs:label>
     </owl:Class>
     
 
@@ -1371,6 +1665,22 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     <!-- http://data.shom.fr/def/navigation_cotiere#MarqueLaterale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueLaterale">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                        <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1378,6 +1688,99 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
                 <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionLaterale"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Les marques latérales, dont l’emploi est associé à un « sens conventionnel de balisage », sont généralement utilisées pour des chenaux bien définis. Ces marques indiquent les côtés bâbord et tribord de la route à suivre.
+Lorsqu’un chenal se divise, une marque latérale peut être utilisée pour indiquer la route qu’il convient de suivre de préférence (chenal préféré).
+Les marques latérales diffèrent suivant qu’elles sont employées dans l’une ou l’autre des régions de balisage A et B.
+Lorsque les marques ne sont pas identifiables d’après leur forme cylindrique ou conique, elles doivent, dans la mesure du possible, porter le voyant approprié.
+Si des marques latérales de rive de chenal sont identifiées par des numéros ou des lettres, la succession des numéros (impairs à tribord et pairs à bâbord) ou des lettres suit le sens conventionnel du balisage.
+Dans les codes standard et détaillé, les revêtements rétroréfléchissants des marques latérales sont constitués
+comme suit :
+– marques latérales vertes : une bande horizontale verte ou une forme verte identique à celle du voyant ;
+– marques latérales rouges : une bande horizontale rouge ou une forme rouge identique à celle du voyant.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque Latérale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueLateraleBabordRegionA -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueLateraleBabordRegionA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Babord"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueLaterale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Babord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Latérale Bâbord Région A</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#MarqueLateraleTribordRegionA -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueLateraleTribordRegionA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+                            <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Tribord"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#MarqueLaterale"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeLateral"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typededirection/Tribord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Marque Latérale Tribord Région A</rdfs:label>
     </owl:Class>
     
 
@@ -1386,13 +1789,34 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#MarqueSpeciale">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Marque"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeCouleur"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">Ces marques n’ont pas pour but principal d’aider la navigation mais elles indiquent une zone spéciale ou une configuration mentionnée dans les documents nautiques appropriés. Ce sont par exemple, des :
+– marques des stations d’acquisition de données océaniques (ODAS) ;
+– marques de séparation du trafic là où le balisage classique du chenal peut prêter à confusion ;
+– marques indiquant les dépôts de matériaux ;
+– marques indiquant des zones de pêche interdite ou de cultures marines ;
+– marques indiquant des zones utilisées pour les exercices militaires ;
+– marques indiquant la présence de câbles ou d’oléoducs ;
+– marques indiquant des zones réservées à des activités nautiques de loisir.
+Elles ne prêtent pas à confusion avec les marques donnant des informations relatives à la navigation et sont mentionnées dans les documents nautiques appropriés.
+En France, les marques spéciales sont classées en deux catégories : marques durables et marques occasionnelles. Les marques spéciales durables sont surmontées d’un voyant en forme de X, jaune.
+Dans les codes standard et détaillé, les revêtements rétroréfléchissants des marques spéciales sont constitués d’une bande horizontale, d’un X ou d’un symbole jaunes.
+[Source : Shom, &apos;Signalisation maritime&apos;, 2016]</rdfs:comment>
+        <rdfs:label xml:lang="fr">Marque Speciale</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://data.shom.fr/def/navigation_cotiere#Organisation -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Organisation"/>
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Organisation">
+        <rdfs:label xml:lang="fr">Organisation</rdfs:label>
+    </owl:Class>
     
 
 
@@ -1406,6 +1830,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Phare</rdfs:label>
     </owl:Class>
     
 
@@ -1455,6 +1880,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Terre">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
+        <rdfs:label xml:lang="fr">Terre</rdfs:label>
     </owl:Class>
     
 
@@ -1469,6 +1895,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigation"/>
+        <rdfs:label xml:lang="fr">Tourelle</rdfs:label>
     </owl:Class>
     
 
@@ -1570,6 +1997,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDePilotage">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:label xml:lang="fr">Zone de Pilotage</rdfs:label>
     </owl:Class>
     
 
@@ -1578,7 +2006,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:comment xml:lang="fr">Ancien nom : ZoneDeNaviationReglementeeOuLimitee</rdfs:comment>
+        <rdfs:label xml:lang="fr">Zone du Domaine Maritime</rdfs:label>
     </owl:Class>
     
 
@@ -1587,6 +2015,7 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Zone du Domaine Terrestre</rdfs:label>
     </owl:Class>
     
 
@@ -1595,7 +2024,14 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
 
     <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
         <rdfs:comment xml:lang="en">A feature is simply any entity in the real world with some spatial location. This could be a park, an airport, a monument, a restaurant,etc. A feature can have a spatial location that cannot be precisely defined, such as a swamp or a mountain range (GeoSPARQL: Enabling a GeospatialSemantic Web by Robert Battle and Dave Kolas).</rdfs:comment>
+        <rdfs:label xml:lang="en">Feature</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
     
 
 
@@ -1980,6 +2416,56 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
         <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Jaune"/>
         <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
         <rdfs:label xml:lang="fr">motif cardinal Sud</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereBabordRegionA -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereBabordRegionA">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
+        <rdfs:label xml:lang="fr">motif chenal préféré bâbord région A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereTribordRegionA -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifChenalPrefereTribordRegionA">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Vert"/>
+        <rdf:_3 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+        <rdfs:label xml:lang="fr">motif chenal préféré tribord région A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifDangerIsole -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifDangerIsole">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Noir"/>
+        <rdfs:label xml:lang="fr">motif danger isolé</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.shom.fr/id/codes/nav/typedemotif/MotifEauxSaines -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedemotif/MotifEauxSaines">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif"/>
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+        <rdf:_1 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Rouge"/>
+        <rdf:_2 rdf:resource="http://data.shom.fr/id/codes/nav/typedecouleur/Blanc"/>
+        <rdfs:label xml:lang="fr">motif eaux saines</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -2402,6 +2888,15 @@ Source : https://sextant.ifremer.fr/record/d4fded20-4afc-11e0-8fd0-005056987263/
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Moulin -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Moulin">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
+        <rdfs:label xml:lang="fr">moulin</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedentitegeographique/Panneau -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedentitegeographique/Panneau">
@@ -2760,45 +3255,6 @@ Souce : https://www.cnrtl.fr/definition/pos%C3%A9e</rdfs:comment>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type de Motif</rdfs:label>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique">
-        <rdfs:label xml:lang="fr">a pour caractéristique</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
-        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNatureDuFond">
-        <rdfs:label xml:lang="fr">a pour nature du fond</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces">
-        <rdfs:label xml:lang="fr">a pour nombre de places</rdfs:label>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourNombreDePlaces _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estDecouverteDe">
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:estDecouverteDe &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est découverte de</rdfs:label>
-        <rdfs:comment xml:lang="fr">La hauteur découverte de l&apos;eau est la longueur vertical de la partie au dessus de la surface de l&apos;eau d&apos;une entité pérenne de l&apos;environnement hydrographique côtier qui est partiellement submergé dans l&apos;eau (avec unités).</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDUneBaliseAIS">
-        <rdfs:label xml:lang="fr">est equipé d&apos;une balise AIS</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estUnRepereLumineux">
-        <rdfs:label xml:lang="fr">est un repère lumineux</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#estUneEntiteMarquee">
-        <rdfs:comment xml:lang="fr">Uniquement utilisé dans le cas ou c&apos;est FALSE car sinon l&apos;entité marquante sera cité directement</rdfs:comment>
-        <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
-    </rdf:Description>
     
 
 
