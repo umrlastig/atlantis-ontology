@@ -726,7 +726,10 @@
 
     <!-- http://data.shom.fr/def/navigation_cotiere#Action -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Action"/>
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Action">
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+        <rdfs:label xml:lang="fr">Action</rdfs:label>
+    </owl:Class>
     
 
 
@@ -734,6 +737,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">Aide à la Navigation Virtuelle</rdfs:label>
     </owl:Class>
     
 
@@ -764,6 +768,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Baignade">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
+        <rdfs:label xml:lang="fr">Baignade</rdfs:label>
     </owl:Class>
     
 
@@ -808,6 +813,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Chenal">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
+        <rdfs:label xml:lang="fr">Chenal</rdfs:label>
     </owl:Class>
     
 
@@ -832,6 +838,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Zone de contact entre la terre et la mer vers l&apos;intérieur (dunes, embruns) et la ligne des plus basses mers ; littoral. (Certains auteurs distinguent la côte, bande de terre telle qu&apos;elle est vue du large et qui présente un certain relief, et le rivage, zone soumise directement à l&apos;action des vagues.) (https://www.larousse.fr/dictionnaires/francais/c%c3%b4te/19603).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Côte</rdfs:label>
     </owl:Class>
     
 
@@ -897,6 +904,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Dragage">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
+        <rdfs:label xml:lang="fr">Dragage</rdfs:label>
     </owl:Class>
     
 
@@ -918,6 +926,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Espar">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:label xml:lang="fr">Espar</rdfs:label>
     </owl:Class>
     
 
@@ -934,6 +943,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Partie du littoral alternativement couverte et découverte par la mer (https://www.larousse.fr/dictionnaires/francais/estran/31219).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Estran</rdfs:label>
     </owl:Class>
     
 
@@ -942,6 +952,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Feu">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:label xml:lang="fr">Feu</rdfs:label>
     </owl:Class>
     
 
@@ -975,6 +986,7 @@
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
         <rdfs:comment xml:lang="fr">À l&apos;intérieur des terres, dans l&apos;arrière-pays ou assez loin de la côte, par opposition au bord de mer (https://www.larousse.fr/dictionnaires/francais/terre/77443#175925).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Intérieur des Terres</rdfs:label>
     </owl:Class>
     
 
@@ -984,6 +996,7 @@
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Large">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
         <rdfs:comment xml:lang="fr">La haute mer (https://www.larousse.fr/dictionnaires/francais/large/46283).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Large</rdfs:label>
     </owl:Class>
     
 
@@ -992,6 +1005,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Lieu de Stationnement</rdfs:label>
     </owl:Class>
     
 
@@ -1019,14 +1033,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="fr">Zone sinueuse où s&apos;établit le contact entre la mer ou un lac et la terre. (Le terme a un sens plus large que rivage et côte, qui désignent respectivement les domaines du littoral soumis directement ou indirectement à l&apos;action de la mer.) (https://www.larousse.fr/dictionnaires/francais/littoral/47506).</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Mouillage -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Mouillage">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
+        <rdfs:label xml:lang="fr">Littoral</rdfs:label>
     </owl:Class>
     
 
@@ -1035,6 +1042,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Navigation">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
+        <rdfs:label xml:lang="fr">Navigation</rdfs:label>
     </owl:Class>
     
 
@@ -1058,6 +1066,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Phare">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:label xml:lang="fr">Phare</rdfs:label>
     </owl:Class>
     
 
@@ -1067,6 +1076,16 @@
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PlongeeSousMarine">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
         <rdfs:label xml:lang="fr">Plongée Sous Marine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#PointDeMouillage -->
+
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PointDeMouillage">
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#LieuDeStationnement"/>
+        <rdfs:label xml:lang="en">Anchorage Point</rdfs:label>
+        <rdfs:label xml:lang="fr">Point de Mouillage</rdfs:label>
     </owl:Class>
     
 
@@ -1100,6 +1119,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Reperage">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle"/>
+        <rdfs:label xml:lang="fr">Repérage</rdfs:label>
     </owl:Class>
     
 
@@ -1120,6 +1140,7 @@
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre"/>
         <rdfs:comment xml:lang="fr">Partie de la terre soumise à l&apos;action des vagues, de la marée (https://www.larousse.fr/dictionnaires/francais/rivage/69587).</rdfs:comment>
+        <rdfs:label xml:lang="fr">Rivage</rdfs:label>
     </owl:Class>
     
 
@@ -1128,6 +1149,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Route">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#AideALaNavigationVirtuelle"/>
+        <rdfs:label xml:lang="fr">Route</rdfs:label>
     </owl:Class>
     
 
@@ -1148,6 +1170,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Stationnement">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Action"/>
+        <rdfs:label xml:lang="fr">Stationnement</rdfs:label>
     </owl:Class>
     
 
@@ -1156,6 +1179,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Tourelle">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Repere"/>
+        <rdfs:label xml:lang="fr">Tourelle</rdfs:label>
     </owl:Class>
     
 
@@ -1249,7 +1273,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineMaritime">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
-        <rdfs:comment xml:lang="fr">Ancien nom : ZoneDeNaviationReglementeeOuLimitee</rdfs:comment>
+        <rdfs:label xml:lang="fr">Zone Du Domaine Maritime</rdfs:label>
     </owl:Class>
     
 
@@ -1258,6 +1282,7 @@
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ZoneDuDomaineTerrestre">
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique"/>
+        <rdfs:label xml:lang="fr">Zone Du Domaine Terrestre</rdfs:label>
     </owl:Class>
     
 
@@ -1304,6 +1329,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#GroupeDEntitesGeographiques">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="fr">Groupe d&apos;Entités Géographiques</rdfs:label>
     </owl:Class>
     
 
@@ -1381,17 +1407,6 @@
         <skos:definition xml:lang="fr">Blabla.</skos:definition>
         <skos:prefLabel xml:lang="en">bell tower</skos:prefLabel>
         <skos:prefLabel xml:lang="fr">clocher</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement -->
-
-    <owl:NamedIndividual rdf:about="http://data.ign.fr/id/codes/nav/typedentitegeographique/Departement">
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">department</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">département</skos:prefLabel>
     </owl:NamedIndividual>
     
 
