@@ -1,0 +1,333 @@
+#modélisation des consignes de navigation et réglementations
+#extraits des IN C2A
+
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
+@prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix ent: <http://data.shom.fr/id/entitegeographique/>.
+@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#exemple 1
+#"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
+
+ent:6001 a nav:Instruction;
+	nav:activite nav:naviguer;
+	nav:pointDeDepart [rlsp:eastOf ent:6002];
+	nav:pointDeDestination ent:6002;
+	nav:suivre ent:6003;
+	nav:suivre ent:6009.
+# >>> comment montrer que l'alignement 6009 est un alternatif à l'alignement 6003? Le 6003 est l'alignement général, le 6009 est pour "Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation"
+
+ent:6002 a nav:EntiteGeographique;
+	nav:nature teg:Chenal.
+
+ent:6003 a nav:Alignement;
+	nav:cap "293.3"^^xsd:float;
+	nav:premierRepere ent:6004;
+	nav:deuxiemeRepere ent:6005;
+	rlsp:southOf ent:6007;
+	rlsp:northOf ent:6008;
+	nav:info "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
+	nav:situeDans ent:6012.
+
+ent:6004 a nav:Amer;
+	rdfs:label "clocher de l'Île de Batz"@fr;
+	nav:nature teg:Clocher;
+	nav:elementDe ent:6006.
+
+ent:6005 a nav:Amer;
+	rdfs:label "pyramide blanche de l'Île Pigued"@fr;
+	nav:nature teg:Pyramide;
+	nav:lat "48° 44,0' N"^^xsd:string;
+	nav:lng "3° 58,2' W"^^xsd:string.
+
+ent:6006 a nav:Amer;
+	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
+	nav:nature teg:Chapelle;
+	nav:aCommeElement ent:6004.
+
+ent:6007 a nav:EntiteGeographique;
+	rdfs:label "Plateau des Duons"@fr.
+
+ent:6008 a nav:Tourelle;
+	rdfs:label "Bazen ar Menk"@br, "tourelle « Le Menk »"@fr;
+	nav:nature teg:Tourelle;
+	nav:marqueDeType nav:MarqueCardinale;
+	nav:typeCardinal nav:Ouest;
+	nav:entiteLumineuse "true"^^xsd:boolean.
+
+ent:6009 a nav:Alignement;
+	nav:cap "290.0"^^xsd:float;
+	nav:premierRepere ent:6010;
+	nav:deuxiemeRepere ent:6011;
+	rlsp:leftOf ent:6003.
+# >>> comment montrer que l'alignement 6009 est un alternatif à l'alignement 6003? Le 6003 est l'alignement général, le 6009 est pour "Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation"
+
+ent:6010 a nav:Phare;
+	rdfs:label "phare de l'Île de Batz"@fr;
+	nav:nature teg:Phare.
+
+ent:6011 a nav:Tourelle;
+	rdfs:label "tourelle « Ar Chaden »"@fr;
+	nav:nature teg:Tourelle.
+
+ent:6012 a nav:Secteur;
+	nav:deCouleur nav:Blanche;
+	nav:angleDebut "289.5"^^xsd:float;
+	nav:angleFin "293.0"^^xsd:float;
+	nav:elementDe ent:6011.
+
+
+#exemple 2
+#"Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."
+
+ent:6012 a nav:Instruction;
+	nav:activite nav:naviguer;
+	nav:pointDeDepart ent:6013;
+	nav:pointDeDestination ent:6014;
+	nav:pointDeDestination ent:6015;
+	nav:suivre ent:6039;
+	nav:suivre ent:6017;
+	nav:suivre ent:6018;
+	nav:suivre ent:6019.
+# >>> comment montrer qu'il y a quatres possibilités pour le pointDeDestination ?
+# >>> comment montrer que la même instruction est valable dans le sens inverse ?
+
+ent:6013 a nav:EntiteGeographique;
+	rdfs:label "La Manche"@fr.
+
+ent:6014 a nav:EntiteGeographique;
+	rdfs:label "Gibraltar"@fr.
+
+ent:6015 a nav:EntiteGeographique;
+	rdfs:label "Atlantique"@fr.
+
+ent:6039 a nav:Route;
+	rdfs:label "très au large d'Ouessant"@fr;
+	rlsp:auLargeDe ent:6016.
+
+ent:6016 a nav:EntiteGeographique;
+	rdfs:label "Ouessant"@fr.
+
+ent:6017 a nav:DispositifDeSeparationDuTrafic;
+	rdfs:label "dispositif de séparation du trafic d’Ouessant"@fr.
+
+ent:6018 a nav:Route;
+	rdfs:label "route côtière à l’Ouest d’Ouessant"@fr;
+	nav:conditionsNavire "§ 2.3.4.2."^^xsd:string.
+# >>> ici ou dans l'Instruction pour mentionner les conditions ?
+# >>> comment faire pour récupérer les conditions d'un autre chapitre ? Il s'agit d'un reglément
+
+ent:6019 a nav:SuiteDePassages;
+	rdfs:label "Chenal du Four au Nord et le Raz de Sein au Sud"@fr;
+	nav:entiteImpliquee ent:6020;
+	nav:entiteImpliquee ent:6021;
+	nav:conditionsNavire "§ 2.3.4.2."^^xsd:string.
+# >>> est-ce que l'ordre est important ? Faut-il avoir des classes pour 'première entité', 'deuxième entité' ?
+
+ent:6020 a nav:EntiteGeographique;
+	rdfs:label "Chenal du Four"@fr;
+	nav:nature teg:Chenal.
+
+ent:6021 a nav:EntiteGeographique;
+	rdfs:label "Raz de Sein"@fr;
+	nav:nature teg:Raz.
+
+
+#exemple 3
+#"De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."
+
+ent:6022 a nav:Interdiction;
+	nav:activiteInterdite nav:naviguer;
+	nav:lieuDEffet ent:6023;
+	nav:aPourTemporalite nav:DeNuit;
+	nav:aCommeException "s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal"^^xsd:string.
+
+ent:6023 a nav:EntiteGeographique;
+	rdfs:label "Grande Passe"@fr.
+
+
+#exemple 4
+#"La pratique des véhicules nautiques à moteur dans l’archipel de Molène au sein du parc naturel marin d’Iroise est interdite, à l’exception de l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°, conformément à l’arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)."
+
+ent:6024 a nav:Interdiction;
+	nav:activiteInterdite nav:naviguer;
+	nav:lieuDEffet ent:6025;
+	nav:aPourCible nav:VehiculeNautiqueAMoteur;
+	nav:aCommeException "l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°"^^xsd:string;
+	nav:estImposePar ent:6034.
+
+ent:6034 a nav:Reglement;
+	nav:infoReglement "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"^^xsd:string.
+
+ent:6025 a nav:EntiteGeographique;
+	rdfs:label "parc naturel marin d'Iroise"@fr.
+
+
+#exemple 5
+#"Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique. Leur accès est interdit du 1er avril au 30 juin. L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction. Le mouillage des navires de plaisance est interdit du 1er avril au 31 juillet dans une zone, portée sur la carte, aux abords de l’îlot des Guernesiais (48° 53,7' N — 1° 48,7' W)"
+
+ent:6026 a nav:Information;
+	nav:stipule "Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique."^^xsd:string;
+	nav:lieuDEffet ent:6027.
+
+ent:6027 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne »"@fr.
+# >>> comment modeler cette ligne d'îles et d'îlots ?
+
+ent:6028 a nav:Phare;
+	rdfs:label "phare de Grande Île"@fr;
+	nav:nature teg:Phare.
+
+ent:6029 a nav:Tourelle;
+	rdfs:label "tourelle « L’Enseigne »"@fr;
+	nav:nature teg:Tourelle.
+
+ent:6030 a nav:Interdiction;
+	nav:actionInterdite nav:naviguer;
+	nav:lieuDEffet ent:6026;
+	nav:aPourTemporalite "du 1er avril au 30 juin"^^xsd:string;
+	nav:aCommeException "L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction."^^xsd:string.
+
+ent:6031 a nav:Interdiction;
+	nav:actionInterdite nav:mouiller;
+	nav:lieuDEffet ent:6032;
+	nav:aPourCible nav:NavireDePlaisance.
+
+ent:6032 a nav:ZoneDuDomaineMaritime;
+	nav:info "zone, portée sur la carte"^^xsd:string;
+	nav:auxAbordsDe ent:6033.
+
+ent:6033 a nav:EntiteGeographique;
+	nav:nature teg:Ilot;
+	rdfs:label "îlot des Guernesiais"@fr;
+	nav:lat "48° 53,7' N"^^xsd:string;
+	nav:lng "1° 48,7' W"^^xsd:string.
+
+
+#exemple 6
+#"ZONE INTERDITE DE LA CENTRALE DE GRAVELINES (arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord). — La navigation, le mouillage, le dragage, le stationnement, la pêche à partir d’embarcation, la baignade, la plongée sous-marine, le dépôt sur le fond de la mer de tout engin lourd ou toute autre activité maritime sont interdits aux abords du centre nucléaire de production d’électricité de Gravelines dans une zone, portée sur les cartes, située immédiatement à l’Ouest du Port Ouest de Dunkerque."
+
+ent:6035 a nav:Interdiction;
+	rdfs:label "Zone interdite de la centrale de Gravelines";
+	nav:actionInterdite nav:navigation, nav:mouillage, nav:dragage, nav:stationnement, nav:pecheAPartirDEmbarcation, nav:baignade, nav:plongeeSousMarine, nav:depotSurLeFondDeLaMerDeToutEnginLourd;
+	nav:lieuDEffet ent:6036;
+	nav:estImposeePar ent:6038.
+# >>> comment intégrer "...ou toute autre activité maritime" ?
+
+ent:6036 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "zone située immédiatement à l'Ouest du Port Ouest de Dunkerque"^^xsd:string;
+	nav:info "zone, portée sur les cartes"^^xsd:string;
+	rlsp:westOf ent:6037.
+
+ent:6037 a nav:EntiteGeographique;
+	rdfs:label "Port Ouest de Dunkerque"@fr;
+	nav:nature teg:Port.
+
+ent:6038 a nav:Reglement;
+	nav:infoReglement "arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord"^^xsd:string.
+
+
+#exemple 7
+#"Les chenaux d’accès et la zone d’attente du STM de Dunkerque sont intégrés à la partie maritime de la Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque, créée par l’arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)."
+
+ent:6040 a nav:Information;
+	nav:stipule "Les chenaux d’accès et la zone d’attente du STM de Dunkerque sont intégrés à la partie maritime de la Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque"^^xsd:string;
+	nav:estImposeePar ent:6041;
+	nav:lieuDEffet ent:6042.
+
+ent:6041 a nav:Reglement;
+	nav:infoReglement "arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)"^^xsd:string.
+
+ent:6042 a nav:EntiteGeographique;
+	rdfs:label "Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque"@fr;
+	nav:nature teg:Zone.
+
+
+#exemple 8
+#"Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."
+
+ent:6043 a nav:Instruction;
+	nav:activite nav:stationner;
+	nav:cible nav:NavireDePlaisance;
+	nav:lieuDEffet ent:6044;
+	nav:lieuDEffet ent:6045;
+	nav:contexteDeLActivite "en attente d’entrée dans le Vieux Bassin"^^xsd:string.
+# >>> ou mettre le contexte comme entité à part afin de pouvoir associer un lieu ?
+
+ent:6044 a nav:EntiteGeographique;
+	rdfs:label "Jetée de la Lieutenance"@fr;
+	nav:nature teg:Jetee.
+
+ent:6045 a nav:EntiteGeographique;
+	rdfs:label "Quai du Jardin Public (partie matérialisée par des flèches blanches)"@fr;
+	nav:nature teg:Quai.
+
+
+#exemple 9
+#"4.5.5.5. Saint-Valéry-sur-Somme
+# [...]
+# RENSEIGNEMENTS. — Département de la Somme (80) ; 2 700 habitants.
+#  Bureau du port et maison des plaisanciers : au port de plaisance ; tél. : 03.22.60.24.80 ; VHF ; saison de 07 h 00 à 23 h 00 (en fonction des heures de marées), hors-saison : de 09 h 00 à 12 h 00 et de 14 h 00 à 17 h 00 ; mél. : snval@wanadoo.fr.# Gendarmerie maritime : tél. : 03.22.60.82.08.# Sas : tél. : 03.22.60.80.23."
+
+ent:6046 a nav:Renseignement;
+	nav:lieuDEffet ent:6048;
+	nav:contact "Bureau du port et maison des plaisanciers : au port de plaisance"^^xsd:string;
+	nav:numeroDeTelephone "03.22.60.24.80"^^xsd:string;
+	nav:adresseMail "snval@wanadoo.fr"^^xsd:string;
+	nav:horairesVHF "saison de 07 h 00 à 23 h 00 (en fonction des heures de marées), hors-saison : de 09 h 00 à 12 h 00 et de 14 h 00 à 17 h 00"^^xsd:string.
+
+ent:6047 a nav:EntiteGeographique;
+	rdfs:label "Département de la Somme (80)"@fr;
+	nav:nature teg:Departement.
+
+ent:6048 a nav:EntiteGeographique;
+	rdfs:label "Saint-Valéry-sur-Somme"@fr;
+	nav:nature teg:Ville;
+	nav:nombreDHabitants "2700"^^xsd:integer;
+	nav:departement ent:6047.
+
+ent:6049 a nav:Renseignement;
+	nav:lieuDEffet ent:6048;
+	nav:contact "Gendarmerie maritime"^^xsd:string;
+	nav:numeroDeTelephone "03.22.60.82.08"^^xsd:string.
+
+ent:6050 a nav:Renseignement;
+	nav:lieuDEffet ent:6048;
+	nav:contact "Sas"^^xsd:string;
+	nav:numeroDeTelephone "03.22.60.80.23"^^xsd:string.
+
+
+#exemple 10
+#"6.2.2.4. Courseulles-sur-Mer
+# [...]
+# RENSEIGNEMENTS. — Département du Calvados (14) ; 4 200 habitants.# Bureau du port : Quai Ouest du Bassin Joinville ; tél. : 02.31.37.51.69 (de – 3 PM à + 3 PM) ; VHF (heures ouvrables).# Douanes : au bureau du port.# Vigie, cabine de l’écluse : tél. : 02.31.37.46.03."
+
+ent:6051 a nav:Renseignement;
+	nav:lieuDEffet ent:6052;
+	nav:contact "Bureau du port : Quai Ouest du Bassin Joinville"^^xsd:string;
+	nav:horairesVHF "heures ouvrables"^^xsd:string.
+
+ent:6052 a nav:EntiteGeographique;
+	rdfs:label "Courseulles-sur-Mer"@fr;
+	nav:nature teg:Ville;
+	nav:departement ent:6053;
+	nav:nombreDHabitants "4200"^^xsd:integer.
+
+ent:6053 a nav:EntiteGeographique;
+	rdfs:label "Département de Calvados (14)"@fr;
+	nav:nature: teg:Departement.
+
+ent:6054 a nav:Renseignement;
+	nav:lieuDEffet ent:6052;
+	nav:contact "Douanes : au bureau du port"^^xsd:string.
+
+ent:6055 a nav:Renseignement;
+	nav:lieuDEffet ent:6052;
+	nav:contact "Vigie, cabine de l’écluse"^^xsd:string;
+	nav:numeroDeTelephone "02.31.37.46.03"^^xsd:string.
+
+
