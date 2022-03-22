@@ -11,7 +11,7 @@
      xmlns:tit="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:prtn="http://www.ontotext.com/proton/protonext#"
+     xmlns:pext="http://www.ontotext.com/proton/protonext#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:weat="https://bimerr.iot.linkeddata.es/def/weather#"
@@ -88,18 +88,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-        <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
-        <rdfs:label xml:lang="en">exact match</rdfs:label>
-    </owl:ObjectProperty>
+    
 
 
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative">
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition locale qualitative</rdfs:label>
     </owl:ObjectProperty>
     
@@ -110,7 +106,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationMeteo"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition météorologique</rdfs:label>
     </owl:ObjectProperty>
     
@@ -121,7 +117,7 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationOceano"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition océanographique</rdfs:label>
     </owl:ObjectProperty>
     
@@ -240,6 +236,12 @@
     </owl:ObjectProperty>
     
 
+        <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exact match</rdfs:label>
+    </owl:ObjectProperty>
+
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -257,6 +259,7 @@
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCap">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCap &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour cap</rdfs:label>
     </owl:DatatypeProperty>
     
