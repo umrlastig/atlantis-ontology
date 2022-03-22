@@ -25,7 +25,7 @@
 
 ent:6001 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
-	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
+	nav:aPourPointDeDepart ent:6097;
 	nav:aPourPointDeDestination ent:4011;
 	nav:impliqueDeSuivre [
  		a rdf:Bag;
@@ -33,9 +33,12 @@ ent:6001 a nav:Instruction;
     		];
 	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
 
+ent:6097 a nav:EntiteGeographique;
+	nav:estALEstDe ent:4011.
+
 ent:6056 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
-	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
+	nav:aPourPointDeDepart ent:6097;
 	nav:aPourPointDeDestination ent:4011;
 	nav:impliqueDeSuivre [
  		a rdf:Bag;
@@ -70,9 +73,12 @@ ent:6004 a nav:Amer;
 	geom:hasGeometry gtrs:0001.
 
 gtrs:0001 a geom:Point;
-	gsp:asWKT """<http://www.opengis.net/def/crs/EPSG/0/2154> Point(185236.82 6872212.7)"""^^gsp:wktLiteral;
-	geom:coordX "185236.82"^^xsd:double;
-	geom:coordY "6872212.70"^^xsd:double.
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-4.0096052 48.7442339)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(185236.82 6872212.7)"^^gsp:wktLiteral;
+	#geom:coordX "185236.82"^^xsd:double;
+	#geom:coordY "6872212.70"^^xsd:double;
+		#not on carte ENC FR67095A.000 nor in BALISAGE Shom shp layer, coords from google maps
+	.
 
 ent:6005 a nav:Amer;
 	rdfs:label "pyramide blanche de l'Île Pigued"@fr;
@@ -82,9 +88,12 @@ ent:6005 a nav:Amer;
 	geom:hasGeometry gtrs:0002.
 
 gtrs:0002 a geom:Point;
-	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(188009.00 6870712.91)"^^gsp:wktLiteral;
-	geom:coordX "188009.00"^^xsd:double;
-	geom:coordY "6870712.91"^^xsd:double.
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.970418 48.733010)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(188009.00 6870712.91)"^^gsp:wktLiteral;
+	#geom:coordX "188009.00"^^xsd:double;
+	#geom:coordY "6870712.91"^^xsd:double;
+		#carte ENC FR67095A.000 sur openCPN
+	.
 
 ent:6006 a nav:Amer;
 	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
@@ -104,9 +113,12 @@ ent:6008 a nav:Tourelle;
 	geom:hasGeometry gtrs:0003.
 
 gtrs:0003 a geom:Point;
-	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(189757.17 6869271.50)"^^gsp:wktLiteral;
-	geom:coordX "189757.17"^^xsd:double;
-	geom:coordY "6869271.50"^^xsd:double.
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.944992 48.721496)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(189757.17 6869271.50)"^^gsp:wktLiteral;
+	#geom:coordX "189757.17"^^xsd:double;
+	#geom:coordY "6869271.50"^^xsd:double;
+		#carte ENC FR67095A.000 sur openCPN
+	.
 
 ent:6009 a nav:Alignement;
 	nav:aPourRepere [
@@ -131,9 +143,11 @@ ent:6011 a nav:Tourelle;
 	geom:hasGeometry gtrs:0004.
 
 gtrs:0004 a geom:Point;
-	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(187971.97 6870630.44)"^^gsp:wktLiteral;
-	geom:coordX "187971.97"^^xsd:double;
-	geom:coordY "6870630.44"^^xsd:double.
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.970793 48.732258)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(187971.97 6870630.44)"^^gsp:wktLiteral;
+	#geom:coordX "187971.97"^^xsd:double;
+	#geom:coordY "6870630.44"^^xsd:double
+	.
 
 ent:6012 a nav:Secteur;
 	nav:estDeCouleur tco:Blanche;
@@ -658,7 +672,8 @@ ent:6081 a nav:Information;
 	nav:aPourEntiteImpliquee ent:6082;
 	nav:aPourConditionMeteo tim:BeauTemps, tim:TempsCalme;
 	nav:aPourConditionOceano tio:MareeBasse;
-	nav:aPourCible tna:NavireDePlaisance, tna:Embarcation.
+	nav:aPourCible tna:NavireDePlaisance, tna:Embarcation;
+	nav:aPourAction tac:Accostage.
 
 ent:6082 a nav:Balise;
 	rdfs:label "Jet d’Amont"@fr.
