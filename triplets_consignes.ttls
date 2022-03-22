@@ -221,7 +221,7 @@ ent:6030 a nav:Interdiction;
 # trouver une bonne ontologie du temps
 
 ent:6031 a nav:Interdiction;
-	nav:aPourActionInterdite nav:mouiller;
+	nav:aPourActionInterdite nav:Mouillage;
 	nav:aPourLieuDEffet ent:6032;
 	nav:aPourCible nav:NavireDePlaisance.
 
