@@ -13,7 +13,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix tdi: <http://data.ign.fr/id/codes/nav/typedei/>.
+@prefix tdi: <http://data.ign.fr/id/codes/nav/typededirection/>.
+@prefix tit: <http://data.ign.fr/id/codes/nav/typedindicationtemporelle/>.
+@prefix tim: <http://data.ign.fr/id/codes/nav/typedindicationmeteorologique/>.
+@prefix tio: <http://data.ign.fr/id/codes/nav/typedindicationoceanographique/>.
 
 #exemple 1
 #"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
@@ -38,7 +41,6 @@ ent:6002 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chenal.
 
 ent:6003 a nav:Alignement;
-#	nav:aPourCap "293.3"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourRepere [
 		a rdf:Seq;
 		rdf:_1 ent:6004;
@@ -49,6 +51,10 @@ ent:6003 a nav:Alignement;
 	nav:aPourInfo "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
 	nav:estSitueDans ent:6012.
 # ---> modifier fichier xml de l'ontologie afin d'ajouter classe rdf:Seq ---> FAIT
+
+<<ent:6003 nav:aPourCap "293.3"^^xsd:float>> qudt:Unit unit:DEG.
+
+
 
 ent:6004 a nav:Amer;
 	rdfs:label "clocher de l'Île de Batz"@fr;
@@ -77,7 +83,6 @@ ent:6008 a nav:Tourelle;
 	nav:estUnRepereLumineux "true"^^xsd:boolean.
 
 ent:6009 a nav:Alignement;
-#	nav:aPourCap "290.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourRepere [
 		a rdf:Seq;
 		rdf:_1 ent:6010;
@@ -97,15 +102,16 @@ ent:6011 a nav:Tourelle;
 
 ent:6012 a nav:Secteur;
 	nav:estDeCouleur tco:Blanche;
-	nav:aPourAngleDebut "289.5"^^xsd:float {|qudt:Unit unit:DEG|};
-	nav:aPourAngleFin "293.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:estUnElementDe ent:6011.
+
+<<ent:6012 nav:aPourAngleDebut "289.5"^^xsd:float>> qudt:Unit unit:DEG.
+<<ent:6012 nav:aPourAngleFin "293.0"^^xsd:float>> qudt:Unit unit:DEG.
 
 
 #exemple 2
 #"Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."
 
-ent:6012 a nav:Instruction;
+ent:6083 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDepart ent:6013;
  	nav:aPourPointDeDestination [
@@ -192,6 +198,7 @@ ent:6024 a nav:Interdiction;
 	nav:estImposeePar ent:6034.
 
 ent:6034 a nav:Reglement;
+	rdfs:label "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"@fr;
 	nav:aPourArrete "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"^^xsd:string.
 
 ent:6025 a nav:EntiteGeographique;
@@ -246,6 +253,7 @@ ent:6030 a nav:Interdiction;
 # trouver une bonne ontologie du temps
 
 ent:6076 a nav:Reglement;
+	rdfs:label "arrêté 78/94 du 4 avril 1978 du maire de Granville"@fr;
 	nav:aPourArrete "arrêté 78/94 du 4 avril 1978 du maire de Granville"^^xsd:string.
 
 ent:6031 a nav:Interdiction;
@@ -287,6 +295,7 @@ ent:6037 a nav:EntiteGeographique;
 	nav:aPourNature teg:Port.
 
 ent:6038 a nav:Reglement;
+	rdfs:label "arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord"@fr;
 	nav:aPourArrete "arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord"^^xsd:string.
 
 
@@ -299,6 +308,7 @@ ent:6040 a nav:Information;
 	nav:aPourLieuDEffet ent:6042.
 
 ent:6041 a nav:Reglement;
+	rdfs:label "arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)"@fr;
 	nav:aPourArrete "arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)"^^xsd:string.
 
 ent:6042 a nav:EntiteGeographique;
@@ -310,15 +320,19 @@ ent:6042 a nav:EntiteGeographique;
 #"Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."
 
 ent:6043 a nav:Instruction;
-	nav:aPourAction tac:Stationnement;
+	nav:aPourAction tac:Navigation;
+	nav:aPourCible tna:NavireDePlaisance;
+	nav:aPourPointDeDestination ent:6084;
+	nav:aPourInfo ent:6085.
+
+ent:6085 a nav:Information;
 	nav:aPourCible tna:NavireDePlaisance;
 	nav:aPourLieuDEffet [
 		a rdf:Bag;
 		rdf:_1 ent:6044;
 		rdf:_2 ent:6045;
 		];
-	nav:aPourContexte "en attente d’entrée dans le Vieux Bassin"^^xsd:string.
-# >>> ou mettre le contexte comme entité à part afin de pouvoir associer un lieu ? ---> c'est bien comme ça ; chercher d'autres exemples ---> voir ent:6062
+	nav:aPourContexte "Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."^^xsd:string.
 
 ent:6044 a nav:EntiteGeographique;
 	rdfs:label "Jetée de la Lieutenance"@fr;
@@ -327,6 +341,9 @@ ent:6044 a nav:EntiteGeographique;
 ent:6045 a nav:EntiteGeographique;
 	rdfs:label "Quai du Jardin Public (partie matérialisée par des flèches blanches)"@fr;
 	nav:aPourNature teg:Quai.
+
+ent:6084 a nav:EntiteGeographique;
+	rdfs:label "Vieux Bassin"@fr.
 
 
 #exemple 9
@@ -428,6 +445,7 @@ ent:6059 a nav:EntiteGeographique;
 	nav:aPourNature teg:Sas.
 
 ent:6060 a nav:Reperage;
+	rdfs:label "après avoir reconnu la bouée d’atterrissage « Le Légué »"@fr;
 	nav:aPourEntiteImpliquee ent:6061.
 
 ent:6061 a nav:Bouee;
@@ -465,7 +483,7 @@ ent:6066 a nav:GroupeDeBouees;
 # À ce moment il faut demeurer particulièrement attentif aux embardées du navire notamment lorsque l’avant commence à se trouver à l’abri du courant. Par forte houle d’Ouest, la tenue du cap peut ainsi devenir trop difficile pour permettre l’entrée."
 
 ent:6067 a nav:EntiteGeographique;
-	nav:aPourNautre teg:Port;
+	nav:aPourNature teg:Port;
 	rdfs:label "Fécamp"@fr;
 	nav:estGerePar ent:6068;
 	nav:aPourLat "49° 53,3' N"^^xsd:string;
@@ -488,8 +506,9 @@ ent:6070 a nav:Instruction;
 		].
 
 ent:6071 a nav:Alignement;
-	nav:aPourCap "82.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourPointDeDestination ent:6072.
+	
+<<ent:6071 nav:aPourCap "82.0"^^xsd:float>> qudt:Unit unit:DEG.
 
 ent:6072 a nav:EntiteGeographique;
 	rdfs:label "quelques centaines de mètres de la Jetée Sud"@fr.
