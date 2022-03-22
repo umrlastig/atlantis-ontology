@@ -25,17 +25,22 @@ ent:6001 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
 	nav:aPourPointDeDestination ent:4011;
-	nav:impliqueDeSuivre ent:6003.
-# >>> comment montrer que l'alignement 6009 est un alternatif à l'alignement 6003? Le 6003 est l'alignement général, le 6009 est pour "Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation" ---> deux instructions avec cibles différents ---> FAIT
-# >>> Si pas de cible, c'est pour tout le monde ?
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6003;
+    		];
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
 
 ent:6056 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
 	nav:aPourPointDeDestination ent:4011;
-	nav:impliqueDeSuivre ent:6009;
-	nav:aPourCible ent:3001.
-# >>> cible dans l'instruction ou dans l'alignement ? ---> instruction pour l'instant
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6009;
+    		];
+	nav:aPourCible ent:3001;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
 
 #ent:6002 a nav:EntiteGeographique;
 #	nav:aPourNature teg:Chenal.
@@ -51,8 +56,8 @@ ent:6003 a nav:Alignement;
 	nav:estAuNordDe ent:6008;
 	nav:aPourInfo "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
 	nav:estSitueDans ent:6012;
-	nav:aPourCap "293.3"^^xsd:float.
-# ---> modifier fichier xml de l'ontologie afin d'ajouter classe rdf:Seq ---> FAIT
+	nav:aPourCap "293.3"^^xsd:float;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
 
 <<ent:6003 nav:aPourCap "293.3"^^xsd:float>> qudt:Unit unit:DEG.
 
@@ -89,7 +94,8 @@ ent:6009 a nav:Alignement;
 		rdf:_2 ent:6011;
 		];
 	nav:estALaGaucheDe ent:6003;
-	nav:aPourCap "290.0"^^xsd:float.
+	nav:aPourCap "290.0"^^xsd:float;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
 	
 <<ent:6009 nav:aPourCap "290.0"^^xsd:float>> qudt:Unit unit:DEG.
 
@@ -130,9 +136,8 @@ ent:6083 a nav:Instruction;
        	rdf:_3 ent:6018;
        	rdf:_4 ent:6019;
     		];
-    	nav:estASensUnique "false"^^xsd:boolean.
-# >>> comment montrer qu'il y a quatre possibilités pour le pointDeDestination et deux pour le siuvre ? ---> rdf bag, seq, liste ---> FAIT ---> ajouter Bag dans le code de Protégé ---> FAIT
-# >>> comment montrer que la même instruction est valable dans le sens inverse ? ---> propriété boolean sens unique ---> ajouter à Protégé ---> FAIT
+    	nav:estASensUnique "false"^^xsd:boolean;
+    	nav:aPourTexteAssocie "Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."^^xsd:string.
 
 ent:6013 a nav:EntiteGeographique;
 	rdfs:label "La Manche"@fr.
@@ -167,7 +172,6 @@ ent:6019 a nav:Route;
 		rdf:_2 ent:6021;
 		];
 	nav:aPourConditionsNavire "§ 2.3.4.2."^^xsd:string.
-# >>> est-ce que l'ordre est important ? Faut-il avoir des classes pour 'première entité', 'deuxième entité' ? ---> rdf seq ---> FAIT
 
 ent:6020 a nav:EntiteGeographique;
 	rdfs:label "Chenal du Four"@fr;
@@ -180,7 +184,6 @@ ent:6021 a nav:EntiteGeographique;
 
 #exemple 3
 #"De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."
-# ---> plutôt une information ---> FAIT (récupère la phrase entière)
 
 ent:6022 a nav:Information;
 	nav:stipule "De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."^^xsd:string;
