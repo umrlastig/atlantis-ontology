@@ -4,44 +4,48 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
 @prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix tac: <http://data.ign.fr/id/codes/nav/typedaction/>.
+@prefix tna: <http://data.ign.fr/id/codes/nav/typedenavire/>.
+@prefix tco: <http://data.ign.fr/id/codes/nav/typedecouleur/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
-@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/2.1/vocab/unit/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix tdi: <http://data.ign.fr/id/codes/nav/typedei/>.
 
 #exemple 1
 #"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
 
 ent:6001 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
-	nav:aPourPointDeDepart [rlsp:eastOf ent:6002];
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [nav:estALEstDe ent:6002];
 	nav:aPourPointDeDestination ent:6002;
 	nav:impliqueDeSuivre ent:6003.
 # >>> comment montrer que l'alignement 6009 est un alternatif à l'alignement 6003? Le 6003 est l'alignement général, le 6009 est pour "Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation" ---> deux instructions avec cibles différents ---> FAIT
 # >>> Si pas de cible, c'est pour tout le monde ?
 
 ent:6056 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
-	nav:aPourPointDeDepart [rlsp:eastOf ent:6002];
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [nav:estALEstDe ent:6002];
 	nav:aPourPointDeDestination ent:6002;
 	nav:impliqueDeSuivre ent:6009;
-	nav:aPourCible nav:PetitNavire.
+	nav:aPourCible tna:PetitNavire.
 # >>> cible dans l'instruction ou dans l'alignement ? ---> instruction pour l'instant
 
 ent:6002 a nav:EntiteGeographique;
 	nav:aPourNature teg:Chenal.
 
 ent:6003 a nav:Alignement;
-	nav:aPourCap "293.3"^^xsd:float;
+#	nav:aPourCap "293.3"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourRepere [
 		a rdf:Seq;
 		rdf:_1 ent:6004;
 		rdf:_2 ent:6005;
 		];
-	rlsp:southOf ent:6007;
-	rlsp:northOf ent:6008;
+	nav:estAuSudDe ent:6007;
+	nav:estAuNordDe ent:6008;
 	nav:aPourInfo "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
 	nav:estSitueDans ent:6012.
 # ---> modifier fichier xml de l'ontologie afin d'ajouter classe rdf:Seq ---> FAIT
@@ -69,18 +73,19 @@ ent:6008 a nav:Tourelle;
 	rdfs:label "Bazen ar Menk"@br, "tourelle « Le Menk »"@fr;
 	nav:aPourNature teg:Tourelle;
 	nav:estUneMarqueDeType nav:MarqueCardinale;
-	nav:aPourTypeCardinal nav:Ouest;
+	nav:aPourTypeCardinal tdi:Ouest;
 	nav:estUnRepereLumineux "true"^^xsd:boolean.
 
 ent:6009 a nav:Alignement;
-	nav:aPourCap "290.0"^^xsd:float;
+#	nav:aPourCap "290.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourRepere [
 		a rdf:Seq;
 		rdf:_1 ent:6010;
 		rdf:_2 ent:6011;
 		];
-	rlsp:leftOf ent:6003.
-# >>> peut-on avoir un leftOf ?
+	nav:estALaGaucheDe ent:6003.
+	
+<<ent:6009 nav:aPourCap "290.0"^^xsd:float>> qudt:Unit unit:DEG.
 
 ent:6010 a nav:Phare;
 	rdfs:label "phare de l'Île de Batz"@fr;
@@ -91,9 +96,9 @@ ent:6011 a nav:Tourelle;
 	nav:aPourNature teg:Tourelle.
 
 ent:6012 a nav:Secteur;
-	nav:estDeCouleur nav:Blanche;
-	nav:aPourAngleDebut "289.5"^^xsd:float;
-	nav:aPourAngleFin "293.0"^^xsd:float;
+	nav:estDeCouleur tco:Blanche;
+	nav:aPourAngleDebut "289.5"^^xsd:float {|qudt:Unit unit:DEG|};
+	nav:aPourAngleFin "293.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:estUnElementDe ent:6011.
 
 
@@ -101,7 +106,7 @@ ent:6012 a nav:Secteur;
 #"Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."
 
 ent:6012 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDepart ent:6013;
  	nav:aPourPointDeDestination [
 		a rdf:Bag;
@@ -130,7 +135,7 @@ ent:6015 a nav:EntiteGeographique;
 
 ent:6039 a nav:Route;
 	rdfs:label "très au large d'Ouessant"@fr;
-	rlsp:auLargeDe ent:6016.
+	nav:auLargeDe ent:6016.
 
 ent:6016 a nav:EntiteGeographique;
 	rdfs:label "Ouessant"@fr.
@@ -170,7 +175,7 @@ ent:6021 a nav:EntiteGeographique;
 ent:6022 a nav:Information;
 	nav:stipule "De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."^^xsd:string;
 	nav:aPourLieuDEffet ent:6023;
-	nav:aPourTemporaliteQualitative nav:DeNuit.
+	nav:aPourTemporalite tit:DeNuit.
 
 ent:6023 a nav:EntiteGeographique;
 	rdfs:label "Grande Passe"@fr.
@@ -180,9 +185,9 @@ ent:6023 a nav:EntiteGeographique;
 #"La pratique des véhicules nautiques à moteur dans l’archipel de Molène au sein du parc naturel marin d’Iroise est interdite, à l’exception de l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°, conformément à l’arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)."
 
 ent:6024 a nav:Interdiction;
-	nav:aPourActionInterdite nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:aPourLieuDEffet ent:6025;
-	nav:aPourCible nav:VehiculeNautiqueAMoteur;
+	nav:aPourCible tna:VehiculeNautiqueAMoteur;
 	nav:aPourException "l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°"^^xsd:string;
 	nav:estImposeePar ent:6034.
 
@@ -193,7 +198,7 @@ ent:6025 a nav:EntiteGeographique;
 	rdfs:label "parc naturel marin d'Iroise"@fr.
 	
 ent:6077 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:pointDeDestination ent:6078;
 	nav:impliqueDeSuivre [
  		a rdf:Bag;
@@ -233,9 +238,9 @@ ent:6029 a nav:Tourelle;
 	nav:aPourNature teg:Tourelle.
 
 ent:6030 a nav:Interdiction;
-	nav:aPourActionInterdite nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:aPourLieuDEffet ent:6027;
-	nav:aPourTemporaliteQuantitative "du 1er avril au 30 juin"^^xsd:string;
+	nav:aPourTemporalite "du 1er avril au 30 juin"^^xsd:string;
 	nav:aPourException "L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction."^^xsd:string;
 	nav:estImposeePar ent:6076.
 # trouver une bonne ontologie du temps
@@ -244,10 +249,10 @@ ent:6076 a nav:Reglement;
 	nav:aPourArrete "arrêté 78/94 du 4 avril 1978 du maire de Granville"^^xsd:string.
 
 ent:6031 a nav:Interdiction;
-	nav:aPourActionInterdite nav:Mouillage;
+	nav:aPourAction tac:Mouillage;
 	nav:aPourLieuDEffet ent:6032;
-	nav:aPourCible nav:NavireDePlaisance;
-	nav:aPourTemporaliteQuantitative "du 1er avril au 31 juillet"^^xsd:string;
+	nav:aPourCible tna:NavireDePlaisance;
+	nav:aPourTemporalite "du 1er avril au 31 juillet"^^xsd:string;
 	nav:estImposeePar ent:6076.
 
 ent:6032 a nav:ZoneDuDomaineMaritime;
@@ -267,7 +272,7 @@ ent:6033 a nav:EntiteGeographique;
 
 ent:6035 a nav:Interdiction;
 	rdfs:label "Zone interdite de la centrale de Gravelines";
-	nav:aPourActionInterdite nav:Navigation, nav:Mouillage, nav:Dragage, nav:Stationnement, nav:PecheAPartirDEmbarcation, nav:Baignade, nav:PlongeeSousMarine, nav:DepotSurLeFondDeLaMerDeToutEnginLourd;
+	nav:aPourAction tac:Navigation, nav:Mouillage, nav:Dragage, nav:Stationnement, nav:PecheAPartirDEmbarcation, nav:Baignade, nav:PlongeeSousMarine, nav:DepotSurLeFondDeLaMerDeToutEnginLourd, nav:TouteActiviteMaritime;
 	nav:aPourLieuDEffet ent:6036;
 	nav:estImposeePar ent:6038.
 # >>> comment intégrer "...ou toute autre activité maritime" ?
@@ -275,7 +280,7 @@ ent:6035 a nav:Interdiction;
 ent:6036 a nav:ZoneDuDomaineMaritime;
 	rdfs:label "zone située immédiatement à l'Ouest du Port Ouest de Dunkerque"^^xsd:string;
 	nav:aPourInfo "zone, portée sur les cartes"^^xsd:string;
-	rlsp:westOf ent:6037.
+	nav:estALOuestDe ent:6037.
 
 ent:6037 a nav:EntiteGeographique;
 	rdfs:label "Port Ouest de Dunkerque"@fr;
@@ -305,8 +310,8 @@ ent:6042 a nav:EntiteGeographique;
 #"Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."
 
 ent:6043 a nav:Instruction;
-	nav:aPourAction nav:Stationnement;
-	nav:aPourCible nav:NavireDePlaisance;
+	nav:aPourAction tac:Stationnement;
+	nav:aPourCible tna:NavireDePlaisance;
 	nav:aPourLieuDEffet [
 		a rdf:Bag;
 		rdf:_1 ent:6044;
@@ -398,7 +403,7 @@ ent:6055 a nav:Renseignement;
 #"INSTRUCTIONS. — Le navire venant du large, après avoir reconnu la bouée d’atterrissage « Le Légué », doit donner un large tour vers l’Est à la bouée « 1 » afin de parer le Banc de la Toupie. Il navigue ensuite entre les bouées du chenal pour se présenter sensiblement dans l’axe du sas de l’écluse. Par mauvais temps de NE, il est conseillé aux navires sans pilote de rester aux abords de la bouée d’atterrissage."
 
 ent:6057 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDepart ent:6058;
 	nav:aPourCible nav:Navire;
 	nav:aPourPointDeDestination ent:6059;
@@ -409,36 +414,37 @@ ent:6057 a nav:Instruction;
 		rdf:_3 ent:6065;
 		];
 	nav:aPourInfo ent:6075.
-	
+
 ent:6075 a nav:Information;
 	nav:stipule "Par mauvais temps de NE, il est conseillé aux navires sans pilote de rester aux abords de la bouée d’atterrissage."^^xsd:string;
-	nav:aPourLieuDEffet ent:6061.
-	
+	nav:aPourLieuDEffet ent:6061;
+	nav:aPourConditionMeteo tim:MauvaisTemps.
+
 ent:6058 a nav:ZoneDuDomaineMaritime;
 	rdfs:label "large"@fr.
-	
+
 ent:6059 a nav:EntiteGeographique;
 	rdfs:label "sas de l'écluse"@fr;
 	nav:aPourNature teg:Sas.
-	
+
 ent:6060 a nav:Reperage;
 	nav:aPourEntiteImpliquee ent:6061.
-	
+
 ent:6061 a nav:Bouee;
 	rdfs:label "bouée d'atterrissage « Le Légué »"@fr.
-	
+
 ent:6062 a nav:Route;
 	rdfs:label "donner un large tour vers l'Est à la bouée « 1 »";
-	rlsp:eastOf ent:6063;
+	nav:estALEstDe ent:6063;
 	nav:aPourContexte "parer le Banc de la Toupie"^^xsd:string.
-	
+
 ent:6063 a nav:Bouee;
 	rdfs:label "bouée « 1 »"@fr.
-	
+
 ent:6064 a nav:EntiteGeographique;
 	nav:aPourNature teg:Banc;
 	rdfs:label "Banc de la Toupie"@fr.
-	
+
 ent:6065 a nav:Route;
 	rdfs:label "entre les bouées du chenal pour se présenter sensiblement dans l’axe du sas de l’écluse"@fr;
 	nav:aPourEntiteImpliquee [
@@ -446,11 +452,11 @@ ent:6065 a nav:Route;
 		rdf:_1 ent:6066;
 		rdf:_2 ent:6059;
 		].
-	
+
 ent:6066 a nav:GroupeDeBouees;
 	rdfs:label "bouées du chenal"@fr.
-	
-	
+
+
 #exemple 12
 #"Fécamp ( 49° 53,3' N — 0° 41,8' E) est un port de pêche, de commerce et de plaisance. C’est un port départemental géré par la chambre de commerce et d’industrie de Fécamp-Bolbec.
 # [...]
@@ -464,36 +470,50 @@ ent:6067 a nav:EntiteGeographique;
 	nav:estGerePar ent:6068;
 	nav:aPourLat "49° 53,3' N"^^xsd:string;
 	nav:aPourLng "0° 41,8' E"^^xsd:string.
-	
+
 ent:6068 a nav:Organisation;
 	rdfs:label "chambre de commerce et d'industrie de Fécamp-Bolbec"@fr.
-	
+
 ent:6069 a nav:Information;
 	nav:aPourEntiteImpliquee ent:6067;
 	nav:stipule "Il est recommandé d’entrer à la fin du courant de flot et peu de temps avant l’heure de la pleine mer qui est aussi l’heure de l’étale. L’heure favorable d’entrée d’un gros navire est en général, une demi-heure avant la pleine mer (une heure avant par gros temps de NE)."^^xsd:string.
-	
+
 ent:6070 a nav:Instruction;
-	nav:aPourAction nav:Navigation;
+	nav:aPourAction tac:Navigation;
 	nav:aPourPointDeDestination ent:6067;
 	nav:impliqueDeSuivre [
 		a rdf:Seq;
 		rdf:_1 ent:6071;
 		rdf:_2 ent:6074;
 		].
-	
+
 ent:6071 a nav:Alignement;
-	nav:aPourCap "82.0"^^xsd:float;
+	nav:aPourCap "82.0"^^xsd:float {|qudt:Unit unit:DEG|};
 	nav:aPourPointDeDestination ent:6072.
-	
+
 ent:6072 a nav:EntiteGeographique;
 	rdfs:label "quelques centaines de mètres de la Jetée Sud"@fr.
-	
+
 ent:6073 a nav:EntiteGeographique;
 	nav:aPourNature teg:Jetee;
 	rdfs:label "Jetée Sud"@fr.
-	
+
 ent:6074 a nav:Route;
 	nav:aPourPointDeDepart ent:6072;
 	nav:aPourPointDeDestination ent:6067;
 	nav:aPourInfo "utiliser la forte dérive due au courant, la barre, la machine en avant"^^xsd:string;
 	nav:aPourContexte "parer aussi près que possible le musoir de la Jetée Sud"^^xsd:string.
+
+
+#exemple 13
+#"À marée basse et par beau temps calme, il est possible, pour un navire de plaisance ou une embarcation, d’accoster le socle de cette balise [la balise « Jet d’Amont »]."
+
+ent:6081 a nav:Information;
+	nav:stipule "À marée basse et par beau temps calme, il est possible, pour un navire de plaisance ou une embarcation, d’accoster le socle de cette balise.";
+	nav:aPourEntiteImpliquee ent:6082;
+	nav:aPourConditionMeteo tim:BeauTemps, tim:TempsCalme;
+	nav:aPourConditionOceano tio:MareeBasse;
+	nav:aPourCible tna:NavireDePlaisance, tna:Embarcation.
+
+ent:6082 a nav:Balise;
+	rdfs:label "Jet d’Amont"@fr.
