@@ -80,10 +80,12 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale">
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative">
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour condition locale qualitative</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -91,7 +93,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationMeteo"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition météorologique</rdfs:label>
@@ -102,7 +104,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationOceano"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition océanographique</rdfs:label>
@@ -121,14 +123,6 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourHoraire -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHoraire">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement">
@@ -139,27 +133,12 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporalite -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
         <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite"/>
+        <rdfs:label xml:lang="fr">a pour temporalité qualitative</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -183,16 +162,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#apres">
         <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>
     
@@ -202,16 +187,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#avant">
         <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>
     
@@ -256,9 +247,9 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale">
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -267,16 +258,16 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourHoraire -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHoraire">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporalite -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -285,7 +276,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
     </owl:DatatypeProperty>
     
@@ -294,7 +285,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
     </owl:DatatypeProperty>
     
@@ -303,6 +294,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesse -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesse">
+        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour vitesse</rdfs:label>
@@ -348,7 +340,7 @@
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ConditionLocale">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale"/>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
                 <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -464,7 +456,7 @@
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite"/>
+                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative"/>
                 <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
             </owl:Restriction>
         </owl:equivalentClass>
@@ -494,7 +486,9 @@
 
     <!-- http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique">
+        <rdfs:label xml:lang="fr">Phénomène Météorologique ou Océanographique</rdfs:label>
+    </owl:Class>
     
 
 
@@ -826,27 +820,17 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotations
+    // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale">
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour condition locale</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHoraire">
-        <rdfs:label xml:lang="fr">a pour horaire</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporalite">
-        <rdfs:label xml:lang="fr">a pour temporalité</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM">
-        <rdfs:label xml:lang="fr">a pour temps après pleine mer</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM">
-        <rdfs:label xml:lang="fr">a pour temps avant pleine mer</rdfs:label>
-    </rdf:Description>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estLocaliseA"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+        <owl:onClass rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+    </owl:Restriction>
 </rdf:RDF>
 
 
