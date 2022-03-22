@@ -74,7 +74,6 @@ ent:6008 a nav:Tourelle;
 
 ent:6009 a nav:Alignement;
 	nav:aPourCap "290.0"^^xsd:float;
-	nav:aPourCible nav:PetitNavire;
 	nav:aPourRepere [
 		a rdf:Seq;
 		rdf:_1 ent:6010;
@@ -185,17 +184,37 @@ ent:6024 a nav:Interdiction;
 	nav:aPourLieuDEffet ent:6025;
 	nav:aPourCible nav:VehiculeNautiqueAMoteur;
 	nav:aPourException "l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°"^^xsd:string;
-	nav:estImposePar ent:6034.
+	nav:estImposeePar ent:6034.
 
 ent:6034 a nav:Reglement;
 	nav:aPourArrete "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"^^xsd:string.
 
 ent:6025 a nav:EntiteGeographique;
 	rdfs:label "parc naturel marin d'Iroise"@fr.
+	
+ent:6077 a nav:Instruction;
+	nav:aPourAction nav:Navigation;
+	nav:pointDeDestination ent:6078;
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6079;
+       	rdf:_2 ent:6080;
+    		];
+	nav:estImposeePar ent:6034.
+	
+ent:6078 a nav:EntiteGeographique;
+	rdfs:label "île Molène";
+	nav:nature teg:Île.
+
+ent:6079 a nav:Chenal;
+	rdfs:label "chenal des Laz"@fr.
+
+ent:6080 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "couloir de 300 m de largeur centré sur l’alignement au 264°"@fr.
 
 
 #exemple 5
-#"Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique. Leur accès est interdit du 1er avril au 30 juin. L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction. Le mouillage des navires de plaisance est interdit du 1er avril au 31 juillet dans une zone, portée sur la carte, aux abords de l’îlot des Guernesiais (48° 53,7' N — 1° 48,7' W)"
+#"RÉSERVE NATURELLE (arrêté 78/94 du 4 avril 1978 du maire de Granville). — Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique. Leur accès est interdit du 1er avril au 30 juin. L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction. Le mouillage des navires de plaisance est interdit du 1er avril au 31 juillet dans une zone, portée sur la carte, aux abords de l’îlot des Guernesiais (48° 53,7' N — 1° 48,7' W)"
 
 ent:6026 a nav:Information;
 	nav:stipule "Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique."^^xsd:string;
@@ -215,18 +234,25 @@ ent:6029 a nav:Tourelle;
 
 ent:6030 a nav:Interdiction;
 	nav:aPourActionInterdite nav:Navigation;
-	nav:aPourLieuDEffet ent:6026;
+	nav:aPourLieuDEffet ent:6027;
 	nav:aPourTemporaliteQuantitative "du 1er avril au 30 juin"^^xsd:string;
-	nav:aPourException "L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction."^^xsd:string.
+	nav:aPourException "L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction."^^xsd:string;
+	nav:estImposeePar ent:6076.
 # trouver une bonne ontologie du temps
+
+ent:6076 a nav:Reglement;
+	nav:aPourArrete "arrêté 78/94 du 4 avril 1978 du maire de Granville"^^xsd:string.
 
 ent:6031 a nav:Interdiction;
 	nav:aPourActionInterdite nav:Mouillage;
 	nav:aPourLieuDEffet ent:6032;
-	nav:aPourCible nav:NavireDePlaisance.
+	nav:aPourCible nav:NavireDePlaisance;
+	nav:aPourTemporaliteQuantitative "du 1er avril au 31 juillet"^^xsd:string;
+	nav:estImposeePar ent:6076.
 
 ent:6032 a nav:ZoneDuDomaineMaritime;
-	nav:aPourInfo "zone, portée sur la carte"^^xsd:string;
+	rdfs:label "zone"@fr;
+	nav:aPourInfo "portée sur la carte"^^xsd:string;
 	nav:estAuxAbordsDe ent:6033.
 
 ent:6033 a nav:EntiteGeographique;
@@ -372,6 +398,7 @@ ent:6055 a nav:Renseignement;
 #"INSTRUCTIONS. — Le navire venant du large, après avoir reconnu la bouée d’atterrissage « Le Légué », doit donner un large tour vers l’Est à la bouée « 1 » afin de parer le Banc de la Toupie. Il navigue ensuite entre les bouées du chenal pour se présenter sensiblement dans l’axe du sas de l’écluse. Par mauvais temps de NE, il est conseillé aux navires sans pilote de rester aux abords de la bouée d’atterrissage."
 
 ent:6057 a nav:Instruction;
+	nav:aPourAction nav:Navigation;
 	nav:aPourPointDeDepart ent:6058;
 	nav:aPourCible nav:Navire;
 	nav:aPourPointDeDestination ent:6059;
@@ -446,6 +473,7 @@ ent:6069 a nav:Information;
 	nav:stipule "Il est recommandé d’entrer à la fin du courant de flot et peu de temps avant l’heure de la pleine mer qui est aussi l’heure de l’étale. L’heure favorable d’entrée d’un gros navire est en général, une demi-heure avant la pleine mer (une heure avant par gros temps de NE)."^^xsd:string.
 	
 ent:6070 a nav:Instruction;
+	nav:aPourAction nav:Navigation;
 	nav:aPourPointDeDestination ent:6067;
 	nav:impliqueDeSuivre [
 		a rdf:Seq;
