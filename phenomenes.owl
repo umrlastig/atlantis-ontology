@@ -1,12 +1,23 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
      xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
+     xmlns:gem="http://www.eionet.europa.eu/gemet/concept/"
+     xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tcr="http://data.shom.fr/id/codes/nav/typedecourant/"
+     xmlns:tim="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/"
+     xmlns:tio="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/"
+     xmlns:tit="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prtn="http://www.ontotext.com/proton/protonext#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:weat="https://bimerr.iot.linkeddata.es/def/weather#"
+     xmlns:sophod="http://sweetontology.net/phenOceanDynamics/"
+     xmlns:sophatmo="http://sweetontology.net/phenAtmo/"
+     xmlns:sophatmow="http://sweetontology.net/phenAtmoWind/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"/>
     
 
@@ -77,7 +88,11 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+        <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exact match</rdfs:label>
+    </owl:ObjectProperty>
 
 
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative -->
@@ -351,6 +366,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Courant -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Courant">
+        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#WaterCurrent"/>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeDeCourant"/>
@@ -367,6 +383,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#CourantDeMaree -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree">
+        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenOceanDynamics/TidalCurrent"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Courant"/>
         <rdfs:label xml:lang="fr">Courant de Marée</rdfs:label>
     </owl:Class>
@@ -479,6 +496,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique">
+        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenAtmo/MeteorologicalPhenomena"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
     </owl:Class>
     
@@ -605,8 +623,34 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#Vent -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Vent">
+        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenAtmoWind/Wind"/>
+        <owl:equivalentClass rdf:resource="https://bimerr.iot.linkeddata.es/def/weather#Wind"/>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique"/>
     </owl:Class>
+    
+
+
+    <!-- http://sweetontology.net/phenAtmo/MeteorologicalPhenomena -->
+
+    <owl:Class rdf:about="http://sweetontology.net/phenAtmo/MeteorologicalPhenomena"/>
+    
+
+
+    <!-- http://sweetontology.net/phenAtmoWind/Wind -->
+
+    <owl:Class rdf:about="http://sweetontology.net/phenAtmoWind/Wind"/>
+    
+
+
+    <!-- http://sweetontology.net/phenOceanDynamics/TidalCurrent -->
+
+    <owl:Class rdf:about="http://sweetontology.net/phenOceanDynamics/TidalCurrent"/>
+    
+
+
+    <!-- http://www.ontotext.com/proton/protonext#WaterCurrent -->
+
+    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#WaterCurrent"/>
     
 
 
@@ -625,6 +669,12 @@
     <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    
+
+
+    <!-- https://bimerr.iot.linkeddata.es/def/weather#Wind -->
+
+    <owl:Class rdf:about="https://bimerr.iot.linkeddata.es/def/weather#Wind"/>
     
 
 
@@ -672,6 +722,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/Brume">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
+        <skos:inScheme rdf:resource="http://www.eionet.europa.eu/gemet/concept/3348"/>
         <rdfs:label xml:lang="fr">brume</rdfs:label>
     </owl:NamedIndividual>
     
@@ -776,6 +827,7 @@
     <!-- http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type de Condition Locale</rdfs:label>
     </owl:NamedIndividual>
     
@@ -805,6 +857,12 @@
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:label xml:lang="fr">Type d&apos;Indication Temporelle</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/3348 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/3348"/>
     
 
 
