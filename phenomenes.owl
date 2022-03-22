@@ -1,900 +1,601 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
-     xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
-     xmlns:gem="http://www.eionet.europa.eu/gemet/concept/"
-     xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:tcr="http://data.shom.fr/id/codes/nav/typedecourant/"
-     xmlns:tim="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/"
-     xmlns:tio="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/"
-     xmlns:tit="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:pext="http://www.ontotext.com/proton/protonext#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:weat="https://bimerr.iot.linkeddata.es/def/weather#"
-     xmlns:sophod="http://sweetontology.net/phenOceanDynamics/"
-     xmlns:sophatmo="http://sweetontology.net/phenAtmo/"
-     xmlns:sophatmow="http://sweetontology.net/phenAtmoWind/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"/>
-    
+@prefix : <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#> .
+@prefix gem: <http://www.eionet.europa.eu/gemet/concept/> .
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tcr: <http://data.shom.fr/id/codes/nav/typedecourant/> .
+@prefix tim: <http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/> .
+@prefix tio: <http://data.shom.fr/id/codes/nav/typedindicationoceanographique/> .
+@prefix tit: <http://data.shom.fr/id/codes/nav/typedindicationtemporelle/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pext: <http://www.ontotext.com/proton/protonext#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix weat: <https://bimerr.iot.linkeddata.es/def/weather#> .
+@prefix sophod: <http://sweetontology.net/phenOceanDynamics/> .
+@prefix sophatmo: <http://sweetontology.net/phenAtmo/> .
+@prefix sophatmow: <http://sweetontology.net/phenAtmoWind/> .
+@base <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8> .
 
+<http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8> rdf:type owl:Ontology .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
 
-    
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+skos:related rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative
+nav:aPourConditionLocaleQualitative rdf:type owl:ObjectProperty ;
+                                    rdfs:range nav:ConditionLocale ;
+                                    rdfs:comment "L'objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourConditionLocale _:objet>> _:autrePropriete _:autreObjet."@fr ;
+                                    rdfs:label "a pour condition locale qualitative"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo
+nav:aPourConditionMeteo rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf nav:aPourConditionLocaleQualitative ;
+                        rdfs:range nav:IndicationMeteo ;
+                        rdfs:comment "L'objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourConditionLocale _:objet>> _:autrePropriete _:autreObjet."@fr ;
+                        rdfs:label "a pour condition météorologique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano
+nav:aPourConditionOceano rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf nav:aPourConditionLocaleQualitative ;
+                         rdfs:range nav:IndicationOceano ;
+                         rdfs:comment "L'objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourConditionLocale _:objet>> _:autrePropriete _:autreObjet."@fr ;
+                         rdfs:label "a pour condition océanographique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourDirection
+nav:aPourDirection rdf:type owl:ObjectProperty ;
+                   rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                   rdfs:range nav:DirectionCardinale ;
+                   rdfs:comment "Exemple : vent aPourDirection NE = vent de NE = vient du NE, va vers SW"@fr ;
+                   rdfs:label "a pour direction"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement
+nav:aPourPortDeRattachement rdf:type owl:ObjectProperty ;
+                            rdfs:domain nav:CourantDeMaree ;
+                            rdfs:range <http://www.opengis.net/ont/geosparql#Feature> ;
+                            rdfs:label "a pour port de rattachement"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative
+nav:aPourTemporaliteQualitative rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf nav:aPourConditionLocaleQualitative ;
+                                rdfs:range nav:IndicationTemporelle ;
+                                rdfs:label "a pour temporalité qualitative"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTypeDeCourant
+nav:aPourTypeDeCourant rdf:type owl:ObjectProperty ;
+                       rdfs:domain nav:Courant ;
+                       rdfs:range [ rdf:type owl:Restriction ;
+                                    owl:onProperty skos:inScheme ;
+                                    owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste>
+                                  ] ;
+                       rdfs:label "a pour type de courant"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#apres
+nav:apres rdf:type owl:ObjectProperty ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste>
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste>
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste>
+                                     ]
+                                   )
+                     ] .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#avant
+nav:avant rdf:type owl:ObjectProperty ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste>
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste>
+                                     ]
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste>
+                                     ]
+                                   )
+                     ] .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#estLocaliseA
+nav:estLocaliseA rdf:type owl:ObjectProperty ;
+                 rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                 rdfs:range <http://www.opengis.net/ont/geosparql#Feature> ;
+                 rdfs:label "est localisé à"@fr .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ;
+                rdfs:label "exact match"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:label "is in scheme"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCap
+nav:aPourCap rdf:type owl:DatatypeProperty ;
+             rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+             rdfs:range xsd:float ;
+             rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCap \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+             rdfs:label "a pour cap"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative
+nav:aPourConditionLocaleQuantitative rdf:type owl:DatatypeProperty ;
+                                     rdfs:range xsd:string .
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourHoraire
+nav:aPourHoraire rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf nav:aPourTemporaliteQuantitative ;
+                 rdfs:range xsd:time .
+
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative
+nav:aPourTemporaliteQuantitative rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf nav:aPourConditionLocaleQuantitative ;
+                                 rdfs:range xsd:string .
+
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM
+nav:aPourTempsApresPM rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:aPourTemporaliteQuantitative ;
+                      rdfs:range xsd:time .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM
+nav:aPourTempsAvantPM rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:aPourTemporaliteQuantitative ;
+                      rdfs:range xsd:time .
 
-    <!-- http://www.w3.org/2004/02/skos/core#definition -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesse
+nav:aPourVitesse rdf:type owl:DatatypeProperty ;
+                 rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                 rdfs:label "a pour vitesse"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi
+nav:aPourVitesseMaxi rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf nav:aPourVitesse ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                     rdfs:label "a pour vitesse maximum"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini
+nav:aPourVitesseMini rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf nav:aPourVitesse ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                     rdfs:label "a pour vitesse minimum"@fr .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.shom.fr/def/navigation_cotiere#ConditionLocale
+nav:ConditionLocale rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty nav:aPourConditionLocaleQualitative ;
+                                          owl:someValuesFrom nav:TypeDeConditionLocale
+                                        ] .
+
 
+###  http://data.shom.fr/def/navigation_cotiere#Courant
+nav:Courant rdf:type owl:Class ;
+            owl:equivalentClass pext:WaterCurrent ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty nav:aPourTypeDeCourant ;
+                                  owl:someValuesFrom nav:TypeDeCourant
+                                ] ;
+            rdfs:subClassOf nav:PhenomeneOceanographique ;
+            rdfs:comment "Le mouvement permanent ou périodique des eaux, généralement dans le sens horizontal, dû à diverses causes telles que des différences de température, le vent ou les marées."@fr ;
+            rdfs:label "Courant"@fr .
 
-    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
-    
+###  http://data.shom.fr/def/navigation_cotiere#CourantDeMaree
+nav:CourantDeMaree rdf:type owl:Class ;
+                   owl:equivalentClass sophod:TidalCurrent ;
+                   rdfs:subClassOf nav:Courant ;
+                   rdfs:label "Courant de Marée"@fr .
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+###  http://data.shom.fr/def/navigation_cotiere#CourantDuAuVent
+nav:CourantDuAuVent rdf:type owl:Class ;
+                    rdfs:subClassOf nav:Courant ;
+                    rdfs:label "Courant dû au Vent"@fr .
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#DirectionCardinale
+nav:DirectionCardinale rdf:type owl:Class ;
+                       rdfs:isDefinedBy nav: ;
+                       rdfs:label "Cardinal Direction"@en ,
+                                  "Direction Cardinale"@fr .
 
-    <!-- http://www.w3.org/2004/02/skos/core#related -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
-    
+###  http://data.shom.fr/def/navigation_cotiere#EntiteGeographique
+nav:EntiteGeographique rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> .
 
+
+###  http://data.shom.fr/def/navigation_cotiere#Etale
+nav:Etale rdf:type owl:Class ;
+          owl:equivalentClass nav:Renverse ;
+          rdfs:subClassOf nav:CourantDeMaree ;
+          rdfs:comment "Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c'est l'étale ou renverse."@fr ;
+          rdfs:label "Étale"@fr .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+
+###  http://data.shom.fr/def/navigation_cotiere#Flot
+nav:Flot rdf:type owl:Class ;
+         rdfs:subClassOf nav:CourantDeMaree ;
+         rdfs:comment "Le courant de flot est le courant créé par la marée montante. Le flot ne coïncide pas exactement avec la marée montante."@fr ;
+         rdfs:label "Flot"@fr .
 
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#IndicationMeteo
+nav:IndicationMeteo rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty nav:aPourConditionMeteo ;
+                                          owl:someValuesFrom nav:TypeDIndicationMeteorologique
+                                        ] ;
+                    rdfs:subClassOf nav:ConditionLocale ;
+                    rdfs:label "Indication Météorologique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#IndicationOceano
+nav:IndicationOceano rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty nav:aPourConditionOceano ;
+                                           owl:someValuesFrom nav:TypeDIndicationOceanographique
+                                         ] ;
+                     rdfs:subClassOf nav:ConditionLocale ;
+                     rdfs:label "Indication Océanographique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle
+nav:IndicationTemporelle rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty nav:aPourTemporaliteQualitative ;
+                                               owl:someValuesFrom nav:TypeDIndicationTemporelle
+                                             ] ;
+                         rdfs:subClassOf nav:ConditionLocale ;
+                         rdfs:label "Indication Temporelle"@fr .
 
-    <!-- http://www.w3.org/2001/XMLSchema#time -->
 
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#time"/>
-    
+###  http://data.shom.fr/def/navigation_cotiere#Jusant
+nav:Jusant rdf:type owl:Class ;
+           rdfs:subClassOf nav:CourantDeMaree ;
+           rdfs:comment "Le courant de jusant est le courant créé par la marée descendante. Le le jusant ne coïncide pas exactement avec la marée descendante."@fr ;
+           rdfs:label "Jusant"@fr .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique
+nav:PhenomeneMeteorologique rdf:type owl:Class ;
+                            owl:equivalentClass sophatmo:MeteorologicalPhenomena ;
+                            rdfs:subClassOf nav:PhenomeneMeteorologiqueOuOceanographique .
 
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique
+nav:PhenomeneMeteorologiqueOuOceanographique rdf:type owl:Class ;
+                                             rdfs:label "Phénomène Météorologique ou Océanographique"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative">
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour condition locale qualitative</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationMeteo"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour condition météorologique</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationOceano"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour condition océanographique</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDirection -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDirection">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale"/>
-        <rdfs:comment xml:lang="fr">Exemple : vent aPourDirection NE = vent de NE = vient du NE, va vers SW</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour direction</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">a pour port de rattachement</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle"/>
-        <rdfs:label xml:lang="fr">a pour temporalité qualitative</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTypeDeCourant -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTypeDeCourant">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Courant"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:label xml:lang="fr">a pour type de courant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#apres -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#apres">
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique
+nav:PhenomeneOceanographique rdf:type owl:Class ;
+                             rdfs:subClassOf nav:PhenomeneMeteorologiqueOuOceanographique .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#avant -->
+###  http://data.shom.fr/def/navigation_cotiere#Renverse
+nav:Renverse rdf:type owl:Class ;
+             rdfs:subClassOf nav:CourantDeMaree ;
+             rdfs:comment "Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c'est l'étale ou renverse."@fr ;
+             rdfs:label "Renverse"@fr .
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#avant">
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#Ressac
+nav:Ressac rdf:type owl:Class ;
+           rdfs:subClassOf nav:Vague ;
+           rdfs:comment "Aller et retour violent des vagues sur elles-mêmes, lorsqu'elles se brisent contre un obstacle (https://www.cnrtl.fr/definition/ressac)."@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estLocaliseA -->
 
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estLocaliseA">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:label xml:lang="fr">est localisé à</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique
+nav:TypeDIndicationMeteorologique rdf:type owl:Class ;
+                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                        owl:onProperty skos:inScheme ;
+                                                        owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste>
+                                                      ] ;
+                                  rdfs:subClassOf nav:TypeDeConditionLocale ;
+                                  rdfs:label "Type d'Indication Météorologique"@fr .
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique
+nav:TypeDIndicationOceanographique rdf:type owl:Class ;
+                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                         owl:onProperty skos:inScheme ;
+                                                         owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste>
+                                                       ] ;
+                                   rdfs:subClassOf nav:TypeDeConditionLocale ;
+                                   rdfs:label "Type d'Indication Océanographique"@fr .
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
-        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
-    </owl:ObjectProperty>
-    
 
-        <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle
+nav:TypeDIndicationTemporelle rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty skos:inScheme ;
+                                                    owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste>
+                                                  ] ;
+                              rdfs:subClassOf nav:TypeDeConditionLocale ;
+                              rdfs:label "Type d'Indication Temporelle"@fr .
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
-        <rdfs:label xml:lang="en">exact match</rdfs:label>
-    </owl:ObjectProperty>
 
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale
+nav:TypeDeConditionLocale rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty skos:inScheme ;
+                                                owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste>
+                                              ] ;
+                          rdfs:subClassOf skos:Concept ;
+                          rdfs:label "Type de Condition Locale"@fr .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeCourant
+nav:TypeDeCourant rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty skos:inScheme ;
+                                        owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste>
+                                      ] ;
+                  rdfs:subClassOf skos:Concept ;
+                  rdfs:label "Type de Courant"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCap -->
+###  http://data.shom.fr/def/navigation_cotiere#Vague
+nav:Vague rdf:type owl:Class ;
+          rdfs:subClassOf nav:PhenomeneOceanographique .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCap">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCap &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour cap</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#Vent
+nav:Vent rdf:type owl:Class ;
+         owl:equivalentClass sophatmow:Wind ,
+                             weat:Wind ;
+         rdfs:subClassOf nav:PhenomeneMeteorologique .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
+###  http://sweetontology.net/phenAtmo/MeteorologicalPhenomena
+sophatmo:MeteorologicalPhenomena rdf:type owl:Class .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourHoraire -->
+###  http://sweetontology.net/phenAtmoWind/Wind
+sophatmow:Wind rdf:type owl:Class .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourHoraire">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://sweetontology.net/phenOceanDynamics/TidalCurrent
+sophod:TidalCurrent rdf:type owl:Class .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQuantitative"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.ontotext.com/proton/protonext#WaterCurrent
+pext:WaterCurrent rdf:type owl:Class .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM -->
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsApresPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
-    </owl:DatatypeProperty>
-    
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTempsAvantPM">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQuantitative"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#time"/>
-    </owl:DatatypeProperty>
-    
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesse -->
+###  https://bimerr.iot.linkeddata.es/def/weather#Wind
+weat:Wind rdf:type owl:Class .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesse">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+#################################################################
+#    Individuals
+#################################################################
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi -->
+###  http://data.shom.fr/id/codes/nav/typedecourant/CourantAlternatif
+tcr:CourantAlternatif rdf:type owl:NamedIndividual ,
+                               nav:TypeDeCourant ;
+                      rdfs:comment "Un courant alternatif est un courant qui porte dans une direction au flot et dans la direction opposée pendant le jusant quel que soit le coefficient de marée."@fr ;
+                      rdfs:label "courant alternatif"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedecourant/CourantGiratoire
+tcr:CourantGiratoire rdf:type owl:NamedIndividual ,
+                              nav:TypeDeCourant ;
+                     rdfs:comment "Un courant giratoire est un courant qui porte dans une direction qui varie en fonction de l'heure de la marée (donc en 12 h 25 min)."@fr ;
+                     rdfs:label "courant giratoire"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedecourant/CourantTraversier
+tcr:CourantTraversier rdf:type owl:NamedIndividual ,
+                               nav:TypeDeCourant ;
+                      rdfs:label "courant traversier"@fr .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+###  http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/Brume
+tim:Brume rdf:type owl:NamedIndividual ,
+                   nav:TypeDIndicationMeteorologique ;
+          skos:inScheme <http://www.eionet.europa.eu/gemet/concept/3348> ;
+          rdfs:label "brume"@fr .
 
-    
 
+###  http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps
+tim:MauvaisTemps rdf:type owl:NamedIndividual ,
+                          nav:TypeDIndicationMeteorologique ;
+                 rdfs:label "mauvais temps"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#ConditionLocale -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#ConditionLocale">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/BasseMer
+tio:BasseMer rdf:type owl:NamedIndividual ,
+                      nav:TypeDIndicationOceanographique ;
+             rdfs:label "basse mer"@fr ,
+                        "low tide"@en .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Courant -->
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuFlot
+tio:FinDuFlot rdf:type owl:NamedIndividual ,
+                       nav:TypeDIndicationOceanographique ;
+              rdfs:label "fin du flot"@fr .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Courant">
-        <owl:equivalentClass rdf:resource="http://www.ontotext.com/proton/protonext#WaterCurrent"/>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTypeDeCourant"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique"/>
-        <rdfs:comment xml:lang="fr">Le mouvement permanent ou périodique des eaux, généralement dans le sens horizontal, dû à diverses causes telles que des différences de température, le vent ou les marées.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Courant</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuJusant
+tio:FinDuJusant rdf:type owl:NamedIndividual ,
+                         nav:TypeDIndicationOceanographique ;
+                rdfs:label "fin du jusant"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#CourantDeMaree -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree">
-        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenOceanDynamics/TidalCurrent"/>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Courant"/>
-        <rdfs:label xml:lang="fr">Courant de Marée</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeMorte-Eau
+tio:MareeDeMorte-Eau rdf:type owl:NamedIndividual ,
+                              nav:TypeDIndicationOceanographique ;
+                     rdfs:comment "En période de mortes-eaux, le marnage est minimal (la mer recouvre et découvre moins) et les courants de marée sont moins forts."@fr ;
+                     rdfs:label "marée de morte-eau"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#CourantDuAuVent -->
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeVive-Eau
+tio:MareeDeVive-Eau rdf:type owl:NamedIndividual ,
+                             nav:TypeDIndicationOceanographique ;
+                    rdfs:comment "En période de vives-eaux, le marnage est plus grand (la mer recouvre et découvre plus) et les courants de marée sont plus forts."@fr ;
+                    rdfs:label "marée de vive-eau"@fr .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#CourantDuAuVent">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Courant"/>
-        <rdfs:label xml:lang="fr">Courant dû au Vent</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/Mi-Maree
+tio:Mi-Maree rdf:type owl:NamedIndividual ,
+                      nav:TypeDIndicationOceanographique ;
+             skos:definition "Blabla."@en ,
+                             "Blabla."@fr ;
+             skos:prefLabel "half tide"@en ,
+                            "mi-marée"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#DirectionCardinale -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#DirectionCardinale">
-        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
-        <rdfs:label xml:lang="en">Cardinal Direction</rdfs:label>
-        <rdfs:label xml:lang="fr">Direction Cardinale</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/PleineMer
+tio:PleineMer rdf:type owl:NamedIndividual ,
+                       nav:TypeDIndicationOceanographique ;
+              rdfs:label "pleine mer"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#EntiteGeographique -->
+###  http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour
+tit:DeJour rdf:type owl:NamedIndividual ,
+                    nav:TypeDIndicationTemporelle ;
+           rdfs:label "de jour"@fr .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#EntiteGeographique">
-        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeNuit
+tit:DeNuit rdf:type owl:NamedIndividual ,
+                    nav:TypeDIndicationTemporelle ;
+           rdfs:label "de nuit"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Etale -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Etale">
-        <owl:equivalentClass rdf:resource="http://data.shom.fr/def/navigation_cotiere#Renverse"/>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree"/>
-        <rdfs:comment xml:lang="fr">Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c&apos;est l&apos;étale ou renverse.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Étale</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste> rdf:type owl:NamedIndividual ,
+                                                                                       skos:ConceptScheme ;
+                                                                              rdfs:label "Type de Condition Locale"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Flot -->
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste> rdf:type owl:NamedIndividual ,
+                                                                                               skos:ConceptScheme ;
+                                                                                      rdfs:label "Type d'Indication Météorologique"@fr .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Flot">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree"/>
-        <rdfs:comment xml:lang="fr">Le courant de flot est le courant créé par la marée montante. Le flot ne coïncide pas exactement avec la marée montante.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Flot</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste> rdf:type owl:NamedIndividual ,
+                                                                                                skos:ConceptScheme ;
+                                                                                       rdfs:label "Type d'Indication Océanographique"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#IndicationMeteo -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#IndicationMeteo">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
-        <rdfs:label xml:lang="fr">Indication Météorologique</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste> rdf:type owl:NamedIndividual ,
+                                                                                           skos:ConceptScheme ;
+                                                                                  rdfs:label "Type d'Indication Temporelle"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#IndicationOceano -->
+###  http://www.eionet.europa.eu/gemet/concept/3348
+<http://www.eionet.europa.eu/gemet/concept/3348> rdf:type owl:NamedIndividual .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#IndicationOceano">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
-        <rdfs:label xml:lang="fr">Indication Océanographique</rdfs:label>
-    </owl:Class>
-    
 
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste> rdf:type owl:NamedIndividual ,
+                                                                                skos:ConceptScheme ;
+                                                                       rdfs:label "Type de Courant"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
-        <rdfs:label xml:lang="fr">Indication Temporelle</rdfs:label>
-    </owl:Class>
-    
+#################################################################
+#    General axioms
+#################################################################
 
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:estLocaliseA ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass <http://www.opengis.net/ont/geosparql#Feature> ;
+  rdfs:subClassOf nav:PhenomeneMeteorologiqueOuOceanographique
+] .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Jusant -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Jusant">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree"/>
-        <rdfs:comment xml:lang="fr">Le courant de jusant est le courant créé par la marée descendante. Le le jusant ne coïncide pas exactement avec la marée descendante.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Jusant</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique">
-        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenAtmo/MeteorologicalPhenomena"/>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique">
-        <rdfs:label xml:lang="fr">Phénomène Météorologique ou Océanographique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Renverse -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Renverse">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#CourantDeMaree"/>
-        <rdfs:comment xml:lang="fr">Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c&apos;est l&apos;étale ou renverse.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Renverse</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Ressac -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Ressac">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#Vague"/>
-        <rdfs:comment xml:lang="fr">Aller et retour violent des vagues sur elles-mêmes, lorsqu&apos;elles se brisent contre un obstacle (https://www.cnrtl.fr/definition/ressac).</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Météorologique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Océanographique</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Temporelle</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type de Condition Locale</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCourant -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type de Courant</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Vague -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Vague">
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique"/>
-    </owl:Class>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#Vent -->
-
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Vent">
-        <owl:equivalentClass rdf:resource="http://sweetontology.net/phenAtmoWind/Wind"/>
-        <owl:equivalentClass rdf:resource="https://bimerr.iot.linkeddata.es/def/weather#Wind"/>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique"/>
-    </owl:Class>
-    
-
-
-    <!-- http://sweetontology.net/phenAtmo/MeteorologicalPhenomena -->
-
-    <owl:Class rdf:about="http://sweetontology.net/phenAtmo/MeteorologicalPhenomena"/>
-    
-
-
-    <!-- http://sweetontology.net/phenAtmoWind/Wind -->
-
-    <owl:Class rdf:about="http://sweetontology.net/phenAtmoWind/Wind"/>
-    
-
-
-    <!-- http://sweetontology.net/phenOceanDynamics/TidalCurrent -->
-
-    <owl:Class rdf:about="http://sweetontology.net/phenOceanDynamics/TidalCurrent"/>
-    
-
-
-    <!-- http://www.ontotext.com/proton/protonext#WaterCurrent -->
-
-    <owl:Class rdf:about="http://www.ontotext.com/proton/protonext#WaterCurrent"/>
-    
-
-
-    <!-- http://www.opengis.net/ont/geosparql#Feature -->
-
-    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
-
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    
-
-
-    <!-- https://bimerr.iot.linkeddata.es/def/weather#Wind -->
-
-    <owl:Class rdf:about="https://bimerr.iot.linkeddata.es/def/weather#Wind"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedecourant/CourantAlternatif -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecourant/CourantAlternatif">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant"/>
-        <rdfs:comment xml:lang="fr">Un courant alternatif est un courant qui porte dans une direction au flot et dans la direction opposée pendant le jusant quel que soit le coefficient de marée.</rdfs:comment>
-        <rdfs:label xml:lang="fr">courant alternatif</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedecourant/CourantGiratoire -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecourant/CourantGiratoire">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant"/>
-        <rdfs:comment xml:lang="fr">Un courant giratoire est un courant qui porte dans une direction qui varie en fonction de l&apos;heure de la marée (donc en 12 h 25 min).</rdfs:comment>
-        <rdfs:label xml:lang="fr">courant giratoire</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedecourant/CourantTraversier -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecourant/CourantTraversier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant"/>
-        <rdfs:label xml:lang="fr">courant traversier</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/Brume -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/Brume">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
-        <skos:inScheme rdf:resource="http://www.eionet.europa.eu/gemet/concept/3348"/>
-        <rdfs:label xml:lang="fr">brume</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique"/>
-        <rdfs:label xml:lang="fr">mauvais temps</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/BasseMer -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/BasseMer">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">basse mer</rdfs:label>
-        <rdfs:label xml:lang="en">low tide</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuFlot -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuFlot">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">fin du flot</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuJusant -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/FinDuJusant">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">fin du jusant</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeMorte-Eau -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeMorte-Eau">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:comment xml:lang="fr">En période de mortes-eaux, le marnage est minimal (la mer recouvre et découvre moins) et les courants de marée sont moins forts.</rdfs:comment>
-        <rdfs:label xml:lang="fr">marée de morte-eau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeVive-Eau -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeDeVive-Eau">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:comment xml:lang="fr">En période de vives-eaux, le marnage est plus grand (la mer recouvre et découvre plus) et les courants de marée sont plus forts.</rdfs:comment>
-        <rdfs:label xml:lang="fr">marée de vive-eau</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/Mi-Maree -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/Mi-Maree">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <skos:definition xml:lang="en">Blabla.</skos:definition>
-        <skos:definition xml:lang="fr">Blabla.</skos:definition>
-        <skos:prefLabel xml:lang="en">half tide</skos:prefLabel>
-        <skos:prefLabel xml:lang="fr">mi-marée</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationoceanographique/PleineMer -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationoceanographique/PleineMer">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique"/>
-        <rdfs:label xml:lang="fr">pleine mer</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
-        <rdfs:label xml:lang="fr">de jour</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeNuit -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeNuit">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle"/>
-        <rdfs:label xml:lang="fr">de nuit</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Condition Locale</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Météorologique</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Océanographique</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Indication Temporelle</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.eionet.europa.eu/gemet/concept/3348 -->
-
-    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/3348"/>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Courant</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estLocaliseA"/>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-        <owl:onClass rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
-    </owl:Restriction>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
