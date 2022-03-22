@@ -1,5 +1,6 @@
 @prefix : <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -47,58 +48,70 @@ xsd:time rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourConsequence
-<http://data.shom.fr/def/navigation_cotiere#aPourConsequence> rdf:type owl:ObjectProperty .
+nav:aPourConsequence rdf:type owl:ObjectProperty .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourDirection
-<http://data.shom.fr/def/navigation_cotiere#aPourDirection> rdf:type owl:ObjectProperty ;
-                                                            rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                            rdfs:range <http://data.shom.fr/def/navigation_cotiere#DirectionCardinale> .
+nav:aPourDirection rdf:type owl:ObjectProperty ;
+                   rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                   rdfs:range nav:DirectionCardinale .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourForce
-<http://data.shom.fr/def/navigation_cotiere#aPourForce> rdf:type owl:ObjectProperty ;
-                                                        rdfs:subPropertyOf owl:topObjectProperty ;
-                                                        rdfs:domain <http://data.shom.fr/def/navigation_cotiere#Vent> .
+nav:aPourForce rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain nav:Vent .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement
-<http://data.shom.fr/def/navigation_cotiere#aPourPortDeRattachement> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:range <http://data.shom.fr/def/navigation_cotiere#EntiteGeographique> .
+nav:aPourPortDeRattachement rdf:type owl:ObjectProperty ;
+                            rdfs:range nav:EntiteGeographique .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourTemporalite
-<http://data.shom.fr/def/navigation_cotiere#aPourTemporalite> rdf:type owl:ObjectProperty ;
-                                                              rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                              rdfs:range <http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologiqueQualitative> ,
-                                                                         <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> .
+nav:aPourTemporalite rdf:type owl:ObjectProperty ;
+                     rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                     rdfs:range nav:IndicationTemporelle .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourVitesse
-<http://data.shom.fr/def/navigation_cotiere#aPourVitesse> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> .
+nav:aPourVitesse rdf:type owl:ObjectProperty ;
+                 rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#apres
+nav:apres rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain nav:IndicationTemporelle ;
+          rdfs:range nav:IndicationTemporelle .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#avant
+nav:avant rdf:type owl:ObjectProperty ;
+          rdfs:domain nav:IndicationTemporelle ;
+          rdfs:range nav:IndicationTemporelle .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#estLocaliseA
-<http://data.shom.fr/def/navigation_cotiere#estLocaliseA> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                          rdfs:range <http://data.shom.fr/def/navigation_cotiere#EntiteGeographique> .
+nav:estLocaliseA rdf:type owl:ObjectProperty ;
+                 rdfs:domain nav:PhenomeneMeteorologiqueOuOceanographique ;
+                 rdfs:range nav:EntiteGeographique .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#typeCardinal
-<http://data.shom.fr/def/navigation_cotiere#typeCardinal> rdf:type owl:ObjectProperty ;
-                                                          rdfs:range <http://data.shom.fr/def/navigation_cotiere#DirectionCardinale> ;
-                                                          rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
-                                                          rdfs:label "cardinal type"@en ,
-                                                                     "type cardinal"@fr .
+nav:typeCardinal rdf:type owl:ObjectProperty ;
+                 rdfs:range nav:DirectionCardinale ;
+                 rdfs:isDefinedBy nav: ;
+                 rdfs:label "cardinal type"@en ,
+                            "type cardinal"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#typeDeCourant
-<http://data.shom.fr/def/navigation_cotiere#typeDeCourant> rdf:type owl:ObjectProperty ;
-                                                           rdfs:subPropertyOf owl:topObjectProperty ;
-                                                           rdfs:domain <http://data.shom.fr/def/navigation_cotiere#Courant> ;
-                                                           rdfs:range <http://data.shom.fr/def/navigation_cotiere#TypeDeCourant> ;
-                                                           rdfs:label "type de courant"@fr .
+nav:typeDeCourant rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain nav:Courant ;
+                  rdfs:range nav:TypeDeCourant ;
+                  rdfs:label "type de courant"@fr .
 
 
 #################################################################
@@ -106,23 +119,9 @@ xsd:time rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://data.shom.fr/def/navigation_cotiere#horaire
-<http://data.shom.fr/def/navigation_cotiere#horaire> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                     rdfs:range xsd:time .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#horaireApresPleineMer
-<http://data.shom.fr/def/navigation_cotiere#horaireApresPleineMer> rdf:type owl:DatatypeProperty ;
-                                                                   rdfs:subPropertyOf <http://data.shom.fr/def/navigation_cotiere#horaire> ;
-                                                                   rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                                   rdfs:range xsd:time .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#horaireAvantPleineMer
-<http://data.shom.fr/def/navigation_cotiere#horaireAvantPleineMer> rdf:type owl:DatatypeProperty ;
-                                                                   rdfs:subPropertyOf <http://data.shom.fr/def/navigation_cotiere#horaire> ;
-                                                                   rdfs:domain <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                                   rdfs:range xsd:time .
+nav:horaire rdf:type owl:DatatypeProperty ;
+            rdfs:domain nav:IndicationTemporaireQuantitative ;
+            rdfs:range xsd:time .
 
 
 #################################################################
@@ -130,122 +129,142 @@ xsd:time rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://data.shom.fr/def/navigation_cotiere#Consequence
-<http://data.shom.fr/def/navigation_cotiere#Consequence> rdf:type owl:Class .
+nav:Consequence rdf:type owl:Class .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#ConsequenceSurConsignesNavigation
-<http://data.shom.fr/def/navigation_cotiere#ConsequenceSurConsignesNavigation> rdf:type owl:Class ;
-                                                                               rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Consequence> .
+nav:ConsequenceSurConsignesNavigation rdf:type owl:Class ;
+                                      rdfs:subClassOf nav:Consequence .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#ConsequenceSurEnvironnement
-<http://data.shom.fr/def/navigation_cotiere#ConsequenceSurEnvironnement> rdf:type owl:Class ;
-                                                                         rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Consequence> .
+nav:ConsequenceSurEnvironnement rdf:type owl:Class ;
+                                rdfs:subClassOf nav:Consequence .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Courant
-<http://data.shom.fr/def/navigation_cotiere#Courant> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> ;
-                                                     rdfs:comment "Le mouvement permanent ou périodique des eaux, généralement dans le sens horizontal, dû à diverses causes telles que des différences de température, le vent ou les marées."@fr ;
-                                                     rdfs:label "Courant"@fr .
+nav:Courant rdf:type owl:Class ;
+            rdfs:subClassOf nav:PhenomeneOceanographique ;
+            rdfs:comment "Le mouvement permanent ou périodique des eaux, généralement dans le sens horizontal, dû à diverses causes telles que des différences de température, le vent ou les marées."@fr ;
+            rdfs:label "Courant"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CourantDeMaree
-<http://data.shom.fr/def/navigation_cotiere#CourantDeMaree> rdf:type owl:Class ;
-                                                            rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Courant> ;
-                                                            rdfs:label "Courant de Marée"@fr .
+nav:CourantDeMaree rdf:type owl:Class ;
+                   rdfs:subClassOf nav:Courant ;
+                   rdfs:label "Courant de Marée"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CourantDuAuVent
-<http://data.shom.fr/def/navigation_cotiere#CourantDuAuVent> rdf:type owl:Class ;
-                                                             rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Courant> ;
-                                                             rdfs:label "Courant dû au Vent"@fr .
+nav:CourantDuAuVent rdf:type owl:Class ;
+                    rdfs:subClassOf nav:Courant ;
+                    rdfs:label "Courant dû au Vent"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#DirectionCardinale
-<http://data.shom.fr/def/navigation_cotiere#DirectionCardinale> rdf:type owl:Class ;
-                                                                rdfs:isDefinedBy <http://data.shom.fr/def/navigation_cotiere#> ;
-                                                                rdfs:label "Cardinal Direction"@en ,
-                                                                           "Direction Cardinale"@fr .
+nav:DirectionCardinale rdf:type owl:Class ;
+                       rdfs:isDefinedBy nav: ;
+                       rdfs:label "Cardinal Direction"@en ,
+                                  "Direction Cardinale"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe
-<http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> rdf:type owl:Class ;
-                                                                        rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#DirectionCardinale> ;
-                                                                        owl:disjointWith <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> ;
-                                                                        rdfs:label "Direction Cardinale Complexe"@fr .
+nav:DirectionCardinaleComplexe rdf:type owl:Class ;
+                               rdfs:subClassOf nav:DirectionCardinale ;
+                               owl:disjointWith nav:DirectionCardinaleSimple ;
+                               rdfs:label "Direction Cardinale Complexe"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple
-<http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> rdf:type owl:Class ;
-                                                                      rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#DirectionCardinale> ;
-                                                                      rdfs:label "Direction Cardinale Simple"@fr .
+nav:DirectionCardinaleSimple rdf:type owl:Class ;
+                             rdfs:subClassOf nav:DirectionCardinale ;
+                             rdfs:label "Direction Cardinale Simple"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#EntiteGeographique
-<http://data.shom.fr/def/navigation_cotiere#EntiteGeographique> rdf:type owl:Class .
+nav:EntiteGeographique rdf:type owl:Class .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Flot
-<http://data.shom.fr/def/navigation_cotiere#Flot> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#CourantDeMaree> ;
-                                                  rdfs:comment "Le courant de flot est le courant créé par la marée montante. Le flot ne coïncide pas exactement avec la marée montante."@fr ;
-                                                  rdfs:label "Flot"@fr .
+nav:Flot rdf:type owl:Class ;
+         rdfs:subClassOf nav:CourantDeMaree ;
+         rdfs:comment "Le courant de flot est le courant créé par la marée montante. Le flot ne coïncide pas exactement avec la marée montante."@fr ;
+         rdfs:label "Flot"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologiqueQualitative
-<http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologiqueQualitative> rdf:type owl:Class ;
-                                                                                 rdfs:subClassOf skos:Concept .
+nav:IndicationMeteorologiqueQualitative rdf:type owl:Class ;
+                                        rdfs:subClassOf skos:Concept .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#IndicationTemporaireQuantitative
+nav:IndicationTemporaireQuantitative rdf:type owl:Class ;
+                                     rdfs:subClassOf nav:IndicationTemporelle .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle
+nav:IndicationTemporelle rdf:type owl:Class .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative
-<http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> rdf:type owl:Class ;
-                                                                             rdfs:subClassOf skos:Concept .
+nav:IndicationTemporelleQualitative rdf:type owl:Class ;
+                                    rdfs:subClassOf nav:IndicationTemporelle .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Jusant
-<http://data.shom.fr/def/navigation_cotiere#Jusant> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#CourantDeMaree> ;
-                                                    rdfs:comment "Le courant de jusant est le courant créé par la marée descendante. Le le jusant ne coïncide pas exactement avec la marée descendante."@fr ;
-                                                    rdfs:label "Jusant"@fr .
+nav:Jusant rdf:type owl:Class ;
+           rdfs:subClassOf nav:CourantDeMaree ;
+           rdfs:comment "Le courant de jusant est le courant créé par la marée descendante. Le le jusant ne coïncide pas exactement avec la marée descendante."@fr ;
+           rdfs:label "Jusant"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologique
+nav:PhenomeneMeteorologique rdf:type owl:Class ;
+                            rdfs:subClassOf nav:PhenomeneMeteorologiqueOuOceanographique .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique
-<http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> rdf:type owl:Class .
+nav:PhenomeneMeteorologiqueOuOceanographique rdf:type owl:Class .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#PhenomeneOceanographique
+nav:PhenomeneOceanographique rdf:type owl:Class ;
+                             rdfs:subClassOf nav:PhenomeneMeteorologiqueOuOceanographique .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Renverse
-<http://data.shom.fr/def/navigation_cotiere#Renverse> rdf:type owl:Class ;
-                                                      rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#CourantDeMaree> ;
-                                                      rdfs:comment "Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c'est l'étale ou renverse."@fr ;
-                                                      rdfs:label "Renverse"@fr ,
-                                                                 "Étale"@fr .
+nav:Renverse rdf:type owl:Class ;
+             rdfs:subClassOf nav:CourantDeMaree ;
+             rdfs:comment "Entre le flot et le jusant, le courant devient nul durant une période variable selon le lieu : c'est l'étale ou renverse."@fr ;
+             rdfs:label "Renverse"@fr ,
+                        "Étale"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Ressac
-<http://data.shom.fr/def/navigation_cotiere#Ressac> rdf:type owl:Class ;
-                                                    rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#Vague> .
+nav:Ressac rdf:type owl:Class ;
+           rdfs:subClassOf nav:Vague ;
+           rdfs:comment "Aller et retour violent des vagues sur elles-mêmes, lorsqu'elles se brisent contre un obstacle (https://www.cnrtl.fr/definition/ressac)."@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDeConsequence
-<http://data.shom.fr/def/navigation_cotiere#TypeDeConsequence> rdf:type owl:Class ;
-                                                               rdfs:subClassOf skos:Concept .
+nav:TypeDeConsequence rdf:type owl:Class ;
+                      rdfs:subClassOf skos:Concept .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDeCourant
-<http://data.shom.fr/def/navigation_cotiere#TypeDeCourant> rdf:type owl:Class ;
-                                                           rdfs:subClassOf skos:Concept ;
-                                                           rdfs:label "Type de Courant"@fr .
+nav:TypeDeCourant rdf:type owl:Class ;
+                  rdfs:subClassOf skos:Concept ;
+                  rdfs:label "Type de Courant"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Vague
-<http://data.shom.fr/def/navigation_cotiere#Vague> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> .
+nav:Vague rdf:type owl:Class ;
+          rdfs:subClassOf nav:PhenomeneOceanographique .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Vent
-<http://data.shom.fr/def/navigation_cotiere#Vent> rdf:type owl:Class ;
-                                                  rdfs:subClassOf <http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique> .
+nav:Vent rdf:type owl:Class ;
+         rdfs:subClassOf nav:PhenomeneMeteorologique .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -256,175 +275,157 @@ skos:Concept rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://data.ign.fr/id/codes/nav/typedentitegeographique/Mi-Maree
+<http://data.ign.fr/id/codes/nav/typedentitegeographique/Mi-Maree> rdf:type owl:NamedIndividual ,
+                                                                            nav:IndicationTemporelleQualitative ;
+                                                                   skos:definition "Blabla."@en ,
+                                                                                   "Blabla."@fr ;
+                                                                   skos:prefLabel "half tide"@en ,
+                                                                                  "mi-marée"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#BasseMer
-<http://data.shom.fr/def/navigation_cotiere#BasseMer> rdf:type owl:NamedIndividual ,
-                                                               <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> ;
-                                                      rdfs:label "basse mer"@fr ,
-                                                                 "low tide"@en .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Blanc
-<http://data.shom.fr/def/navigation_cotiere#Blanc> rdf:type owl:NamedIndividual ;
-                                                   owl:sameAs <http://data.shom.fr/def/navigation_cotiere#Blanche> .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Blanche
-<http://data.shom.fr/def/navigation_cotiere#Blanche> rdf:type owl:NamedIndividual .
+nav:BasseMer rdf:type owl:NamedIndividual ,
+                      nav:IndicationTemporelleQualitative ;
+             rdfs:label "basse mer"@fr ,
+                        "low tide"@en .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Brume
-<http://data.shom.fr/def/navigation_cotiere#Brume> rdf:type owl:NamedIndividual ,
-                                                            <http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologiqueQualitative> .
+nav:Brume rdf:type owl:NamedIndividual ,
+                   nav:IndicationMeteorologiqueQualitative .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CourantAlternatif
-<http://data.shom.fr/def/navigation_cotiere#CourantAlternatif> rdf:type owl:NamedIndividual ,
-                                                                        <http://data.shom.fr/def/navigation_cotiere#TypeDeCourant> ;
-                                                               rdfs:comment "Un courant alternatif est un courant qui porte dans une direction au flot et dans la direction opposée pendant le jusant quel que soit le coefficient de marée."@fr ;
-                                                               rdfs:label "CourantAlternatif"@fr .
+nav:CourantAlternatif rdf:type owl:NamedIndividual ,
+                               nav:TypeDeCourant ;
+                      rdfs:comment "Un courant alternatif est un courant qui porte dans une direction au flot et dans la direction opposée pendant le jusant quel que soit le coefficient de marée."@fr ;
+                      rdfs:label "CourantAlternatif"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CourantGiratoire
-<http://data.shom.fr/def/navigation_cotiere#CourantGiratoire> rdf:type owl:NamedIndividual ,
-                                                                       <http://data.shom.fr/def/navigation_cotiere#TypeDeCourant> ;
-                                                              rdfs:comment "Un courant giratoire est un courant qui porte dans une direction qui varie en fonction de l'heure de la marée (donc en 12 h 25 min)."@fr ;
-                                                              rdfs:label "CourantGiratoire"@fr .
+nav:CourantGiratoire rdf:type owl:NamedIndividual ,
+                              nav:TypeDeCourant ;
+                     rdfs:comment "Un courant giratoire est un courant qui porte dans une direction qui varie en fonction de l'heure de la marée (donc en 12 h 25 min)."@fr ;
+                     rdfs:label "CourantGiratoire"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#CourantTraversier
-<http://data.shom.fr/def/navigation_cotiere#CourantTraversier> rdf:type owl:NamedIndividual ,
-                                                                        <http://data.shom.fr/def/navigation_cotiere#TypeDeCourant> ;
-                                                               rdfs:label "CourantTraversier"@fr .
+nav:CourantTraversier rdf:type owl:NamedIndividual ,
+                               nav:TypeDeCourant ;
+                      rdfs:label "CourantTraversier"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Est
-<http://data.shom.fr/def/navigation_cotiere#Est> rdf:type owl:NamedIndividual ,
-                                                          <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> .
+nav:Est rdf:type owl:NamedIndividual ,
+                 nav:DirectionCardinaleSimple .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Est-Nord-Est
-<http://data.shom.fr/def/navigation_cotiere#Est-Nord-Est> rdf:type owl:NamedIndividual ,
-                                                                   <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Est-Nord-Est rdf:type owl:NamedIndividual ,
+                          nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Est-Sud-Est
-<http://data.shom.fr/def/navigation_cotiere#Est-Sud-Est> rdf:type owl:NamedIndividual ,
-                                                                  <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Est-Sud-Est rdf:type owl:NamedIndividual ,
+                         nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#FinDuFlot
-<http://data.shom.fr/def/navigation_cotiere#FinDuFlot> rdf:type owl:NamedIndividual ,
-                                                                <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> .
+nav:FinDuFlot rdf:type owl:NamedIndividual ,
+                       nav:IndicationTemporelleQualitative .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#FinDuJusant
-<http://data.shom.fr/def/navigation_cotiere#FinDuJusant> rdf:type owl:NamedIndividual ,
-                                                                  <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Gris
-<http://data.shom.fr/def/navigation_cotiere#Gris> rdf:type owl:NamedIndividual ;
-                                                  owl:sameAs <http://data.shom.fr/def/navigation_cotiere#Grise> .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Grise
-<http://data.shom.fr/def/navigation_cotiere#Grise> rdf:type owl:NamedIndividual .
+nav:FinDuJusant rdf:type owl:NamedIndividual ,
+                         nav:IndicationTemporelleQualitative .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#MareeDeMorte-Eau
-<http://data.shom.fr/def/navigation_cotiere#MareeDeMorte-Eau> rdf:type owl:NamedIndividual ,
-                                                                       <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> ;
-                                                              rdfs:comment "En période de mortes-eaux, le marnage est minimal (la mer recouvre et découvre moins) et les courants de marée sont moins forts."@fr .
+nav:MareeDeMorte-Eau rdf:type owl:NamedIndividual ,
+                              nav:IndicationTemporelleQualitative ;
+                     rdfs:comment "En période de mortes-eaux, le marnage est minimal (la mer recouvre et découvre moins) et les courants de marée sont moins forts."@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#MareeDeVive-Eau
-<http://data.shom.fr/def/navigation_cotiere#MareeDeVive-Eau> rdf:type owl:NamedIndividual ,
-                                                                      <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> ;
-                                                             rdfs:comment "En période de vives-eaux, le marnage est plus grand (la mer recouvre et découvre plus) et les courants de marée sont plus forts."@fr .
+nav:MareeDeVive-Eau rdf:type owl:NamedIndividual ,
+                             nav:IndicationTemporelleQualitative ;
+                    rdfs:comment "En période de vives-eaux, le marnage est plus grand (la mer recouvre et découvre plus) et les courants de marée sont plus forts."@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#MauvaisTemps
-<http://data.shom.fr/def/navigation_cotiere#MauvaisTemps> rdf:type owl:NamedIndividual ,
-                                                                   <http://data.shom.fr/def/navigation_cotiere#IndicationMeteorologiqueQualitative> .
-
-
-###  http://data.shom.fr/def/navigation_cotiere#Mi-Maree
-<http://data.shom.fr/def/navigation_cotiere#Mi-Maree> rdf:type owl:NamedIndividual ,
-                                                               <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> ;
-                                                      skos:definition "Blabla."@en ,
-                                                                      "Blabla."@fr ;
-                                                      skos:prefLabel "half tide"@en ,
-                                                                     "mi-marée"@fr .
+nav:MauvaisTemps rdf:type owl:NamedIndividual ,
+                          nav:IndicationMeteorologiqueQualitative .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Nord
-<http://data.shom.fr/def/navigation_cotiere#Nord> rdf:type owl:NamedIndividual ,
-                                                           <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> .
+nav:Nord rdf:type owl:NamedIndividual ,
+                  nav:DirectionCardinaleSimple .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Nord-Est
-<http://data.shom.fr/def/navigation_cotiere#Nord-Est> rdf:type owl:NamedIndividual ,
-                                                               <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Nord-Est rdf:type owl:NamedIndividual ,
+                      nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Est
-<http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Est> rdf:type owl:NamedIndividual ,
-                                                                    <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Nord-Nord-Est rdf:type owl:NamedIndividual ,
+                           nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Nord-Nord-Ouest> rdf:type owl:NamedIndividual ,
-                                                                      <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Nord-Nord-Ouest rdf:type owl:NamedIndividual ,
+                             nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Nord-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Nord-Ouest> rdf:type owl:NamedIndividual ,
-                                                                 <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Nord-Ouest rdf:type owl:NamedIndividual ,
+                        nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Ouest
-<http://data.shom.fr/def/navigation_cotiere#Ouest> rdf:type owl:NamedIndividual ,
-                                                            <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> .
+nav:Ouest rdf:type owl:NamedIndividual ,
+                   nav:DirectionCardinaleSimple .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Ouest-Nord-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Ouest-Nord-Ouest> rdf:type owl:NamedIndividual ,
-                                                                       <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Ouest-Nord-Ouest rdf:type owl:NamedIndividual ,
+                              nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Ouest-Sud-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Ouest-Sud-Ouest> rdf:type owl:NamedIndividual ,
-                                                                      <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Ouest-Sud-Ouest rdf:type owl:NamedIndividual ,
+                             nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#PleineMer
-<http://data.shom.fr/def/navigation_cotiere#PleineMer> rdf:type owl:NamedIndividual ,
-                                                                <http://data.shom.fr/def/navigation_cotiere#IndicationTemporelleQualitative> .
+nav:PleineMer rdf:type owl:NamedIndividual ,
+                       nav:IndicationTemporelleQualitative .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Sud
-<http://data.shom.fr/def/navigation_cotiere#Sud> rdf:type owl:NamedIndividual ,
-                                                          <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleSimple> .
+nav:Sud rdf:type owl:NamedIndividual ,
+                 nav:DirectionCardinaleSimple .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Sud-Est
-<http://data.shom.fr/def/navigation_cotiere#Sud-Est> rdf:type owl:NamedIndividual ,
-                                                              <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Sud-Est rdf:type owl:NamedIndividual ,
+                     nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Sud-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Sud-Ouest> rdf:type owl:NamedIndividual ,
-                                                                <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Sud-Ouest rdf:type owl:NamedIndividual ,
+                       nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Est
-<http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Est> rdf:type owl:NamedIndividual ,
-                                                                  <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Sud-Sud-Est rdf:type owl:NamedIndividual ,
+                         nav:DirectionCardinaleComplexe .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Ouest
-<http://data.shom.fr/def/navigation_cotiere#Sud-Sud-Ouest> rdf:type owl:NamedIndividual ,
-                                                                    <http://data.shom.fr/def/navigation_cotiere#DirectionCardinaleComplexe> .
+nav:Sud-Sud-Ouest rdf:type owl:NamedIndividual ,
+                           nav:DirectionCardinaleComplexe .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
