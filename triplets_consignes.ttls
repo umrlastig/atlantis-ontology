@@ -3,42 +3,43 @@
 
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
-@prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
-@prefix tac: <http://data.ign.fr/id/codes/nav/typedaction/>.
-@prefix tna: <http://data.ign.fr/id/codes/nav/typedenavire/>.
-@prefix tco: <http://data.ign.fr/id/codes/nav/typedecouleur/>.
+@prefix teg: <http://data.shom.fr/id/codes/nav/typedentitegeographique/>.
+@prefix tac: <http://data.shom.fr/id/codes/nav/typedaction/>.
+@prefix tna: <http://data.shom.fr/id/codes/nav/typedenavire/>.
+@prefix tco: <http://data.shom.fr/id/codes/nav/typedecouleur/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix unit: <http://qudt.org/2.1/vocab/unit/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix tdi: <http://data.ign.fr/id/codes/nav/typededirection/>.
-@prefix tit: <http://data.ign.fr/id/codes/nav/typedindicationtemporelle/>.
-@prefix tim: <http://data.ign.fr/id/codes/nav/typedindicationmeteorologique/>.
-@prefix tio: <http://data.ign.fr/id/codes/nav/typedindicationoceanographique/>.
+@prefix tdi: <http://data.shom.fr/id/codes/nav/typededirection/>.
+@prefix tit: <http://data.shom.fr/id/codes/nav/typedindicationtemporelle/>.
+@prefix tim: <http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/>.
+@prefix tio: <http://data.shom.fr/id/codes/nav/typedindicationoceanographique/>.
 
 #exemple 1
 #"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
 
 ent:6001 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
-	nav:aPourPointDeDepart [nav:estALEstDe ent:6002];
-	nav:aPourPointDeDestination ent:6002;
+	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
+	nav:aPourPointDeDestination ent:4011;
 	nav:impliqueDeSuivre ent:6003.
 # >>> comment montrer que l'alignement 6009 est un alternatif à l'alignement 6003? Le 6003 est l'alignement général, le 6009 est pour "Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation" ---> deux instructions avec cibles différents ---> FAIT
 # >>> Si pas de cible, c'est pour tout le monde ?
 
 ent:6056 a nav:Instruction;
 	nav:aPourAction tac:Navigation;
-	nav:aPourPointDeDepart [nav:estALEstDe ent:6002];
-	nav:aPourPointDeDestination ent:6002;
+	nav:aPourPointDeDepart [nav:estALEstDe ent:4011];
+	nav:aPourPointDeDestination ent:4011;
 	nav:impliqueDeSuivre ent:6009;
-	nav:aPourCible tna:PetitNavire.
+	nav:aPourCible ent:3001.
 # >>> cible dans l'instruction ou dans l'alignement ? ---> instruction pour l'instant
 
-ent:6002 a nav:EntiteGeographique;
-	nav:aPourNature teg:Chenal.
+#ent:6002 a nav:EntiteGeographique;
+#	nav:aPourNature teg:Chenal.
+#devient ent:4011
 
 ent:6003 a nav:Alignement;
 	nav:aPourRepere [
@@ -49,12 +50,11 @@ ent:6003 a nav:Alignement;
 	nav:estAuSudDe ent:6007;
 	nav:estAuNordDe ent:6008;
 	nav:aPourInfo "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
-	nav:estSitueDans ent:6012.
+	nav:estSitueDans ent:6012;
+	nav:aPourCap "293.3"^^xsd:float.
 # ---> modifier fichier xml de l'ontologie afin d'ajouter classe rdf:Seq ---> FAIT
 
 <<ent:6003 nav:aPourCap "293.3"^^xsd:float>> qudt:Unit unit:DEG.
-
-
 
 ent:6004 a nav:Amer;
 	rdfs:label "clocher de l'Île de Batz"@fr;
@@ -85,16 +85,18 @@ ent:6008 a nav:Tourelle;
 ent:6009 a nav:Alignement;
 	nav:aPourRepere [
 		a rdf:Seq;
-		rdf:_1 ent:6010;
+		rdf:_1 ent:4004;
 		rdf:_2 ent:6011;
 		];
-	nav:estALaGaucheDe ent:6003.
+	nav:estALaGaucheDe ent:6003;
+	nav:aPourCap "290.0"^^xsd:float.
 	
 <<ent:6009 nav:aPourCap "290.0"^^xsd:float>> qudt:Unit unit:DEG.
 
-ent:6010 a nav:Phare;
-	rdfs:label "phare de l'Île de Batz"@fr;
-	nav:aPourNature teg:Phare.
+#ent:6010 a nav:Phare;
+#	rdfs:label "phare de l'Île de Batz"@fr;
+#	nav:aPourNature teg:Phare.
+#devient ent:4004
 
 ent:6011 a nav:Tourelle;
 	rdfs:label "tourelle « Ar Chaden »"@fr;
@@ -102,7 +104,9 @@ ent:6011 a nav:Tourelle;
 
 ent:6012 a nav:Secteur;
 	nav:estDeCouleur tco:Blanche;
-	nav:estUnElementDe ent:6011.
+	nav:estUnElementDe ent:6011;
+	nav:aPourAngleDebut "289.5"^^xsd:float;
+	nav:aPourAngleFin "293.0"^^xsd:float.
 
 <<ent:6012 nav:aPourAngleDebut "289.5"^^xsd:float>> qudt:Unit unit:DEG.
 <<ent:6012 nav:aPourAngleFin "293.0"^^xsd:float>> qudt:Unit unit:DEG.
@@ -320,18 +324,10 @@ ent:6042 a nav:EntiteGeographique;
 #"Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."
 
 ent:6043 a nav:Instruction;
-	nav:aPourAction tac:Navigation;
+	nav:aPourAction tac:Attente;
 	nav:aPourCible tna:NavireDePlaisance;
 	nav:aPourPointDeDestination ent:6084;
-	nav:aPourInfo ent:6085.
-
-ent:6085 a nav:Information;
-	nav:aPourCible tna:NavireDePlaisance;
-	nav:aPourLieuDEffet [
-		a rdf:Bag;
-		rdf:_1 ent:6044;
-		rdf:_2 ent:6045;
-		];
+	nav:aPourLieuDEffet ent:6044, ent:6045;
 	nav:aPourContexte "Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."^^xsd:string.
 
 ent:6044 a nav:EntiteGeographique;
@@ -506,7 +502,8 @@ ent:6070 a nav:Instruction;
 		].
 
 ent:6071 a nav:Alignement;
-	nav:aPourPointDeDestination ent:6072.
+	nav:aPourPointDeDestination ent:6072;
+	nav:aPourCap "82.0"^^xsd:float.
 	
 <<ent:6071 nav:aPourCap "82.0"^^xsd:float>> qudt:Unit unit:DEG.
 
@@ -536,3 +533,41 @@ ent:6081 a nav:Information;
 
 ent:6082 a nav:Balise;
 	rdfs:label "Jet d’Amont"@fr.
+
+#entités pour d'autres modelets
+
+#exemple 3 modelet navires
+#"Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."
+
+ent:6085 a nav:Information;
+	nav:aPourLieuDEffet ent:4072;
+	nav:aPourCible ent:3005;
+	nav:aPourInfo "Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."^^xsd:string.
+
+
+#exemple 4 modelet navires
+#"AVERTISSEMENT. — Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."
+
+ent:6086 a nav:Interdiction;
+	nav:aPourLieuDEffet ent:4074;
+	nav:aPourCible ent:3006;
+	nav:aPourAction tac:Navigation;
+	nav:aPourInfo "Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."^^xsd:string.
+
+
+#exemple 5 modelet navires
+#"Le passage est rectiligne, facile à suivre et avantageux par beau temps, lorsque l’on a le courant pour soi. Mais les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."
+
+ent:6087 a nav:Information;
+	nav:aPourLieuDEffet ent:4075;
+	nav:aPourCible ent:3007, ent:3008, ent:3009, ent:3010;
+	nav:aPourInfo "Les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."^^xsd:string.
+
+
+#exemple 6 modelet navires
+#"Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."
+
+ent:6088 a nav:Information;
+	nav:aPourLieuDEffet ent:4076;
+	nav:aPourCible ent:3011;
+	nav:aPourInfo "Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."^^xsd:string.
