@@ -12,7 +12,7 @@
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
 #exemple 1
 #"Dans le milieu du chenal, les renverses ont lieu vers – 0525 et + 0020 PM Roscoff. Le flot porte à l’Est et le jusant à l’Ouest ; les vitesses varient selon les endroits, mais sont de 2,5 à 3,5 nœuds en général. Le courant est traversier à l’entrée Est du chenal, à l’Est de la ligne joignant l’Île Pigued à la tourelle « Men Guen Bras ».
@@ -34,16 +34,16 @@ ent:5003 a nav:EntiteGeographique;
 
 ent:5004 a nav:Flot;
 	nav:estLocaliseA ent:5001;
-	nav:aPourDirection nav:Est;
+	nav:aPourDirection tdi:Est;
 	nav:aPourVitesse "de 2,5 à 3,5 nœuds"^^xsd:string.
 
 ent:5005 a nav:Jusant;
 	nav:estLocaliseA ent:5001;
-	nav:aPourDirection nav:Ouest;
+	nav:aPourDirection tdi:Ouest;
 	nav:aPourVitesse "de 2,5 à 3,5 nœuds"^^xsd:string.
 
 ent:5006 a nav:Courant;
-	nav:typeDeCourant nav:CourantTraversier;
+	nav:typeDeCourant tcr:CourantTraversier;
 	nav:estLocaliseA ent:5007.
 
 ent:5007 a nav:EntiteGeographique;
@@ -57,7 +57,7 @@ ent:5008 a nav:EntiteGeographique;
 
 ent:5009 a nav:Ressac;
 	nav:estLocaliseA ent:5008;
-	nav:aPourTemporalite nav:MauvaisTemps;
+	nav:aPourTemporalite tim:MauvaisTemps;
 	#mauvais temps de Nord à NE
 	.
 
@@ -65,7 +65,7 @@ ent:5009 a nav:Ressac;
 #"Par vents de NE, on constate souvent une réduction des hauteurs de marée pouvant dépasser 0,3 m. Les vents des autres secteurs font apparaître, au contraire, une surélévation de 0,5 m ou plus."
 
 ent:5010 a nav:Vent;
-	nav:aPourDirection nav:Nord-Est;
+	nav:aPourDirection tdi:Nord-Est;
 	#vent de NE : vient du NE, va vers SW
 	nav:aPourConsequence [ a nav:ConsequenceSurEnvironnement;
 						rdfs:label "une réduction des hauteurs de marée pouvant dépasser 0,3 m"@fr].
@@ -79,14 +79,41 @@ ent:5011 a nav:Vent;
 #exemple 4
 #"Au large et à l’Est du méridien du Cap Blanc-Nez, le courant porte au large à la fin du flot et à terre à la fin du jusant. Au large, les vitesses maximales en VE moyenne atteignent 1,7 nœud sur les bancs ou à proximité et 2,9 nœuds dans les passes et entre les bancs. Le flot portant au NE est plus fort mais dure moins longtemps que le jusant qui porte au SW."
 
-ent:5012 a nav:EntiteGeographique;
-	rdfs:label "au large et à l’Est du méridien du Cap Blanc-Nez"@fr.
+ent:5012 a nav:Large.
+
+ent:5018 a nav:EntiteGeographique;
+	rdfs:label "Cap Blanc-Nez"@fr.
 
 ent:5013 a nav:Courant;
-	nav:estLocaliseA ent:5012;
-	nav:aPourDirection ent:5014;
-	nav:aPourTemporalite nav:FinDuFlot.
+	nav:estLocaliseA ent:5012, [nav:estALOuestDe [nav:leMeridienDe ent:5018]];
+	nav:aPourDirection ent:5012;
+	nav:aPourTemporalite tio:FinDuFlot.
 
-ent:5014 a nav:EntiteGeographique;
-	rdfs:label "large"@fr.
+ent:5014 a nav:Courant;
+	nav:estLocaliseA ent:5012, [nav:estALOuestDe [nav:leMeridienDe ent:5018]];
+	nav:aPourDirection ent:5019;
+	nav:aPourTemporalite tio:FinDuJusant.
 
+ent:5019 a nav:Terre.
+
+ent:5020 a nav:Flot;
+	nav:aPourDirection tdi:Nord-Est.
+
+ent:5021 a nav:Jusant;
+	nav:aPourDirection tdi:Sud-Ouest.
+
+
+#exemple 5
+#"À mesure que l’on se rapproche de la terre, le courant giratoire diminue mais reste encore sensible à l’Ouest du Goulet de Brest et de la Baie de Douarnenez."
+
+ent:5015 a nav:Courant;
+	nav:aPourTypeDeCourant tcr:CourantGiratoire;
+	nav:estLocaliseA [nav:estALOuestDe ent:5016, ent:5017].
+
+ent:5016 a nav:EntiteGeographique;
+	nav:aPourNature teg:Goulet;
+	rdfs:label "Goulet de Brest"@fr.
+
+ent:5017 a nav:EntiteGeographique;
+	nav:aPourNature teg:Baie;
+	rdfs:label "Baie de Douarnenez"@fr.
