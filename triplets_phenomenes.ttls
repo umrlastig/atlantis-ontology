@@ -4,6 +4,11 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
 @prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix tim: <http://data.ign.fr/id/codes/nav/typedindicationmeteorologique/>.
+@prefix tio: <http://data.ign.fr/id/codes/nav/typedindicationoceanographique/>.
+@prefix tit: <http://data.ign.fr/id/codes/nav/typedindicationtemporelle/>.
+@prefix tcr: <http://data.ign.fr/id/codes/nav/typedecourant/>.
+@prefix tdi: <http://data.ign.fr/id/codes/nav/typededirection/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
@@ -17,12 +22,10 @@ ent:5001 a nav:EntiteGeographique;
 	rdfs:label "milieu du chenal"@fr.
 
 ent:5002 a nav:Renverse;
-	nav:aPourTemporalite [ a nav:IndicationTemporelleQuantitative;
-							nav:horaire "05:25:00"^^xsd:time;
-							nav:avant nav:PleineMer];
-	nav:aPourTemporalite [ a nav:IndicationTemporelleQuantitative;
-							nav:horaire "00:20:00"^^xsd:time;
-							nav:apres nav:PleineMer];
+	nav:aPourTemporalite [ nav:aPourHoraire "05:25:00"^^xsd:time;
+				nav:avant tio:PleineMer];
+	nav:aPourTemporalite [ nav:aPourHoraire "00:20:00"^^xsd:time;
+				nav:apres tio:PleineMer];
 	nav:aPourPortDeRattachement ent:5003;
 	nav:estLocaliseA ent:5001.
 
