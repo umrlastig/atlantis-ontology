@@ -5,18 +5,24 @@
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
 @prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
-@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 #exemple 1
+#"Dans le milieu du chenal, les renverses ont lieu vers – 0525 et + 0020 PM Roscoff. Le flot porte à l’Est et le jusant à l’Ouest ; les vitesses varient selon les endroits, mais sont de 2,5 à 3,5 nœuds en général. Le courant est traversier à l’entrée Est du chenal, à l’Est de la ligne joignant l’Île Pigued à la tourelle « Men Guen Bras ».
+#Aux abords de Roscoff, le jusant porte à l’Ouest et le flot à l’Est. Il y a étale du courant vers – 0050 PM Roscoff. Au mouillage extérieur de Roscoff, entre la tourelle « Le Menk » et la côte, les renverses ont lieu à – 0050 et à + 0550 PM Roscoff. Le flot porte à 185°, le jusant à 351° ; les vitesses sont de 1,1 nœud."
+
 ent:5001 a nav:EntiteGeographique;
 	rdfs:label "milieu du chenal"@fr.
 
 ent:5002 a nav:Renverse;
-	nav:horaireAvantPleineMer "05:25:00"^^xsd:time;
-	nav:horaireApresPleineMer "00:20:00"^^xsd:time;
+	nav:aPourTemporalite [ a nav:IndicationTemporelleQuantitative;
+							nav:horaire "05:25:00"^^xsd:time;
+							nav:avant nav:PleineMer];
+	nav:aPourTemporalite [ a nav:IndicationTemporelleQuantitative;
+							nav:horaire "00:20:00"^^xsd:time;
+							nav:apres nav:PleineMer];
 	nav:aPourPortDeRattachement ent:5003;
 	nav:estLocaliseA ent:5001.
 
@@ -41,8 +47,10 @@ ent:5007 a nav:EntiteGeographique;
 	rdfs:label "entrée Est du chenal"@fr.
 
 #exemple 2
+#"Le site est exposé au ressac par mauvais temps de Nord à NE."
+
 ent:5008 a nav:EntiteGeographique;
-	rdfs:label "le site"@fr.
+	rdfs:label "site"@fr.
 
 ent:5009 a nav:Ressac;
 	nav:estLocaliseA ent:5008;
@@ -51,19 +59,23 @@ ent:5009 a nav:Ressac;
 	.
 
 #exemple 3
+#"Par vents de NE, on constate souvent une réduction des hauteurs de marée pouvant dépasser 0,3 m. Les vents des autres secteurs font apparaître, au contraire, une surélévation de 0,5 m ou plus."
+
 ent:5010 a nav:Vent;
 	nav:aPourDirection nav:Nord-Est;
 	#vent de NE : vient du NE, va vers SW
-	nav:aPourConsequence [a nav:ConsequenceSurEnvironnement;
-		rdfs:label "une réduction des hauteurs de marée pouvant dépasser 0,3 m"@fr].
-#ça c'est un noeud blanc
+	nav:aPourConsequence [ a nav:ConsequenceSurEnvironnement;
+						rdfs:label "une réduction des hauteurs de marée pouvant dépasser 0,3 m"@fr].
 
 ent:5011 a nav:Vent;
 	#nav:aPourDirection tout sauf NE
-	nav:aPourConsequence [a nav:ConsequenceSurEnvironnement;
-		rdfs:label "une surélévation de 0,5 m ou plus"@fr].
+	nav:aPourConsequence [ a nav:ConsequenceSurEnvironnement;
+						rdfs:label "une surélévation des hauteurs de marée de 0,5 m ou plus"@fr].
 
-#Au large et à l’Est du méridien du Cap Blanc-Nez, le courant porte au large à la fin du flot et à terre à la fin du jusant. Au large, les vitesses maximales en VE moyenne atteignent 1,7 nœud sur les bancs ou à proximité et 2,9 nœuds dans les passes et entre les bancs. Le flot portant au NE est plus fort mais dure moins longtemps que le jusant qui porte au SW.
+
+#exemple 4
+#"Au large et à l’Est du méridien du Cap Blanc-Nez, le courant porte au large à la fin du flot et à terre à la fin du jusant. Au large, les vitesses maximales en VE moyenne atteignent 1,7 nœud sur les bancs ou à proximité et 2,9 nœuds dans les passes et entre les bancs. Le flot portant au NE est plus fort mais dure moins longtemps que le jusant qui porte au SW."
+
 ent:5012 a nav:EntiteGeographique;
 	rdfs:label "au large et à l’Est du méridien du Cap Blanc-Nez"@fr.
 
@@ -73,5 +85,5 @@ ent:5013 a nav:Courant;
 	nav:aPourTemporalite nav:FinDuFlot.
 
 ent:5014 a nav:EntiteGeographique;
-	rdfs:label "au large"@fr.
+	rdfs:label "large"@fr.
 
