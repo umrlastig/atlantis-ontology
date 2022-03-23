@@ -31,14 +31,19 @@ ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute.
 #exemple 2
 #"Les principaux équipements et services offerts sont les suivants : 550 places pour navires de plaisance, dont 150 pour les bateaux de passage, longueur maximum 15 m, tirant d’eau 5 m ; [...]"
 
-ent:3003 nav:estDeType tna:NavireDePlaisance.
+ent:3003 nav:estDeType tna:NavireDePlaisance;
+	nav:estDeLongueurMaxi "15.0"^^xsd:float;
+	nav:aPourTirantDEauMaxi "5.0"^^xsd:float.
+
+<<ent:3003 nav:estDeLongueurMaxi "15.0"^^xsd:float>> qudt:Unit unit:M.
+<<ent:3003 nav:aPourTirantDEauMaxi "5.0"^^xsd:float>> qudt:Unit unit:M.
 
 ent:3004 nav:estDeType tna:BateauDePassage;
 	nav:estDeLongueurMaxi "15.0"^^xsd:float;
-	nav:aPourTirantDEau "5.0"^^xsd:float.
+	nav:aPourTirantDEauMaxi "5.0"^^xsd:float.
 
 <<ent:3004 nav:estDeLongueurMaxi "15.0"^^xsd:float>> qudt:Unit unit:M.
-<<ent:3004 nav:aPourTirantDEau "5.0"^^xsd:float>> qudt:Unit unit:M.
+<<ent:3004 nav:aPourTirantDEauMaxi "5.0"^^xsd:float>> qudt:Unit unit:M.
 
 #exemple 3
 #"Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."
@@ -71,9 +76,3 @@ ent:3010 a nav:Navire;
 
 ent:3011 a nav:Navire;
 	nav:nEstPasEquipeDe teq:VHF.
-
-#exemple 7
-#"Cet article concerne tous les bâtiments sortant des écluses de Tancarville même s’ils sont équipés d’un radar."
-
-ent:3012 a nav:Navire;
-	nav:estEquipeDe teq:Radar.
