@@ -34,29 +34,34 @@ ent:5002 a nav:Renverse;
 #devient ent:4016
 
 ent:5004 a nav:Flot;
-	nav:estLocaliseA [nav:estAuxAbordsDe ent:4016];
-	nav:aPourDirection tdi:Est.
+	nav:estLocaliseA ent:4077;
+	nav:aPourDirection tdi:Est;
+	nav:aPourVitesseMini "2.5"^^xsd:float;
+	nav:aPourVitesseMaxi "3.5"^^xsd:float.
 
 <<ent:5004 nav:aPourVitesseMini "2.5"^^xsd:float>> qudt:Unit unit:KN.
 <<ent:5004 nav:aPourVitesseMaxi "3.5"^^xsd:float>> qudt:Unit unit:KN.
 
 ent:5005 a nav:Jusant;
-	nav:estLocaliseA [nav:estAuxAbordsDe ent:4016];
-	nav:aPourDirection tdi:Ouest.
+	nav:estLocaliseA ent:4077;
+	nav:aPourDirection tdi:Ouest;
+	nav:aPourVitesseMini "2.5"^^xsd:float;
+	nav:aPourVitesseMaxi "3.5"^^xsd:float.
 
 <<ent:5005 nav:aPourVitesseMini "2.5"^^xsd:float>> qudt:Unit unit:KN.
 <<ent:5005 nav:aPourVitesseMaxi "3.5"^^xsd:float>> qudt:Unit unit:KN.
 
 ent:5022 a nav:Etale;
 	nav:aPourTempsAvantPM "00:50:00"^^xsd:time;
-	nav:estLocaliseA [nav:estAuxAbordsDe ent:4016].
+	nav:estLocaliseA ent:4077.
 
 ent:5006 a nav:Courant;
 	nav:typeDeCourant tcr:CourantTraversier;
 	nav:estLocaliseA ent:5007.
 
 ent:5007 a nav:EntiteGeographique;
-	rdfs:label "entrée Est du chenal, à l’Est de la ligne joignant l’Île Pigued à la tourelle « Men Guen Bras »"@fr.
+	rdfs:label "entrée Est du chenal, à l’Est de la ligne joignant l’Île Pigued à la tourelle « Men Guen Bras »"@fr;
+	nav:estALEstDe ent:4078.
 
 ent:5023 a nav:EntiteGeographique;
 	rdfs:label "mouillage extérieur de Roscoff, entre la tourelle « Le Menk » et la côte"@fr;
@@ -123,15 +128,25 @@ ent:5012 a nav:Large;
 ent:5018 a nav:EntiteGeographique;
 	rdfs:label "Cap Blanc-Nez"@fr.
 
+ent:5030 a nav:EntiteGeographique;
+	rdfs:label "méridien du Cap Blanc-Nez"@fr;
+	nav:contient ent:5018.
+
+ent:5031 a nav:EntiteGeographique;
+	nav:estALOuestDe ent:5030;
+	rdfs:label "l’Est du méridien du Cap Blanc-Nez"@fr.
+
 ent:5013 a nav:Courant;
-	nav:estLocaliseA ent:5012, [nav:estALOuestDe [nav:leMeridienDe ent:5018]];
+	nav:estLocaliseA ent:5012, ent:5031;
 	nav:aPourDirection ent:5012;
 	nav:aPourConditionOceano tio:FinDuFlot;
 	nav:aPourVitesseMaxi "1.7"^^xsd:float;
 	nav:aPourVitesseMaxi "2.9"^^xsd:float.
 
-<<<<ent:5013 nav:aPourVitesseMaxi "1.7"^^xsd:float>> qudt:Unit unit:KN>> nav:aPourLocalisation ent:5027.
-<<<<ent:5013 nav:aPourVitesseMaxi "2.9"^^xsd:float>> qudt:Unit unit:KN>> nav:aPourLocalisation ent:5028.
+<<ent:5013 nav:aPourVitesseMaxi "1.7"^^xsd:float>> qudt:Unit unit:KN.
+<<ent:5013 nav:aPourVitesseMaxi "1.7"^^xsd:float>> nav:estLocaliseA ent:5027.
+<<ent:5013 nav:aPourVitesseMaxi "2.9"^^xsd:float>> qudt:Unit unit:KN.
+<<ent:5013 nav:aPourVitesseMaxi "2.9"^^xsd:float>> nav:aPourLocalisation ent:5028.
 
 ent:5027 a nav:EntiteGeographique;
 	rdfs:label "bancs"@fr.
@@ -140,7 +155,7 @@ ent:5028 a nav:EntiteGeographique;
 	rdfs:label "passes et entre les bancs"@fr.
 
 ent:5014 a nav:Courant;
-	nav:estLocaliseA ent:5012, [nav:estALOuestDe [nav:leMeridienDe ent:5018]];
+	nav:estLocaliseA ent:5012, ent:5031;
 	nav:aPourDirection ent:5019;
 	nav:aPourConditionOceano tio:FinDuJusant.
 
@@ -160,13 +175,21 @@ ent:5021 a nav:Jusant;
 
 ent:5015 a nav:Courant;
 	nav:aPourTypeDeCourant tcr:CourantGiratoire;
-	nav:estLocaliseA [nav:estALOuestDe ent:5016, ent:5017];
+	nav:estLocaliseA ent:5032, ent:5033;
 	nav:aPourInfo "À mesure que l’on se rapproche de la terre, le courant giratoire diminue mais reste encore sensible à l’Ouest du Goulet de Brest et de la Baie de Douarnenez."^^xsd:string.
 
 ent:5016 a nav:EntiteGeographique;
 	nav:aPourNature teg:Goulet;
 	rdfs:label "Goulet de Brest"@fr.
 
+ent:5032 a nav:EntiteGeographique;
+	nav:estALOuestDe ent:5016;
+	rdfs:label "l'Ouest du Goulet de Brest"@fr.
+
 ent:5017 a nav:EntiteGeographique;
 	nav:aPourNature teg:Baie;
 	rdfs:label "Baie de Douarnenez"@fr.
+
+ent:5033 a nav:EntiteGeographique;
+	nav:estALOuestDe ent:5017;
+	rdfs:label "l'Ouest de la Baie de Douarnenez"@fr.
