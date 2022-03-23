@@ -1,0 +1,77 @@
+#modélisation de phénomènes météorologiques et océanographiques
+#extraits des IN C2A
+
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
+@prefix teg: <http://data.ign.fr/id/codes/nav/typedentitegeographique/>.
+@prefix ent: <http://data.shom.fr/id/entitegeographique/>.
+@prefix rlsp: <http://data.ign.fr/def/relationsspatiales#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#exemple 1
+ent:5001 a nav:EntiteGeographique;
+	rdfs:label "milieu du chenal"@fr.
+
+ent:5002 a nav:Renverse;
+	nav:horaireAvantPleineMer "05:25:00"^^xsd:time;
+	nav:horaireApresPleineMer "00:20:00"^^xsd:time;
+	nav:aPourPortDeRattachement ent:5003;
+	nav:estLocaliseA ent:5001.
+
+ent:5003 a nav:EntiteGeographique;
+	rdfs:label "Roscoff"@fr.
+
+ent:5004 a nav:Flot;
+	nav:estLocaliseA ent:5001;
+	nav:aPourDirection nav:Est;
+	nav:aPourVitesse "de 2,5 à 3,5 nœuds"^^xsd:string.
+
+ent:5005 a nav:Jusant;
+	nav:estLocaliseA ent:5001;
+	nav:aPourDirection nav:Ouest;
+	nav:aPourVitesse "de 2,5 à 3,5 nœuds"^^xsd:string.
+
+ent:5006 a nav:Courant;
+	nav:typeDeCourant nav:CourantTraversier;
+	nav:estLocaliseA ent:5007.
+
+ent:5007 a nav:EntiteGeographique;
+	rdfs:label "entrée Est du chenal"@fr.
+
+#exemple 2
+ent:5008 a nav:EntiteGeographique;
+	rdfs:label "le site"@fr.
+
+ent:5009 a nav:Ressac;
+	nav:estLocaliseA ent:5008;
+	nav:aPourTemporalite nav:MauvaisTemps;
+	#mauvais temps de Nord à NE
+	.
+
+#exemple 3
+ent:5010 a nav:Vent;
+	nav:aPourDirection nav:Nord-Est;
+	#vent de NE : vient du NE, va vers SW
+	nav:aPourConsequence [a nav:ConsequenceSurEnvironnement;
+		rdfs:label "une réduction des hauteurs de marée pouvant dépasser 0,3 m"@fr].
+#ça c'est un noeud blanc
+
+ent:5011 a nav:Vent;
+	#nav:aPourDirection tout sauf NE
+	nav:aPourConsequence [a nav:ConsequenceSurEnvironnement;
+		rdfs:label "une surélévation de 0,5 m ou plus"@fr].
+
+#Au large et à l’Est du méridien du Cap Blanc-Nez, le courant porte au large à la fin du flot et à terre à la fin du jusant. Au large, les vitesses maximales en VE moyenne atteignent 1,7 nœud sur les bancs ou à proximité et 2,9 nœuds dans les passes et entre les bancs. Le flot portant au NE est plus fort mais dure moins longtemps que le jusant qui porte au SW.
+ent:5012 a nav:EntiteGeographique;
+	rdfs:label "au large et à l’Est du méridien du Cap Blanc-Nez"@fr.
+
+ent:5013 a nav:Courant;
+	nav:estLocaliseA ent:5012;
+	nav:aPourDirection ent:5014;
+	nav:aPourTemporalite nav:FinDuFlot.
+
+ent:5014 a nav:EntiteGeographique;
+	rdfs:label "au large"@fr.
+
