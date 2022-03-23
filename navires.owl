@@ -198,9 +198,29 @@
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">Exemple : &quot;Les embarcations calant moins de 1 m peu-
-vent accoster à toute heure...&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Exemple : &quot;Les embarcations calant moins de 1 m peuvent accoster à toute heure...&quot;</rdfs:comment>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour calaison</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCalaison"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour calaison maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCalaison"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour calaison minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -210,6 +230,7 @@ vent accoster à toute heure...&quot;</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCapacite">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour capacité</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -220,8 +241,29 @@ vent accoster à toute heure...&quot;</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Le déplacement est une mesure de la masse de liquide déplacée par la partie immergée d&apos;un navire dans différentes situations de chargement. Le déplacement varie avec le tirant d&apos;eau. (Source : https://fr.wikipedia.org/wiki/D%C3%A9placement_(navire))</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour déplacement</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour déplacement maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour déplacement minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -231,6 +273,7 @@ vent accoster à toute heure...&quot;</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDimension">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour dimension</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -251,8 +294,29 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCapacite"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">La jauge brute (gross tonnage en anglais) est une des méthodes de mesure de la capacité de transport d&apos;un navire. Cette mesure s&apos;exprime en tonneaux de jauge brute ou tonneaux (tjb, GT, ou gross tonnage en anglais), ou en mètres cubes. (Source : https://fr.wikipedia.org/wiki/Jauge_brute)</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour jauge brute</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour jauge brute maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour jauge brute minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -263,8 +327,29 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Le port en lourd d&apos;un navire représente le chargement maximal qu&apos;il peut emporter. Le port en lourd inclut les marchandises transportées, les consommables et le personnel. Le port en lourd est aussi un outil servant à classer les navires marchands : on l&apos;abrège souvent en tpl (« tonnes de port en lourd »), ou avec l&apos;abréviation anglaise DWT (« deadweight tons »). On parle par exemple d&apos;un « vraquier de 70 000 tpl ». Par abus de langage, on parle souvent d&apos;un « navire de 70 000 tonnes » pour parler de son port en lourd. (Source : https://fr.wikipedia.org/wiki/Port_en_lourd)</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour port en lourd</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour port en lourd maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour port en lourd minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -274,7 +359,28 @@ vent accoster à toute heure...&quot;</rdfs:comment>
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration">
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour rayon de giration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour rayon de giration maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour rayon de giration minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -285,8 +391,29 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Le tirant d&apos;air correspond à la hauteur maximale des superstructures ou des mâts d&apos;un bateau, au-dessus de la ligne de flottaison. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27air)</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour tirant d&apos;air</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tirant d&apos;air maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tirant d&apos;air minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -297,8 +424,39 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Le tirant d&apos;eau est la hauteur de la partie immergée du bateau qui varie en fonction de la charge transportée. Il correspond à la distance verticale entre la flottaison et le point le plus bas de la coque, généralement la quille. Le tirant d&apos;eau maximum d&apos;un navire à un instant donné est nommé calaison, ainsi un navire qui cale huit mètres a un tirant d&apos;eau maximal de huit mètres. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27eau)</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour tirant d&apos;eau</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tirant d&apos;eau maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tirant d&apos;eau minimum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTonageMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTonageMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTonnage"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tonnage minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -309,8 +467,19 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCapacite"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Le tonnage est la capacité de transport d&apos;un navire de commerce évaluée par son volume intérieur. Le tonnage est exprimé en tonneaux (le tonneau est équivalent à 2,83 m3) pour les petits bateaux et en unités UMS (de l&apos;anglais Universal Measurement System) pour les navires de longueur supérieure à 24 mètres effectuant des voyages internationaux. (Source : https://fr.wikipedia.org/wiki/Tonnage)</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour tonnage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTonnageMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTonnageMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTonnage"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour tonnage maximum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -321,7 +490,28 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour vitesse</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour vitesse maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">a pour vitesse minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -332,6 +522,7 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">est de largeur</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -343,7 +534,48 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">est de largeur hors-tout</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de largeur hors-tout maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de largeur hors-tout minimum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de largeur maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de largeur minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -354,6 +586,7 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">est de longueur</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -365,8 +598,49 @@ vent accoster à toute heure...&quot;</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:comment xml:lang="fr">La longueur hors-tout correspond à la distance entre les points extrêmes avant et arrière de la structure permanente du bateau. Ceci inclut les éventuels espars tels que le beaupré ou une queue de malet ainsi que les balcons. En revanche, les grues ne sont en général pas incluses. (Source : https://fr.wikipedia.org/wiki/Longueur_hors-tout)</rdfs:comment>
         <rdfs:label xml:lang="fr">est de longueur hors-tout</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de longueur hors-tout maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de longueur hors-tout minimum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurMaxi -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de longueur maximum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurMini -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueur"/>
+        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
+        <rdfs:label xml:lang="fr">est de longueur minimum</rdfs:label>
     </owl:DatatypeProperty>
     
 
