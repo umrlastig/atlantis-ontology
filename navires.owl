@@ -1,9 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
      xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
+     xmlns:C31="http://vocab.nerc.ac.uk/collection/C31/current/"
+     xmlns:L06="http://vocab.nerc.ac.uk/collection/L06/current/"
+     xmlns:P21="http://vocab.nerc.ac.uk/collection/P21/current/"
+     xmlns:bkc="http://data.europa.eu/bkc/"
+     xmlns:evo="http://eurovoc.europa.eu/"
+     xmlns:gem="http://www.eionet.europa.eu/gemet/concept/"
      xmlns:gsp="http://www.opengis.net/ont/geosparql#"
+     xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tca="http://data.shom.fr/id/codes/nav/typedecargaison/"
+     xmlns:teq="http://data.shom.fr/id/codes/nav/typedequipement/"
+     xmlns:tet="http://data.shom.fr/id/codes/nav/typedetat/"
+     xmlns:tna="http://data.shom.fr/id/codes/nav/typedenavire/"
+     xmlns:tta="http://data.shom.fr/id/codes/nav/typedetaille/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -168,6 +180,14 @@
             </owl:Restriction>
         </rdfs:range>
         <rdfs:label xml:lang="fr">n&apos;est pas équipé de</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:label xml:lang="en">exact match</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -484,9 +504,9 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesse -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesse">
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
@@ -496,20 +516,20 @@
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMaxi">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour vitesse maximum</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini -->
+    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesse"/>
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMini">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour vitesse minimum</rdfs:label>
     </owl:DatatypeProperty>
@@ -769,12 +789,9 @@
     
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecaractetat/EnReparation -->
+    <!-- http://data.europa.eu/bkc/007.10.03.0100 -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecaractetat/EnReparation">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">en réparation</rdfs:label>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://data.europa.eu/bkc/007.10.03.0100"/>
     
 
 
@@ -915,6 +932,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAPassagers">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS7792"/>
         <rdfs:comment xml:lang="fr">navire à passagers, navire de transport de passagers</rdfs:comment>
         <rdfs:label xml:lang="fr">navire à passagers</rdfs:label>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
@@ -1006,6 +1024,10 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDePeche">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
+        <skos:exactMatch rdf:resource="http://data.europa.eu/bkc/007.10.03.0100"/>
+        <skos:exactMatch rdf:resource="http://eurovoc.europa.eu/4829"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/36"/>
+        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/3266"/>
         <rdfs:label xml:lang="fr">navire de pêche</rdfs:label>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
     </owl:NamedIndividual>
@@ -1056,6 +1078,9 @@
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireMilitaire">
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/C31/current/MS"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/39"/>
+        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS6802"/>
         <rdfs:comment xml:lang="fr">navire militaire, navire de la Marine Nationale</rdfs:comment>
         <rdfs:label xml:lang="fr">navire militaire</rdfs:label>
         <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
@@ -1260,6 +1285,15 @@
     
 
 
+    <!-- http://data.shom.fr/id/codes/nav/typedetat/EnReparation -->
+
+    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/EnReparation">
+        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
+        <rdfs:label xml:lang="fr">en réparation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://data.shom.fr/id/codes/nav/typedetat/Etranger -->
 
     <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Etranger">
@@ -1293,6 +1327,48 @@
         <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
         <rdfs:label xml:lang="fr">mouillé</rdfs:label>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://eurovoc.europa.eu/4829 -->
+
+    <owl:NamedIndividual rdf:about="http://eurovoc.europa.eu/4829"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/C31/current/MS -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/C31/current/MS"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/L06/current/36 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/36"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/L06/current/39 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/39"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS6802 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS6802"/>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS7792 -->
+
+    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS7792"/>
+    
+
+
+    <!-- http://www.eionet.europa.eu/gemet/concept/3266 -->
+
+    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/3266"/>
     
 
 
