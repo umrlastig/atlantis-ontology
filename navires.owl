@@ -1,1422 +1,978 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#"
-     xml:base="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"
-     xmlns:C31="http://vocab.nerc.ac.uk/collection/C31/current/"
-     xmlns:L06="http://vocab.nerc.ac.uk/collection/L06/current/"
-     xmlns:P21="http://vocab.nerc.ac.uk/collection/P21/current/"
-     xmlns:bkc="http://data.europa.eu/bkc/"
-     xmlns:evo="http://eurovoc.europa.eu/"
-     xmlns:gem="http://www.eionet.europa.eu/gemet/concept/"
-     xmlns:gsp="http://www.opengis.net/ont/geosparql#"
-     xmlns:nav="http://data.shom.fr/def/navigation_cotiere#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:tca="http://data.shom.fr/id/codes/nav/typedecargaison/"
-     xmlns:teq="http://data.shom.fr/id/codes/nav/typedequipement/"
-     xmlns:tet="http://data.shom.fr/id/codes/nav/typedetat/"
-     xmlns:tna="http://data.shom.fr/id/codes/nav/typedenavire/"
-     xmlns:tta="http://data.shom.fr/id/codes/nav/typedetaille/"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8"/>
-    
+@prefix : <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8#> .
+@prefix C31: <http://vocab.nerc.ac.uk/collection/C31/current/> .
+@prefix L06: <http://vocab.nerc.ac.uk/collection/L06/current/> .
+@prefix P21: <http://vocab.nerc.ac.uk/collection/P21/current/> .
+@prefix bkc: <http://data.europa.eu/bkc/> .
+@prefix evo: <http://eurovoc.europa.eu/> .
+@prefix gem: <http://www.eionet.europa.eu/gemet/concept/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tca: <http://data.shom.fr/id/codes/nav/typedecargaison/> .
+@prefix teq: <http://data.shom.fr/id/codes/nav/typedequipement/> .
+@prefix tet: <http://data.shom.fr/id/codes/nav/typedetat/> .
+@prefix tna: <http://data.shom.fr/id/codes/nav/typedenavire/> .
+@prefix tta: <http://data.shom.fr/id/codes/nav/typedetaille/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8> .
+
+<http://www.semanticweb.org/hrawsthorne/ontologies/2021/2/untitled-ontology-8> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+skos:related rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire
+nav:aPourCaracteristiqueNavire rdf:type owl:ObjectProperty ;
+                               rdfs:domain nav:Navire ;
+                               rdfs:label "a pour caractéristique navire"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCargaison
+nav:aPourCargaison rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+                   rdfs:domain nav:Navire ;
+                   rdfs:range [ rdf:type owl:Restriction ;
+                                owl:onProperty skos:inScheme ;
+                                owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste>
+                              ] ;
+                   rdfs:comment "hydrocarbures, matières dangereuses, ciment, produits agro-alimentaires, marchandises, passagers"@fr ;
+                   rdfs:label "a pour cargaison"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourEtat
+nav:aPourEtat rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+              rdfs:domain nav:Navire ;
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty skos:inScheme ;
+                           owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste>
+                         ] ;
+              rdfs:label "a pour état"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTaille
+nav:aPourTaille rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+                rdfs:domain nav:Navire ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty skos:inScheme ;
+                             owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste>
+                           ] ;
+                rdfs:label "a pour taille"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#estDeType
+nav:estDeType rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+              rdfs:domain nav:Navire ;
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty skos:inScheme ;
+                           owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste>
+                         ] ;
+              rdfs:isDefinedBy nav: ;
+              rdfs:label "est de type"@fr ,
+                         "type of ship"@en .
+
 
+###  http://data.shom.fr/def/navigation_cotiere#estEquipeDe
+nav:estEquipeDe rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+                rdfs:domain nav:Navire ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty skos:inScheme ;
+                             owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste>
+                           ] ;
+                rdfs:label "est équipé de"@fr .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#nEstPasEquipeDe
+nav:nEstPasEquipeDe rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf nav:aPourCaracteristiqueNavire ;
+                    rdfs:domain nav:Navire ;
+                    rdfs:range [ rdf:type owl:Restriction ;
+                                 owl:onProperty skos:inScheme ;
+                                 owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste>
+                               ] ;
+                    rdfs:label "n'est pas équipé de"@fr .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ;
+                rdfs:label "exact match"@en .
 
-    <!-- http://www.w3.org/2004/02/skos/core#broader -->
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
-    
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:label "is in scheme"@en .
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+#################################################################
+#    Data properties
+#################################################################
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourCalaison
+nav:aPourCalaison rdf:type owl:DatatypeProperty ;
+                  owl:equivalentProperty nav:aPourTirantDEau ;
+                  rdfs:subPropertyOf nav:aPourDimension ;
+                  rdfs:domain nav:Navire ;
+                  rdfs:range xsd:float ;
+                  rdfs:comment "Exemple : \"Les embarcations calant moins de 1 m peuvent accoster à toute heure...\""@fr ,
+                               "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                  rdfs:label "a pour calaison"@fr .
+
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#related -->
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:label xml:lang="fr">a pour caractéristique navire</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCargaison -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCargaison">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:comment xml:lang="fr">hydrocarbures, matières dangereuses, ciment, produits agro-alimentaires, marchandises, passagers</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour cargaison</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourEtat -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourEtat">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:label xml:lang="fr">a pour état</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTaille -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTaille">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:label xml:lang="fr">a pour taille</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeType -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeType">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
-        <rdfs:label xml:lang="fr">est de type</rdfs:label>
-        <rdfs:label xml:lang="en">type of ship</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#estEquipeDe -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEquipeDe">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:label xml:lang="fr">est équipé de</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://data.shom.fr/def/navigation_cotiere#nEstPasEquipeDe -->
-
-    <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#nEstPasEquipeDe">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCaracteristiqueNavire"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste"/>
-            </owl:Restriction>
-        </rdfs:range>
-        <rdfs:label xml:lang="fr">n&apos;est pas équipé de</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
-        <rdfs:label xml:lang="en">exact match</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMaxi
+nav:aPourCalaisonMaxi rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:aPourCalaison ;
+                      rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                      rdfs:label "a pour calaison maximum"@fr .
+
 
-
-    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
-        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMini
+nav:aPourCalaisonMini rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:aPourCalaison ;
+                      rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                      rdfs:label "a pour calaison minimum"@fr .
 
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCapacite
+nav:aPourCapacite rdf:type owl:DatatypeProperty ;
+                  rdfs:domain nav:Navire ;
+                  rdfs:range xsd:float ;
+                  rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                  rdfs:label "a pour capacité"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCalaison -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCalaison">
-        <owl:equivalentProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau"/>
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">Exemple : &quot;Les embarcations calant moins de 1 m peuvent accoster à toute heure...&quot;</rdfs:comment>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour calaison</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourDeplacement
+nav:aPourDeplacement rdf:type owl:DatatypeProperty ;
+                     rdfs:domain nav:Navire ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDeplacement \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                  "Le déplacement est une mesure de la masse de liquide déplacée par la partie immergée d'un navire dans différentes situations de chargement. Le déplacement varie avec le tirant d'eau. (Source : https://fr.wikipedia.org/wiki/D%C3%A9placement_(navire))"@fr ;
+                     rdfs:label "a pour déplacement"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMaxi -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMaxi
+nav:aPourDeplacementMaxi rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf nav:aPourDeplacement ;
+                         rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDeplacement \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                         rdfs:label "a pour déplacement maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCalaison"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour calaison maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMini
+nav:aPourDeplacementMini rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf nav:aPourDeplacement ;
+                         rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDeplacement \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                         rdfs:label "a pour déplacement minimum"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMini -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourDimension
+nav:aPourDimension rdf:type owl:DatatypeProperty ;
+                   rdfs:domain nav:Navire ;
+                   rdfs:range xsd:float ;
+                   rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                   rdfs:label "a pour dimension"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCalaisonMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCalaison"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour calaison minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourInfo
+nav:aPourInfo rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string ;
+              rdfs:label "a pour info"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourCapacite -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourCapacite">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour capacité</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute
+nav:aPourJaugeBrute rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf nav:aPourCapacite ;
+                    rdfs:domain nav:Navire ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                 "La jauge brute (gross tonnage en anglais) est une des méthodes de mesure de la capacité de transport d'un navire. Cette mesure s'exprime en tonneaux de jauge brute ou tonneaux (tjb, GT, ou gross tonnage en anglais), ou en mètres cubes. (Source : https://fr.wikipedia.org/wiki/Jauge_brute)"@fr ;
+                    rdfs:label "a pour jauge brute"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDeplacement -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMaxi
+nav:aPourJaugeBruteMaxi rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourJaugeBrute ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour jauge brute maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Le déplacement est une mesure de la masse de liquide déplacée par la partie immergée d&apos;un navire dans différentes situations de chargement. Le déplacement varie avec le tirant d&apos;eau. (Source : https://fr.wikipedia.org/wiki/D%C3%A9placement_(navire))</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour déplacement</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMini
+nav:aPourJaugeBruteMini rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourJaugeBrute ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour jauge brute minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour déplacement maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd
+nav:aPourPortEnLourd rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain nav:Navire ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourPortEnLourd \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                  "Le port en lourd d'un navire représente le chargement maximal qu'il peut emporter. Le port en lourd inclut les marchandises transportées, les consommables et le personnel. Le port en lourd est aussi un outil servant à classer les navires marchands : on l'abrège souvent en tpl (« tonnes de port en lourd »), ou avec l'abréviation anglaise DWT (« deadweight tons »). On parle par exemple d'un « vraquier de 70 000 tpl ». Par abus de langage, on parle souvent d'un « navire de 70 000 tonnes » pour parler de son port en lourd. (Source : https://fr.wikipedia.org/wiki/Port_en_lourd)"@fr ;
+                     rdfs:label "a pour port en lourd"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMini -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMaxi
+nav:aPourPortEnLourdMaxi rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf nav:aPourPortEnLourd ;
+                         rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourPortEnLourd \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                         rdfs:label "a pour port en lourd maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDeplacementMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDeplacement"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDeplacement &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour déplacement minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMini
+nav:aPourPortEnLourdMini rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf nav:aPourPortEnLourd ;
+                         rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourPortEnLourd \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                         rdfs:label "a pour port en lourd minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourDimension -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourDimension">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour dimension</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration
+nav:aPourRayonDeGiration rdf:type owl:DatatypeProperty ;
+                         rdfs:domain nav:Navire ;
+                         rdfs:range xsd:float ;
+                         rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourRayonDeGiration \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                         rdfs:label "a pour rayon de giration"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourInfo -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMaxi
+nav:aPourRayonDeGirationMaxi rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf nav:aPourRayonDeGiration ;
+                             rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourRayonDeGiration \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                             rdfs:label "a pour rayon de giration maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourInfo">
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="fr">a pour info</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMini
+nav:aPourRayonDeGirationMini rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf nav:aPourRayonDeGiration ;
+                             rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourRayonDeGiration \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                             rdfs:label "a pour rayon de giration minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCapacite"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">La jauge brute (gross tonnage en anglais) est une des méthodes de mesure de la capacité de transport d&apos;un navire. Cette mesure s&apos;exprime en tonneaux de jauge brute ou tonneaux (tjb, GT, ou gross tonnage en anglais), ou en mètres cubes. (Source : https://fr.wikipedia.org/wiki/Jauge_brute)</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour jauge brute</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir
+nav:aPourTirantDAir rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf nav:aPourDimension ;
+                    rdfs:domain nav:Navire ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                 "Le tirant d'air correspond à la hauteur maximale des superstructures ou des mâts d'un bateau, au-dessus de la ligne de flottaison. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27air)"@fr ;
+                    rdfs:label "a pour tirant d'air"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMaxi -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMaxi
+nav:aPourTirantDAirMaxi rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourTirantDAir ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour tirant d'air maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour jauge brute maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMini
+nav:aPourTirantDAirMini rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourTirantDAir ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour tirant d'air minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBruteMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourJaugeBrute"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour jauge brute minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau
+nav:aPourTirantDEau rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf nav:aPourDimension ;
+                    rdfs:domain nav:Navire ;
+                    rdfs:range xsd:float ;
+                    rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                 "Le tirant d'eau est la hauteur de la partie immergée du bateau qui varie en fonction de la charge transportée. Il correspond à la distance verticale entre la flottaison et le point le plus bas de la coque, généralement la quille. Le tirant d'eau maximum d'un navire à un instant donné est nommé calaison, ainsi un navire qui cale huit mètres a un tirant d'eau maximal de huit mètres. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27eau)"@fr ;
+                    rdfs:label "a pour tirant d'eau"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMaxi
+nav:aPourTirantDEauMaxi rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourTirantDEau ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour tirant d'eau maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Le port en lourd d&apos;un navire représente le chargement maximal qu&apos;il peut emporter. Le port en lourd inclut les marchandises transportées, les consommables et le personnel. Le port en lourd est aussi un outil servant à classer les navires marchands : on l&apos;abrège souvent en tpl (« tonnes de port en lourd »), ou avec l&apos;abréviation anglaise DWT (« deadweight tons »). On parle par exemple d&apos;un « vraquier de 70 000 tpl ». Par abus de langage, on parle souvent d&apos;un « navire de 70 000 tonnes » pour parler de son port en lourd. (Source : https://fr.wikipedia.org/wiki/Port_en_lourd)</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour port en lourd</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMini
+nav:aPourTirantDEauMini rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf nav:aPourTirantDEau ;
+                        rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                        rdfs:label "a pour tirant d'eau minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour port en lourd maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourTonageMini
+nav:aPourTonageMini rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf nav:aPourTonnage ;
+                    rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                    rdfs:label "a pour tonnage minimum"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMini -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourTonnage
+nav:aPourTonnage rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf nav:aPourCapacite ;
+                 rdfs:domain nav:Navire ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                              "Le tonnage est la capacité de transport d'un navire de commerce évaluée par son volume intérieur. Le tonnage est exprimé en tonneaux (le tonneau est équivalent à 2,83 m3) pour les petits bateaux et en unités UMS (de l'anglais Universal Measurement System) pour les navires de longueur supérieure à 24 mètres effectuant des voyages internationaux. (Source : https://fr.wikipedia.org/wiki/Tonnage)"@fr ;
+                 rdfs:label "a pour tonnage"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourdMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourPortEnLourd"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourPortEnLourd &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour port en lourd minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourTonnageMaxi
+nav:aPourTonnageMaxi rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf nav:aPourTonnage ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourCapacite \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                     rdfs:label "a pour tonnage maximum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration">
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour rayon de giration</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire
+nav:aPourVitesseNavire rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain nav:Navire ;
+                       rdfs:range xsd:float ;
+                       rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                       rdfs:label "a pour vitesse"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMaxi -->
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMaxi
+nav:aPourVitesseNavireMaxi rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf nav:aPourVitesseNavire ;
+                           rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                           rdfs:label "a pour vitesse maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour rayon de giration maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMini
+nav:aPourVitesseNavireMini rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf nav:aPourVitesseNavire ;
+                           rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourVitesse \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                           rdfs:label "a pour vitesse minimum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGirationMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourRayonDeGiration"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourRayonDeGiration &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour rayon de giration minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeur
+nav:estDeLargeur rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf nav:aPourDimension ;
+                 rdfs:domain nav:Navire ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                 rdfs:label "est de largeur"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir -->
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout
+nav:estDeLargeurHors-Tout rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf nav:aPourDimension ;
+                          rdfs:domain nav:Navire ;
+                          rdfs:range xsd:float ;
+                          rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                          rdfs:label "est de largeur hors-tout"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Le tirant d&apos;air correspond à la hauteur maximale des superstructures ou des mâts d&apos;un bateau, au-dessus de la ligne de flottaison. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27air)</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;air</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMaxi
+nav:estDeLargeurHors-ToutMaxi rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf nav:estDeLargeurHors-Tout ;
+                              rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                              rdfs:label "est de largeur hors-tout maximum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;air maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMini
+nav:estDeLargeurHors-ToutMini rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf nav:estDeLargeurHors-Tout ;
+                              rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                              rdfs:label "est de largeur hors-tout minimum"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMini -->
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeurMaxi
+nav:estDeLargeurMaxi rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf nav:estDeLargeur ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                     rdfs:label "est de largeur maximum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAirMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDAir"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;air minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#estDeLargeurMini
+nav:estDeLargeurMini rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf nav:estDeLargeur ;
+                     rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                     rdfs:label "est de largeur minimum"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueur
+nav:estDeLongueur rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf nav:aPourDimension ;
+                  rdfs:domain nav:Navire ;
+                  rdfs:range xsd:float ;
+                  rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                  rdfs:label "est de longueur"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout
+nav:estDeLongueurHors-Tout rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf nav:aPourDimension ;
+                           rdfs:domain nav:Navire ;
+                           rdfs:range xsd:float ;
+                           rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ,
+                                        "La longueur hors-tout correspond à la distance entre les points extrêmes avant et arrière de la structure permanente du bateau. Ceci inclut les éventuels espars tels que le beaupré ou une queue de malet ainsi que les balcons. En revanche, les grues ne sont en général pas incluses. (Source : https://fr.wikipedia.org/wiki/Longueur_hors-tout)"@fr ;
+                           rdfs:label "est de longueur hors-tout"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Le tirant d&apos;eau est la hauteur de la partie immergée du bateau qui varie en fonction de la charge transportée. Il correspond à la distance verticale entre la flottaison et le point le plus bas de la coque, généralement la quille. Le tirant d&apos;eau maximum d&apos;un navire à un instant donné est nommé calaison, ainsi un navire qui cale huit mètres a un tirant d&apos;eau maximal de huit mètres. (Source : https://fr.wikipedia.org/wiki/Tirant_d%27eau)</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;eau</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMaxi
+nav:estDeLongueurHors-ToutMaxi rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf nav:estDeLongueurHors-Tout ;
+                               rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                               rdfs:label "est de longueur hors-tout maximum"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMaxi -->
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMini
+nav:estDeLongueurHors-ToutMini rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf nav:estDeLongueurHors-Tout ;
+                               rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                               rdfs:label "est de longueur hors-tout minimum"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;eau maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueurMaxi
+nav:estDeLongueurMaxi rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:estDeLongueur ;
+                      rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                      rdfs:label "est de longueur maximum"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEauMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTirantDEau"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tirant d&apos;eau minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#estDeLongueurMini
+nav:estDeLongueurMini rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf nav:estDeLongueur ;
+                      rdfs:comment "L'objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : <<_:entité _:aPourDimension \"valeur\"^^xsd:float>> qudt:Unit _:UnitéDeMesure."@fr ;
+                      rdfs:label "est de longueur minimum"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTonageMini -->
+#################################################################
+#    Classes
+#################################################################
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTonageMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTonnage"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tonnage minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#Navire
+nav:Navire rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty nav:estDeType ;
+                                 owl:someValuesFrom nav:TypeDeNavire
+                               ] .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTonnage -->
+###  http://data.shom.fr/def/navigation_cotiere#TypeDEquipement
+nav:TypeDEquipement rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty skos:inScheme ;
+                                          owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste>
+                                        ] ;
+                    rdfs:subClassOf skos:Concept ;
+                    rdfs:label "Type d'Équipement"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTonnage">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourCapacite"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Le tonnage est la capacité de transport d&apos;un navire de commerce évaluée par son volume intérieur. Le tonnage est exprimé en tonneaux (le tonneau est équivalent à 2,83 m3) pour les petits bateaux et en unités UMS (de l&apos;anglais Universal Measurement System) pour les navires de longueur supérieure à 24 mètres effectuant des voyages internationaux. (Source : https://fr.wikipedia.org/wiki/Tonnage)</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tonnage</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#TypeDEtat
+nav:TypeDEtat rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty skos:inScheme ;
+                                    owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste>
+                                  ] ;
+              rdfs:subClassOf skos:Concept ;
+              rdfs:label "Type d'État"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourTonnageMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTonnageMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourTonnage"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourCapacite &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour tonnage maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison
+nav:TypeDeCargaison rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty skos:inScheme ;
+                                          owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste>
+                                        ] ;
+                    rdfs:subClassOf skos:Concept ;
+                    rdfs:label "Type de Cargaison"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire -->
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeNavire
+nav:TypeDeNavire rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste>
+                                     ] ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:isDefinedBy nav: ;
+                 rdfs:label "Type de Navire"@fr ,
+                            "Type of Ship"@en .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeTaille
+nav:TypeDeTaille rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste>
+                                     ] ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:label "Type de Taille"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMaxi -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMini -->
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavireMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourVitesseNavire"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourVitesse &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">a pour vitesse minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+#################################################################
+#    Individuals
+#################################################################
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeur -->
+###  http://data.europa.eu/bkc/007.10.03.0100
+<http://data.europa.eu/bkc/007.10.03.0100> rdf:type owl:NamedIndividual .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeur">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedecargaison/Ciment
+tca:Ciment rdf:type owl:NamedIndividual ,
+                    nav:TypeDeCargaison ;
+           rdfs:label "ciment"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur hors-tout</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedecargaison/Hydrocarbures
+tca:Hydrocarbures rdf:type owl:NamedIndividual ,
+                           nav:TypeDeCargaison ;
+                  rdfs:label "hydrocarbures"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMaxi -->
+###  http://data.shom.fr/id/codes/nav/typedecargaison/Marchandises
+tca:Marchandises rdf:type owl:NamedIndividual ,
+                          nav:TypeDeCargaison ;
+                 rdfs:label "marchandises"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur hors-tout maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedecargaison/MatieresDangereuses
+tca:MatieresDangereuses rdf:type owl:NamedIndividual ,
+                                 nav:TypeDeCargaison ;
+                        owl:sameAs tca:SubstancesDangereuses ;
+                        rdfs:label "matières dangereuses"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-ToutMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeurHors-Tout"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur hors-tout minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedecargaison/Passagers
+tca:Passagers rdf:type owl:NamedIndividual ,
+                       nav:TypeDeCargaison ;
+              rdfs:label "passagers"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurMaxi -->
+###  http://data.shom.fr/id/codes/nav/typedecargaison/ProduitsAgro-Alimentaires
+tca:ProduitsAgro-Alimentaires rdf:type owl:NamedIndividual ,
+                                       nav:TypeDeCargaison ;
+                              rdfs:label "produits agro-alimentaires"@fr ;
+                              skos:broader tna:Navire .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeur"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedecargaison/SubstancesDangereuses
+tca:SubstancesDangereuses rdf:type owl:NamedIndividual ,
+                                   nav:TypeDeCargaison ;
+                          rdfs:label "substances dangereuses"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLargeurMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLargeurMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLargeur"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de largeur minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/BateauDePassage
+tna:BateauDePassage rdf:type owl:NamedIndividual ,
+                             nav:TypeDeNavire ;
+                    rdfs:label "bateau de passage"@fr ;
+                    skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueur -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/Batiment
+tna:Batiment rdf:type owl:NamedIndividual ,
+                      nav:TypeDeNavire ;
+             rdfs:label "bâtiment"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueur">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/BatimentDesServicesPublics
+tna:BatimentDesServicesPublics rdf:type owl:NamedIndividual ,
+                                        nav:TypeDeNavire ;
+                               rdfs:label "bâtiment des services publics"@fr ;
+                               skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourDimension"/>
-        <rdfs:domain rdf:resource="http://data.shom.fr/def/navigation_cotiere#Navire"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">La longueur hors-tout correspond à la distance entre les points extrêmes avant et arrière de la structure permanente du bateau. Ceci inclut les éventuels espars tels que le beaupré ou une queue de malet ainsi que les balcons. En revanche, les grues ne sont en général pas incluses. (Source : https://fr.wikipedia.org/wiki/Longueur_hors-tout)</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur hors-tout</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/Embarcation
+tna:Embarcation rdf:type owl:NamedIndividual ,
+                         nav:TypeDeNavire ;
+                rdfs:comment "petit bateau"@fr ;
+                rdfs:label "embarcation"@fr .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMaxi -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/Navire
+tna:Navire rdf:type owl:NamedIndividual ,
+                    nav:TypeDeNavire ;
+           rdfs:label "navire"@fr .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur hors-tout maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAFondPlat
+tna:NavireAFondPlat rdf:type owl:NamedIndividual ,
+                             nav:TypeDeNavire ;
+                    rdfs:label "navire à fond plat"@fr ;
+                    skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-ToutMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueurHors-Tout"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur hors-tout minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAMoteur
+tna:NavireAMoteur rdf:type owl:NamedIndividual ,
+                           nav:TypeDeNavire ;
+                  rdfs:label "navire à moteur"@fr ;
+                  skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurMaxi -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAPassagers
+tna:NavireAPassagers rdf:type owl:NamedIndividual ,
+                              nav:TypeDeNavire ;
+                     skos:exactMatch P21:MS7792 ;
+                     rdfs:comment "navire à passagers, navire de transport de passagers"@fr ;
+                     rdfs:label "navire à passagers"@fr ;
+                     skos:broader tna:Navire .
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurMaxi">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueur"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur maximum</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAPasserellePlusHaute
+tna:NavireAPasserellePlusHaute rdf:type owl:NamedIndividual ,
+                                        nav:TypeDeNavire ;
+                               skos:broader tna:Navire ;
+                               skos:prefLabel "navire à passerelle plus haute"@fr .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#estDeLongueurMini -->
 
-    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDeLongueurMini">
-        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeLongueur"/>
-        <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété sera toujours une valeur avec une unité de mesure associée. Donc, elle sera toujours dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourDimension &quot;valeur&quot;^^xsd:float&gt;&gt; qudt:Unit _:UnitéDeMesure.</rdfs:comment>
-        <rdfs:label xml:lang="fr">est de longueur minimum</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAVoile
+tna:NavireAVoile rdf:type owl:NamedIndividual ,
+                          nav:TypeDeNavire ;
+                 rdfs:label "navire à voile"@fr ;
+                 skos:broader tna:Navire .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireAuMouillage
+tna:NavireAuMouillage rdf:type owl:NamedIndividual ,
+                               nav:TypeDeNavire ;
+                      rdfs:label "navire au mouillage"@fr ;
+                      skos:broader tna:Navire .
 
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireCablier
+tna:NavireCablier rdf:type owl:NamedIndividual ,
+                           nav:TypeDeNavire ;
+                  rdfs:label "navire cablier"@fr ;
+                  skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#Navire -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#Navire">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://data.shom.fr/def/navigation_cotiere#estDeType"/>
-                <owl:someValuesFrom rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireControle
+tna:NavireControle rdf:type owl:NamedIndividual ,
+                            nav:TypeDeNavire ;
+                   rdfs:label "navire contrôle"@fr ;
+                   skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEquipement -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDeCommerce
+tna:NavireDeCommerce rdf:type owl:NamedIndividual ,
+                              nav:TypeDeNavire ;
+                     rdfs:label "navire de commerce"@fr ;
+                     skos:broader tna:Navire .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Équipement</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDeHaute-Mer
+tna:NavireDeHaute-Mer rdf:type owl:NamedIndividual ,
+                               nav:TypeDeNavire ;
+                      rdfs:label "navire de haute-mer"@fr ;
+                      skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEtat -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEtat">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type d&apos;État</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDeLiaison
+tna:NavireDeLiaison rdf:type owl:NamedIndividual ,
+                             nav:TypeDeNavire ;
+                    rdfs:label "navire de liaison"@fr ;
+                    skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDePeche
+tna:NavireDePeche rdf:type owl:NamedIndividual ,
+                           nav:TypeDeNavire ;
+                  skos:exactMatch <http://data.europa.eu/bkc/007.10.03.0100> ,
+                                  <http://eurovoc.europa.eu/4829> ,
+                                  <http://vocab.nerc.ac.uk/collection/L06/current/36> ,
+                                  <http://www.eionet.europa.eu/gemet/concept/3266> ;
+                  rdfs:label "navire de pêche"@fr ;
+                  skos:broader tna:Navire .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type de Cargaison</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDePlaisance
+tna:NavireDePlaisance rdf:type owl:NamedIndividual ,
+                               nav:TypeDeNavire ;
+                      rdfs:label "navire de plaisance"@fr ;
+                      skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeNavire -->
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
-        <rdfs:label xml:lang="fr">Type de Navire</rdfs:label>
-        <rdfs:label xml:lang="en">Type of Ship</rdfs:label>
-    </owl:Class>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireDeServitudeEtDeSauvetage
+tna:NavireDeServitudeEtDeSauvetage rdf:type owl:NamedIndividual ,
+                                            nav:TypeDeNavire ;
+                                   rdfs:label "navire de servitude et de sauvetage"@fr ;
+                                   skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeTaille -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireEnBois
+tna:NavireEnBois rdf:type owl:NamedIndividual ,
+                          nav:TypeDeNavire ;
+                 rdfs:label "navire en bois"@fr ;
+                 skos:broader tna:Navire .
 
-    <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeTaille">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:label xml:lang="fr">Type de Taille</rdfs:label>
-    </owl:Class>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireLourd
+tna:NavireLourd rdf:type owl:NamedIndividual ,
+                         nav:TypeDeNavire ;
+                rdfs:label "navire lourd"@fr ;
+                skos:broader tna:Navire .
 
-    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireMilitaire
+tna:NavireMilitaire rdf:type owl:NamedIndividual ,
+                             nav:TypeDeNavire ;
+                    skos:exactMatch C31:MS ,
+                                    <http://vocab.nerc.ac.uk/collection/L06/current/39> ,
+                                    P21:MS6802 ;
+                    rdfs:comment "navire militaire, navire de la Marine Nationale"@fr ;
+                    rdfs:label "navire militaire"@fr ;
+                    skos:broader tna:Navire .
 
 
-    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireOstreicole
+tna:NavireOstreicole rdf:type owl:NamedIndividual ,
+                              nav:TypeDeNavire ;
+                     rdfs:label "navire ostreicole"@fr ;
+                     skos:broader tna:Navire .
 
-    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavirePeuManoeuvrant
+tna:NavirePeuManoeuvrant rdf:type owl:NamedIndividual ,
+                                  nav:TypeDeNavire ;
+                         rdfs:label "navire peu manœuvrant"@fr ;
+                         skos:broader tna:Navire .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireRoulier
+tna:NavireRoulier rdf:type owl:NamedIndividual ,
+                           nav:TypeDeNavire ;
+                  rdfs:label "navire roulier"@fr ;
+                  skos:broader tna:Navire .
 
 
-    <!-- http://data.europa.eu/bkc/007.10.03.0100 -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireSablier
+tna:NavireSablier rdf:type owl:NamedIndividual ,
+                           nav:TypeDeNavire ;
+                  rdfs:label "navire sablier"@fr ;
+                  skos:broader tna:Navire .
 
-    <owl:NamedIndividual rdf:about="http://data.europa.eu/bkc/007.10.03.0100"/>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireTransbordeur
+tna:NavireTransbordeur rdf:type owl:NamedIndividual ,
+                                nav:TypeDeNavire ;
+                       rdfs:label "navire transbordeur"@fr ;
+                       skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/Ciment -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/Ciment">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">ciment</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/NavireVisiteur
+tna:NavireVisiteur rdf:type owl:NamedIndividual ,
+                            nav:TypeDeNavire ;
+                   rdfs:label "navire visiteur"@fr ;
+                   skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/Hydrocarbures -->
+###  http://data.shom.fr/id/codes/nav/typedenavire/Paquebot
+tna:Paquebot rdf:type owl:NamedIndividual ,
+                      nav:TypeDeNavire ;
+             rdfs:label "paquebot"@fr ;
+             skos:broader tna:Navire .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/Hydrocarbures">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">hydrocarbures</rdfs:label>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedenavire/Petrolier
+tna:Petrolier rdf:type owl:NamedIndividual ,
+                       nav:TypeDeNavire ;
+              rdfs:label "pétrolier"@fr ;
+              skos:broader tna:Navire .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/Marchandises -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/Marchandises">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">marchandises</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedenavire/VehiculeNautiqueAMoteur
+tna:VehiculeNautiqueAMoteur rdf:type owl:NamedIndividual ,
+                                     nav:TypeDeNavire ;
+                            rdfs:label "vehicule nautique à moteur"@fr ;
+                            skos:broader tna:Navire .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/MatieresDangereuses -->
+###  http://data.shom.fr/id/codes/nav/typedequipement/Projecteur
+teq:Projecteur rdf:type owl:NamedIndividual ,
+                        nav:TypeDEquipement ;
+               rdfs:label "projecteur"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/MatieresDangereuses">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <owl:sameAs rdf:resource="http://data.shom.fr/id/codes/nav/typedecargaison/SubstancesDangereuses"/>
-        <rdfs:label xml:lang="fr">matières dangereuses</rdfs:label>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedequipement/PropulseurDEtrave
+teq:PropulseurDEtrave rdf:type owl:NamedIndividual ,
+                               nav:TypeDEquipement ;
+                      rdfs:label "propulseur d'étrave"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/Passagers -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/Passagers">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">passagers</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedequipement/Radar
+teq:Radar rdf:type owl:NamedIndividual ,
+                   nav:TypeDEquipement ;
+          rdfs:label "radar"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/ProduitsAgro-Alimentaires -->
+###  http://data.shom.fr/id/codes/nav/typedequipement/VHF
+teq:VHF rdf:type owl:NamedIndividual ,
+                 nav:TypeDEquipement .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/ProduitsAgro-Alimentaires">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">produits agro-alimentaires</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedetaille/Grand
+tta:Grand rdf:type owl:NamedIndividual ,
+                   nav:TypeDeTaille ;
+          rdfs:label "grand"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedecargaison/SubstancesDangereuses -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedecargaison/SubstancesDangereuses">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison"/>
-        <rdfs:label xml:lang="fr">substances dangereuses</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedetaille/Gros
+tta:Gros rdf:type owl:NamedIndividual ,
+                  nav:TypeDeTaille ;
+         rdfs:label "gros"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/BateauDePassage -->
+###  http://data.shom.fr/id/codes/nav/typedetaille/Petit
+tta:Petit rdf:type owl:NamedIndividual ,
+                   nav:TypeDeTaille ;
+          rdfs:label "petit"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/BateauDePassage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">bateau de passage</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedetat/AFaibleTonnage
+tet:AFaibleTonnage rdf:type owl:NamedIndividual ,
+                            nav:TypeDEtat ;
+                   rdfs:label "à faible tonnage"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/Batiment -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/Batiment">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">bâtiment</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedetat/ALEchouage
+tet:ALEchouage rdf:type owl:NamedIndividual ,
+                        nav:TypeDEtat ;
+               rdfs:label "à l'échouage"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/BatimentDesServicesPublics -->
+###  http://data.shom.fr/id/codes/nav/typedetat/Arme
+tet:Arme rdf:type owl:NamedIndividual ,
+                  nav:TypeDEtat ;
+         rdfs:label "armé"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/BatimentDesServicesPublics">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">bâtiment des services publics</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedetat/DeFaiblePuissance
+tet:DeFaiblePuissance rdf:type owl:NamedIndividual ,
+                               nav:TypeDEtat ;
+                      rdfs:label "de faible puissance"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/Embarcation -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/Embarcation">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:comment xml:lang="fr">petit bateau</rdfs:comment>
-        <rdfs:label xml:lang="fr">embarcation</rdfs:label>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedetat/Desarme
+tet:Desarme rdf:type owl:NamedIndividual ,
+                     nav:TypeDEtat ;
+            rdfs:label "désarmé"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/Navire -->
+###  http://data.shom.fr/id/codes/nav/typedetat/EnReparation
+tet:EnReparation rdf:type owl:NamedIndividual ,
+                          nav:TypeDEtat ;
+                 rdfs:label "en réparation"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/Navire">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire</rdfs:label>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedetat/Etranger
+tet:Etranger rdf:type owl:NamedIndividual ,
+                      nav:TypeDEtat ;
+             rdfs:label "étranger"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAFondPlat -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAFondPlat">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire à fond plat</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
+###  http://data.shom.fr/id/codes/nav/typedetat/EtrangerALUE
+tet:EtrangerALUE rdf:type owl:NamedIndividual ,
+                          nav:TypeDEtat ;
+                 rdfs:label "étranger à l'UE"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAMoteur -->
+###  http://data.shom.fr/id/codes/nav/typedetat/Francais
+tet:Francais rdf:type owl:NamedIndividual ,
+                      nav:TypeDEtat ;
+             rdfs:label "français"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAMoteur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire à moteur</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  http://data.shom.fr/id/codes/nav/typedetat/Mouille
+tet:Mouille rdf:type owl:NamedIndividual ,
+                     nav:TypeDEtat ;
+            rdfs:label "mouillé"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAPassagers -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAPassagers">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS7792"/>
-        <rdfs:comment xml:lang="fr">navire à passagers, navire de transport de passagers</rdfs:comment>
-        <rdfs:label xml:lang="fr">navire à passagers</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
+###  http://eurovoc.europa.eu/4829
+<http://eurovoc.europa.eu/4829> rdf:type owl:NamedIndividual .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAPasserellePlusHaute -->
+###  http://vocab.nerc.ac.uk/collection/C31/current/MS
+C31:MS rdf:type owl:NamedIndividual .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAPasserellePlusHaute">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-        <skos:prefLabel xml:lang="fr">navire à passerelle plus haute</skos:prefLabel>
-    </owl:NamedIndividual>
-    
 
+###  http://vocab.nerc.ac.uk/collection/L06/current/36
+<http://vocab.nerc.ac.uk/collection/L06/current/36> rdf:type owl:NamedIndividual .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAVoile -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAVoile">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire à voile</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
+###  http://vocab.nerc.ac.uk/collection/L06/current/39
+<http://vocab.nerc.ac.uk/collection/L06/current/39> rdf:type owl:NamedIndividual .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireAuMouillage -->
+###  http://vocab.nerc.ac.uk/collection/P21/current/MS6802
+P21:MS6802 rdf:type owl:NamedIndividual .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireAuMouillage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire au mouillage</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  http://vocab.nerc.ac.uk/collection/P21/current/MS7792
+P21:MS7792 rdf:type owl:NamedIndividual .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireCablier -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireCablier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire cablier</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
+###  http://www.eionet.europa.eu/gemet/concept/3266
+<http://www.eionet.europa.eu/gemet/concept/3266> rdf:type owl:NamedIndividual .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireControle -->
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste> rdf:type owl:NamedIndividual ,
+                                                                                  skos:ConceptScheme ;
+                                                                         rdfs:label "Type de Cargaison"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireControle">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire contrôle</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste> rdf:type owl:NamedIndividual ,
+                                                                               skos:ConceptScheme ;
+                                                                      rdfs:label "Type de Navire"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDeCommerce -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDeCommerce">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire de commerce</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste> rdf:type owl:NamedIndividual ,
+                                                                                  skos:ConceptScheme ;
+                                                                         rdfs:label "Type d'Équipement"@fr .
 
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDeHaute-Mer -->
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste> rdf:type owl:NamedIndividual ,
+                                                                               skos:ConceptScheme ;
+                                                                      rdfs:label "Type de Taille"@fr .
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDeHaute-Mer">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire de haute-mer</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
 
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste> rdf:type owl:NamedIndividual ,
+                                                                            skos:ConceptScheme ;
+                                                                   rdfs:label "Type d'État"@fr .
 
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDeLiaison -->
 
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDeLiaison">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire de liaison</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDePeche -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDePeche">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <skos:exactMatch rdf:resource="http://data.europa.eu/bkc/007.10.03.0100"/>
-        <skos:exactMatch rdf:resource="http://eurovoc.europa.eu/4829"/>
-        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/36"/>
-        <skos:exactMatch rdf:resource="http://www.eionet.europa.eu/gemet/concept/3266"/>
-        <rdfs:label xml:lang="fr">navire de pêche</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDePlaisance -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDePlaisance">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire de plaisance</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireDeServitudeEtDeSauvetage -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireDeServitudeEtDeSauvetage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire de servitude et de sauvetage</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireEnBois -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireEnBois">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire en bois</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireLourd -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireLourd">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire lourd</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireMilitaire -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireMilitaire">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/C31/current/MS"/>
-        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/L06/current/39"/>
-        <skos:exactMatch rdf:resource="http://vocab.nerc.ac.uk/collection/P21/current/MS6802"/>
-        <rdfs:comment xml:lang="fr">navire militaire, navire de la Marine Nationale</rdfs:comment>
-        <rdfs:label xml:lang="fr">navire militaire</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireOstreicole -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireOstreicole">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire ostreicole</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavirePeuManoeuvrant -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavirePeuManoeuvrant">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire peu manœuvrant</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireRoulier -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireRoulier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire roulier</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireSablier -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireSablier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire sablier</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireTransbordeur -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireTransbordeur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire transbordeur</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/NavireVisiteur -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/NavireVisiteur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">navire visiteur</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/Paquebot -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/Paquebot">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">paquebot</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/Petrolier -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/Petrolier">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">pétrolier</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedenavire/VehiculeNautiqueAMoteur -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedenavire/VehiculeNautiqueAMoteur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire"/>
-        <rdfs:label xml:lang="fr">vehicule nautique à moteur</rdfs:label>
-        <skos:broader rdf:resource="http://data.shom.fr/id/codes/nav/typedenavire/Navire"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedequipement/Projecteur -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedequipement/Projecteur">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement"/>
-        <rdfs:label xml:lang="fr">projecteur</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedequipement/PropulseurDEtrave -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedequipement/PropulseurDEtrave">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement"/>
-        <rdfs:label xml:lang="fr">propulseur d&apos;étrave</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedequipement/Radar -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedequipement/Radar">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement"/>
-        <rdfs:label xml:lang="fr">radar</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedequipement/VHF -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedequipement/VHF">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetaille/Grand -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetaille/Grand">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeTaille"/>
-        <rdfs:label xml:lang="fr">grand</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetaille/Gros -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetaille/Gros">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeTaille"/>
-        <rdfs:label xml:lang="fr">gros</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetaille/Petit -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetaille/Petit">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeTaille"/>
-        <rdfs:label xml:lang="fr">petit</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/AFaibleTonnage -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/AFaibleTonnage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">à faible tonnage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/ALEchouage -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/ALEchouage">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">à l&apos;échouage</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/Arme -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Arme">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">armé</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/DeFaiblePuissance -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/DeFaiblePuissance">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">de faible puissance</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/Desarme -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Desarme">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">désarmé</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/EnReparation -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/EnReparation">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">en réparation</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/Etranger -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Etranger">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">étranger</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/EtrangerALUE -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/EtrangerALUE">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">étranger à l&apos;UE</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/Francais -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Francais">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">français</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://data.shom.fr/id/codes/nav/typedetat/Mouille -->
-
-    <owl:NamedIndividual rdf:about="http://data.shom.fr/id/codes/nav/typedetat/Mouille">
-        <rdf:type rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEtat"/>
-        <rdfs:label xml:lang="fr">mouillé</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://eurovoc.europa.eu/4829 -->
-
-    <owl:NamedIndividual rdf:about="http://eurovoc.europa.eu/4829"/>
-    
-
-
-    <!-- http://vocab.nerc.ac.uk/collection/C31/current/MS -->
-
-    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/C31/current/MS"/>
-    
-
-
-    <!-- http://vocab.nerc.ac.uk/collection/L06/current/36 -->
-
-    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/36"/>
-    
-
-
-    <!-- http://vocab.nerc.ac.uk/collection/L06/current/39 -->
-
-    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/L06/current/39"/>
-    
-
-
-    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS6802 -->
-
-    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS6802"/>
-    
-
-
-    <!-- http://vocab.nerc.ac.uk/collection/P21/current/MS7792 -->
-
-    <owl:NamedIndividual rdf:about="http://vocab.nerc.ac.uk/collection/P21/current/MS7792"/>
-    
-
-
-    <!-- http://www.eionet.europa.eu/gemet/concept/3266 -->
-
-    <owl:NamedIndividual rdf:about="http://www.eionet.europa.eu/gemet/concept/3266"/>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Cargaison</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Navire</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type d&apos;Équipement</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type de Taille</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste -->
-
-    <owl:NamedIndividual rdf:about="https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste">
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:label xml:lang="fr">Type d&apos;État</rdfs:label>
-    </owl:NamedIndividual>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
