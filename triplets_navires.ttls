@@ -22,7 +22,7 @@
 #Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
 
 ent:3001 a nav:Navire;
-	nav:aPourTaille tta:Petit
+	nav:aPourTaille tta:Petit;
 	nav:aPourInfo "petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation"^^xsd:string.
 
 ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute.
@@ -33,9 +33,11 @@ ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute.
 
 ent:3003 nav:estDeType tna:NavireDePlaisance.
 
-ent:3004 nav:estDeType tna:BateauDePassage.
+ent:3004 nav:estDeType tna:BateauDePassage;
+	nav:estDeLongueurMaxi "15.0"^^xsd:float;
+	nav:aPourTirantDEau "5.0"^^xsd:float.
 
-<<ent:3004 nav:estDeLongueurHors-Tout "15.0"^^xsd:float>> qudt:Unit unit:M.
+<<ent:3004 nav:estDeLongueurMaxi "15.0"^^xsd:float>> qudt:Unit unit:M.
 <<ent:3004 nav:aPourTirantDEau "5.0"^^xsd:float>> qudt:Unit unit:M.
 
 #exemple 3
