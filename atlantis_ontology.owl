@@ -10,10 +10,14 @@
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tac: <http://data.shom.fr/id/codes/nav/typedaction/> .
 @prefix tco: <http://data.shom.fr/id/codes/nav/typedecouleur/> .
 @prefix tdi: <http://data.shom.fr/id/codes/nav/typededirection/> .
 @prefix teg: <http://data.shom.fr/id/codes/nav/typedentitegeographique/> .
 @prefix tfo: <http://data.shom.fr/id/codes/nav/typedeforme/> .
+@prefix tim: <http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/> .
+@prefix tio: <http://data.shom.fr/id/codes/nav/typedindicationoceanographique/> .
+@prefix tit: <http://data.shom.fr/id/codes/nav/typedindicationtemporelle/> .
 @prefix tmo: <http://data.shom.fr/id/codes/nav/typedemotif/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -35,6 +39,10 @@
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#about
+rdfs:about rdf:type owl:AnnotationProperty .
+
 
 ###  http://www.w3.org/2004/02/skos/core#broader
 skos:broader rdf:type owl:AnnotationProperty .
@@ -65,9 +73,63 @@ spacerel:contains rdf:type owl:ObjectProperty ;
                   owl:equivalentProperty nav:contient .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourAction
+nav:aPourAction rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf nav:aPourSpecification ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( nav:Instruction
+                                            nav:Interdiction
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty skos:inScheme ;
+                             owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste>
+                           ] ;
+                rdfs:label "a pour action"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourCaracteristique
 nav:aPourCaracteristique rdf:type owl:ObjectProperty ;
                          rdfs:label "a pour caractéristique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCible
+nav:aPourCible rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf nav:aPourSpecification ;
+               rdfs:domain nav:ConsigneDeNavigation ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty skos:inScheme ;
+                            owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste>
+                          ] ;
+               rdfs:label "a pour cible"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionLocale
+nav:aPourConditionLocale rdf:type owl:ObjectProperty ;
+                         rdfs:domain nav:ConsigneDeNavigation ;
+                         rdfs:label "a pour condition locale"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo
+nav:aPourConditionMeteo rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf nav:aPourConditionLocale ;
+                        rdfs:domain nav:ConsigneDeNavigation ;
+                        rdfs:range [ rdf:type owl:Restriction ;
+                                     owl:onProperty skos:inScheme ;
+                                     owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste>
+                                   ] ;
+                        rdfs:label "a pour condition météorologique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano
+nav:aPourConditionOceano rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf nav:aPourConditionLocale ;
+                         rdfs:domain nav:ConsigneDeNavigation ;
+                         rdfs:range [ rdf:type owl:Restriction ;
+                                      owl:onProperty skos:inScheme ;
+                                      owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste>
+                                    ] ;
+                         rdfs:label "a pour condition océanographique"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourElement
@@ -83,6 +145,25 @@ nav:aPourElement rdf:type owl:ObjectProperty ;
                             "has element"@en .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourEntiteImpliquee
+nav:aPourEntiteImpliquee rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf nav:aPourSpecification ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( nav:Alignement
+                                                     nav:ConsigneDeNavigation
+                                                     nav:Reglement
+                                                     nav:Relevement
+                                                     nav:Reperage
+                                                     nav:Route
+                                                   )
+                                     ] ;
+                         rdfs:range gsp:Feature ;
+                         rdfs:comment "L'objet de cette propriété sera toujours un rdfs:Container contennant une ou plusieurs entités, ou un rdfs:Container sera soit un rdf:Bag (entités sans ordre particulier) ou un rdf:Seq (entités dans un ordre particulier). Par exemple : _:entité _:aPourEntiteImpliquee [a rdfs:Container; rdf:_1 _:autreEntité1; rdf:_2 _:autreEntité2; ]."@fr ;
+                         rdfs:isDefinedBy nav: ;
+                         rdfs:label "a pour entité impliquée"@fr ,
+                                    "entity involved"@en .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourForme
 nav:aPourForme rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf nav:aPourCaracteristique ;
@@ -92,6 +173,14 @@ nav:aPourForme rdf:type owl:ObjectProperty ;
                             owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedeforme/liste>
                           ] ;
                rdfs:label "a pour forme"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourLieuDEffet
+nav:aPourLieuDEffet rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf nav:aPourSpecification ;
+                    rdfs:domain nav:ConsigneDeNavigation ;
+                    rdfs:range gsp:Feature ;
+                    rdfs:label "a pour lieu d'effet"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourMotif
@@ -122,6 +211,67 @@ nav:aPourNature rdf:type owl:ObjectProperty ;
                 rdfs:isDefinedBy nav: ;
                 rdfs:label "a pour nature"@fr ,
                            "has nature"@en .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourPointDeDepart
+nav:aPourPointDeDepart rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf nav:aPourSpecification ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( nav:Alignement
+                                                   nav:ConsigneDeNavigation
+                                                   nav:DispositifDeSeparationDuTrafic
+                                                   nav:Relevement
+                                                   nav:Route
+                                                 )
+                                   ] ;
+                       rdfs:range gsp:Feature ;
+                       owl:propertyDisjointWith nav:aPourPointDeDestination ;
+                       rdfs:comment "L'objet de cette propriété sera toujours un rdfs:Container contennant une ou plusieurs entités, où un rdfs:Container sera soit un rdf:Bag (entités sans ordre particulier) ou un rdf:Seq (entités dans un ordre particulier). Par exemple : _:entité _:aPourPointDeDepart [a rdfs:Container; rdf:_1 _:autreEntité1; rdf:_2 _:autreEntité2; ]."@fr ;
+                       rdfs:label "a pour point de départ"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourPointDeDestination
+nav:aPourPointDeDestination rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf nav:aPourSpecification ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( nav:Alignement
+                                                        nav:ConsigneDeNavigation
+                                                        nav:DispositifDeSeparationDuTrafic
+                                                        nav:Relevement
+                                                        nav:Route
+                                                      )
+                                        ] ;
+                            rdfs:range gsp:Feature ;
+                            rdfs:comment "L'objet de cette propriété sera toujours un rdfs:Container contennant une ou plusieurs entités, où un rdfs:Container sera soit un rdf:Bag (entités sans ordre particulier) ou un rdf:Seq (entités dans un ordre particulier). Par exemple : _:entité _:aPourPointDeDestination [a rdfs:Container; rdf:_1 _:autreEntité1; rdf:_2 _:autreEntité2; ]."@fr ;
+                            rdfs:label "a pour point de destination"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourRepere
+nav:aPourRepere rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf nav:aPourSpecification ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( nav:Alignement
+                                            nav:Relevement
+                                          )
+                            ] ;
+                rdfs:range nav:EntiteGeographique ;
+                rdfs:comment "L'objet de cette propriété sera toujours un rdfs:Container contennant une ou plusieurs entités, où un rdfs:Container sera soit un rdf:Bag (entités sans ordre particulier) ou un rdf:Seq (entités dans un ordre particulier). Par exemple : _:entité _:aPourRepere [a rdfs:Container; rdf:_1 _:autreEntité1; rdf:_2 _:autreEntité2; ]."@fr ;
+                rdfs:label "a pour repère"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourSpecification
+nav:aPourSpecification rdf:type owl:ObjectProperty ;
+                       rdfs:label "a pour spécification"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourTemporalite
+nav:aPourTemporalite rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf nav:aPourConditionLocale ;
+                     rdfs:domain nav:ConsigneDeNavigation ;
+                     rdfs:range [ rdf:type owl:Restriction ;
+                                  owl:onProperty skos:inScheme ;
+                                  owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste>
+                                ] .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourTypeCardinal
@@ -432,6 +582,14 @@ nav:estGerePar rdf:type owl:ObjectProperty ;
                           "is managed by"@en .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#estImposeePar
+nav:estImposeePar rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf nav:aPourSpecification ;
+                  rdfs:domain nav:ConsigneDeNavigation ;
+                  rdfs:range nav:Reglement ;
+                  rdfs:label "est imposée par"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#estLeGerantDe
 nav:estLeGerantDe rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf nav:aPourCaracteristique ;
@@ -515,6 +673,15 @@ nav:estUneMarqueDeType rdf:type owl:ObjectProperty ;
                        rdfs:label "est une marque de type"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#impliqueDeSuivre
+nav:impliqueDeSuivre rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf nav:aPourSpecification ;
+                     rdfs:domain nav:Instruction ;
+                     rdfs:range gsp:Feature ;
+                     rdfs:comment "L'objet de cette propriété sera toujours un rdfs:Container contennant une ou plusieurs entités, où un rdfs:Container sera soit un rdf:Bag (entités sans ordre particulier) ou un rdf:Seq (entités dans un ordre particulier). Par exemple : _:entité _:impliqueDeSuivre [a rdfs:Container; rdf:_1 _:autreEntité1; rdf:_2 _:autreEntité2; ]."@fr ;
+                     rdfs:label "implique de suivre"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#lExtremiteDe
 nav:lExtremiteDe rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf nav:unePartieDe ;
@@ -589,6 +756,10 @@ rdf:_4 rdf:type owl:ObjectProperty ;
 rdf:member rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#member
+rdfs:member rdf:type owl:ObjectProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#exactMatch
 skos:exactMatch rdf:type owl:ObjectProperty ;
                 rdfs:label "exact match"@en .
@@ -603,6 +774,76 @@ skos:inScheme rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourAdresseMail
+nav:aPourAdresseMail rdf:type owl:DatatypeProperty ;
+                     rdfs:domain nav:Renseignement ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "a pour adresse mail"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourAngleDebut
+nav:aPourAngleDebut rdf:type owl:DatatypeProperty ;
+                    rdfs:domain nav:Alignement ;
+                    rdfs:range xsd:float ;
+                    owl:propertyDisjointWith nav:aPourAngleFin ;
+                    rdfs:isDefinedBy nav: ;
+                    rdfs:label "a pour angle début"@fr ,
+                               "has beginning angle"@en .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourAngleFin
+nav:aPourAngleFin rdf:type owl:DatatypeProperty ;
+                  rdfs:domain nav:Alignement ;
+                  rdfs:range xsd:float ;
+                  rdfs:isDefinedBy nav: ;
+                  rdfs:label "a pour angle fin"@fr ,
+                             "has end angle"@en .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourArrete
+nav:aPourArrete rdf:type owl:DatatypeProperty ;
+                rdfs:domain nav:Reglement ;
+                rdfs:range xsd:string ;
+                rdfs:label "a pour arrêté"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourCap
+nav:aPourCap rdf:type owl:DatatypeProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( nav:Alignement
+                                         nav:Relevement
+                                       )
+                         ] ;
+             rdfs:range xsd:float ;
+             rdfs:label "a pour cap"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourConditionsNavire
+nav:aPourConditionsNavire rdf:type owl:DatatypeProperty ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( nav:AideVirtuelleALaNavigation
+                                                      nav:ConsigneDeNavigation
+                                                      nav:Reglement
+                                                    )
+                                      ] ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "a pour conditions navire"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourContact
+nav:aPourContact rdf:type owl:DatatypeProperty ;
+                 rdfs:domain nav:Renseignement ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "a pour contact"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourContexte
+nav:aPourContexte rdf:type owl:DatatypeProperty ;
+                  rdfs:domain nav:ConsigneDeNavigation ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "a pour contexte"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourCoordonneesGeographiques
 nav:aPourCoordonneesGeographiques rdf:type owl:DatatypeProperty ;
                                   rdfs:label "a pour coordonnées géographiques"@fr .
@@ -614,6 +855,13 @@ nav:aPourDimension rdf:type owl:DatatypeProperty ;
                    rdfs:label "a pour dimension" .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourException
+nav:aPourException rdf:type owl:DatatypeProperty ;
+                   rdfs:domain nav:Interdiction ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "a pour exception"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourHauteur
 nav:aPourHauteur rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf nav:aPourDimension ;
@@ -623,8 +871,27 @@ nav:aPourHauteur rdf:type owl:DatatypeProperty ;
                  rdfs:label "a pour hauteur" .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourHorairesTelephone
+nav:aPourHorairesTelephone rdf:type owl:DatatypeProperty ;
+                           rdfs:domain nav:Renseignement ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "a pour horaires téléphone"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourHorairesVHF
+nav:aPourHorairesVHF rdf:type owl:DatatypeProperty ;
+                     rdfs:domain nav:Renseignement ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "a pour horaires VHF"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourInfo
 nav:aPourInfo rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( nav:ConsigneDeNavigation
+                                          gsp:Feature
+                                        )
+                          ] ;
               rdfs:range xsd:string ;
               rdfs:label "a pour info"@fr .
 
@@ -661,6 +928,7 @@ nav:aPourLat rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf nav:aPourCoordonneesGeographiques ;
              rdfs:domain gsp:Feature ;
              rdfs:range xsd:string ;
+             owl:propertyDisjointWith nav:aPourLng ;
              rdfs:label "a pour latitude"@fr .
 
 
@@ -678,6 +946,12 @@ nav:aPourNatureDuFond rdf:type owl:DatatypeProperty ;
                       rdfs:range xsd:string .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#aPourNombreDHabitants
+nav:aPourNombreDHabitants rdf:type owl:DatatypeProperty ;
+                          rdfs:range xsd:integer ;
+                          rdfs:label "a pour nombre d'habitants"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#aPourNombreDePlaces
 nav:aPourNombreDePlaces rdf:type owl:DatatypeProperty ;
                         rdfs:domain [ rdf:type owl:Restriction ;
@@ -686,6 +960,13 @@ nav:aPourNombreDePlaces rdf:type owl:DatatypeProperty ;
                                     ] ;
                         rdfs:range xsd:int ;
                         rdfs:label "a pour nombre de places"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#aPourNumeroDeTelephone
+nav:aPourNumeroDeTelephone rdf:type owl:DatatypeProperty ;
+                           rdfs:domain nav:Renseignement ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "a pour numéro de téléphone"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#aPourProfondeurEau
@@ -721,6 +1002,13 @@ nav:aPourSeparation rdf:type owl:DatatypeProperty ;
                     rdfs:label "a pour séparation"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#estASensUnique
+nav:estASensUnique rdf:type owl:DatatypeProperty ;
+                   rdfs:domain nav:Instruction ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "est à sens unique"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#estDecouverteDe
 nav:estDecouverteDe rdf:type owl:DatatypeProperty ;
                     rdfs:domain gsp:Feature ;
@@ -748,6 +1036,12 @@ nav:estUneEntiteMarquee rdf:type owl:DatatypeProperty ;
                         rdfs:domain gsp:Feature ;
                         rdfs:range xsd:boolean ;
                         rdfs:label "est une entité marquée"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#stipule
+nav:stipule rdf:type owl:DatatypeProperty ;
+            rdfs:domain nav:Information ;
+            rdfs:range xsd:string .
 
 
 #################################################################
@@ -827,6 +1121,14 @@ nav:Chenal rdf:type owl:Class ;
                                pext:Channel ;
            rdfs:subClassOf nav:ZoneDuDomaineMaritime ;
            rdfs:label "Chenal"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation
+nav:ConsigneDeNavigation rdf:type owl:Class ;
+                         rdfs:comment "??? optionnel : 'a pour cible' some 'is in scheme' value 'Type de Navire' SubClassOf 'Consigne de Navigation'"@fr ,
+                                      "??? optionnel : 'est imposée par' some Règlement SubClassOf 'Consigne de Navigation'"@fr ;
+                         rdfs:isDefinedBy nav: ;
+                         rdfs:label "Consigne de Navigation"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Cote
@@ -928,6 +1230,24 @@ nav:FeuASecteur rdf:type owl:Class ;
                                     ] ;
                 rdfs:subClassOf nav:Feu ;
                 rdfs:label "Feu à Secteur"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Information
+nav:Information rdf:type owl:Class ;
+                rdfs:subClassOf nav:ConsigneDeNavigation ;
+                rdfs:label "Information"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Instruction
+nav:Instruction rdf:type owl:Class ;
+                rdfs:subClassOf nav:ConsigneDeNavigation ;
+                rdfs:label "Instruction"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Interdiction
+nav:Interdiction rdf:type owl:Class ;
+                 rdfs:subClassOf nav:ConsigneDeNavigation ;
+                 rdfs:label "Interdiction"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#InterieurDesTerres
@@ -1347,6 +1667,11 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
                    rdfs:label "Marque Speciale"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Navire
+nav:Navire rdf:type owl:Class ;
+           rdfs:label "Navire"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Organisation
 nav:Organisation rdf:type owl:Class ;
                  rdfs:label "Organisation"@fr .
@@ -1363,6 +1688,11 @@ nav:Phare rdf:type owl:Class ;
           rdfs:label "Phare"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#Reglement
+nav:Reglement rdf:type owl:Class ;
+              rdfs:label "Règlement"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#Relevement
 nav:Relevement rdf:type owl:Class ;
                owl:equivalentClass sopropsdir:Bearing ;
@@ -1370,6 +1700,12 @@ nav:Relevement rdf:type owl:Class ;
                rdfs:comment "Le relèvement est la détermination de l'angle que fait, dans le plan horizontal, la ligne d'un observateur vers un objet avec celle d'une direction de référence fixe. En général, le relèvement se fait par rapport au Nord vrai ou géographique : positif dans le sens horaire (wikipédia)."@fr ;
                rdfs:label "Bearing"@en ,
                           "Relèvement"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#Renseignement
+nav:Renseignement rdf:type owl:Class ;
+                  rdfs:subClassOf nav:ConsigneDeNavigation ;
+                  rdfs:label "Renseignement"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#Reperage
@@ -1410,6 +1746,16 @@ nav:Tourelle rdf:type owl:Class ;
              rdfs:label "Tourelle"@fr .
 
 
+###  http://data.shom.fr/def/navigation_cotiere#TypeDAction
+nav:TypeDAction rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty skos:inScheme ;
+                                      owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste>
+                                    ] ;
+                rdfs:subClassOf skos:Concept ;
+                rdfs:label "Type d'Action"@fr .
+
+
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDAmer
 nav:TypeDAmer rdf:type owl:Class ;
               owl:equivalentClass [ rdf:type owl:Restriction ;
@@ -1430,6 +1776,42 @@ nav:TypeDEntiteGeographique rdf:type owl:Class ;
                             rdfs:isDefinedBy nav: ;
                             rdfs:label "Type d'Entité Géographique"@fr ,
                                        "Type of Geographic Entity"@en .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteo
+nav:TypeDIndicationMeteo rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty skos:inScheme ;
+                                               owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste>
+                                             ] ;
+                         rdfs:subClassOf nav:TypeDeConditionLocale ;
+                         rdfs:label "Type d'Indication Météorologique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceano
+nav:TypeDIndicationOceano rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty skos:inScheme ;
+                                                owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste>
+                                              ] ;
+                          rdfs:subClassOf nav:TypeDeConditionLocale ;
+                          rdfs:label "Type d'Indication Océanographique"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle
+nav:TypeDIndicationTemporelle rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty skos:inScheme ;
+                                                    owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste>
+                                                  ] ;
+                              rdfs:subClassOf nav:TypeDeConditionLocale ;
+                              rdfs:label "Type d'Indication Temporelle"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale
+nav:TypeDeConditionLocale rdf:type owl:Class ;
+                          rdfs:subClassOf skos:Concept ;
+                          rdfs:label "Type de Condition Locale"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur
@@ -1481,6 +1863,16 @@ nav:TypeDeMotif rdf:type owl:Class ;
                                     ] ;
                 rdfs:subClassOf skos:Concept ;
                 rdfs:label "Type de Motif"@fr .
+
+
+###  http://data.shom.fr/def/navigation_cotiere#TypeDeNavire
+nav:TypeDeNavire rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty skos:inScheme ;
+                                       owl:hasValue <https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste>
+                                     ] ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:label "Type de Navire"@fr .
 
 
 ###  http://data.shom.fr/def/navigation_cotiere#ZoneDePilotage
@@ -1593,6 +1985,68 @@ ttdr:Ile rdf:type owl:NamedIndividual .
 
 ###  http://data.ign.fr/id/codes/topo/typedezai/Port
 ttdz:Port rdf:type owl:NamedIndividual .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Attente
+tac:Attente rdf:type owl:NamedIndividual ,
+                     nav:TypeDAction ;
+            rdfs:label "attente"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Baignade
+tac:Baignade rdf:type owl:NamedIndividual ,
+                      nav:TypeDAction ;
+             skos:exactMatch <http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f> ,
+                             P21:MS10387 ;
+             rdfs:label "baignade"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/DepotSurLeFondDeLaMerDeToutEnginLourd
+tac:DepotSurLeFondDeLaMerDeToutEnginLourd rdf:type owl:NamedIndividual ,
+                                                   nav:TypeDAction ;
+                                          rdfs:label "dépôt sur le fond de la mer de tout engin lourd"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Dragage
+tac:Dragage rdf:type owl:NamedIndividual ,
+                     nav:TypeDAction ;
+            rdfs:label "dragage"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Mouillage
+tac:Mouillage rdf:type owl:NamedIndividual ,
+                       nav:TypeDAction ;
+              rdfs:label "mouillage"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Navigation
+tac:Navigation rdf:type owl:NamedIndividual ,
+                        nav:TypeDAction ;
+               rdfs:label "navigation"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/PecheAPartirDEmbarcation
+tac:PecheAPartirDEmbarcation rdf:type owl:NamedIndividual ,
+                                      nav:TypeDAction ;
+                             rdfs:label "pêche à partir d'embarcation"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/PlongeeSous-Marine
+tac:PlongeeSous-Marine rdf:type owl:NamedIndividual ,
+                                nav:TypeDAction ;
+                       rdfs:label "plongée sous-marine"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/Stationnement
+tac:Stationnement rdf:type owl:NamedIndividual ,
+                           nav:TypeDAction ;
+                  rdfs:label "stationnement"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedaction/TouteActiviteMaritime
+tac:TouteActiviteMaritime rdf:type owl:NamedIndividual ,
+                                   nav:TypeDAction ;
+                          rdfs:label "toute activité maritime"@fr .
 
 
 ###  http://data.shom.fr/id/codes/nav/typedecouleur/Blanc
@@ -1994,7 +2448,7 @@ teg:Chenal rdf:type owl:NamedIndividual ,
            skos:exactMatch A02:Channels ,
                            P21:MS3992 ,
                            P21:MSS233 ;
-           rdfs:comment "Voir classes : http://www.ontotext.com/proton/protonext#Channel ;      http://sweetontology.net/realmHydroBody/Channel"@fr ;
+           rdfs:comment "Voir classes : http://www.ontotext.com/proton/protonext#Channel ;    http://sweetontology.net/realmHydroBody/Channel"@fr ;
            skos:prefLabel "channel"@en ,
                           "chenal"@fr .
 
@@ -2462,6 +2916,54 @@ teg:ZoneDePosees rdf:type owl:NamedIndividual ,
                  skos:prefLabel "zone de posées"@fr .
 
 
+###  http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/BeauTemps
+tim:BeauTemps rdf:type owl:NamedIndividual ,
+                       nav:TypeDIndicationMeteo ;
+              rdfs:label "beau temps"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/MauvaisTemps
+tim:MauvaisTemps rdf:type owl:NamedIndividual ,
+                          nav:TypeDIndicationMeteo ;
+                 rdfs:label "mauvais temps"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/TempsCalme
+tim:TempsCalme rdf:type owl:NamedIndividual ,
+                        nav:TypeDIndicationMeteo ;
+               rdfs:label "temps calme"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeBasse
+tio:MareeBasse rdf:type owl:NamedIndividual ,
+                        nav:TypeDIndicationOceano ;
+               rdfs:label "marée basse"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationoceanographique/MareeHaute
+tio:MareeHaute rdf:type owl:NamedIndividual ,
+                        nav:TypeDIndicationOceano ;
+               rdfs:label "marée haute"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeJour
+tit:DeJour rdf:type owl:NamedIndividual ,
+                    nav:TypeDIndicationTemporelle ;
+           rdfs:label "de jour"@fr .
+
+
+###  http://data.shom.fr/id/codes/nav/typedindicationtemporelle/DeNuit
+tit:DeNuit rdf:type owl:NamedIndividual ,
+                    nav:TypeDIndicationTemporelle ;
+           rdfs:label "de nuit"@fr .
+
+
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste> rdf:type owl:NamedIndividual ,
+                                                                             skos:ConceptScheme ;
+                                                                    rdfs:label "Type d'Action"@fr .
+
+
 ###  http://data.shom.fr/id/codes/navigation_cotiere/typedeforme/liste
 <http://data.shom.fr/id/codes/navigation_cotiere/typedeforme/liste> rdf:type owl:NamedIndividual ,
                                                                              skos:ConceptScheme ;
@@ -2480,6 +2982,24 @@ teg:ZoneDePosees rdf:type owl:NamedIndividual ,
                                                                                 rdfs:label "Type d'Entité Géographique"@fr .
 
 
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste> rdf:type owl:NamedIndividual ,
+                                                                                               skos:ConceptScheme ;
+                                                                                      rdfs:label "Type d'Indication Météorologique"@fr .
+
+
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste> rdf:type owl:NamedIndividual ,
+                                                                                                skos:ConceptScheme ;
+                                                                                       rdfs:label "Type d'Indication Océanographique"@fr .
+
+
+###  http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste
+<http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste> rdf:type owl:NamedIndividual ,
+                                                                                           skos:ConceptScheme ;
+                                                                                  rdfs:label "Type d'Indication Temporelle"@fr .
+
+
 ###  http://eurovoc.europa.eu/4101
 <http://eurovoc.europa.eu/4101> rdf:type owl:NamedIndividual .
 
@@ -2490,6 +3010,10 @@ teg:ZoneDePosees rdf:type owl:NamedIndividual ,
 
 ###  http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/c79b3794-f546-4e32-a5a6-9db7a6693537
 eau:c79b3794-f546-4e32-a5a6-9db7a6693537 rdf:type owl:NamedIndividual .
+
+
+###  http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f
+<http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/01cdd98b-3b9c-4ca1-ba51-701eed703c0f> rdf:type owl:NamedIndividual .
 
 
 ###  http://thesaurus.oieau.fr/thesaurus/page/ark:/99160/209c9299-058c-4bde-81c1-70e08c24f995
@@ -2546,6 +3070,10 @@ A02:Seawalls rdf:type owl:NamedIndividual .
 
 ###  http://vocab.nerc.ac.uk/collection/A04/current/Shipwrecks
 A04:Shipwrecks rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.nerc.ac.uk/collection/P21/current/MS10387
+P21:MS10387 rdf:type owl:NamedIndividual .
 
 
 ###  http://vocab.nerc.ac.uk/collection/P21/current/MS10833
@@ -2668,9 +3196,110 @@ P21:MSS233 rdf:type owl:NamedIndividual .
                                                                      rdfs:label "Type de Motif"@fr .
 
 
+###  https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste
+<https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste> rdf:type owl:NamedIndividual ,
+                                                                               skos:ConceptScheme ;
+                                                                      rdfs:label "Type de Navire"@fr .
+
+
+[ rdfs:about "http://www.w3.org/2000/01/rdf-schema#member"
+] .
+
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:Class ;
+   owl:unionOf ( [ rdf:type owl:Restriction ;
+                   owl:onProperty nav:aPourEntiteImpliquee ;
+                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                   owl:onClass gsp:Feature
+                 ]
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty nav:aPourLieuDEffet ;
+                   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                   owl:onClass gsp:Feature
+                 ]
+               ) ;
+   rdfs:subClassOf nav:Information
+ ] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ rdf:type owl:Restriction ;
+                  owl:onProperty nav:aPourEntiteImpliquee ;
+                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:onClass gsp:Feature
+                ]
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty nav:aPourLieuDEffet ;
+                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:onClass gsp:Feature
+                ]
+              ) ;
+  rdfs:subClassOf nav:Interdiction
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ rdf:type owl:Restriction ;
+                  owl:onProperty nav:aPourEntiteImpliquee ;
+                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:onClass gsp:Feature
+                ]
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty nav:aPourLieuDEffet ;
+                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                  owl:onClass gsp:Feature
+                ]
+              ) ;
+  rdfs:subClassOf nav:Renseignement
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:aPourAction ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass [ rdf:type owl:Restriction ;
+                owl:onProperty skos:inScheme ;
+                owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste>
+              ] ;
+  rdfs:subClassOf nav:Instruction
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:aPourAction ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass [ rdf:type owl:Restriction ;
+                owl:onProperty skos:inScheme ;
+                owl:hasValue <http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste>
+              ] ;
+  rdfs:subClassOf nav:Interdiction
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:impliqueDeSuivre ;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+  owl:onClass gsp:Feature ;
+  rdfs:subClassOf nav:Instruction
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:aPourArrete ;
+  owl:someValuesFrom xsd:string ;
+  rdfs:subClassOf nav:Reglement
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty nav:stipule ;
+  owl:someValuesFrom xsd:string ;
+  rdfs:subClassOf nav:Information
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( nav:Alignement

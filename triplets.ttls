@@ -1,4 +1,4 @@
-#modélisation d'entités pérennes de l'environnement hydrographique côtier
+#modélisation d'entités pérennes du paysage hydrographique côtier
 #extraits des IN C2A
 
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
@@ -308,11 +308,13 @@ ent:4066 a nav:EntiteGeographique;
 #	rdfs:label "Île de Sieck"@fr;
 	nav:aPourElement ent:4067;
 	nav:aPourTexteAssocie "La Pointe de Bloscon porte la chapelle de Sainte-Barbe (48° 43,6' N — 3° 58,2' W), de couleur blanche ; plus au SW on voit le clocher de Roscoff et, juste au Sud, les installations portuaires de Roscoff-Bloscon. À 3 M au SW du phare de Batz, l’Île de Siec comporte, près de son extrémité Ouest, une petite anse ouverte au Sud, protégée à l’Ouest par un môle."^^xsd:string;
-	geom:hasGeometry gtrs:0025.
+	geom:hasGeometry gtrs:0025;
+	nav:estAuSudOuestDe ent:4004.
 
 gtrs:0025 a geom:MultiPolygon;
 	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> MultiPolygon (((-4.06892999999999994 48.70544999999999902, -4.06921999999999962 48.70559000000000083, -4.07015999999999956 48.70562999999999931, -4.07049000000000039 48.70573000000000263, -4.07108000000000025 48.70541000000000054, -4.07085000000000008 48.70515000000000327, -4.07042999999999999 48.7046800000000033, -4.07035999999999998 48.70448999999999984, -4.07080999999999982 48.70454999999999757, -4.07127000000000017 48.70441000000000287, -4.0714100000000002 48.70441000000000287, -4.07162000000000024 48.70476000000000028, -4.07174000000000014 48.70488999999999891, -4.07209000000000021 48.70492999999999739, -4.07254000000000005 48.70488999999999891, -4.07293000000000038 48.70510999999999768, -4.07273999999999958 48.70532999999999646, -4.07273999999999958 48.70573000000000263, -4.07240999999999964 48.70573000000000263, -4.07228000000000012 48.70588999999999658, -4.07195000000000018 48.70600000000000307, -4.07188000000000017 48.70615999999999701, -4.07113999999999976 48.70669000000000182, -4.07075000000000031 48.70685999999999893, -4.07054000000000027 48.70660000000000167, -4.07042999999999999 48.70665000000000333, -4.07009000000000043 48.70656000000000319, -4.06982999999999961 48.70656000000000319, -4.06956999999999969 48.70651000000000153, -4.06928999999999963 48.70671999999999713, -4.0690900000000001 48.70669000000000182, -4.06888999999999967 48.70691000000000059, -4.06843000000000021 48.70678000000000196, -4.06855999999999973 48.70656000000000319, -4.06843000000000021 48.70656000000000319, -4.06810000000000027 48.70647999999999911, -4.06768999999999981 48.70660000000000167, -4.06749000000000027 48.70642999999999745, -4.06716000000000033 48.70656000000000319, -4.06677999999999962 48.70647999999999911, -4.06590999999999969 48.70642999999999745, -4.06451000000000029 48.70642999999999745, -4.06404999999999994 48.70638000000000289, -4.06357999999999997 48.70620999999999867, -4.06320000000000014 48.70600000000000307, -4.06292999999999971 48.70559000000000083, -4.06273000000000017 48.70541000000000054, -4.06252999999999975 48.70532999999999646, -4.06200000000000028 48.70532999999999646, -4.06158999999999981 48.70542999999999978, -4.06132999999999988 48.70564000000000249, -4.06113000000000035 48.70559000000000083, -4.06106000000000034 48.70586000000000126, -4.06073000000000039 48.7058099999999996, -4.0607899999999999 48.70559000000000083, -4.06031999999999993 48.70550999999999675, -4.06001000000000012 48.70537999999999812, -4.05987999999999971 48.70519999999999783, -4.06001000000000012 48.70476000000000028, -4.06052999999999997 48.70481000000000193, -4.06066000000000038 48.70457999999999998, -4.06066000000000038 48.70441000000000287, -4.06052999999999997 48.70400999999999669, -4.06006999999999962 48.70358000000000231, -4.0599400000000001 48.70338999999999885, -4.06006999999999962 48.7030900000000031, -4.0599400000000001 48.70300999999999902, -4.0599400000000001 48.70288000000000039, -4.06013000000000002 48.70266000000000162, -4.06031999999999993 48.70251999999999981, -4.06085999999999991 48.70277999999999707, -4.06146000000000029 48.70273999999999859, -4.06245000000000012 48.70273999999999859, -4.06259999999999977 48.70286000000000115, -4.06306000000000012 48.70300000000000296, -4.06306000000000012 48.70338999999999885, -4.06353000000000009 48.70358000000000231, -4.06397999999999993 48.70365999999999929, -4.06477999999999984 48.70430999999999955, -4.06510999999999978 48.70448999999999984, -4.06550999999999974 48.70463000000000164, -4.06583999999999968 48.70463000000000164, -4.06651000000000007 48.70443999999999818, -4.06677999999999962 48.7046800000000033, -4.0666500000000001 48.70479000000000269, -4.06709000000000032 48.70483999999999725, -4.06801999999999975 48.70479000000000269, -4.06829999999999981 48.70497999999999905, -4.06855999999999973 48.70506000000000313, -4.06869999999999976 48.70532999999999646, -4.06892999999999994 48.70544999999999902)))"^^gsp:wktLiteral.
 
+<<ent:4066 nav:estAuSudOuestDe ent:4004>> nav:aPourSeparation "3.0"^^xsd:float.
 << <<ent:4066 nav:estAuSudOuestDe ent:4004>> nav:aPourSeparation "3.0"^^xsd:float>> qudt:Unit unit:MI_N.
 
 ent:4067 a nav:EntiteGeographique;
@@ -488,7 +490,8 @@ ent:4051 a nav:EntiteGeographique;
 	nav:estSitueDans ent:4050;
 	rdfs:label "plateau de La Malouine"@fr;
 	nav:aPourTexteAssocie "CHENAL DE LA MALOUINE. INSTRUCTIONS. — Ce chenal, profond de 3 m, n’a que 100 m de largeur entre le plateau de La Malouine et celui de La Pendante."^^xsd:string;
-	geom:hasGeometry gtrs:0031.
+	geom:hasGeometry gtrs:0031;
+	nav:aUneRelationSpatialeAvec ent:4052.
 
 gtrs:0031 a geom:MultiPolygon;
 	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> MultiPolygon (((-4.6028399999999996 48.6265199999999993, -4.60266999999999982 48.6265199999999993, -4.60252000000000017 48.62657000000000096, -4.60245000000000015 48.62651000000000323, -4.60238999999999976 48.62642000000000309, -4.60240999999999989 48.62635999999999825, -4.60250000000000004 48.62630000000000052, -4.60261000000000031 48.62626000000000204, -4.60275000000000034 48.62624999999999886, -4.60299999999999976 48.62626999999999811, -4.6031500000000003 48.62630999999999659, -4.60318000000000005 48.62639000000000067, -4.60317000000000043 48.62644000000000233, -4.60313999999999979 48.62646999999999764, -4.60304000000000002 48.62648999999999688, -4.60292999999999974 48.62648000000000081, -4.6028399999999996 48.6265199999999993)))"^^gsp:wktLiteral.
@@ -503,6 +506,7 @@ ent:4052 a nav:EntiteGeographique;
 gtrs:0032 a geom:Point;
 	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point (-4.61010999999999971 48.62617000000000189)"^^gsp:wktLiteral.
 
+<<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float.
 << <<ent:4051 nav:aUneRelationSpatialeAvec ent:4052>> nav:aPourSeparation "100.0"^^xsd:float>> qudt:Unit unit:M.
 
 
@@ -702,3 +706,758 @@ ent:4078 a nav:EntiteGeographique;
 ent:4079 a nav:EntiteGeographique;
 	nav:aPourNature teg:Ile;
 	rdfs:label "Île Pigued"@fr.
+
+
+#modélisation des consignes de navigation et réglementations
+#extraits des IN C2A
+
+@prefix gsp: <http://www.opengis.net/ont/geosparql#>.
+@prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
+@prefix teg: <http://data.shom.fr/id/codes/nav/typedentitegeographique/>.
+@prefix tac: <http://data.shom.fr/id/codes/nav/typedaction/>.
+@prefix tna: <http://data.shom.fr/id/codes/nav/typedenavire/>.
+@prefix tco: <http://data.shom.fr/id/codes/nav/typedecouleur/>.
+@prefix ent: <http://data.shom.fr/id/entitegeographique/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/2.1/vocab/unit/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix tdi: <http://data.shom.fr/id/codes/nav/typededirection/>.
+@prefix tit: <http://data.shom.fr/id/codes/nav/typedindicationtemporelle/>.
+@prefix tim: <http://data.shom.fr/id/codes/nav/typedindicationmeteorologique/>.
+@prefix tio: <http://data.shom.fr/id/codes/nav/typedindicationoceanographique/>.
+@prefix gtrs: <http://data.shom.fr/id/codes/nav/geometries/>.
+@prefix geom: <http://data.ign.fr/def/geometrie#>.
+
+#exemple 1
+#"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."
+
+ent:6001 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [
+		a rdf:Bag;
+		rdf:_1 ent:6097;
+		];
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:4011;
+		];
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6003;
+    	];
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
+
+ent:6097 a nav:EntiteGeographique;
+	nav:estALEstDe ent:4011.
+
+ent:6056 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [
+		a rdf:Bag;
+		rdf:_1 ent:6097;
+		];
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:4011;
+		];
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6009;
+    	];
+	nav:aPourCible ent:3001;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
+
+#ent:6002 a nav:EntiteGeographique;
+#	nav:aPourNature teg:Chenal.
+#devient ent:4011
+
+ent:6003 a nav:Alignement;
+	nav:aPourRepere [
+		a rdf:Seq;
+		rdf:_1 ent:6004;
+		rdf:_2 ent:6005;
+		];
+	nav:estAuSudDe ent:6007;
+	nav:estAuNordDe ent:6008;
+	nav:aPourInfo "Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle"^^xsd:string;
+	nav:estSitueDans ent:6012;
+	nav:aPourCap "293.3"^^xsd:float;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
+
+<<ent:6003 nav:aPourCap "293.3"^^xsd:float>> qudt:Unit unit:DEG.
+
+ent:6004 a nav:Amer;
+	rdfs:label "clocher de l'Île de Batz"@fr;
+	nav:aPourNature teg:Clocher;
+	nav:estElementDe ent:6006;
+	geom:hasGeometry gtrs:0001.
+
+gtrs:0001 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-4.0096052 48.7442339)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(185236.82 6872212.7)"^^gsp:wktLiteral;
+	#geom:coordX "185236.82"^^xsd:double;
+	#geom:coordY "6872212.70"^^xsd:double;
+		#not on carte ENC FR67095A.000 nor in BALISAGE Shom shp layer, coords from google maps
+	.
+
+ent:6005 a nav:Amer;
+	rdfs:label "pyramide blanche de l'Île Pigued"@fr;
+	nav:aPourNature teg:Pyramide;
+	nav:aPourLat "48° 44,0' N"^^xsd:string;
+	nav:aPourLng "3° 58,2' W"^^xsd:string;
+	geom:hasGeometry gtrs:0002.
+
+gtrs:0002 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.970418 48.733010)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(188009.00 6870712.91)"^^gsp:wktLiteral;
+	#geom:coordX "188009.00"^^xsd:double;
+	#geom:coordY "6870712.91"^^xsd:double;
+		#carte ENC FR67095A.000 sur openCPN
+	.
+
+ent:6006 a nav:Amer;
+	rdfs:label "chapelle Notre-Dame de Bon Secours"@fr;
+	nav:aPourNature teg:Chapelle;
+	nav:aPourElement ent:6004;
+	geom:hasGeometry gtrs:0001.
+
+ent:6007 a nav:EntiteGeographique;
+	rdfs:label "Plateau des Duons"@fr.
+
+ent:6008 a nav:Tourelle;
+	rdfs:label "Bazen ar Menk"@br, "tourelle « Le Menk »"@fr;
+	nav:aPourNature teg:Tourelle;
+	nav:estUneMarqueDeType nav:MarqueCardinale;
+	nav:aPourTypeCardinal tdi:Ouest;
+	nav:estUnRepereLumineux "true"^^xsd:boolean;
+	geom:hasGeometry gtrs:0003.
+
+gtrs:0003 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.944992 48.721496)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(189757.17 6869271.50)"^^gsp:wktLiteral;
+	#geom:coordX "189757.17"^^xsd:double;
+	#geom:coordY "6869271.50"^^xsd:double;
+		#carte ENC FR67095A.000 sur openCPN
+	.
+
+ent:6009 a nav:Alignement;
+	nav:aPourRepere [
+		a rdf:Seq;
+		rdf:_1 ent:4004;
+		rdf:_2 ent:6011;
+		];
+	nav:estALaGaucheDe ent:6003;
+	nav:aPourCap "290.0"^^xsd:float;
+	nav:aPourTexteAssocie "En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse). Les petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation, peuvent se présenter légèrement à gauche de l’alignement de garde à 290° du phare de l’Île de Batz par la tourelle « Ar Chaden »."^^xsd:string.
+	
+<<ent:6009 nav:aPourCap "290.0"^^xsd:float>> qudt:Unit unit:DEG.
+
+#ent:6010 a nav:Phare;
+#	rdfs:label "phare de l'Île de Batz"@fr;
+#	nav:aPourNature teg:Phare.
+#devient ent:4004
+
+ent:6011 a nav:Tourelle;
+	rdfs:label "tourelle « Ar Chaden »"@fr;
+	nav:aPourNature teg:Tourelle;
+	geom:hasGeometry gtrs:0004.
+
+gtrs:0004 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-3.970793 48.732258)"^^gsp:wktLiteral
+	#gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/2154> Point(187971.97 6870630.44)"^^gsp:wktLiteral;
+	#geom:coordX "187971.97"^^xsd:double;
+	#geom:coordY "6870630.44"^^xsd:double
+	.
+
+ent:6012 a nav:Secteur;
+	nav:estDeCouleur tco:Blanche;
+	nav:estUnElementDe ent:6011;
+	nav:aPourAngleDebut "289.5"^^xsd:float;
+	nav:aPourAngleFin "293.0"^^xsd:float.
+
+<<ent:6012 nav:aPourAngleDebut "289.5"^^xsd:float>> qudt:Unit unit:DEG.
+<<ent:6012 nav:aPourAngleFin "293.0"^^xsd:float>> qudt:Unit unit:DEG.
+
+
+#exemple 2
+#"Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."
+
+ent:6083 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [
+		a rdf:Bag;
+		rdf:_1 ent:6013;
+		];
+ 	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6014;
+		rdf:_2 ent:6015;
+		];
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6039;
+       	rdf:_2 ent:6017;
+       	rdf:_3 ent:6018;
+       	rdf:_4 ent:6019;
+    	];
+    	nav:estASensUnique "false"^^xsd:boolean;
+    	nav:aPourTexteAssocie "Les navires qui se dirigent de La Manche vers Gibraltar et l’Atlantique, ou inversement, peuvent soit passer très au large d’Ouessant, soit emprunter le dispositif de séparation du trafic d’Ouessant ou, s’ils remplissent les conditions voulues (§ 2.3.4.2.), suivre la route côtière à l’Ouest d’Ouessant, ou bien encore emprunter le Chenal du Four au Nord et le Raz de Sein au Sud."^^xsd:string.
+
+ent:6013 a nav:EntiteGeographique;
+	rdfs:label "La Manche"@fr;
+	geom:hasGeometry gtrs:0040.
+
+gtrs:0040 a geom:Polygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> POLYGON((-5.735 50.075,-5.715 50.085,-5.665 50.045,-5.56 50.07,-5.48 50.115,-5.3 50.07,-5.255 49.985,-5.195 49.97,-5.055 50.06,-4.935 50.195,-4.8 50.23,-4.7 50.32,-4.545 50.33,-4.22 50.32,-4.045 50.305,-3.855 50.21,-3.655 50.21,-3.54 50.305,-3.465 50.445,-3.305 50.63,-2.89 50.725,-2.57 50.63,-2.445 50.52,-1.955 50.6,-1.64 50.68,-1.335 50.585,-1.285 50.585,-0.785 50.72,-0.705 50.785,-0.225 50.835,0.2 50.74,0.23 50.755,0.25 50.755,0.265 50.775,0.275 50.775,0.285 50.79,0.325 50.81,0.35 50.835,0.4 50.85,0.475 50.855,0.515 50.87,0.565 50.87,0.66 50.89,0.695 50.92,0.78 50.955,0.955 50.93,0.945 50.945,0.945 50.98,0.955 51.01,0.985 51.045,1.015 51.055,1.02 51.065,1.05 51.08,1.175 51.095,1.215 51.12,1.265 51.12,1.295 51.13,1.31 51.145,1.365 51.155,1.39 51.185,1.41 51.185,1.635 51.11,1.69 51.085,1.855 51.035,1.94 51.005,1.95 50.99,1.945 50.975,1.925 50.96,1.905 50.96,1.89 50.95,1.86 50.955,1.85 50.945,1.795 50.94,1.745 50.925,1.715 50.91,1.675 50.87,1.605 50.85,1.61 50.83,1.635 50.81,1.635 50.8,1.625 50.79,1.625 50.755,1.615 50.745,1.62 50.715,1.61 50.705,1.59 50.705,1.585 50.695,1.59 50.66,1.6 50.645,1.595 50.575,1.63 50.555,1.645 50.53,1.7 50.52,1.715 50.505,1.715 50.485,1.7 50.47,1.69 50.47,1.67 50.485,1.63 50.49,1.61 50.505,1.595 50.505,1.59 50.43,1.58 50.41,1.615 50.39,1.64 50.39,1.65 50.37,1.665 50.36,1.665 50.34,1.66 50.33,1.635 50.33,1.625 50.34,1.57 50.34,1.56 50.275,1.595 50.28,1.615 50.265,1.615 50.25,1.625 50.24,1.64 50.235,1.65 50.24,1.695 50.225,1.705 50.215,1.71 50.185,1.685 50.155,1.645 50.155,1.63 50.17,1.58 50.165,1.55 50.19,1.53 50.19,1.5 50.165,1.48 50.11,1.46 50.085,1.395 50.055,1.385 50.04,1.36 50.04,1.34 50.03,1.335 50.02,1.295 50.005,1.21 49.95,1.03 49.895,0.96 49.9,0.935 49.885,0.835 49.87,0.8 49.855,0.68 49.85,0.585 49.835,0.54 49.815,0.525 49.8,0.505 49.8,0.5 49.79,0.485 49.79,0.475 49.78,0.375 49.75,0.355 49.73,0.225 49.7,0.18 49.675,0.17 49.63,0.13 49.585,0.09 49.52,0.11 49.505,0.11 49.495,0.13 49.485,0.13 49.475,0.18 49.47,0.22 49.475,0.29 49.46,0.365 49.465,0.385 49.445,0.375 49.42,0.315 49.41,0.225 49.41,0.195 49.395,0.135 49.385,0.05 49.325,-0.01 49.3,-0.06 49.29,-0.08 49.275,-0.215 49.26,-0.255 49.26,-0.275 49.275,-0.3 49.275,-0.4 49.315,-0.46 49.315,-0.5 49.325,-0.635 49.32,-0.825 49.335,-0.915 49.36,-0.935 49.375,-1.075 49.37,-1.08 49.36,-1.095 49.355,-1.105 49.325,-1.13 49.325,-1.16 49.34,-1.17 49.325,-1.19 49.315,-1.215 49.315,-1.225 49.325,-1.225 49.34,-1.215 49.355,-1.205 49.355,-1.205 49.37,-1.195 49.375,-1.185 49.4,-1.25 49.45,-1.315 49.515,-1.33 49.54,-1.32 49.59,-1.3 49.605,-1.28 49.605,-1.275 49.625,-1.26 49.635,-1.29 49.675,-1.405 49.685,-1.46 49.67,-1.475 49.65,-1.52 49.635,-1.615 49.64,-1.66 49.635,-1.71 49.65,-1.72 49.66,-1.78 49.66,-1.8 49.67,-1.83 49.67,-1.85 49.685,-1.85 49.695,-1.89 49.685,-1.85 49.67,-1.825 49.625,-1.82 49.57,-1.825 49.555,-1.85 49.53,-1.83 49.515,-1.825 49.485,-1.805 49.46,-1.8 49.395,-1.765 49.4,-1.735 49.38,-1.735 49.365,-1.7 49.365,-1.685 49.35,-1.66 49.35,-1.655 49.32,-1.675 49.31,-1.645 49.295,-1.645 49.265,-1.635 49.245,-1.575 49.245,-1.56 49.23,-1.56 49.215,-1.585 49.2,-1.58 49.155,-1.57 49.135,-1.59 49.1,-1.59 49.09,-1.58 49.085,-1.58 49.04,-1.56 49.055,-1.53 49.06,-1.5 49.045,-1.485 49.025,-1.495 49,-1.515 49,-1.535 49.015,-1.53 49,-1.54 48.99,-1.54 48.955,-1.53 48.955,-1.525 48.945,-1.525 48.92,-1.535 48.9,-1.55 48.895,-1.565 48.85,-1.55 48.815,-1.555 48.755,-1.515 48.745,-1.5 48.73,-1.495 48.705,-1.46 48.7,-1.44 48.685,-1.41 48.695,-1.375 48.695,-1.365 48.665,-1.345 48.66,-1.345 48.65,-1.335 48.645,-1.335 48.62,-1.35 48.61,-1.405 48.625,-1.435 48.605,-1.485 48.595,-1.5 48.6,-1.515 48.595,-1.535 48.61,-1.56 48.61,-1.66 48.59,-1.77 48.58,-1.86 48.6,-1.89 48.635,-1.88 48.675,-1.895 48.675,-1.975 48.66,-1.99 48.64,-2 48.64,-1.995 48.615,-2.01 48.6,-2.03 48.595,-2.07 48.61,-2.075 48.62,-2.105 48.615,-2.11 48.585,-2.135 48.585,-2.14 48.57,-2.15 48.57,-2.16 48.555,-2.195 48.56,-2.195 48.545,-2.205 48.535,-2.225 48.535,-2.24 48.55,-2.245 48.595,-2.255 48.595,-2.27 48.62,-2.305 48.59,-2.325 48.59,-2.355 48.605,-2.36 48.615,-2.35 48.635,-2.355 48.64,-2.415 48.61,-2.43 48.615,-2.435 48.63,-2.45 48.63,-2.455 48.61,-2.475 48.595,-2.545 48.575,-2.555 48.56,-2.585 48.545,-2.6 48.53,-2.6 48.51,-2.61 48.5,-2.655 48.505,-2.665 48.475,-2.685 48.47,-2.73 48.51,-2.74 48.505,-2.76 48.52,-2.75 48.54,-2.755 48.545,-2.77 48.545,-2.84 48.585,-2.85 48.645,-2.9 48.66,-2.905 48.68,-2.96 48.705,-2.97 48.72,-2.965 48.74,-3.02 48.745,-3.06 48.765,-3.065 48.8,-3.08 48.76,-3.1 48.745,-3.07 48.725,-3.07 48.705,-3.085 48.695,-3.12 48.7,-3.13 48.69,-3.15 48.69,-3.17 48.725,-3.17 48.755,-3.15 48.77,-3.14 48.79,-3.12 48.795,-3.12 48.84,-3.135 48.84,-3.17 48.825,-3.18 48.805,-3.195 48.795,-3.18 48.775,-3.18 48.755,-3.19 48.745,-3.225 48.745,-3.255 48.725,-3.28 48.73,-3.29 48.755,-3.27 48.77,-3.27 48.8,-3.26 48.81,-3.235 48.815,-3.24 48.83,-3.255 48.815,-3.32 48.815,-3.345 48.8,-3.365 48.8,-3.375 48.785,-3.425 48.775,-3.45 48.78,-3.475 48.805,-3.505 48.805,-3.545 48.775,-3.52 48.745,-3.515 48.72,-3.525 48.71,-3.55 48.705,-3.56 48.71,-3.55 48.7,-3.55 48.67,-3.575 48.65,-3.625 48.655,-3.655 48.635,-3.67 48.635,-3.68 48.645,-3.68 48.665,-3.69 48.67,-3.71 48.67,-3.73 48.685,-3.76 48.69,-3.79 48.68,-3.805 48.69,-3.825 48.68,-3.83 48.65,-3.795 48.645,-3.79 48.625,-3.8 48.61,-3.825 48.61,-3.825 48.57,-3.85 48.57,-3.86 48.585,-3.885 48.585,-3.895 48.6,-3.885 48.62,-3.905 48.625,-3.915 48.64,-3.925 48.64,-3.915 48.61,-3.915 48.59,-3.925 48.58,-3.945 48.58,-3.96 48.595,-3.97 48.595,-3.98 48.61,-3.975 48.655,-3.99 48.665,-3.995 48.695,-4.02 48.69,-4.02 48.68,-4.05 48.65,-4.065 48.65,-4.085 48.67,-4.105 48.665,-4.11 48.675,-4.135 48.675,-4.18 48.665,-4.175 48.645,-4.18 48.635,-4.195 48.63,-4.265 48.63,-4.29 48.615,-4.315 48.615,-4.33 48.625,-4.335 48.65,-4.35 48.655,-4.365 48.65,-4.395 48.615,-4.425 48.62,-4.495 48.6,-4.525 48.61,-4.575 48.605,-4.615 48.67,-4.81 48.905,-4.87 48.99,-5.73 50.05,-5.735 50.075),(-2.96 48.74,-2.96 48.745,-2.965 48.74,-2.96 48.74),(-3.115 48.84,-3.115 48.845,-3.12 48.845,-3.12 48.84,-3.115 48.84),(-2.34 48.64,-2.34 48.645,-2.345 48.645,-2.345 48.64,-2.34 48.64),(-2.33 48.645,-2.33 48.65,-2.335 48.65,-2.335 48.645,-2.33 48.645),(-1.895 49.69,-1.92 49.705,-1.915 49.685,-1.895 49.685,-1.895 49.69))"^^gsp:wktLiteral.
+
+ent:6014 a nav:EntiteGeographique;
+	rdfs:label "Gibraltar"@fr;
+	geom:hasGeometry gtrs:0041.
+
+gtrs:0041 a geom:Polygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> POLYGON((-5.34127554060165 36.1284086496264,-5.3412896 36.1284043,-5.3413009 36.1283669,-5.3412959 36.128345,-5.3413029 36.128327,-5.341355 36.1282912,-5.341368 36.1282594,-5.3413941 36.1282524,-5.3413896 36.1282261,-5.3413616 36.1282098,-5.3413241 36.128224,-5.3413005 36.1282189,-5.3412836 36.1281993,-5.3412973 36.1281756,-5.3412981 36.1281558,-5.3412745 36.1281153,-5.3412559 36.1280564,-5.3412529 36.1280107,-5.34125002874016 36.1280004598425,-5.341 36.124,-5.343 36.122,-5.343 36.117,-5.346 36.11,-5.349 36.111,-5.348 36.115,-5.35 36.117,-5.351 36.123,-5.355 36.125,-5.353 36.127,-5.355 36.131,-5.353 36.131,-5.353 36.134,-5.357 36.142,-5.361 36.144,-5.359 36.148,-5.353 36.146,-5.352 36.151,-5.35 36.151,-5.35 36.154,-5.344 36.154,-5.34 36.152,-5.341 36.145,-5.339 36.145,-5.339 36.141,-5.342 36.14,-5.34134226710953 36.1294762737524,-5.3414648 36.1294657,-5.3414594 36.129429,-5.3414753 36.1294073,-5.3414703 36.1293579,-5.3414355 36.1293277,-5.3414409 36.129309,-5.3414632 36.1293051,-5.3414774 36.129296,-5.3414521 36.1292896,-5.3413955 36.1292946,-5.3413456 36.1292904,-5.34133042921941 36.1292868675106,-5.3413232627433 36.1291722038928,-5.3413477 36.1291447,-5.3413583 36.129118,-5.3413519 36.1290499,-5.3413314 36.1290392,-5.34131534270557 36.1290454832891,-5.34131102616247 36.1289764185996,-5.3413164 36.1289741,-5.3413358 36.1289581,-5.3413388 36.1289191,-5.34133 36.128898,-5.34130508316862 36.1288813306979,-5.34127554060165 36.1284086496264))"^^gsp:wktLiteral.
+
+ent:6015 a nav:EntiteGeographique;
+	rdfs:label "Atlantique"@fr.
+
+ent:6039 a nav:Route;
+	rdfs:label "très au large d'Ouessant"@fr;
+	nav:auLargeDe ent:6016.
+
+ent:6016 a nav:EntiteGeographique;
+	rdfs:label "Ouessant"@fr;
+	geom:hasGeometry gtrs:0042.
+
+gtrs:0042 a geom:Polygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> POLYGON((-5.142 48.457,-5.133 48.464,-5.119 48.469,-5.113 48.469,-5.111 48.475,-5.107 48.477,-5.098 48.477,-5.097 48.479,-5.091 48.481,-5.085 48.477,-5.082 48.477,-5.08 48.478,-5.08 48.483,-5.077 48.487,-5.064 48.486,-5.059 48.481,-5.049 48.481,-5.046 48.477,-5.049 48.47,-5.034 48.468,-5.03 48.464,-5.032 48.458,-5.037 48.454,-5.041 48.453,-5.047 48.455,-5.05 48.452,-5.052 48.452,-5.057 48.446,-5.06 48.445,-5.068 48.445,-5.07 48.447,-5.074 48.445,-5.08 48.445,-5.087 48.437,-5.099 48.435,-5.101 48.432,-5.109 48.433,-5.113 48.431,-5.122 48.436,-5.121 48.442,-5.115 48.444,-5.113 48.447,-5.11 48.447,-5.109 48.449,-5.102 48.449,-5.101 48.45,-5.102 48.452,-5.112 48.45,-5.116 48.447,-5.121 48.448,-5.123 48.446,-5.128 48.446,-5.13 48.444,-5.141 48.444,-5.145 48.447,-5.145 48.45,-5.142 48.457))"^^gsp:wktLiteral.
+
+ent:6017 a nav:DispositifDeSeparationDuTrafic;
+	rdfs:label "dispositif de séparation du trafic d’Ouessant"@fr;
+	geom:hasGeometry gtrs:0043.
+
+gtrs:0043 a geom:Polygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Polygon ((-5.36749999999999972 48.48980000000000246, -5.70500000000000007 48.58500000000000085, -5.91999999999999993 48.66170000000000329, -6.02669999999999995 48.70000000000000284, -6.04670000000000041 48.71000000000000085, -6.02590000000000003 48.73559999999999803, -5.33129999999999971 48.73559999999999803, -5.24500000000000011 48.66170000000000329, -5.1982999999999997 48.61999999999999744, -5.36749999999999972 48.48980000000000246))"^^gsp:wktLiteral.
+
+ent:6018 a nav:Route;
+	rdfs:label "route côtière à l’Ouest d’Ouessant"@fr;
+	nav:aPourConditionsNavire "§ 2.3.4.2."^^xsd:string.
+# >>> comment faire pour récupérer les conditions d'un autre chapitre ? Il s'agit d'un reglément
+# >>> aPourConditionsNavire même chose que cible ? Ici plus stricte parce que c'est un reglément
+
+ent:6019 a nav:Route;
+	rdfs:label "Chenal du Four au Nord et le Raz de Sein au Sud"@fr;
+	nav:aPourEntiteImpliquee [
+		a rdf:Seq;
+		rdf:_1 ent:6020;
+		rdf:_2 ent:6021;
+		];
+	nav:aPourConditionsNavire "§ 2.3.4.2."^^xsd:string.
+
+ent:6020 a nav:EntiteGeographique;
+	rdfs:label "Chenal du Four"@fr;
+	nav:aPourNature teg:Chenal;
+	geom:hasGeometry gtrs:0044.
+
+gtrs:0044 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point (-4.88180000000000014 48.51709999999999923)"^^gsp:wktLiteral.
+
+ent:6021 a nav:EntiteGeographique;
+	rdfs:label "Raz de Sein"@fr;
+	nav:aPourNature teg:Raz;
+	geom:hasGeometry gtrs:0045.
+
+gtrs:0045 a geom:MultiPolygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> MultiPolygon (((-4.82969999999999988 48.05449999999999733, -4.77829999999999977 48.05440000000000111, -4.74270000000000014 48.01910000000000167, -4.79910000000000014 48.01850000000000307, -4.79910000000000014 48.03159999999999741, -4.82969999999999988 48.05449999999999733)))"^^gsp:wktLiteral.
+
+
+#exemple 3
+#"De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."
+
+ent:6022 a nav:Information;
+	nav:stipule "De nuit, la Grande Passe ne peut être pratiquée que s’il fait assez clair pour distinguer les tourelles et les bouées proches du chenal."^^xsd:string;
+	nav:aPourLieuDEffet ent:6023;
+	nav:aPourTemporalite tit:DeNuit.
+
+ent:6023 a nav:EntiteGeographique;
+	rdfs:label "Grande Passe"@fr.
+
+
+#exemple 4
+#"EN VENANT DE L’EST. — On part du Sud du chenal de La Helle pour :
+# – passer par le chenal des Laz en suivant l’alignement à 264° du moulin Nord de Molène, sans ailes, rouge à bande centrale verticale blanche, par la tourelle blanche de l’îlot Lédénez Vraz, équipé dans sa partie supérieure, d’un panneau rouge à bande centrale verticale blanche ;
+# [...]
+# La pratique des véhicules nautiques à moteur dans l’archipel de Molène au sein du parc naturel marin d’Iroise est interdite, à l’exception de l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°, conformément à l’arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)."
+
+ent:6024 a nav:Interdiction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourLieuDEffet ent:6025;
+	nav:aPourCible tna:VehiculeNautiqueAMoteur;
+	nav:aPourException "l’accès à l’île Molène par le chenal des Laz, dans un couloir de 300 m de largeur centré sur l’alignement au 264°"^^xsd:string;
+	nav:estImposeePar ent:6034.
+
+ent:6091 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:pointDeDepart [nav:dansLeSudDe ent:6092];
+	nav:pointDeDestination ent:6078;
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6079;
+       	rdf:_2 ent:6093;
+    		].
+ent:6092 a nav:EntiteGeographique;
+	rdfs:label "chenal de La Helle"@fr;
+	nav:aPourNature teg:Chenal.
+
+ent:6093 a nav:Alignement;
+	nav:aPourRepere [
+		a rdf:Seq;
+		rdf:_1 ent:6095;
+		rdf:_2 ent:6096;
+		];
+	nav:aPourCap "264.0"^^xsd:float.
+
+ent:6095 a nav:EntiteGeographique;
+	rdfs:label "moulin Nord de Molène"@fr;
+	nav:aPourNature teg:Moulin;
+	geom:hasGeometry gtrs:0008.
+
+gtrs:0008 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-4.9609694 48.3986836)"^^gsp:wktLiteral.
+
+ent:6096 a nav:EntiteGeographique;
+	nav:aPourNature teg:Tourelle;
+	nav:estDeCouleur tco:Blanche;
+	geom:hasGeometry gtrs:0009.
+
+gtrs:0009 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(-4.95003 48.39944)"^^gsp:wktLiteral.
+
+ent:6034 a nav:Reglement;
+	rdfs:label "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"@fr;
+	nav:aPourArrete "arrêté 2014/32 du 10 juin 2014 du préfet maritime de l’Atlantique (disposible sur le site www.premar-atlantique.gouv.fr/arretes.html)"^^xsd:string.
+
+ent:6025 a nav:EntiteGeographique;
+	rdfs:label "parc naturel marin d'Iroise"@fr.
+	
+ent:6077 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:pointDeDestination ent:6078;
+	nav:impliqueDeSuivre [
+ 		a rdf:Bag;
+       	rdf:_1 ent:6079;
+       	rdf:_2 ent:6080;
+    		];
+	nav:estImposeePar ent:6034.
+	
+ent:6078 a nav:EntiteGeographique;
+	rdfs:label "île Molène";
+	nav:nature teg:Île;
+	geom:hasGeometry gtrs:0010.
+
+gtrs:0010 a geom:MultiPolygon;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> MULTIPOLYGON(((-4.9783417 48.3998453,-4.9783604 48.3998612,-4.9783837 48.3998714,-4.9784278 48.3998756,-4.9784598 48.3998716,-4.9784912 48.3998731,-4.9785069 48.3998694,-4.9785521 48.3998446,-4.9785917 48.3998284,-4.9786077 48.3998174,-4.978607 48.3997866,-4.978619 48.3997578,-4.9786337 48.3997387,-4.9786521 48.3997348,-4.9787044 48.3997484,-4.9787207 48.3997482,-4.9787702 48.3997078,-4.9787874 48.3996777,-4.9787924 48.3996484,-4.9788009 48.3996415,-4.9788082 48.3996184,-4.9788227 48.3995976,-4.9788137 48.3995385,-4.9787767 48.3995003,-4.9786856 48.399473,-4.9786559 48.3994741,-4.9786024 48.3994885,-4.9785259 48.3995389,-4.9784884 48.3995695,-4.9784182 48.399661,-4.9783637 48.3997136,-4.9783539 48.3997296,-4.978308 48.399758,-4.9782927 48.3997735,-4.9782862 48.3998201,-4.9783187 48.3998459,-4.9783417 48.3998453)),((-4.9766357 48.3942852,-4.9766745 48.3941831,-4.9767111 48.3941472,-4.9767119 48.3941164,-4.9767049 48.394106,-4.9766564 48.3940912,-4.9766149 48.3940949,-4.9765749 48.3941085,-4.9765311 48.3941512,-4.9764867 48.3942609,-4.9764658 48.394284,-4.9764565 48.3943208,-4.976486 48.394345,-4.9765018 48.3943512,-4.976557 48.3943565,-4.9766022 48.3943508,-4.9766198 48.3943414,-4.9766288 48.3943291,-4.9766357 48.3942852)),((-4.976034 48.4024742,-4.9760837 48.4024528,-4.9760894 48.4024452,-4.976049 48.4024207,-4.9760113 48.4024142,-4.9759669 48.4024525,-4.976034 48.4024742)),((-4.9736364 48.3973288,-4.9736688 48.3972652,-4.9736703 48.3972488,-4.9736612 48.3972331,-4.9736421 48.3972236,-4.9736171 48.3972198,-4.9735888 48.3972217,-4.9735603 48.3972309,-4.9735256 48.3972613,-4.9735079 48.3973059,-4.9735146 48.3973226,-4.9735236 48.3973283,-4.973566 48.3973481,-4.9735869 48.3973521,-4.9736072 48.3973516,-4.9736364 48.3973288)),((-4.9722671 48.4036037,-4.9723261 48.4035868,-4.9723516 48.4035566,-4.9723409 48.4035263,-4.9722725 48.4035254,-4.9722389 48.4035076,-4.9722631 48.4034898,-4.9722644 48.4034675,-4.9722175 48.4034346,-4.9721893 48.4034034,-4.9721317 48.4034043,-4.9720713 48.4034159,-4.972011 48.4034381,-4.9719989 48.403472,-4.9719949 48.4035183,-4.9720418 48.4035494,-4.9720793 48.4035583,-4.9721477 48.403561,-4.9721491 48.4035877,-4.9721974 48.4035984,-4.9722671 48.4036037)),((-4.9717627 48.3918171,-4.9718593 48.3918126,-4.9719089 48.3917957,-4.9719465 48.3918064,-4.9720122 48.3917681,-4.9720739 48.3917592,-4.9721275 48.3917636,-4.9721839 48.3917405,-4.9721852 48.3916737,-4.972145 48.3916443,-4.9721007 48.3916105,-4.9720927 48.3915615,-4.9720176 48.3915437,-4.9719679 48.3915116,-4.9719197 48.3915134,-4.9718781 48.3915526,-4.9718446 48.3915321,-4.9717708 48.3915428,-4.9716514 48.3915882,-4.9716488 48.3915508,-4.9716206 48.3915356,-4.9715737 48.391557,-4.9715549 48.3915926,-4.9715938 48.3916398,-4.9715629 48.3916719,-4.9715589 48.3917138,-4.9716179 48.3917699,-4.9716903 48.3918064,-4.9717627 48.3918171)),((-4.9715683 48.3922374,-4.971752 48.3922009,-4.9718043 48.3921323,-4.9719746 48.3920949,-4.9719572 48.3920112,-4.9718258 48.3919346,-4.9716675 48.3919257,-4.9714959 48.3919453,-4.971402 48.3918812,-4.9713457 48.3918224,-4.9714959 48.3918331,-4.9715267 48.3918144,-4.9715522 48.3917854,-4.9715173 48.3917213,-4.9715012 48.3916657,-4.9714101 48.3915962,-4.971335 48.3915588,-4.9712358 48.3915446,-4.9712009 48.3916105,-4.9711795 48.3916532,-4.9712009 48.3916799,-4.9711418 48.3916924,-4.9711633 48.3917636,-4.9712598 48.3918046,-4.9712598 48.3918562,-4.9711418 48.3918669,-4.9710828 48.3919186,-4.9709782 48.3918776,-4.9708682 48.3918758,-4.9707502 48.3918509,-4.9707127 48.391915,-4.9706912 48.3919702,-4.9707502 48.391988,-4.970836 48.3919702,-4.9708656 48.3920344,-4.9709782 48.3921092,-4.971064 48.3921341,-4.971115 48.3921804,-4.9712813 48.3922267,-4.9714181 48.3922588,-4.9715683 48.3922374)),((-4.9693589 48.4046979,-4.9694179 48.404681,-4.9694635 48.4046801,-4.9695105 48.4046708,-4.9695373 48.4046427,-4.9695105 48.4046214,-4.9694749 48.4046232,-4.9694367 48.4046103,-4.9694032 48.4046062,-4.9693569 48.4046232,-4.9693341 48.4046419,-4.9693603 48.4046574,-4.9693401 48.4046752,-4.9693388 48.4046944,-4.9693589 48.4046979)),((-4.9692009 48.4049508,-4.9692684 48.404939,-4.9692859 48.4049206,-4.969329 48.4048463,-4.9693613 48.4048269,-4.9693972 48.4048218,-4.9694125 48.4048153,-4.9694233 48.4048056,-4.9694184 48.4047824,-4.9694086 48.4047713,-4.9693705 48.404753,-4.9693507 48.4047481,-4.969329 48.4047486,-4.969215 48.4047753,-4.969214 48.4048224,-4.9691996 48.4048532,-4.9692024 48.4048711,-4.9692231 48.4049004,-4.9692244 48.4049175,-4.9692151 48.4049371,-4.9692009 48.4049508)),((-4.9634139 48.4027058,-4.9634349 48.4027722,-4.963388 48.4028034,-4.9633742 48.4028197,-4.9633721 48.4028325,-4.9633844 48.4028426,-4.9634089 48.4028518,-4.9635098 48.4028721,-4.9635344 48.4028731,-4.963594 48.4028718,-4.9636942 48.4028615,-4.9637206 48.4028651,-4.9637436 48.4028735,-4.9638118 48.4028843,-4.9638443 48.4028839,-4.9638814 48.4028687,-4.9638715 48.4028486,-4.9638562 48.402837,-4.9637368 48.4028107,-4.9637136 48.4028014,-4.9636968 48.402789,-4.9636822 48.4027556,-4.9636563 48.4027284,-4.9636063 48.4026938,-4.9635511 48.4026704,-4.9635312 48.4026554,-4.9635066 48.4026452,-4.9634821 48.4026451,-4.9634636 48.4026572,-4.9634139 48.4027058)),((-4.9607642 48.4013905,-4.9607955 48.4014354,-4.9608259 48.4014388,-4.9608712 48.401424,-4.9609361 48.401378,-4.9610112 48.4013449,-4.9610542 48.4013149,-4.961071 48.4013093,-4.9616634 48.401329,-4.9618844 48.4013268,-4.9619571 48.4013228,-4.9621033 48.4013021,-4.9621666 48.4012897,-4.9622208 48.4012707,-4.9623186 48.4011818,-4.9624039 48.4010639,-4.9625762 48.4007765,-4.9626391 48.4006547,-4.9626624 48.4006378,-4.96267 48.4006074,-4.9627063 48.4005426,-4.9627355 48.4005027,-4.9628489 48.4003196,-4.9629255 48.4002249,-4.9629718 48.4001811,-4.9631841 48.4000049,-4.9634734 48.3998001,-4.9635885 48.3997263,-4.9636436 48.3996955,-4.963771 48.3996408,-4.9638377 48.3996146,-4.9639065 48.3995937,-4.9641669 48.3995291,-4.9642255 48.3995215,-4.964284 48.3995221,-4.9643391 48.3995274,-4.964391 48.3995384,-4.9645462 48.3995858,-4.9646996 48.3996035,-4.9648312 48.399629,-4.9649035 48.3996314,-4.9649276 48.3996379,-4.9649475 48.3996528,-4.9649736 48.3996818,-4.9650837 48.3997359,-4.9651142 48.3997492,-4.9651639 48.399763,-4.9651861 48.3997751,-4.9652013 48.3997858,-4.9652455 48.3998353,-4.9652818 48.39986,-4.9654964 48.399869,-4.9655243 48.3998743,-4.9655585 48.3998757,-4.9656272 48.3998991,-4.9657021 48.3999184,-4.9657871 48.3998964,-4.9657912 48.399888,-4.9657824 48.3998479,-4.965795 48.3998055,-4.9657953 48.3997629,-4.9658588 48.3997071,-4.9659384 48.3996502,-4.9659646 48.3996258,-4.9659696 48.3995785,-4.9659569 48.3995667,-4.9659351 48.3995573,-4.9658937 48.3995529,-4.965878 48.3995476,-4.9658696 48.3995373,-4.9658634 48.3993894,-4.9658813 48.3993285,-4.9659251 48.3992677,-4.9659564 48.3991969,-4.9660607 48.3990253,-4.9661543 48.3989086,-4.9662292 48.3987942,-4.9663528 48.3986511,-4.9664019 48.398608,-4.9664239 48.3985921,-4.96647 48.3985917,-4.9664871 48.3985788,-4.9664909 48.3985685,-4.9664851 48.3985572,-4.9664609 48.3985317,-4.9664805 48.3984996,-4.9666955 48.398297,-4.9667969 48.3982142,-4.9668682 48.3981742,-4.9668963 48.3981714,-4.9669267 48.3981838,-4.9669539 48.3982019,-4.9670052 48.3982536,-4.9670718 48.3982898,-4.9671177 48.3983057,-4.9671582 48.3983129,-4.9671989 48.3983128,-4.967236 48.3983067,-4.967322 48.3982738,-4.9673486 48.3982521,-4.9673549 48.3982399,-4.9673423 48.3982019,-4.9672989 48.3981488,-4.9672766 48.3980734,-4.9672752 48.3980283,-4.9672533 48.3979827,-4.9672258 48.3979448,-4.9672224 48.3979224,-4.9671796 48.3979,-4.9671448 48.3978942,-4.9671096 48.3978948,-4.967098 48.3978901,-4.9670876 48.3978754,-4.9670787 48.3978706,-4.9670424 48.397864,-4.9669841 48.3978643,-4.9669631 48.3978603,-4.966928 48.3978437,-4.9669184 48.3978344,-4.9669165 48.3978219,-4.9669227 48.3978088,-4.9669531 48.3977769,-4.9669917 48.3977182,-4.9670079 48.3976728,-4.967002 48.3976606,-4.9669869 48.3976507,-4.9669466 48.3976444,-4.966921 48.3976461,-4.9668688 48.3976596,-4.9668296 48.3976785,-4.9667993 48.3977032,-4.9667736 48.3977393,-4.9667384 48.3977579,-4.9666911 48.3977683,-4.9666427 48.3977716,-4.9665463 48.3977627,-4.9664627 48.3977394,-4.9664336 48.3977269,-4.9662018 48.3976132,-4.9658161 48.3974078,-4.965762 48.3973734,-4.9657157 48.3973368,-4.9656441 48.3972674,-4.9653892 48.3970911,-4.9653253 48.3970375,-4.9652359 48.3969405,-4.9651392 48.3968222,-4.9650815 48.3967194,-4.9649473 48.3965783,-4.9648456 48.396445,-4.9648115 48.3963813,-4.9647782 48.3962967,-4.9647038 48.3960748,-4.9646835 48.3959505,-4.964684 48.3959269,-4.9646959 48.39588,-4.9647031 48.3957846,-4.964734 48.395702,-4.9647698 48.3956246,-4.9647798 48.3956194,-4.9649718 48.3955784,-4.9650259 48.3955774,-4.9650494 48.3955713,-4.9650724 48.3955616,-4.9651033 48.3955324,-4.9652058 48.3955011,-4.9652357 48.3954747,-4.9652455 48.3954586,-4.9652457 48.3954424,-4.965238 48.3954275,-4.9652172 48.3954153,-4.96516 48.3953966,-4.9651394 48.3953862,-4.9651277 48.3953716,-4.9651069 48.3953152,-4.9651081 48.395278,-4.9651029 48.3952621,-4.9650815 48.3952283,-4.9650659 48.3952148,-4.9650217 48.3951925,-4.9649427 48.395092,-4.9649294 48.3950676,-4.9648889 48.3949528,-4.9648921 48.3949381,-4.9649221 48.3948945,-4.9650272 48.3947997,-4.9650814 48.3947364,-4.9650921 48.3947085,-4.9650862 48.3946962,-4.9650691 48.3946911,-4.9650449 48.3946927,-4.9649811 48.3947106,-4.9649294 48.3947367,-4.964869 48.3947859,-4.9648573 48.3947894,-4.9648538 48.3947752,-4.9648363 48.3947583,-4.9648199 48.3947314,-4.9648149 48.3947163,-4.9648192 48.3946817,-4.9648014 48.3946449,-4.9647882 48.3946295,-4.9647372 48.3945977,-4.9647157 48.3945901,-4.9646711 48.3945651,-4.9646287 48.3945272,-4.9646228 48.394515,-4.964626 48.3945003,-4.9646776 48.394429,-4.9646759 48.3943821,-4.9646366 48.3942934,-4.9646431 48.3942468,-4.9646375 48.3942011,-4.9645846 48.3940853,-4.9645468 48.3939884,-4.9645394 48.3939663,-4.96454 48.3939436,-4.9645681 48.3938423,-4.9646082 48.3937401,-4.9646499 48.3936659,-4.9646941 48.3935996,-4.9647219 48.3935679,-4.9647462 48.393549,-4.9647596 48.3935481,-4.9648489 48.3935909,-4.9648983 48.393603,-4.9649183 48.3936007,-4.9649832 48.3935539,-4.9649853 48.3935411,-4.9649765 48.3935281,-4.96492 48.3934867,-4.9649096 48.393472,-4.9649115 48.3934574,-4.9649329 48.3934289,-4.9650035 48.3933662,-4.9650145 48.3933402,-4.9650373 48.3933205,-4.9650482 48.3932936,-4.9650408 48.3932543,-4.9650458 48.3932422,-4.9650776 48.3932283,-4.9650865 48.393215,-4.9650891 48.3931968,-4.9650808 48.3931603,-4.9650608 48.3931263,-4.9650453 48.3931138,-4.9649756 48.3930751,-4.9649655 48.3930622,-4.9649591 48.3930292,-4.9650298 48.392887,-4.9650572 48.3928707,-4.9651197 48.3928529,-4.9651289 48.3928423,-4.9651285 48.3928306,-4.9651045 48.3928069,-4.9650852 48.3928046,-4.9650197 48.3928208,-4.9649994 48.3928212,-4.9649417 48.3927898,-4.9648137 48.3926981,-4.9648057 48.3926453,-4.9647843 48.3926115,-4.9647856 48.3926023,-4.9647956 48.3925791,-4.9648507 48.3925392,-4.9648599 48.3925105,-4.9648531 48.3924929,-4.9647947 48.392448,-4.9647215 48.3923679,-4.9646757 48.3923439,-4.9646487 48.3923358,-4.9645665 48.3923223,-4.9643894 48.3922737,-4.9643302 48.3922415,-4.9642853 48.3922228,-4.9642647 48.3921944,-4.9641853 48.3921455,-4.9641387 48.392098,-4.9640702 48.3920492,-4.9640077 48.3919956,-4.963971 48.3919772,-4.9638642 48.3919447,-4.9638049 48.3919116,-4.9637394 48.3918916,-4.9636857 48.3918599,-4.963653 48.3918323,-4.9636071 48.3918074,-4.9635854 48.3917898,-4.9635574 48.3917573,-4.9635222 48.3917308,-4.9634618 48.3917086,-4.9633831 48.3916732,-4.9633203 48.3916531,-4.9632658 48.3916251,-4.9632467 48.3916065,-4.9631918 48.3915315,-4.9630779 48.3914252,-4.9629402 48.3913233,-4.962873 48.3912826,-4.9627682 48.3912273,-4.9625495 48.3911643,-4.9624871 48.3911377,-4.9624517 48.3911284,-4.9622105 48.3910777,-4.9616697 48.3909948,-4.9614729 48.3909502,-4.9613467 48.3909153,-4.9612054 48.3908696,-4.9611223 48.3908499,-4.9609312 48.3907805,-4.9608446 48.3907556,-4.9607276 48.3907363,-4.9606134 48.3907088,-4.9604447 48.3906885,-4.9603469 48.3906878,-4.9602345 48.3906629,-4.9601036 48.3906237,-4.9599886 48.3905818,-4.9599175 48.3905513,-4.959789 48.3905192,-4.9597184 48.3904923,-4.9596792 48.3904751,-4.9595188 48.3903846,-4.9593168 48.3902617,-4.95919 48.3901952,-4.9591334 48.39018,-4.9590557 48.390178,-4.9590081 48.3901866,-4.95894 48.390212,-4.9588681 48.3902304,-4.9586248 48.3903626,-4.9584946 48.3904437,-4.9583398 48.390578,-4.9583036 48.3906166,-4.9582263 48.3906797,-4.9581978 48.3906979,-4.9581345 48.3907283,-4.9580627 48.3907468,-4.9579508 48.3907525,-4.9578247 48.3907709,-4.9576877 48.390781,-4.9576216 48.3907747,-4.9575002 48.390753,-4.9574313 48.3907558,-4.957412 48.3907625,-4.9573864 48.3907905,-4.9573834 48.390807,-4.957421 48.3909021,-4.957426 48.3909262,-4.957446 48.3911382,-4.9574397 48.3911956,-4.9574316 48.3912224,-4.9573941 48.3913063,-4.957321 48.3914152,-4.95728 48.3914668,-4.9571369 48.3916067,-4.956928 48.3918043,-4.9568685 48.3918508,-4.9567909 48.391894,-4.9566313 48.3919608,-4.9565433 48.3919893,-4.9564499 48.3920092,-4.9561249 48.3920591,-4.9559922 48.3920888,-4.9558495 48.3921057,-4.9557099 48.3921069,-4.9554396 48.3921242,-4.9552582 48.3921455,-4.9550278 48.3921574,-4.9549882 48.3921646,-4.9549575 48.3921775,-4.9548317 48.3922791,-4.9548119 48.3923003,-4.9547737 48.3923798,-4.954756 48.3924063,-4.9546869 48.3924787,-4.954547 48.3926753,-4.9544775 48.3928256,-4.9544538 48.3928661,-4.9544253 48.3929024,-4.9541424 48.3930778,-4.9540325 48.3931323,-4.9538598 48.3932379,-4.9538328 48.3932479,-4.9537725 48.3932619,-4.9537568 48.3932747,-4.9537579 48.3932909,-4.9537675 48.3933092,-4.9538589 48.3933836,-4.9537918 48.3934161,-4.9537656 48.3934224,-4.9537343 48.3934218,-4.9537251 48.3934776,-4.9540101 48.3934946,-4.9540047 48.3937454,-4.9539886 48.3938179,-4.9539362 48.3939291,-4.9539156 48.3939823,-4.9539069 48.3940043,-4.9538894 48.3940859,-4.9538865 48.3941738,-4.9539184 48.3944466,-4.9540346 48.3947733,-4.9540606 48.394909,-4.9540638 48.3949567,-4.9540472 48.3951071,-4.9540416 48.3953923,-4.9540474 48.395485,-4.9540707 48.395629,-4.9540931 48.3957234,-4.9541387 48.3958623,-4.9541625 48.3959023,-4.9542468 48.3960015,-4.9542769 48.3960302,-4.9543145 48.3960539,-4.954482 48.3961385,-4.9544157 48.3962207,-4.9544456 48.3962386,-4.9544787 48.3962418,-4.9545577 48.3961714,-4.9548981 48.3962759,-4.9550818 48.3963504,-4.9555644 48.3965865,-4.9557243 48.3966562,-4.9557335 48.3966899,-4.9557312 48.3967109,-4.9557075 48.3967595,-4.9556877 48.396844,-4.9556352 48.3969461,-4.955645 48.3969653,-4.9556381 48.3970806,-4.955416 48.3971778,-4.9547496 48.3974723,-4.9547366 48.3974578,-4.9547317 48.3974563,-4.9547266 48.3974549,-4.954693 48.3974653,-4.9546639 48.3974889,-4.9546689 48.397513,-4.95468 48.3975231,-4.9547102 48.3975337,-4.9547575 48.3975324,-4.9550231 48.3974213,-4.9553426 48.397738,-4.9547691 48.3979765,-4.9547619 48.3979824,-4.9547764 48.3980058,-4.9548136 48.3980277,-4.9548781 48.3980225,-4.9557902 48.3976364,-4.9559338 48.3975798,-4.9559887 48.3975661,-4.9561127 48.3975686,-4.9563134 48.3976302,-4.9563769 48.397663,-4.9565994 48.3978144,-4.95665 48.3978697,-4.9566666 48.3978994,-4.9566667 48.3979437,-4.9566377 48.3981563,-4.956652 48.398187,-4.956658 48.3982182,-4.9566433 48.3982816,-4.9566126 48.3983397,-4.9566178 48.3983729,-4.9566312 48.3984081,-4.956652 48.3984375,-4.9567109 48.398495,-4.9567869 48.3985478,-4.9568294 48.3985693,-4.9568698 48.3985838,-4.9569345 48.3986264,-4.957059 48.3987392,-4.957144 48.3988348,-4.9571781 48.3988614,-4.9572151 48.3988824,-4.9573152 48.3989236,-4.9573531 48.3989509,-4.9573561 48.3989561,-4.9573588 48.3989614,-4.9573528 48.3989925,-4.9573694 48.3990312,-4.9574596 48.3990966,-4.9575466 48.3991694,-4.9575755 48.3992072,-4.9575912 48.3992568,-4.9576126 48.3992816,-4.9576484 48.3993036,-4.9576915 48.3993187,-4.9577416 48.3993271,-4.9578783 48.3993324,-4.9579148 48.3993408,-4.9579808 48.3993816,-4.9580033 48.3994045,-4.9580171 48.3994325,-4.9580448 48.399455,-4.9583091 48.399505,-4.9583562 48.3995109,-4.9583982 48.3995108,-4.9584283 48.3995024,-4.9584439 48.3994896,-4.9584658 48.3994547,-4.9585246 48.399458,-4.9586839 48.3995133,-4.9589091 48.3996021,-4.9590034 48.39965,-4.9590809 48.3996963,-4.9591165 48.3997246,-4.9591486 48.3997568,-4.9592236 48.3998576,-4.9592629 48.3999191,-4.9592721 48.3999538,-4.9592717 48.4000307,-4.9592509 48.4001451,-4.9592395 48.4001766,-4.9591968 48.4002265,-4.9591397 48.4003506,-4.9591184 48.4004163,-4.9591 48.4004473,-4.9590715 48.4004746,-4.9589411 48.4005629,-4.9588762 48.4006279,-4.9588562 48.4007025,-4.9587786 48.400781,-4.9587514 48.400841,-4.9587166 48.4008909,-4.9587098 48.4009185,-4.9587216 48.4009421,-4.9587576 48.4009741,-4.9586779 48.4010834,-4.9586784 48.4011051,-4.958009 48.401454,-4.9579867 48.4014329,-4.9578913 48.4014746,-4.9578286 48.4015095,-4.9577187 48.4015902,-4.9575043 48.4017077,-4.9573714 48.4017981,-4.9572902 48.4018361,-4.9572399 48.4018539,-4.9572303 48.4018618,-4.9571743 48.4018864,-4.9571216 48.4019143,-4.9570611 48.4019546,-4.9569394 48.4020116,-4.9568785 48.4020573,-4.956877 48.4020615,-4.9568756 48.4020656,-4.9568809 48.4020825,-4.9566562 48.4022133,-4.9565228 48.402291,-4.9565115 48.4022882,-4.9564977 48.4022774,-4.9562981 48.4024029,-4.9562861 48.4024046,-4.9562708 48.402393,-4.9562194 48.4024209,-4.9562941 48.4024837,-4.9564249 48.4024242,-4.9564974 48.4023832,-4.9565213 48.4023879,-4.9565311 48.4023809,-4.9565771 48.4023624,-4.9567417 48.4022302,-4.9569337 48.4021259,-4.9569748 48.4021376,-4.9570628 48.4021,-4.9571324 48.4020574,-4.9571736 48.4020067,-4.9572418 48.4020265,-4.9572792 48.4020222,-4.9573696 48.4019826,-4.9574839 48.4019126,-4.9575693 48.4018761,-4.9579453 48.4016871,-4.9580428 48.4016317,-4.9580941 48.4015939,-4.9582067 48.4015393,-4.958261 48.4015039,-4.9583775 48.4014391,-4.9585719 48.4013157,-4.9586489 48.4012771,-4.9586809 48.401255,-4.9587534 48.401223,-4.9587834 48.4012147,-4.9587888 48.4012148,-4.9587943 48.4012148,-4.9588454 48.4012385,-4.9588662 48.4012417,-4.95898 48.4012485,-4.9590226 48.4012429,-4.9590469 48.4012331,-4.9590794 48.4012056,-4.9590816 48.4011756,-4.9590969 48.4011601,-4.9591198 48.4011586,-4.9591919 48.4011953,-4.959219 48.4012215,-4.9592294 48.4012543,-4.9592289 48.4012869,-4.9592381 48.4013206,-4.9592601 48.401349,-4.9592889 48.4013687,-4.9593567 48.4014311,-4.959379 48.4014612,-4.9593954 48.401471,-4.9594149 48.4014742,-4.959445 48.4014667,-4.9595061 48.4014219,-4.9595547 48.4014024,-4.9595973 48.4013787,-4.9596291 48.4013558,-4.9596496 48.40133,-4.9596875 48.4013202,-4.9597346 48.401317,-4.9598771 48.4013255,-4.9599123 48.401334,-4.9599549 48.4013374,-4.9600285 48.4013298,-4.9600509 48.4013436,-4.9600676 48.4014085,-4.9600847 48.4014408,-4.9601157 48.4014659,-4.9601579 48.4014847,-4.9602608 48.4015004,-4.96053 48.4015112,-4.9606414 48.4015028,-4.9606816 48.4014901,-4.9607008 48.4014644,-4.9607309 48.4013855,-4.9607463 48.40138,-4.9607642 48.4013905)),((-4.9605416 48.4020982,-4.9605877 48.4020887,-4.9606119 48.4020781,-4.9606159 48.4020687,-4.9606089 48.4020492,-4.9605972 48.4020437,-4.960578 48.4020423,-4.9605597 48.4020471,-4.9605288 48.4020763,-4.9605416 48.4020982)),((-4.959905 48.402529,-4.9599376 48.4025024,-4.9598697 48.4024934,-4.9598294 48.4025232,-4.9598372 48.4025299,-4.959905 48.402529)),((-4.9594195 48.401728,-4.9594609 48.4017234,-4.9595185 48.4017095,-4.9595534 48.4016891,-4.9595951 48.4016863,-4.959603 48.4016758,-4.9596023 48.4016623,-4.9595813 48.4016492,-4.9595098 48.4016342,-4.9594791 48.4016199,-4.9594406 48.40159,-4.9593951 48.4015677,-4.9593666 48.4015678,-4.9593379 48.4015842,-4.9592665 48.4016415,-4.9592728 48.4016564,-4.9593109 48.4016837,-4.9593346 48.4016966,-4.9594195 48.401728)),((-4.9591515 48.4016627,-4.9591556 48.4015919,-4.9591255 48.4015903,-4.9590739 48.4016082,-4.9590695 48.4016239,-4.9590746 48.401657,-4.9590927 48.4016784,-4.9591028 48.4016823,-4.9591245 48.4016817,-4.9591515 48.4016627)),((-4.9585087 48.4034551,-4.9585033 48.4033936,-4.9584671 48.403342,-4.9584001 48.4033099,-4.958329 48.4033206,-4.9583102 48.4033847,-4.9583478 48.4033927,-4.9583719 48.4033918,-4.9584108 48.4034123,-4.9584122 48.4034364,-4.9584497 48.4034613,-4.9585087 48.4034551)),((-4.9577262 48.4043124,-4.9576994 48.4042608,-4.9576947 48.4042368,-4.9576678 48.4042092,-4.9576296 48.404202,-4.9575921 48.4042167,-4.9575793 48.4042381,-4.9575639 48.4042612,-4.9575666 48.4042791,-4.9575968 48.4042902,-4.9576323 48.4042835,-4.9576578 48.4042942,-4.9577 48.4043156,-4.9577262 48.4043124)),((-4.9522324 48.4033529,-4.9521926 48.4033502,-4.9521422 48.4033581,-4.9521263 48.40337,-4.9521231 48.4033847,-4.952133 48.4033958,-4.9521708 48.4034032,-4.9522053 48.4034162,-4.9522229 48.4034159,-4.9522395 48.4034085,-4.9522549 48.4033849,-4.9522543 48.4033722,-4.9522324 48.4033529)),((-4.9521475 48.403062,-4.9521214 48.4030692,-4.9520826 48.4030727,-4.9520701 48.4030799,-4.9520664 48.403091,-4.9520726 48.4031051,-4.952088 48.4031176,-4.9521084 48.4031262,-4.9521915 48.4031106,-4.9522231 48.4030768,-4.9521475 48.403062)),((-4.951707 48.404052,-4.9516709 48.404002,-4.9516655 48.4039842,-4.9516692 48.4039551,-4.9516623 48.4039456,-4.9515673 48.4039276,-4.9515119 48.4039295,-4.9514624 48.4039256,-4.9514418 48.4039333,-4.951435 48.4039509,-4.9514438 48.4039729,-4.9514658 48.4039931,-4.9515273 48.4040134,-4.9516756 48.4040866,-4.9516964 48.4040898,-4.9517083 48.4040781,-4.951707 48.404052)),((-4.9512539 48.4052272,-4.9512099 48.4052148,-4.9511667 48.4052078,-4.9511461 48.4052155,-4.9511445 48.4052228,-4.9511528 48.4052322,-4.9512363 48.4052456,-4.9512482 48.4052439,-4.9512539 48.4052272)),((-4.950926 48.3981076,-4.9508876 48.3980695,-4.9508511 48.3980439,-4.9506846 48.3979665,-4.950653 48.3979551,-4.9505675 48.3979373,-4.9504451 48.3979275,-4.9500836 48.3979346,-4.9498811 48.3979509,-4.9498362 48.3979594,-4.949751 48.3979886,-4.949713 48.3980066,-4.9496759 48.3980307,-4.9496166 48.3980962,-4.9495952 48.3981338,-4.9495834 48.3981726,-4.9495446 48.3984094,-4.9495364 48.3986776,-4.9495488 48.3987862,-4.9495535 48.3990138,-4.9495403 48.3991331,-4.9495357 48.3992455,-4.9495261 48.3992986,-4.949461 48.3994513,-4.9493641 48.3996007,-4.949307 48.3996986,-4.949185 48.3998433,-4.9489707 48.4000151,-4.9487391 48.4001798,-4.9485105 48.400329,-4.9484474 48.4003604,-4.9481709 48.4004713,-4.9481021 48.4004922,-4.9479136 48.4005392,-4.9478758 48.400558,-4.947835 48.4006023,-4.9476979 48.4006477,-4.9476667 48.4006661,-4.9476476 48.4006565,-4.9475949 48.400604,-4.9475497 48.4006288,-4.9475744 48.4006569,-4.9475888 48.4006894,-4.9475892 48.4007012,-4.9475679 48.4007125,-4.947521 48.4007256,-4.9473993 48.4007564,-4.9473385 48.4007669,-4.9472762 48.4007683,-4.9470749 48.4007394,-4.9467819 48.4006786,-4.9465235 48.4005956,-4.9464661 48.4005841,-4.9463498 48.4005693,-4.9462935 48.4005649,-4.9462351 48.4005653,-4.9461007 48.4005833,-4.9458701 48.4006477,-4.9458072 48.4006718,-4.9457007 48.4007305,-4.9456564 48.4007606,-4.9456349 48.4007892,-4.9456134 48.400844,-4.9455775 48.4009033,-4.9455612 48.4009206,-4.9455413 48.4009328,-4.9455296 48.4009544,-4.9455318 48.4010401,-4.9454775 48.4011568,-4.94543 48.4012287,-4.9454165 48.4012649,-4.9454134 48.4012986,-4.9454319 48.4013127,-4.9454684 48.401303,-4.9454986 48.4012784,-4.9455438 48.4012003,-4.9456138 48.4011242,-4.9457279 48.4010261,-4.9458061 48.4009774,-4.9458968 48.4009487,-4.9459437 48.4009446,-4.9460986 48.4009541,-4.9461525 48.4009695,-4.946258 48.4010112,-4.946421 48.4010925,-4.9466445 48.4011959,-4.9468258 48.4012904,-4.9469938 48.4014039,-4.9470393 48.4014443,-4.9471574 48.4015783,-4.9471904 48.4016258,-4.9472115 48.4016759,-4.9472416 48.4018475,-4.9473147 48.402141,-4.9473258 48.4022325,-4.9473189 48.4022763,-4.9472959 48.4023575,-4.9472787 48.4023966,-4.9472306 48.4024731,-4.9472019 48.4025075,-4.947171 48.4025368,-4.9471028 48.4025884,-4.9470383 48.4026198,-4.9470047 48.4026221,-4.9469428 48.4026082,-4.9469239 48.4026085,-4.9469153 48.4026236,-4.9469109 48.4026483,-4.9469152 48.4026769,-4.946936 48.4027063,-4.9469681 48.4027303,-4.9470008 48.4027399,-4.9470303 48.402737,-4.9470549 48.402729,-4.9470862 48.4027296,-4.9472386 48.4027854,-4.9472559 48.4028014,-4.9472795 48.4028134,-4.9473088 48.4028096,-4.9473245 48.4027968,-4.9473242 48.4027769,-4.947342 48.4027332,-4.9473472 48.4027048,-4.9473648 48.4026955,-4.9474447 48.4026938,-4.947494 48.4026877,-4.9477241 48.4026379,-4.9478502 48.4026186,-4.9480227 48.4026097,-4.9480875 48.4026162,-4.9482156 48.4026193,-4.9483554 48.402628,-4.9485114 48.4026447,-4.9486514 48.4026543,-4.9487805 48.4026728,-4.9488506 48.4026789,-4.9489212 48.4026787,-4.9489927 48.4026757,-4.9491337 48.4026562,-4.9491999 48.4026446,-4.9493372 48.40261,-4.9494581 48.4025657,-4.9495193 48.402539,-4.9496366 48.4024795,-4.9497462 48.4024151,-4.9499144 48.4023242,-4.949974 48.4022967,-4.9500911 48.4022535,-4.9501431 48.4022293,-4.9501798 48.4022033,-4.9502541 48.4021739,-4.9503377 48.4021339,-4.9503691 48.4021082,-4.950389 48.402078,-4.9503887 48.4020491,-4.9503708 48.4020295,-4.9503421 48.4020196,-4.9502183 48.402009,-4.950215 48.4019965,-4.9502307 48.4019476,-4.9502227 48.4019219,-4.9501536 48.4018515,-4.9501384 48.4018227,-4.9501307 48.4017897,-4.9501291 48.4017166,-4.9501418 48.401675,-4.9501637 48.4016311,-4.9502254 48.4015455,-4.9503637 48.4013653,-4.9504009 48.4013239,-4.9504479 48.4012846,-4.9505522 48.4012116,-4.9507114 48.401115,-4.9508274 48.4010565,-4.9510079 48.4009748,-4.9512133 48.4009058,-4.951351 48.4008649,-4.9514229 48.4008465,-4.9514961 48.4008361,-4.9516348 48.4008286,-4.9518343 48.4008278,-4.9519968 48.4008431,-4.9520326 48.4008552,-4.9520937 48.4008909,-4.9521659 48.4009195,-4.9522364 48.4009545,-4.9523045 48.4009825,-4.9523456 48.4010114,-4.952373 48.4010131,-4.9524795 48.4009635,-4.952542 48.4009186,-4.952563 48.4008873,-4.9525698 48.4008597,-4.9525663 48.4008274,-4.9525428 48.4007621,-4.9525502 48.4007308,-4.9526112 48.4006137,-4.9526219 48.4005768,-4.952617 48.4005446,-4.9525988 48.4005142,-4.9525695 48.4004818,-4.9525353 48.4004,-4.9524593 48.400114,-4.9524572 48.4000644,-4.9524646 48.3999609,-4.9524564 48.3998619,-4.9523819 48.3996753,-4.952279 48.3994715,-4.95218 48.3993289,-4.9520639 48.3991992,-4.9520209 48.3991578,-4.9519207 48.3990877,-4.9518278 48.3990306,-4.9517764 48.3990052,-4.9516637 48.3989603,-4.9515923 48.3989371,-4.9515394 48.3989108,-4.9514933 48.3989021,-4.9514732 48.3988863,-4.9514019 48.3988459,-4.9513862 48.3988316,-4.9512871 48.3987243,-4.9512429 48.3986477,-4.9512075 48.3985579,-4.9511622 48.3984651,-4.9510882 48.3983353,-4.9509807 48.3981725,-4.950926 48.3981076)),((-4.9500736 48.405737,-4.9499523 48.4056801,-4.9499295 48.4056735,-4.9497826 48.4056626,-4.9497624 48.4056639,-4.949763 48.4056766,-4.9497806 48.4056944,-4.9498579 48.405747,-4.9498845 48.4057615,-4.9499117 48.4057705,-4.9500187 48.4057868,-4.9500671 48.4057746,-4.9500736 48.405737)),((-4.9472837 48.4116895,-4.9473165 48.4116682,-4.9473333 48.4116317,-4.9473118 48.4115974,-4.9472783 48.4115854,-4.9472428 48.4115854,-4.9472079 48.4116045,-4.9471985 48.4116228,-4.9472072 48.4116472,-4.9472327 48.4116664,-4.9472837 48.4116895)),((-4.9466305 48.4079995,-4.94668 48.4080034,-4.9466923 48.4079953,-4.9466883 48.4079513,-4.9466517 48.4079339,-4.9466312 48.4079325,-4.9466099 48.4079358,-4.9465965 48.4079457,-4.946591 48.4079723,-4.9466305 48.4079995)),((-4.9447402 48.4060477,-4.9447619 48.4061285,-4.9447493 48.4061528,-4.9447667 48.4061869,-4.9447786 48.4061934,-4.9448266 48.4062055,-4.9449257 48.4062504,-4.9450286 48.4062661,-4.9450571 48.406266,-4.9450844 48.4062759,-4.9451575 48.4062918,-4.9452347 48.4063173,-4.9453022 48.4063598,-4.9453133 48.406379,-4.9452877 48.4064431,-4.9452963 48.4064642,-4.9453216 48.4064607,-4.9453915 48.4064289,-4.9455454 48.4063154,-4.945634 48.4062643,-4.945825 48.4060995,-4.9458653 48.4060516,-4.9459452 48.4059341,-4.9460131 48.4058084,-4.9460934 48.4056755,-4.9462203 48.4054915,-4.946369 48.4052536,-4.9464298 48.4051447,-4.9464561 48.405085,-4.946462 48.405034,-4.9464539 48.4049269,-4.9464172 48.4048281,-4.9464078 48.4047845,-4.9464084 48.4047437,-4.9464012 48.4047053,-4.9463867 48.4046719,-4.9463773 48.4046102,-4.9463511 48.4045541,-4.9463281 48.4045276,-4.9463013 48.4045122,-4.946238 48.4045156,-4.9461441 48.4044785,-4.9460026 48.4044319,-4.9459597 48.4044267,-4.9459237 48.4044309,-4.945858 48.4044633,-4.9458285 48.4044834,-4.945823 48.404501,-4.9458289 48.4045132,-4.9458257 48.4045279,-4.9457864 48.404564,-4.9457799 48.4045843,-4.9457806 48.4046069,-4.9457903 48.4046261,-4.9457811 48.4046548,-4.9457095 48.4047645,-4.9456923 48.4048751,-4.9456717 48.4048919,-4.9456471 48.4048909,-4.9455972 48.40483,-4.9455667 48.4048084,-4.945538 48.4047978,-4.9455216 48.4048062,-4.9455398 48.4048546,-4.9455458 48.4049121,-4.9455578 48.4049375,-4.9455807 48.4049541,-4.9456358 48.4049685,-4.9456552 48.4049797,-4.9456847 48.4050221,-4.9456946 48.4050874,-4.9456822 48.4051308,-4.94564 48.4052285,-4.9456049 48.4052752,-4.945472 48.4054197,-4.9453216 48.4055474,-4.9452647 48.4055838,-4.9452001 48.4056144,-4.9451451 48.4056461,-4.9451015 48.4056807,-4.9450629 48.4057221,-4.9449984 48.4058161,-4.9449601 48.4058503,-4.944917 48.4058794,-4.9448736 48.4059158,-4.9447986 48.405994,-4.9447402 48.4060477)),((-4.9445114 48.4058018,-4.9444848 48.4057783,-4.9444422 48.4057576,-4.9443512 48.4057393,-4.9443348 48.4057477,-4.9443069 48.4058237,-4.9443121 48.4058487,-4.9443352 48.405867,-4.9444217 48.4059091,-4.9444864 48.4059147,-4.9445441 48.4059099,-4.9445906 48.4058941,-4.9446052 48.4058832,-4.9446071 48.4058686,-4.9445695 48.4058359,-4.9445114 48.4058018)),((-4.9424691 48.4089935,-4.9424929 48.4089892,-4.9425267 48.4089698,-4.9425344 48.4089584,-4.9425302 48.4089478,-4.9425126 48.40894,-4.9424891 48.408937,-4.9424649 48.4089387,-4.9424446 48.4089482,-4.9424316 48.4089608,-4.9424266 48.4089729,-4.9424308 48.4089825,-4.9424691 48.4089935)))"^^gsp:wktLiteral.
+
+ent:6079 a nav:EntiteGeographique;
+	rdfs:label "chenal des Laz"@fr;
+	nav:aPourNature teg:Chenal.
+
+ent:6080 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "couloir de 300 m de largeur centré sur l’alignement au 264°"@fr.
+
+
+#exemple 5
+#"RÉSERVE NATURELLE (arrêté 78/94 du 4 avril 1978 du maire de Granville). — Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique. Leur accès est interdit du 1er avril au 30 juin. L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction. Le mouillage des navires de plaisance est interdit du 1er avril au 31 juillet dans une zone, portée sur la carte, aux abords de l’îlot des Guernesiais (48° 53,7' N — 1° 48,7' W)"
+
+ent:6026 a nav:Information;
+	nav:stipule "Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne » constituent une réserve ornithologique."^^xsd:string;
+	nav:aPourLieuDEffet ent:6027.
+
+ent:6027 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "Les îles et îlots situés à l’Est de la ligne joignant le phare de Grande Île à la tourelle « L’Enseigne »"@fr.
+# >>> comment modeler cette ligne d'îles et d'îlots ?
+
+ent:6028 a nav:Phare;
+	rdfs:label "phare de Grande Île"@fr;
+	nav:aPourNature teg:Phare.
+
+ent:6029 a nav:Tourelle;
+	rdfs:label "tourelle « L’Enseigne »"@fr;
+	nav:aPourNature teg:Tourelle.
+
+ent:6030 a nav:Interdiction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourLieuDEffet ent:6027;
+	nav:aPourTemporalite "du 1er avril au 30 juin"^^xsd:string;
+	nav:aPourException "L’île Aneret (ou Grande Ancre) n’est pas concernée par cette interdiction."^^xsd:string;
+	nav:estImposeePar ent:6076.
+# trouver une bonne ontologie du temps
+
+ent:6076 a nav:Reglement;
+	rdfs:label "arrêté 78/94 du 4 avril 1978 du maire de Granville"@fr;
+	nav:aPourArrete "arrêté 78/94 du 4 avril 1978 du maire de Granville"^^xsd:string.
+
+ent:6031 a nav:Interdiction;
+	nav:aPourAction tac:Mouillage;
+	nav:aPourLieuDEffet ent:6032;
+	nav:aPourCible tna:NavireDePlaisance;
+	nav:aPourTemporalite "du 1er avril au 31 juillet"^^xsd:string;
+	nav:estImposeePar ent:6076.
+
+ent:6032 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "zone"@fr;
+	nav:aPourInfo "portée sur la carte"^^xsd:string;
+	nav:estAuxAbordsDe ent:6033.
+
+ent:6033 a nav:EntiteGeographique;
+	nav:aPourNature teg:Ilot;
+	rdfs:label "îlot des Guernesiais"@fr;
+	nav:aPourLat "48° 53,7' N"^^xsd:string;
+	nav:aPourLng "1° 48,7' W"^^xsd:string.
+
+
+#exemple 6
+#"ZONE INTERDITE DE LA CENTRALE DE GRAVELINES (arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord). — La navigation, le mouillage, le dragage, le stationnement, la pêche à partir d’embarcation, la baignade, la plongée sous-marine, le dépôt sur le fond de la mer de tout engin lourd ou toute autre activité maritime sont interdits aux abords du centre nucléaire de production d’électricité de Gravelines dans une zone, portée sur les cartes, située immédiatement à l’Ouest du Port Ouest de Dunkerque."
+
+ent:6035 a nav:Interdiction;
+	rdfs:label "Zone interdite de la centrale de Gravelines";
+	nav:aPourAction tac:Navigation, nav:Mouillage, nav:Dragage, nav:Stationnement, nav:PecheAPartirDEmbarcation, nav:Baignade, nav:PlongeeSousMarine, nav:DepotSurLeFondDeLaMerDeToutEnginLourd, nav:TouteActiviteMaritime;
+	nav:aPourLieuDEffet ent:6036;
+	nav:estImposeePar ent:6038.
+# >>> comment intégrer "...ou toute autre activité maritime" ?
+
+ent:6036 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "zone située immédiatement à l'Ouest du Port Ouest de Dunkerque"^^xsd:string;
+	nav:aPourInfo "zone, portée sur les cartes"^^xsd:string;
+	nav:estALOuestDe ent:6037.
+
+ent:6037 a nav:EntiteGeographique;
+	rdfs:label "Port Ouest de Dunkerque"@fr;
+	nav:aPourNature teg:Port.
+
+ent:6038 a nav:Reglement;
+	rdfs:label "arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord"@fr;
+	nav:aPourArrete "arrêté 17/2010 du 3 mai 2010 du préfet maritime de La Manche et de la Mer du Nord"^^xsd:string.
+
+
+#exemple 7
+#"Les chenaux d’accès et la zone d’attente du STM de Dunkerque sont intégrés à la partie maritime de la Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque, créée par l’arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)."
+
+ent:6040 a nav:Information;
+	nav:stipule "Les chenaux d’accès et la zone d’attente du STM de Dunkerque sont intégrés à la partie maritime de la Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque"^^xsd:string;
+	nav:estImposeePar ent:6041;
+	nav:aPourLieuDEffet ent:6042.
+
+ent:6041 a nav:Reglement;
+	rdfs:label "arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)"@fr;
+	nav:aPourArrete "arrêté interpréfectoral 45/2014 du 18 juillet 2014 du préfet maritime de la Manche et de la mer du Nord et du préfet du Nord (disponible sur le site www.premar-manche.gouv.fr)"^^xsd:string.
+
+ent:6042 a nav:EntiteGeographique;
+	rdfs:label "Zone Maritime et Fluviale de Régulation (ZMFR) du port de Dunkerque"@fr;
+	nav:aPourNature teg:Zone.
+
+
+#exemple 8
+#"Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."
+
+ent:6043 a nav:Instruction;
+	nav:aPourAction tac:Attente;
+	nav:aPourCible tna:NavireDePlaisance;
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6084;
+		];
+	nav:aPourLieuDEffet ent:6044, ent:6045;
+	nav:aPourContexte "Les navires de plaisance en attente d’entrée dans le Vieux Bassin sont tenus de stationner à la Jetée de la Lieutenance et au Quai du Jardin Public (partie matérialisée par des flèches blanches)."^^xsd:string.
+
+ent:6044 a nav:EntiteGeographique;
+	rdfs:label "Jetée de la Lieutenance"@fr;
+	nav:aPourNature teg:Jetee.
+
+ent:6045 a nav:EntiteGeographique;
+	rdfs:label "Quai du Jardin Public (partie matérialisée par des flèches blanches)"@fr;
+	nav:aPourNature teg:Quai.
+
+ent:6084 a nav:EntiteGeographique;
+	rdfs:label "Vieux Bassin"@fr.
+
+
+#exemple 9
+#"4.5.5.5. Saint-Valéry-sur-Somme
+# [...]
+# RENSEIGNEMENTS. — Département de la Somme (80) ; 2 700 habitants.
+# Bureau du port et maison des plaisanciers : au port de plaisance ; tél. : 03.22.60.24.80 ; VHF ; saison de 07 h 00 à 23 h 00 (en fonction des heures de marées), hors-saison : de 09 h 00 à 12 h 00 et de 14 h 00 à 17 h 00 ; mél. : snval@wanadoo.fr.
+# Gendarmerie maritime : tél. : 03.22.60.82.08.
+# Sas : tél. : 03.22.60.80.23."
+
+ent:6046 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6048;
+	nav:aPourContact "Bureau du port et maison des plaisanciers : au port de plaisance"^^xsd:string;
+	nav:aPourNumeroDeTelephone "03.22.60.24.80"^^xsd:string;
+	nav:aPourAdresseMail "snval@wanadoo.fr"^^xsd:string;
+	nav:aPourHorairesVHF "saison de 07 h 00 à 23 h 00 (en fonction des heures de marées), hors-saison : de 09 h 00 à 12 h 00 et de 14 h 00 à 17 h 00"^^xsd:string.
+
+ent:6047 a nav:EntiteGeographique;
+	rdfs:label "Département de la Somme (80)"@fr;
+	nav:aPourNature teg:Departement.
+
+ent:6048 a nav:EntiteGeographique;
+	rdfs:label "Saint-Valéry-sur-Somme"@fr;
+	nav:aPourNature teg:Ville;
+	nav:aPourNombreDHabitants "2700"^^xsd:integer;
+	nav:aPourDepartement ent:6047.
+
+ent:6049 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6048;
+	nav:aPourContact "Gendarmerie maritime"^^xsd:string;
+	nav:aPourNumeroDeTelephone "03.22.60.82.08"^^xsd:string.
+
+ent:6050 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6048;
+	nav:aPourContact "Sas"^^xsd:string;
+	nav:aPourNumeroDeTelephone "03.22.60.80.23"^^xsd:string.
+
+
+#exemple 10
+#"6.2.2.4. Courseulles-sur-Mer
+# [...]
+# RENSEIGNEMENTS. — Département du Calvados (14) ; 4 200 habitants.
+# Bureau du port : Quai Ouest du Bassin Joinville ; tél. : 02.31.37.51.69 (de – 3 PM à + 3 PM) ; VHF (heures ouvrables).
+# Douanes : au bureau du port.
+# Vigie, cabine de l’écluse : tél. : 02.31.37.46.03."
+
+ent:6051 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6052;
+	nav:aPourContact "Bureau du port : Quai Ouest du Bassin Joinville"^^xsd:string;
+	nav:aPourNumeroDeTelephone "02.31.37.51.69"^^xsd:string;
+	nav:aPourHorairesTelephone "de – 3 PM à + 3 PM"^^xsd:string;
+	nav:aPourHorairesVHF "heures ouvrables"^^xsd:string.
+
+ent:6052 a nav:EntiteGeographique;
+	rdfs:label "Courseulles-sur-Mer"@fr;
+	nav:aPourNature teg:Ville;
+	nav:aPourDepartement ent:6053;
+	nav:aPourNombreDHabitants "4200"^^xsd:integer.
+
+ent:6053 a nav:EntiteGeographique;
+	rdfs:label "Département de Calvados (14)"@fr;
+	nav:aPourNature: teg:Departement.
+
+ent:6054 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6052;
+	nav:aPourContact "Douanes : au bureau du port"^^xsd:string.
+
+ent:6055 a nav:Renseignement;
+	nav:aPourLieuDEffet ent:6052;
+	nav:aPourContact "Vigie, cabine de l’écluse"^^xsd:string;
+	nav:aPourNumeroDeTelephone "02.31.37.46.03"^^xsd:string.
+
+#exemple 11
+#"INSTRUCTIONS. — Le navire venant du large, après avoir reconnu la bouée d’atterrissage « Le Légué », doit donner un large tour vers l’Est à la bouée « 1 » afin de parer le Banc de la Toupie. Il navigue ensuite entre les bouées du chenal pour se présenter sensiblement dans l’axe du sas de l’écluse. Par mauvais temps de NE, il est conseillé aux navires sans pilote de rester aux abords de la bouée d’atterrissage."
+
+ent:6057 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDepart [
+		a rdf:Bag;
+		rdf:_1 ent:6058;
+		];
+	nav:aPourCible nav:Navire;
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6059;
+		];
+	nav:impliqueDeSuivre [
+		a rdf:Seq;
+		rdf:_1 ent:6060;
+		rdf:_2 ent:6062;
+		rdf:_3 ent:6065;
+		];
+	nav:aPourInfo ent:6075.
+
+ent:6075 a nav:Information;
+	nav:stipule "Par mauvais temps de NE, il est conseillé aux navires sans pilote de rester aux abords de la bouée d’atterrissage."^^xsd:string;
+	nav:aPourLieuDEffet ent:6061;
+	nav:aPourConditionMeteo tim:MauvaisTemps.
+
+ent:6058 a nav:ZoneDuDomaineMaritime;
+	rdfs:label "large"@fr.
+
+ent:6059 a nav:EntiteGeographique;
+	rdfs:label "sas de l'écluse"@fr;
+	nav:aPourNature teg:Sas.
+
+ent:6060 a nav:Reperage;
+	rdfs:label "après avoir reconnu la bouée d’atterrissage « Le Légué »"@fr;
+	nav:aPourEntiteImpliquee ent:6061.
+
+ent:6061 a nav:Bouee;
+	rdfs:label "bouée d'atterrissage « Le Légué »"@fr.
+
+ent:6062 a nav:Route;
+	rdfs:label "donner un large tour vers l'Est à la bouée « 1 »";
+	nav:estALEstDe ent:6063;
+	nav:aPourContexte "parer le Banc de la Toupie"^^xsd:string.
+
+ent:6063 a nav:Bouee;
+	rdfs:label "bouée « 1 »"@fr.
+
+ent:6064 a nav:EntiteGeographique;
+	nav:aPourNature teg:Banc;
+	rdfs:label "Banc de la Toupie"@fr.
+
+ent:6065 a nav:Route;
+	rdfs:label "entre les bouées du chenal pour se présenter sensiblement dans l’axe du sas de l’écluse"@fr;
+	nav:aPourEntiteImpliquee [
+		a rdf:Seq;
+		rdf:_1 ent:6066;
+		rdf:_2 ent:6059;
+		].
+
+ent:6066 a nav:GroupeDeBouees;
+	rdfs:label "bouées du chenal"@fr.
+
+
+#exemple 12
+#"Fécamp ( 49° 53,3' N — 0° 41,8' E) est un port de pêche, de commerce et de plaisance. C’est un port départemental géré par la chambre de commerce et d’industrie de Fécamp-Bolbec.
+# [...]
+# Il est recommandé d’entrer à la fin du courant de flot et peu de temps avant l’heure de la pleine mer qui est aussi l’heure de l’étale. L’heure favorable d’entrée d’un gros navire est en général, une demi-heure avant la pleine mer (une heure avant par gros temps de NE).
+# L’entrée ne comporte pas de méthode a priori, si ce n’est d’approcher en se maintenant sur l’alignement à 082° (§ 4.8.2.[L’approche s’effectue en suivant l’alignement lumineux à 082°, peu visible, du feu des pilotes, porté par un poteau blanc à sommet rouge et à voyant circulaire implanté à l’enracinement de la Jetée Nord, par la tourelle verte de l’extrémité de la Jetée Sud.]), jusqu’à quelques centaines de mètres de la Jetée Sud puis d’utiliser la forte dérive due au courant, la barre, la machine en avant, pour parer aussi près que possible le musoir de la Jetée Sud.
+# À ce moment il faut demeurer particulièrement attentif aux embardées du navire notamment lorsque l’avant commence à se trouver à l’abri du courant. Par forte houle d’Ouest, la tenue du cap peut ainsi devenir trop difficile pour permettre l’entrée."
+
+ent:6067 a nav:EntiteGeographique;
+	nav:aPourNature teg:Port;
+	rdfs:label "Fécamp"@fr;
+	nav:estGerePar ent:6068;
+	nav:aPourLat "49° 53,3' N"^^xsd:string;
+	nav:aPourLng "0° 41,8' E"^^xsd:string.
+
+ent:6068 a nav:Organisation;
+	rdfs:label "chambre de commerce et d'industrie de Fécamp-Bolbec"@fr.
+
+ent:6069 a nav:Information;
+	nav:aPourEntiteImpliquee ent:6067;
+	nav:stipule "Il est recommandé d’entrer à la fin du courant de flot et peu de temps avant l’heure de la pleine mer qui est aussi l’heure de l’étale. L’heure favorable d’entrée d’un gros navire est en général, une demi-heure avant la pleine mer (une heure avant par gros temps de NE)."^^xsd:string.
+
+ent:6070 a nav:Instruction;
+	nav:aPourAction tac:Navigation;
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6067;
+		];
+	nav:impliqueDeSuivre [
+		a rdf:Seq;
+		rdf:_1 ent:6071;
+		rdf:_2 ent:6074;
+		].
+
+ent:6071 a nav:Alignement;
+	nav:aPourRepere [
+		a rdf:Seq;
+		rdf:_1 ent:6089;
+		rdf:_2 ent:6090;
+		];
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6072;
+		];
+	nav:aPourCap "82.0"^^xsd:float.
+
+<<ent:6071 nav:aPourCap "82.0"^^xsd:float>> qudt:Unit unit:DEG.
+
+ent:6089 a nav:EntiteGeographique;
+	nav:aPourNature teg:Feu;
+	rdfs:label "feu des Pilotes"^^xsd:string;
+	nav:estUnRepereLumineux "true"^^xsd:boolean;
+	nav:aPourTexteAssocie "feu des pilotes, porté par un poteau blanc à sommet rouge et à voyant circulaire implanté à l’enracinement de la Jetée Nord"^^xsd:string;
+	geom:hasGeometry gtrs:0006.
+
+gtrs:0006 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(0.366685 49.765086)"^^gsp:wktLiteral;
+#	geom:coordX ""^^xsd:double;
+#	geom:coordY ""^^xsd:double
+	.
+
+ent:6090 a nav:EntiteGeographique;
+	nav:aPourNature teg:Tourelle;
+	nav:estDeCouleur tco:Verte;
+	nav:aPourTexteAssocie "tourelle verte de l’extrémité de la Jetée Sud"^^xsd:string;
+	geom:hasGeometry gtrs:0007.
+
+gtrs:0007 a geom:Point;
+	gsp:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> Point(0.363625 49.764804)"^^gsp:wktLiteral;
+#	geom:coordX ""^^xsd:double;
+#	geom:coordY ""^^xsd:double
+	.
+	
+ent:6072 a nav:EntiteGeographique;
+	rdfs:label "quelques centaines de mètres de la Jetée Sud"@fr.
+
+ent:6073 a nav:EntiteGeographique;
+	nav:aPourNature teg:Jetee;
+	rdfs:label "Jetée Sud"@fr.
+
+ent:6074 a nav:Route;
+	nav:aPourPointDeDepart [
+		a rdf:Bag;
+		rdf:_1 ent:6072;
+		];
+	nav:aPourPointDeDestination [
+		a rdf:Bag;
+		rdf:_1 ent:6067;
+		];
+	nav:aPourInfo "utiliser la forte dérive due au courant, la barre, la machine en avant"^^xsd:string;
+	nav:aPourContexte "parer aussi près que possible le musoir de la Jetée Sud"^^xsd:string.
+
+
+#exemple 13
+#"À marée basse et par beau temps calme, il est possible, pour un navire de plaisance ou une embarcation, d’accoster le socle de cette balise [la balise « Jet d’Amont »]."
+
+ent:6081 a nav:Information;
+	nav:stipule "À marée basse et par beau temps calme, il est possible, pour un navire de plaisance ou une embarcation, d’accoster le socle de cette balise.";
+	nav:aPourEntiteImpliquee ent:6082;
+	nav:aPourConditionMeteo tim:BeauTemps, tim:TempsCalme;
+	nav:aPourConditionOceano tio:MareeBasse;
+	nav:aPourCible tna:NavireDePlaisance, tna:Embarcation;
+	nav:aPourAction tac:Accostage.
+
+ent:6082 a nav:Balise;
+	rdfs:label "Jet d’Amont"@fr.
+
+#entités pour d'autres modelets
+
+#exemple 3 modelet navires
+#"Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."
+
+ent:6085 a nav:Information;
+	nav:aPourLieuDEffet ent:4072;
+	nav:aPourCible ent:3005;
+	nav:aPourInfo "Le pilotage est également obligatoire pour tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions."^^xsd:string.
+
+
+#exemple 4 modelet navires
+#"AVERTISSEMENT. — Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."
+
+ent:6086 a nav:Interdiction;
+	nav:aPourLieuDEffet ent:4074;
+	nav:aPourCible ent:3006;
+	nav:aPourAction tac:Navigation;
+	nav:aPourInfo "Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."^^xsd:string.
+
+
+#exemple 5 modelet navires
+#"Le passage est rectiligne, facile à suivre et avantageux par beau temps, lorsque l’on a le courant pour soi. Mais les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."
+
+ent:6087 a nav:Information;
+	nav:aPourLieuDEffet ent:4075;
+	nav:aPourCible ent:3007, ent:3008, ent:3009, ent:3010;
+	nav:aPourInfo "Les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."^^xsd:string.
+
+
+#exemple 6 modelet navires
+#"Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."
+
+ent:6088 a nav:Information;
+	nav:aPourLieuDEffet ent:4076;
+	nav:aPourCible ent:3011;
+	nav:aPourInfo "Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."^^xsd:string.
