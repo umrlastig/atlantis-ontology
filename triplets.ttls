@@ -1,5 +1,5 @@
-#modélisation de navires
-#extraits des IN C2A
+#quelques exemples de la modélisation de navires
+#extraits des IN C2A, C22
 
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix nav: <http://data.shom.fr/def/navigation_cotiere#>.
@@ -16,6 +16,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix unit: <http://qudt.org/2.1/vocab/unit/>.
+@prefix ein: <http://data.shom.fr/id/editionin/>.
 
 #exemple 1
 #"En venant de l’Est, on prend le chenal en suivant l’alignement à 293,3° du clocher de l’Île de Batz (chapelle Notre-Dame de Bon Secours), sur la côte Sud de l’île, par la pyramide blanche de l’Île Pigued (48° 44,0' N — 3° 58,2' W). Cet alignement n’est visible par les petits navires que jusqu’à environ 0,6 M à l’Est de la tourelle « Le Menk » (à mi-marée) et, par les navires à passerelle plus haute, jusqu’au Nord de la tourelle ; il se situe dans le secteur blanc (289,5° – 293°) du feu de la tourelle « Ar Chaden » (§ 9.3.3.1.). La route à 293,3° laisse au Nord le Plateau des Duons et au Sud Bazenn ar Menk (tourelle « Le Menk », cardinale Ouest lumineuse), et la Basse de Bloscon (bouée cardinale Nord lumineuse).
@@ -23,9 +24,20 @@
 
 ent:3001 a nav:Navire;
 	nav:aPourTaille tta:Petit;
-	nav:aPourInfo "petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation"^^xsd:string.
+	nav:aPourInfo "petits navires d’où il n’est pas possible de voir le clocher de l’Île de Batz, masqué par la végétation"^^xsd:string;
+	nav:aPourProvenance ein:C2A08022017.
 
-ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute.
+<<ent:3001 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "529"^^xsd:int.
+
+ein:C2A08022017 a nav:C2A;
+	nav:estAJourAu "2017-02-08"^^xsd:date;
+	nav:aPourAnneeEdition "2010"^^xsd:gYear;
+	nav:aPourZoneDeCouverture "De la frontière belge à la Pointe de Penmarc'h"^^xsd:string.
+
+ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute;
+	nav:aPourProvenance ein:C2A08022017.
+
+<<ent:3002 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "529"^^xsd:int.
 
 
 #exemple 2
@@ -33,15 +45,19 @@ ent:3002 nav:estDeType tna:NavireAPasserellePlusHaute.
 
 ent:3003 nav:estDeType tna:NavireDePlaisance;
 	nav:estDeLongueurMaxi "15.0"^^xsd:float;
-	nav:aPourTirantDEauMaxi "5.0"^^xsd:float.
+	nav:aPourTirantDEauMaxi "5.0"^^xsd:float;
+	nav:aPourProvenance ein:C2A08022017.
 
+<<ent:3003 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "568"^^xsd:int.
 <<ent:3003 nav:estDeLongueurMaxi "15.0"^^xsd:float>> qudt:Unit unit:M.
 <<ent:3003 nav:aPourTirantDEauMaxi "5.0"^^xsd:float>> qudt:Unit unit:M.
 
 ent:3004 nav:estDeType tna:BateauDePassage;
 	nav:estDeLongueurMaxi "15.0"^^xsd:float;
-	nav:aPourTirantDEauMaxi "5.0"^^xsd:float.
+	nav:aPourTirantDEauMaxi "5.0"^^xsd:float;
+	nav:aPourProvenance ein:C2A08022017.
 
+<<ent:3004 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "568"^^xsd:int.
 <<ent:3004 nav:estDeLongueurMaxi "15.0"^^xsd:float>> qudt:Unit unit:M.
 <<ent:3004 nav:aPourTirantDEauMaxi "5.0"^^xsd:float>> qudt:Unit unit:M.
 
@@ -50,32 +66,58 @@ ent:3004 nav:estDeType tna:BateauDePassage;
 
 ent:3005 a nav:Navire;
 	nav:aPourCargaison tca:Hydrocarbures, tca:SubstancesDangereuses;
-	nav:aPourInfo "tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions"^^xsd:string.
+	nav:aPourInfo "tous les navires transportant des hydrocarbures ou des substances dangereuses, quelles que soient leurs dimensions"^^xsd:string;
+	nav:aPourProvenance ein:C2220102021.
+
+<<ent:3005 nav:aPourProvenance ein:C2220102021>> nav:aPourNumeroDePage "486"^^xsd:int.
+
+ein:C2220102021 a nav:C22;
+	nav:estAJourAu "2021-10-20"^^xsd:date;
+	nav:aPourAnneeEdition "2018"^^xsd:gYear;
+	nav:aPourZoneDeCouverture "Du cap de La Hague à la pointe de Penmarc'h"^^xsd:string.
 
 #exemple 4
 #"AVERTISSEMENT. — Les navires étrangers à l’Union européenne ne sont pas admis, sauf cas de force majeure dûment constaté, à relâcher aux Îles Chausey où n’existe pas de service de douane permanent."
 
 ent:3006 a nav:Navire;
-	nav:aPourEtat tet:EtrangerALUE.
+	nav:aPourEtat tet:EtrangerALUE;
+	nav:aPourProvenance ein:C2220102021.
+
+<<ent:3006 nav:aPourProvenance ein:C2220102021>> nav:aPourNumeroDePage "218"^^xsd:int.
 
 #exemple 5
 #"Le passage est rectiligne, facile à suivre et avantageux par beau temps, lorsque l’on a le courant pour soi. Mais les petits bâtiments (navires de pêche et de plaisance, et les navires de faible puissance) doivent prendre de très grandes précautions pour franchir ce passage, même par de bonnes conditions de temps et de courant."
 
 ent:3007 nav:estDeType tna:Batiment;
-	nav:aPourTaille tta:Petit.
+	nav:aPourTaille tta:Petit;
+	nav:aPourProvenance ein:C2A08022017.
 
-ent:3008 nav:estDeType tna:NavireDePeche.
+<<ent:3007 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "555"^^xsd:int.
 
-ent:3009 nav:estDeType tna:NavireDePlaisance.
+ent:3008 nav:estDeType tna:NavireDePeche;
+	nav:aPourProvenance ein:C2A08022017.
+
+<<ent:3008 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "555"^^xsd:int.
+
+ent:3009 nav:estDeType tna:NavireDePlaisance;
+	nav:aPourProvenance ein:C2A08022017.
+
+<<ent:3009 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "555"^^xsd:int.
 
 ent:3010 a nav:Navire;
-	nav:aPourEtat tet:DeFaiblePuissance.
+	nav:aPourEtat tet:DeFaiblePuissance;
+	nav:aPourProvenance ein:C2A08022017.
+
+<<ent:3010 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "555"^^xsd:int.
 
 #exemple 6
 #"Pour obtenir un poste portatif, les navires qui ne sont pas équipés de VHF doivent le signaler dans le message d’arrivée pour les navires entrants ou lors des demandes de départ pour les navires sortants."
 
 ent:3011 a nav:Navire;
-	nav:nEstPasEquipeDe teq:VHF.
+	nav:nEstPasEquipeDe teq:VHF;
+	nav:aPourProvenance ein:C2A08022017.
+
+<<ent:3011 nav:aPourProvenance ein:C2A08022017>> nav:aPourNumeroDePage "275"^^xsd:int.
 
 #modélisation d'entités pérennes de l'environnement hydrographique côtier
 #extraits des IN C2A
