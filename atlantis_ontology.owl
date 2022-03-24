@@ -222,7 +222,6 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative">
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition locale qualitative</rdfs:label>
     </owl:ObjectProperty>
@@ -233,7 +232,12 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionMeteo">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationMeteo"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
+            </owl:Restriction>
+        </rdfs:range>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition météorologique</rdfs:label>
     </owl:ObjectProperty>
@@ -244,7 +248,12 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourConditionOceano">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationOceano"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
+            </owl:Restriction>
+        </rdfs:range>
         <rdfs:comment xml:lang="fr">L&apos;objet de cette propriété peut être une valeur qui nécessite être précisé avec une autre propriété et objet. Donc, elle peut être dans un quoted triple écrit en RDF-star. Par exemple : &lt;&lt;_:entité _:aPourConditionLocale _:objet&gt;&gt; _:autrePropriete _:autreObjet.</rdfs:comment>
         <rdfs:label xml:lang="fr">a pour condition océanographique</rdfs:label>
     </owl:ObjectProperty>
@@ -499,7 +508,12 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTemporaliteQualitative">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aPourConditionLocaleQualitative"/>
-        <rdfs:range rdf:resource="http://data.shom.fr/def/navigation_cotiere#IndicationTemporelle"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
+            </owl:Restriction>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">a pour temporalité qualitative</rdfs:label>
     </owl:ObjectProperty>
     
@@ -3518,12 +3532,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDAction -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDAction">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedaction/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type d&apos;Action</rdfs:label>
     </owl:Class>
@@ -3548,12 +3556,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedentitegeographique/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">Type d&apos;Entité Géographique</rdfs:label>
@@ -3565,12 +3567,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEquipement -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEquipement">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedequipement/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type d&apos;Équipement</rdfs:label>
     </owl:Class>
@@ -3580,12 +3576,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDEtat -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDEtat">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetat/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type d&apos;État</rdfs:label>
     </owl:Class>
@@ -3595,12 +3585,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationMeteorologique">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationmeteorologique/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
         <rdfs:label xml:lang="fr">Type d&apos;Indication Météorologique</rdfs:label>
     </owl:Class>
@@ -3610,12 +3594,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationOceanographique">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationoceanographique/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
         <rdfs:label xml:lang="fr">Type d&apos;Indication Océanographique</rdfs:label>
     </owl:Class>
@@ -3625,12 +3603,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDIndicationTemporelle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedindicationtemporelle/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale"/>
         <rdfs:label xml:lang="fr">Type d&apos;Indication Temporelle</rdfs:label>
     </owl:Class>
@@ -3640,12 +3612,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCargaison">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecargaison/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Cargaison</rdfs:label>
     </owl:Class>
@@ -3655,12 +3621,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeConditionLocale">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedeconditionlocale/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Condition Locale</rdfs:label>
     </owl:Class>
@@ -3670,12 +3630,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCouleur">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecouleur/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">Type de Couleur</rdfs:label>
@@ -3686,12 +3640,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeCourant -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeCourant">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedecourant/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Courant</rdfs:label>
     </owl:Class>
@@ -3701,12 +3649,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeDanger -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeDanger">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typededanger/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <rdfs:label xml:lang="fr">Type de Danger</rdfs:label>
     </owl:Class>
@@ -3716,12 +3658,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeForme -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeForme">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedeforme/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Forme</rdfs:label>
     </owl:Class>
@@ -3731,12 +3667,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeLieuDeStationnement">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="http://data.shom.fr/id/codes/navigation_cotiere/typedelieudestationnement/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#TypeDEntiteGeographique"/>
         <rdfs:label xml:lang="fr">Type de Lieu de Stationnement</rdfs:label>
     </owl:Class>
@@ -3746,12 +3676,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeMotif -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeMotif">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedemotif/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Motif</rdfs:label>
     </owl:Class>
@@ -3761,12 +3685,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeNavire -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeNavire">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedenavire/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">Type de Navire</rdfs:label>
@@ -3778,12 +3696,6 @@ Dans les codes standard et détaillé, les revêtements rétroréfléchissants d
     <!-- http://data.shom.fr/def/navigation_cotiere#TypeDeTaille -->
 
     <owl:Class rdf:about="http://data.shom.fr/def/navigation_cotiere#TypeDeTaille">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                <owl:hasValue rdf:resource="https://data.shom.fr/id/codes/navigation_cotiere/typedetaille/liste"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:label xml:lang="fr">Type de Taille</rdfs:label>
     </owl:Class>
