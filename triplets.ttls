@@ -13,6 +13,8 @@
 @prefix tna: <http://data.shom.fr/id/codes/nav/typedenavire/>.
 @prefix tca: <http://data.shom.fr/id/codes/nav/typedecargaison/>.
 @prefix teq: <http://data.shom.fr/id/codes/nav/typedequipement/>.
+@prefix tfo: <http://data.shom.fr/id/codes/nav/typedeforme/>.
+@prefix tmo: <http://data.shom.fr/id/codes/nav/typedemotif/>.
 @prefix tet: <http://data.shom.fr/id/codes/nav/typedetat/>.
 @prefix ent: <http://data.shom.fr/id/entitegeographique/>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
