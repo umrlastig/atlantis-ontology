@@ -893,6 +893,7 @@ ent:4060 a nav:EntiteGeographique;
 	nav:estDeCouleur tco:Noir, tco:Blanc;
 	nav:aPourElement ent:4069;
 	nav:marqueLEntite ent:4062;
+	rdfs:label "tourelle Roustel"@fr;
 	nav:estEntre [
 		a rdf:Bag;
 		rdf:_1 ent:4064;
@@ -915,6 +916,7 @@ ent:4061 a nav:EntiteGeographique;
 	nav:aPourForme tfo:conique;
 	nav:estDeCouleur tco:Vert;
 	nav:marqueLEntite ent:4063;
+	rdfs:label "tourelle Platte"@fr;
 	nav:estEntre [
 		a rdf:Bag;
 		rdf:_1 ent:4064;
