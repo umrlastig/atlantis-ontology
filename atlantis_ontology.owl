@@ -718,7 +718,14 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALAbriDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est à l&apos;abri de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -729,8 +736,22 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALEstDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estALOuestDe"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est à l&apos;est de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -740,8 +761,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALEstNordEstDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est à l&apos;est-nord-est de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -764,8 +799,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estALOuestDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est à l&apos;ouest de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -809,7 +858,14 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuLargeDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est au large de</rdfs:label>
     </owl:ObjectProperty>
@@ -821,8 +877,22 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuNordDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudDe"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est au nord de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -833,8 +903,22 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuNordEstDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <owl:inverseOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est au nord-est de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -844,8 +928,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuSudDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est au sud de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -855,8 +953,22 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuSudOuestDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="fr">est au sud-ouest de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -866,7 +978,14 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estAuxAbordsDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est aux abords de</rdfs:label>
     </owl:ObjectProperty>
@@ -877,8 +996,6 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLEstDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est dans l&apos;est de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -888,8 +1005,6 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLOuestDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est dans l&apos;ouest de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -899,8 +1014,6 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLeNordDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est dans le nord de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -910,8 +1023,6 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estDansLeSudDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#estSitueDans"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est dans le sud de</rdfs:label>
     </owl:ObjectProperty>
     
@@ -987,7 +1098,14 @@
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estEntoureDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est entouré de</rdfs:label>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
@@ -1120,7 +1238,14 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estPresDe">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">est près de</rdfs:label>
     </owl:ObjectProperty>
@@ -1142,7 +1267,14 @@
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#estSitueDans">
         <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
-        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:isDefinedBy rdf:resource="http://data.shom.fr/def/navigation_cotiere#"/>
         <rdfs:label xml:lang="fr">est situé dans</rdfs:label>
@@ -1261,6 +1393,7 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#unePartieDe -->
 
     <owl:ObjectProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#unePartieDe">
+        <rdfs:subPropertyOf rdf:resource="http://data.shom.fr/def/navigation_cotiere#aUneRelationSpatialeAvec"/>
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:label xml:lang="fr">une partie de</rdfs:label>
@@ -2288,6 +2421,16 @@
         <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:label xml:lang="fr">est une entité marquée</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://data.shom.fr/def/navigation_cotiere#seVisualiseSur -->
+
+    <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#seVisualiseSur">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="fr">se visualise sur</rdfs:comment>
     </owl:DatatypeProperty>
     
 
