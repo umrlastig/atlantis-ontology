@@ -2055,6 +2055,19 @@
     <!-- http://data.shom.fr/def/navigation_cotiere#aPourTexteAssocie -->
 
     <owl:DatatypeProperty rdf:about="http://data.shom.fr/def/navigation_cotiere#aPourTexteAssocie">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#ConditionLocale"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#ConsigneDeNavigation"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Navire"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Organisation"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#PhenomeneMeteorologiqueOuOceanographique"/>
+                    <rdf:Description rdf:about="http://data.shom.fr/def/navigation_cotiere#Reglement"/>
+                    <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="fr">a pour texte associé</rdfs:label>
     </owl:DatatypeProperty>
