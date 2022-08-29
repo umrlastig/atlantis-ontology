@@ -1,5 +1,7 @@
 # ATLANTIS in English
-This repository contains...
+This repository contains…
+
+This work is being carried out at the LASTIG, a research unit at Université Gustave Eiffel, by Jean-Guillaume Benoît and Corentin Kergus.
 
 Under no circumstances should any part of this work be used for real-life navigation.
 
