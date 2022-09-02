@@ -681,7 +681,7 @@ WHERE {
 }
 ```
 
-Quels sont les consignes pour les petits navires dans le Canal de l'Île de Batz ?
+Quels sont les consignes pour les petits navires pour entrer dans le Canal de l'Île de Batz ?
 ```sparql
 PREFIX nav: <http://data.shom.fr/def/navigation_cotiere#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -692,18 +692,18 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX tac: <http://data.shom.fr/id/codes/nav/typedaction/>
 PREFIX tna: <http://data.shom.fr/id/codes/nav/typedenavire/>
 PREFIX tta: <http://data.shom.fr/id/codes/nav/typedetaille/>
-SELECT DISTINCT ?ent ?s ?nom ?p ?o ?ou ?lieu ?navire
+SELECT DISTINCT ?ent ?type ?p ?o
 WHERE {
 ?ent a nav:ConsigneDeNavigation.
-    OPTIONAL { ?ent nav:impliqueDeSuivre ?nb.
-    ?nb rdf:member ?s.
-?s a ?nom}
-?ent ?p ?o.
-?ent ?ou ?lieu.
+?ent nav:aPourPointDeDestination ?nb1.
+?nb1 rdf:member ?lieu.
 ?lieu rdfs:label "Canal de l'Île de Batz"@fr.
+?ent nav:impliqueDeSuivre ?nb2.
+?nb2 rdf:member ?suivre.
+?suivre ?p ?o.
 ?ent nav:aPourCible ?navire.
 ?navire a nav:Navire.
-?navire nav:aPourTaille tta:Petit.
+?navire nav:aPourTaille tta:Petit
 }
 ```
 
